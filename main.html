@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator Ofert</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+<body>
+    <div class="background-image" style="background-image: url('mitsubishi.jpg');"></div>
+    <div class="form-container">
+        <h2>Generator Ofert</h2>
+        <form id="offerForm">
+            <div class="input-group">
+                <label for="userName">Imię i Nazwisko:</label>
+                <input type="text" id="userName" name="userName" autocomplete="name" required>
+            </div>
+            <div class="input-group">
+                <label for="price">Cena:</label>
+                <input type="number" id="price" name="price" required>
+            </div>
+            <div class="input-group">
+                <label for="pdfType">Typ oferty:</label>
+                <select id="pdfType" name="pdfType" autocomplete="off">
+                  <option value="Toshiba" id="device-name">Toshiba</option>
+                  <option value="Mitsubishi" id="device-name">Mitsubishi</option>
+                  <option value="ATLANTIC" id="device-name">ATLANTIC</option>
+                </select>
+                <select id="powerOptions" name="powerOptions" autocomplete="off">
+                    <!-- Opcje zostaną tutaj dodane przez JavaScript -->
+                  </select>
+              </div>
+            <button type="button" id="generatePdfButton">Generuj PDF</button>
+        </form>
+    </div>
+    <div id="pdfTemplate" style="display:none;">
+        <div class="header-info">
+            <div class="seller-info">
+                <strong>Sprzedawca:</strong> "KAMAN" SP. Z O.O.<br>
+                Opiekun klienta: Beata Mularczyk<br>
+                Tel: 884996055<br>
+                Email: bmularczyk.kaman@gmail.com
+            </div>
+            <div class="offer-details">
+                <strong>Data wystawienia:</strong> <span id="issueDate"></span><br>
+                <strong>Numer oferty:</strong> 12345
+            </div>
+            <h1>OFERTA DLA KLIENTA</h1>
+            <div class="client-info">
+                Nabywca: <span id="clientName">PODSIADŁO ŁUKASZ</span><br>
+                Adres: <span id="clientAddress">BOLMIN 69, 26-060 CHĘCINY</span><br>
+                Tel: 606-636-459<br>
+                Email: lukaszpodsiadlooo@gmail.com
+            </div>
+        </div>
+        <div id="tableContainer"></div>
+        <table class="additional-options-table">
+            <thead>
+                <tr>
+                    <th>Lp.</th>
+                    <th>Nazwa</th>
+                    <th>Cena</th>
+                </tr>
+            </thead>
+            <tbody id="additionalOptionsBody">
+            </tbody>
+        </table>
+        <div class="footer">
+            Uwagi: CENA KOŃCOWA ZA INSTALACJĘ: <span id="pdfPrice"></span> BRUTTO Z 8% VAT<br>
+            WYCENA WAŻNA 14 DNI<br>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <script src="script.js" type="module"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+  const pdfTypeSelect = document.getElementById('pdfType');
+  const deviceNameSpan = document.getElementById('device-name');
+  const powerOptionsSelect = document.getElementById('powerOptions');
+
+  function updateOffer() {
+    const selectedOption = pdfTypeSelect.options[pdfTypeSelect.selectedIndex];
+    const selectedPowerOption = powerOptionsSelect.value;
+    deviceNameSpan.textContent = `${selectedOption.text} ${selectedPowerOption}`;
+    // Tutaj możesz dodać więcej logiki do generowania oferty na podstawie wybranych opcji
+  }
+
+  pdfTypeSelect.addEventListener('change', updatePowerOptions);
+  powerOptionsSelect.addEventListener('change', updateOffer);
+
+  // Inicjalizacja opcji mocy i oferty przy załadowaniu strony
+  updatePowerOptions();
+  updateOffer();
+});
+
+      </script>
+     <script>
+        function updatePowerOptions() {
+          var pdfType = document.getElementById('pdfType').value;
+          var powerOptions = document.getElementById('powerOptions');
+          powerOptions.innerHTML = ''; // Wyczyść obecne opcje
+      
+          var options = [];
+      
+          if (pdfType === 'Toshiba') {
+            options = ['11 kW', '8 kW', '6 kW'];
+          } else if (pdfType === 'Mitsubishi') {
+            options = ['12 kW', '10 kW', '8 kW'];
+          } else if (pdfType === 'ATLANTIC') {
+            options = ['15 kW', '10 kW', '6 kW'];
+          }
+      
+          for (var i = 0; i < options.length; i++) {
+            var option = document.createElement('option');
+            option.value = options[i];
+            option.text = options[i];
+            powerOptions.appendChild(option);
+          }
+        }
+      
+        function updateDeviceName() {
+          var pdfType = document.getElementById('pdfType').value;
+          var power = document.getElementById('powerOptions').value;
+          var deviceNameSpan = document.getElementById('device-name');
+          deviceNameSpan.textContent = pdfType + ' ' + power;
+        }
+      
+        document.addEventListener('DOMContentLoaded', function () {
+          var pdfTypeSelect = document.getElementById('pdfType');
+          var powerOptionsSelect = document.getElementById('powerOptions');
+      
+          pdfTypeSelect.addEventListener('change', function () {
+            updatePowerOptions();
+            updateDeviceName(); // Aktualizuj nazwę urządzenia po zmianie typu oferty
+          });
+      
+          powerOptionsSelect.addEventListener('change', function () {
+            updateDeviceName(); // Aktualizuj nazwę urządzenia również po zmianie mocy
+          });
+      
+          // Inicjalizacja opcji mocy i nazwy urządzenia przy załadowaniu strony
+          updatePowerOptions();
+          updateDeviceName();
+        });
+      </script>
+      
+      
+      
+</body>
+</html>
+
