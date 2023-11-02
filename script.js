@@ -25,6 +25,24 @@ async function loadImageData() {
 }
 
 loadImageData();
+
+function generateOfferNumber() {
+    const date = new Date();
+    const month = date.getMonth() + 1; // Miesiące są indeksowane od 0
+    const year = date.getFullYear();
+    let offerNumber = localStorage.getItem('offerNumber');
+
+    if (!offerNumber) {
+        offerNumber = 1;
+    } else {
+        offerNumber = parseInt(offerNumber) + 1;
+    }
+
+    localStorage.setItem('offerNumber', offerNumber);
+    return `Numer oferty: ${offerNumber}/${month}/${year}`;
+}
+
+
 function getSecondPageBackgroundImageByType(pdfType) {
     switch(pdfType) {
         case "Mitsubishi":
@@ -52,6 +70,8 @@ function getBackgroundImageByType(pdfType) {
 }
 
 function generatePDF() {
+    const offerNumber = generateOfferNumber();
+    console.log(offerNumber); 
     const userName = document.getElementById('userName').value;
     const pdfType = document.getElementById('pdfType').value;
     const power = document.getElementById('powerOptions').value; // Pobranie wartości mocy
@@ -62,6 +82,7 @@ function generatePDF() {
     let backgroundImage = getBackgroundImageByType(pdfType);
     let secondPageBackgroundImage = getSecondPageBackgroundImageByType(pdfType);
 
+
     
 
 
@@ -69,7 +90,10 @@ function generatePDF() {
     <div id="page">
         <div id="top-page" style="background-image: url('${backgroundImage}');">
             <div id="top-top-page">
-                <img src="${imageBase63}" width="20%">
+                <div id="offer-number">${offerNumber}</div>
+                <div id="logo">
+                <img src="${imageBase63}" width="40%">
+                </div>
             </div>
             <div id="top-bottom-page">
             <span id="device-name">${pdfType}</span>
