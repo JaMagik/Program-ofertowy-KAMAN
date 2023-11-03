@@ -27,12 +27,16 @@
                 <label for="pdfType">Typ oferty:</label>
                 <select id="pdfType" name="pdfType" autocomplete="off">
                   <option value="Toshiba" id="device-name">Toshiba</option>
-                  <option value="Mitsubishi" id="device-name">Mitsubishi</option>
+                  <option value="Mitsubishi-hydrobox" id="device-name">Mitsubishi-hydrobox</option>
+                  <option value="Mitsubishi-cylinder" id="device-name">Mitsubishi-cylinder</option>
                   <option value="ATLANTIC" id="device-name">ATLANTIC</option>
+                  <option value="GALMET-PRIMA" id="device-name">GALMET-PRIMA</option>
+                  <option value="HEIZTECHNIK" id="device-name">HEIZTECHNIK</option>
                 </select>
                 <select id="powerOptions" name="powerOptions" autocomplete="off">
                     <!-- Opcje zostaną tutaj dodane przez JavaScript -->
                   </select>
+                  
               </div>
             <button type="button" id="generatePdfButton">Generuj PDF</button>
         </form>
@@ -108,11 +112,21 @@
       
           if (pdfType === 'Toshiba') {
             options = ['11 kW', '8 kW', '6 kW'];
-          } else if (pdfType === 'Mitsubishi') {
+          } else if (pdfType === 'Mitsubishi-cylinder') {
+            options = ['12 kW', '10 kW', '8 kW'];
+          } else if (pdfType === 'Mitsubishi-hydrobox') {
             options = ['12 kW', '10 kW', '8 kW'];
           } else if (pdfType === 'ATLANTIC') {
             options = ['15 kW', '10 kW', '6 kW'];
           }
+          else if (pdfType === 'GALMET-PRIMA') {
+            options = ['12 kW', '10 kW', '8 kW'];
+          }
+          else if (pdfType === 'HEIZTECHNIK') {
+            options = ['14 kW', '12 kW', '9 kW'];
+          }
+          
+          
       
           for (var i = 0; i < options.length; i++) {
             var option = document.createElement('option');
