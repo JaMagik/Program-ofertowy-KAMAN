@@ -26,7 +26,8 @@
             <div class="input-group">
                 <label for="pdfType">Typ oferty:</label>
                 <select id="pdfType" name="pdfType" autocomplete="off">
-                  <option value="Toshiba" id="device-name">Toshiba</option>
+                  <option value="Toshiba 3F" id="device-name">Toshiba 3F</option>
+                  <option value="Toshiba 1F" id="device-name">Toshiba 1F</option>
                   <option value="Mitsubishi-hydrobox" id="device-name">Mitsubishi-hydrobox</option>
                   <option value="Mitsubishi-cylinder" id="device-name">Mitsubishi-cylinder</option>
                   <option value="ATLANTIC" id="device-name">ATLANTIC</option>
@@ -110,12 +111,16 @@
       
           var options = [];
       
-          if (pdfType === 'Toshiba') {
+          if (pdfType === 'Toshiba 3F') {
             options = ['11 kW', '8 kW', '6 kW'];
-          } else if (pdfType === 'Mitsubishi-cylinder') {
-            options = ['12 kW', '10 kW', '8 kW'];
+          }
+          else if (pdfType === 'Toshiba 1F') {
+            options = ['11 kW', '8 kW', '6 kW'];
+          }
+           else if (pdfType === 'Mitsubishi-cylinder') {
+            options = ['14 kW','12 kW', '10 kW', '8 kW', '6 kW'];
           } else if (pdfType === 'Mitsubishi-hydrobox') {
-            options = ['12 kW', '10 kW', '8 kW'];
+            options = ['14 kW','12 kW', '10 kW', '8 kW', '6 kW'];
           } else if (pdfType === 'ATLANTIC') {
             options = ['15 kW', '10 kW', '6 kW'];
           }
@@ -166,5 +171,4 @@
       
 </body>
 </html>
-
 
