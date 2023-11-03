@@ -1,5 +1,7 @@
 document.getElementById('generatePdfButton').addEventListener('click', generatePDF);
 
+let imageBaseGalmetWEW;
+let imageBaseMitsubishiCylinder;
 let imageBase56;
 let imageBaseForAtlantic;
 let imageBaseForToshiba;
@@ -8,6 +10,10 @@ let imageBase59;
 let imageBase61;
 let imageBase63;
 let imageBase64;
+let imageBaseGalmetZEW; 
+let imageBaseHeizWEW;
+let imageBaseHeizZEW;
+
 
 
 
@@ -21,7 +27,11 @@ async function loadImageData() {
     imageBase61 = imagesModule.imageBase61;
     imageBase63 = imagesModule.imageBase63;
     imageBase64 = imagesModule.imageBase64;
-    
+    imageBaseMitsubishiCylinder = imagesModule.imageBaseMitsubishiCylinder;
+    imageBaseGalmetWEW = imagesModule.imageBaseGalmetWEW;
+    imageBaseGalmetZEW = imagesModule.imageBaseGalmetZEW;
+    imageBaseHeizWEW = imagesModule.imageBaseHeizWEW;
+    imageBaseHeizZEW = imagesModule.imageBaseHeizZEW;
 }
 
 loadImageData();
@@ -45,12 +55,18 @@ function generateOfferNumber() {
 
 function getSecondPageBackgroundImageByType(pdfType) {
     switch(pdfType) {
-        case "Mitsubishi":
+        case "Mitsubishi-cylinder":
+            return imageBase61;
+            case "Mitsubishi-hydrobox":
             return imageBase61; // Zakładam, że masz zdefiniowane zmienne dla każdego typu
         case "Toshiba":
             return imageBaseForToshiba;
         case "ATLANTIC":
             return  imageBase56;
+            case "GALMET-PRIMA":
+            return  imageBaseGalmetZEW;
+            case "HEIZTECHNIK":
+            return imageBaseHeizZEW;
         default:
             return null; // lub jakiś domyślny obraz, jeśli potrzebujesz
     }
@@ -58,12 +74,18 @@ function getSecondPageBackgroundImageByType(pdfType) {
 
 function getBackgroundImageByType(pdfType) {
     switch(pdfType) {
-        case "Mitsubishi":
+        case "Mitsubishi-cylinder":
+            return imageBaseMitsubishiCylinder;
+            case "Mitsubishi-hydrobox":
             return imageBase64;
         case "Toshiba":
             return imageBase57;
         case "ATLANTIC":
             return imageBaseForAtlantic;
+            case "GALMET-PRIMA":
+            return imageBaseGalmetWEW;
+            case "HEIZTECHNIK":
+            return imageBaseHeizWEW;
         default:
             return null; // lub jakiś domyślny obraz, jeśli potrzebujesz
     }
@@ -77,6 +99,8 @@ function generatePDF() {
     const power = document.getElementById('powerOptions').value; // Pobranie wartości mocy
     const priceInput = document.getElementById("price");
     const pdfPriceValue = priceInput.value;
+    
+
 
     let tableContent = getTableContentByType(pdfType, power);
     let backgroundImage = getBackgroundImageByType(pdfType);
@@ -408,7 +432,233 @@ function getTableContentByType(pdfType, power) {
 </table>
 `};
 break;
-      case "Mitsubishi":
+      case "Mitsubishi-cylinder":
+        if (power === '12 kW') {
+            tableContent = `
+        <table id="customTable" border="1">
+        <tbody>
+                            <tr>
+                                <th>Numer</th>
+                                <th>Nazwa towaru</th>
+                                <th>Miara</th>
+                                <th>Ilość</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Ecodan | Zubadan Inverter | Split | 12,0kW, 400V, R32 PUD-SHWM100YAA</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Ecodan | moduł wew. 200 litrów | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie EHSD-YM6/9D</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Elementy hydrauliczne i elektryczne do pompy ciepła</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+                                <td>kpl.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Grupa bezpieczeństwa CWU (6bar)</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>MIEDŹ CHŁODNICZA</td>
+                                <td>kpl.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>REGULATOR BEZPRZEWODOWY MITSUBISHI PAR-WT</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+                                <td>kpl.</td>
+                                <td>1</td>
+                            </tr>
+                        </tbody>
+    </table>
+    `;
+    
+        } else if (power === '10 kW') {
+        tableContent = `
+    <table id="customTable" border="1">
+    <tbody>
+                        <tr>
+                            <th>Numer</th>
+                            <th>Nazwa towaru</th>
+                            <th>Miara</th>
+                            <th>Ilość</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Ecodan | Zubadan Inverter | Split | 10,0kW, 400V, R32 PUD-SHWM100YAA</td>
+                            <td>szt.</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                        <td>2</td>
+                        <td>Ecodan | moduł wew. 200 litrów | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie EHSD-YM6/9D</td>
+                        <td>szt.</td>
+                        <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+                            <td>szt.</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
+                            <td>szt.</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+                            <td>kpl.</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Grupa bezpieczeństwa CWU (6bar)</td>
+                            <td>szt.</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>MIEDŹ CHŁODNICZA</td>
+                            <td>kpl.</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>REGULATOR BEZPRZEWODOWY MITSUBISHI PAR-WT</td>
+                            <td>szt.</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+                            <td>szt.</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+                            <td>kpl.</td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+</table>
+`;
+
+        break;
+    } else if (power === '8 kW') {
+        tableContent = `
+    <table id="customTable" border="1">
+    <tbody>
+                        <tr>
+                            <th>Numer</th>
+                            <th>Nazwa towaru</th>
+                            <th>Miara</th>
+                            <th>Ilość</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Ecodan | Zubadan Inverter | Split | 8,0kW, 400V, R32 PUD-SHWM100YAA</td>
+                            <td>szt.</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                        <td>2</td>
+                        <td>Ecodan | moduł wew. 200 litrów | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie EHSD-YM6/9D</td>
+                        <td>szt.</td>
+                        <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+                            <td>szt.</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
+                            <td>szt.</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+                            <td>kpl.</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Grupa bezpieczeństwa CWU (6bar)</td>
+                            <td>szt.</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>MIEDŹ CHŁODNICZA</td>
+                            <td>kpl.</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>REGULATOR BEZPRZEWODOWY MITSUBISHI PAR-WT</td>
+                            <td>szt.</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+                            <td>szt.</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+                            <td>kpl.</td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+</table>
+`};
+
+        break;
+
+        case "Mitsubishi-hydrobox":
         if (power === '12 kW') {
             tableContent = `
         <table id="customTable" border="1">
@@ -856,6 +1106,418 @@ break;
 `};
 
         break;
+        case "GALMET-PRIMA":
+        if (power === '12 kW') {
+            tableContent = `
+        <table id="customTable" border="1">
+        <tbody>
+                            <tr>
+                                <th>Numer</th>
+                                <th>Nazwa towaru</th>
+                                <th>Miara</th>
+                                <th>Ilość</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>GALMET PRIMA 12 KW JEDNOSTKA ZEWNĘTRZNA ORAZ JEDNOSTKA WEWNĘTRZNA ( HYDROBOX )</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Elementy hydrauliczne i elektryczne do pompy ciepła</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>GRUPA BEZPIECZEŃSTWA C.O ( 2.5 BAR )</td>
+                                <td>kpl.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Grupa bezpieczeństwa CWU (6bar)</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>MIEDŹ CHŁODNICZA</td>
+                                <td>kpl.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+                                <td>kpl.</td>
+                                <td>1</td>
+                            </tr>
+                        </tbody>
+    </table>
+    `;
+    
+        } else if (power === '10 kW') {
+        tableContent = `
+    <table id="customTable" border="1">
+    <tbody>
+                        <tr>
+                            <th>Numer</th>
+                            <th>Nazwa towaru</th>
+                            <th>Miara</th>
+                            <th>Ilość</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>GALMET PRIMA 12 KW JEDNOSTKA ZEWNĘTRZNA ORAZ JEDNOSTKA WEWNĘTRZNA ( HYDROBOX )</td>
+                            <td>szt.</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                        <td>2</td>
+                        <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L</td>
+                        <td>szt.</td>
+                        <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+                            <td>szt.</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
+                            <td>szt.</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>GRUPA BEZPIECZEŃŚTWA C.O (2.5 BAR )</td>
+                            <td>kpl.</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Grupa bezpieczeństwa CWU (6bar)</td>
+                            <td>szt.</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>MIEDŹ CHŁODNICZA</td>
+                            <td>kpl.</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+                            <td>szt.</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+                            <td>kpl.</td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+</table>
+`;
+
+        break;
+    } else if (power === '8 kW') {
+        tableContent = `
+    <table id="customTable" border="1">
+    <tbody>
+                        <tr>
+                            <th>Numer</th>
+                            <th>Nazwa towaru</th>
+                            <th>Miara</th>
+                            <th>Ilość</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>GALMET PRIMA 12 KW JEDNOSTKA ZEWNĘTRZNA ORAZ JEDNOSTKA WEWNĘTRZNA ( HYDROBOX )</td>
+                            <td>szt.</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                        <td>2</td>
+                        <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L</td>
+                        <td>szt.</td>
+                        <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+                            <td>szt.</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
+                            <td>szt.</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>GRUPA BEZPIECZEŃŚTWA C.O (2.5 BAR )</td>
+                            <td>kpl.</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Grupa bezpieczeństwa CWU (6bar)</td>
+                            <td>szt.</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>MIEDŹ CHŁODNICZA</td>
+                            <td>kpl.</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+                            <td>szt.</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+                            <td>kpl.</td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+</table>
+`};
+
+        break;
+        case "HEIZTECHNIK":
+        if (power === '14 kW') {
+            tableContent = `
+        <table id="customTable" border="1">
+        <tbody>
+                            <tr>
+                                <th>Numer</th>
+                                <th>Nazwa towaru</th>
+                                <th>Miara</th>
+                                <th>Ilość</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>POMPA CIEPŁA HEIZTECHNIK 14 KW CALLA VERDE COMFORT Z WBUDOWANYM ZASOBNIKIEM CWU</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>CZUJNIK TEMPERATURY</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Elementy hydrauliczne i elektryczne do pompy ciepła</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>INTERNET</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>OTULINA NA PRZEWODY HYDRAULICZNE</td>
+                                <td>kpl.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Grupa bezpieczeństwa CWU (6bar)</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>MIEDŹ CHŁODNICZA</td>
+                                <td>kpl.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+                                <td>kpl.</td>
+                                <td>1</td>
+                            </tr>
+                        </tbody>
+    </table>
+    `;
+    
+        } else if (power === '12 kW') {
+        tableContent = `
+    <table id="customTable" border="1">
+    <tbody>
+    <tr>
+    <th>Numer</th>
+    <th>Nazwa towaru</th>
+    <th>Miara</th>
+    <th>Ilość</th>
+</tr>
+<tr>
+    <td>1</td>
+    <td>POMPA CIEPŁA HEIZTECHNIK 12 KW CALLA VERDE COMFORT Z WBUDOWANYM ZASOBNIKIEM CWU</td>
+    <td>szt.</td>
+    <td>1</td>
+</tr>
+<tr>
+    <td>2</td>
+    <td>CZUJNIK TEMPERATURY</td>
+    <td>szt.</td>
+    <td>1</td>
+</tr>
+<tr>
+    <td>3</td>
+    <td>Elementy hydrauliczne i elektryczne do pompy ciepła</td>
+    <td>szt.</td>
+    <td>1</td>
+</tr>
+<tr>
+    <td>4</td>
+    <td>INTERNET</td>
+    <td>szt.</td>
+    <td>1</td>
+</tr>
+<tr>
+    <td>5</td>
+    <td>OTULINA NA PRZEWODY HYDRAULICZNE</td>
+    <td>kpl.</td>
+    <td>1</td>
+</tr>
+<tr>
+    <td>6</td>
+    <td>Grupa bezpieczeństwa CWU (6bar)</td>
+    <td>szt.</td>
+    <td>1</td>
+</tr>
+<tr>
+    <td>7</td>
+    <td>MIEDŹ CHŁODNICZA</td>
+    <td>kpl.</td>
+    <td>1</td>
+</tr>
+<tr>
+    <td>8</td>
+    <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+    <td>szt.</td>
+    <td>1</td>
+</tr>
+<tr>
+    <td>9</td>
+    <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+    <td>kpl.</td>
+    <td>1</td>
+                    </tbody>
+</table>
+`;
+
+        break;
+    } else if (power === '9 kW') {
+        tableContent = `
+    <table id="customTable" border="1">
+    <tbody>
+    <tr>
+    <th>Numer</th>
+    <th>Nazwa towaru</th>
+    <th>Miara</th>
+    <th>Ilość</th>
+</tr>
+<tr>
+    <td>1</td>
+    <td>POMPA CIEPŁA HEIZTECHNIK 9 KW CALLA VERDE COMFORT Z WBUDOWANYM ZASOBNIKIEM CWU</td>
+    <td>szt.</td>
+    <td>1</td>
+</tr>
+<tr>
+    <td>2</td>
+    <td>CZUJNIK TEMPERATURY</td>
+    <td>szt.</td>
+    <td>1</td>
+</tr>
+<tr>
+    <td>3</td>
+    <td>Elementy hydrauliczne i elektryczne do pompy ciepła</td>
+    <td>szt.</td>
+    <td>1</td>
+</tr>
+<tr>
+    <td>4</td>
+    <td>INTERNET</td>
+    <td>szt.</td>
+    <td>1</td>
+</tr>
+<tr>
+    <td>5</td>
+    <td>OTULINA NA PRZEWODY HYDRAULICZNE</td>
+    <td>kpl.</td>
+    <td>1</td>
+</tr>
+<tr>
+    <td>6</td>
+    <td>Grupa bezpieczeństwa CWU (6bar)</td>
+    <td>szt.</td>
+    <td>1</td>
+</tr>
+<tr>
+    <td>7</td>
+    <td>MIEDŹ CHŁODNICZA</td>
+    <td>kpl.</td>
+    <td>1</td>
+</tr>
+<tr>
+    <td>8</td>
+    <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+    <td>szt.</td>
+    <td>1</td>
+</tr>
+<tr>
+    <td>9</td>
+    <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+    <td>kpl.</td>
+    <td>1</td>
+                    </tbody>
+</table>
+`};
+
+        break;
     }
     return tableContent;
     
@@ -953,6 +1615,12 @@ function getAdditionalOptionsTable() {
 
     `;
 }
+
+
+
+
+
+
 
 
 
