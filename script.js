@@ -59,8 +59,10 @@ function getSecondPageBackgroundImageByType(pdfType) {
             return imageBase61;
             case "Mitsubishi-hydrobox":
             return imageBase61; // Zakładam, że masz zdefiniowane zmienne dla każdego typu
-        case "Toshiba":
+        case "Toshiba 3F":
             return imageBaseForToshiba;
+            case "Toshiba 1F":
+                return imageBaseForToshiba;
         case "ATLANTIC":
             return  imageBase56;
             case "GALMET-PRIMA":
@@ -78,7 +80,9 @@ function getBackgroundImageByType(pdfType) {
             return imageBaseMitsubishiCylinder;
             case "Mitsubishi-hydrobox":
             return imageBase64;
-        case "Toshiba":
+        case "Toshiba 3F":
+            return imageBase57;
+            case "Toshiba 1F":
             return imageBase57;
         case "ATLANTIC":
             return imageBaseForAtlantic;
@@ -209,7 +213,7 @@ function getTableContentByType(pdfType, power) {
     let tableContent = '';
 
     switch(pdfType) {
-      case "Toshiba":
+        case "Toshiba 1F":
         if (power === '11 kW') {
           tableContent = `
       <table id="customTable" border="1">
@@ -222,7 +226,7 @@ function getTableContentByType(pdfType, power) {
           </tr>
           <tr>
               <td>1</td>
-              <td> JEDNOSTKA WEWNĘTRZNA TOSHIBA 11 KW 1101HRW-E 1101XWH**W-E</td>
+              <td> JEDNOSTKA WEWNĘTRZNA TOSHIBA 11 KW 1F 1101HRW-E 1101XWH**W-E</td>
               <td>szt.</td>
               <td>1</td>
           </tr>
@@ -234,7 +238,7 @@ function getTableContentByType(pdfType, power) {
           </tr>
           <tr>
               <td>3</td>
-              <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L KOSPEL</td>
+              <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L </td>
               <td>szt.</td>
               <td>1</td>
           </tr>
@@ -264,7 +268,7 @@ function getTableContentByType(pdfType, power) {
           </tr>
           <tr>
               <td>8</td>
-              <td>GRUPA BEZPIECZEŃSTWA C.O (2,5 bar)</td>
+              <td>GRUPA BEZPIECZEŃSTWA C.O (3 bar)</td>
               <td>szt.</td>
               <td>1</td>
           </tr>
@@ -296,7 +300,7 @@ function getTableContentByType(pdfType, power) {
           </tr>
           <tr>
               <td>1</td>
-              <td> JEDNOSTKA WEWNĘTRZNA TOSHIBA 8 KW 1101HRW-E 1101XWH**W-E</td>
+              <td> JEDNOSTKA WEWNĘTRZNA TOSHIBA 8 KW 1F 1101HRW-E 1101XWH**W-E</td>
               <td>szt.</td>
               <td>1</td>
           </tr>
@@ -308,7 +312,7 @@ function getTableContentByType(pdfType, power) {
           </tr>
           <tr>
               <td>3</td>
-              <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L KOSPEL</td>
+              <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L</td>
               <td>szt.</td>
               <td>1</td>
           </tr>
@@ -338,7 +342,7 @@ function getTableContentByType(pdfType, power) {
           </tr>
           <tr>
               <td>8</td>
-              <td>GRUPA BEZPIECZEŃSTWA C.O (2,5 bar)</td>
+              <td>GRUPA BEZPIECZEŃSTWA C.O (3 bar)</td>
               <td>szt.</td>
               <td>1</td>
           </tr>
@@ -370,7 +374,7 @@ function getTableContentByType(pdfType, power) {
     </tr>
     <tr>
         <td>1</td>
-        <td> JEDNOSTKA WEWNĘTRZNA TOSHIBA 6 KW 1101HRW-E 1101XWH**W-E</td>
+        <td> JEDNOSTKA WEWNĘTRZNA TOSHIBA 6 KW 1F 1101HRW-E 1101XWH**W-E</td>
         <td>szt.</td>
         <td>1</td>
     </tr>
@@ -382,7 +386,7 @@ function getTableContentByType(pdfType, power) {
     </tr>
     <tr>
         <td>3</td>
-        <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L KOSPEL</td>
+        <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L</td>
         <td>szt.</td>
         <td>1</td>
     </tr>
@@ -412,18 +416,12 @@ function getTableContentByType(pdfType, power) {
     </tr>
     <tr>
         <td>8</td>
-        <td>REGULATOR BEZPRZEWODOWY MITSUBISHI PAR-WT</td>
-        <td>szt.</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>9</td>
         <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
         <td>szt.</td>
         <td>1</td>
     </tr>
     <tr>
-        <td>10</td>
+        <td>9</td>
         <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
         <td>kpl.</td>
         <td>1</td>
@@ -432,8 +430,302 @@ function getTableContentByType(pdfType, power) {
 </table>
 `};
 break;
+      case "Toshiba 3F":
+        if (power === '11 kW') {
+          tableContent = `
+      <table id="customTable" border="1">
+      <tbody>
+          <tr>
+              <th>Numer</th>
+              <th>Nazwa towaru</th>
+              <th>Miara</th>
+              <th>Ilość</th>
+          </tr>
+          <tr>
+              <td>1</td>
+              <td> JEDNOSTKA WEWNĘTRZNA TOSHIBA 11 KW 3F 1101HRW-E 1101XWH**W-E</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>2</td>
+              <td>JEDNOSTKA ZEWNĘTRZNA TOSHIBA 11 KW 1101HRW-E</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>3</td>
+              <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L </td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>4</td>
+              <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>5</td>
+              <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+              <td>kpl.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>6</td>
+              <td>Grupa bezpieczeństwa CWU (6bar)</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>7</td>
+              <td>MIEDŹ CHŁODNICZA</td>
+              <td>kpl.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>8</td>
+              <td>GRUPA BEZPIECZEŃSTWA C.O (3 bar)</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>9</td>
+              <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>10</td>
+              <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+              <td>kpl.</td>
+              <td>1</td>
+          </tr>
+      </tbody>
+  </table>
+  `;
+  break;
+        } else if (power === '8 kW') {
+          tableContent = `
+      <table id="customTable" border="1">
+      <tbody>
+          <tr>
+              <th>Numer</th>
+              <th>Nazwa towaru</th>
+              <th>Miara</th>
+              <th>Ilość</th>
+          </tr>
+          <tr>
+              <td>1</td>
+              <td> JEDNOSTKA WEWNĘTRZNA TOSHIBA 8 KW 3F 1101HRW-E 1101XWH**W-E</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>2</td>
+              <td>JEDNOSTKA ZEWNĘTRZNA TOSHIBA 8 KW 1101HRW-E</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>3</td>
+              <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>4</td>
+              <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>5</td>
+              <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+              <td>kpl.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>6</td>
+              <td>Grupa bezpieczeństwa CWU (6bar)</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>7</td>
+              <td>MIEDŹ CHŁODNICZA</td>
+              <td>kpl.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>8</td>
+              <td>GRUPA BEZPIECZEŃSTWA C.O (3 bar)</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>9</td>
+              <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>10</td>
+              <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+              <td>kpl.</td>
+              <td>1</td>
+          </tr>
+      </tbody>
+  </table>
+  `;
+  break;
+        } else if (power === '6 kW') {
+    tableContent = `
+<table id="customTable" border="1">
+<tbody>
+    <tr>
+        <th>Numer</th>
+        <th>Nazwa towaru</th>
+        <th>Miara</th>
+        <th>Ilość</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td> JEDNOSTKA WEWNĘTRZNA TOSHIBA 6 KW 3F 1101HRW-E 1101XWH**W-E</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>JEDNOSTKA ZEWNĘTRZNA TOSHIBA 6 KW 1101HRW-E</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>Grupa bezpieczeństwa CWU (6bar)</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>MIEDŹ CHŁODNICZA</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
+</tbody>
+</table>
+`};
+break;
+
+
       case "Mitsubishi-cylinder":
-        if (power === '12 kW') {
+        if (power === '14 kW') {
+            tableContent = `
+        <table id="customTable" border="1">
+        <tbody>
+                            <tr>
+                                <th>Numer</th>
+                                <th>Nazwa towaru</th>
+                                <th>Miara</th>
+                                <th>Ilość</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Ecodan | Zubadan Inverter | Split | 14,0kW, 400V, R32 PUD-SHWM100YAA</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Ecodan | moduł wew. 300 litrów | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie EHSD-YM6/9D</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Elementy hydrauliczne i elektryczne do pompy ciepła</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+                                <td>kpl.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Grupa bezpieczeństwa CWU (6bar)</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>MIEDŹ CHŁODNICZA</td>
+                                <td>kpl.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>REGULATOR BEZPRZEWODOWY MITSUBISHI PAR-WT</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+                                <td>kpl.</td>
+                                <td>1</td>
+                            </tr>
+                        </tbody>
+    </table>
+    `;
+    
+        }
+        else if (power === '12 kW') {
             tableContent = `
         <table id="customTable" border="1">
         <tbody>
@@ -656,6 +948,8 @@ break;
 </table>
 `};
 
+
+
         break;
 
         case "Mitsubishi-hydrobox":
@@ -683,7 +977,7 @@ break;
                             </tr>
                             <tr>
                                 <td>3</td>
-                                <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 300L KOSPEL</td>
+                                <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 300L</td>
                                 <td>szt.</td>
                                 <td>1</td>
                             </tr>
@@ -757,7 +1051,7 @@ break;
                         </tr>
                         <tr>
                             <td>3</td>
-                            <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 300L KOSPEL</td>
+                            <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 300L</td>
                             <td>szt.</td>
                             <td>1</td>
                         </tr>
@@ -832,7 +1126,7 @@ break;
                         </tr>
                         <tr>
                             <td>3</td>
-                            <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 300L KOSPEL</td>
+                            <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 300L</td>
                             <td>szt.</td>
                             <td>1</td>
                         </tr>
@@ -880,9 +1174,88 @@ break;
                         </tr>
                     </tbody>
 </table>
-`};
+
+`;
 
         break;
+
+     } else if (power === '6 kW') {
+            tableContent = `
+        <table id="customTable" border="1">
+        <tbody>
+                            <tr>
+                                <th>Numer</th>
+                                <th>Nazwa towaru</th>
+                                <th>Miara</th>
+                                <th>Ilość</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Ecodan | Zubadan Inverter | Split | 6,0kW, 400V, R32 PUD-SHWM100YAA</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Ecodan | Hydrobox | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie EHSD-YM6/9D</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 300L</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+                                <td>kpl.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Grupa bezpieczeństwa CWU (6bar)</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>MIEDŹ CHŁODNICZA</td>
+                                <td>kpl.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>REGULATOR BEZPRZEWODOWY MITSUBISHI PAR-WT</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+                                <td>kpl.</td>
+                                <td>1</td>
+                            </tr>
+                        </tbody>
+    </table>
+    
+    `};
+    
+            break;
+        
         
         
       case "ATLANTIC":
@@ -1143,7 +1516,7 @@ break;
                             </tr>
                             <tr>
                                 <td>5</td>
-                                <td>GRUPA BEZPIECZEŃSTWA C.O ( 2.5 BAR )</td>
+                                <td>GRUPA BEZPIECZEŃSTWA C.O ( 3 BAR )</td>
                                 <td>kpl.</td>
                                 <td>1</td>
                             </tr>
@@ -1187,7 +1560,7 @@ break;
                         </tr>
                         <tr>
                             <td>1</td>
-                            <td>GALMET PRIMA 12 KW JEDNOSTKA ZEWNĘTRZNA ORAZ JEDNOSTKA WEWNĘTRZNA ( HYDROBOX )</td>
+                            <td>GALMET PRIMA 10 KW JEDNOSTKA ZEWNĘTRZNA ORAZ JEDNOSTKA WEWNĘTRZNA ( HYDROBOX )</td>
                             <td>szt.</td>
                             <td>1</td>
                         </tr>
@@ -1211,7 +1584,7 @@ break;
                         </tr>
                         <tr>
                             <td>5</td>
-                            <td>GRUPA BEZPIECZEŃŚTWA C.O (2.5 BAR )</td>
+                            <td>GRUPA BEZPIECZEŃŚTWA C.O (3 BAR )</td>
                             <td>kpl.</td>
                             <td>1</td>
                         </tr>
@@ -1256,7 +1629,7 @@ break;
                         </tr>
                         <tr>
                             <td>1</td>
-                            <td>GALMET PRIMA 12 KW JEDNOSTKA ZEWNĘTRZNA ORAZ JEDNOSTKA WEWNĘTRZNA ( HYDROBOX )</td>
+                            <td>GALMET PRIMA 8 KW JEDNOSTKA ZEWNĘTRZNA ORAZ JEDNOSTKA WEWNĘTRZNA ( HYDROBOX )</td>
                             <td>szt.</td>
                             <td>1</td>
                         </tr>
@@ -1280,7 +1653,7 @@ break;
                         </tr>
                         <tr>
                             <td>5</td>
-                            <td>GRUPA BEZPIECZEŃŚTWA C.O (2.5 BAR )</td>
+                            <td>GRUPA BEZPIECZEŃŚTWA C.O (3 BAR )</td>
                             <td>kpl.</td>
                             <td>1</td>
                         </tr>
@@ -1615,6 +1988,11 @@ function getAdditionalOptionsTable() {
 
     `;
 }
+
+
+
+
+
 
 
 
