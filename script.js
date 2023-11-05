@@ -1498,7 +1498,7 @@ break;
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L</td>
+                                <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 300L</td>
                                 <td>szt.</td>
                                 <td>1</td>
                             </tr>
