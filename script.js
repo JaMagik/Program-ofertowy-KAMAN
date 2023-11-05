@@ -1275,6 +1275,7 @@ break;
             <td>szt.</td>
             <td>1</td>
         </tr>
+        <tr>
             <td>2</td>
             <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
             <td>szt.</td>
