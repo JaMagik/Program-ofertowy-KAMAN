@@ -1,5 +1,7 @@
 document.getElementById('generatePdfButton').addEventListener('click', generatePDF);
 
+let imageBaseViessmanZEW;
+let imageBaseViessmanWEW;
 let imageBaseGalmetWEW;
 let imageBaseMitsubishiCylinder;
 let imageBase56;
@@ -32,6 +34,9 @@ async function loadImageData() {
     imageBaseGalmetZEW = imagesModule.imageBaseGalmetZEW;
     imageBaseHeizWEW = imagesModule.imageBaseHeizWEW;
     imageBaseHeizZEW = imagesModule.imageBaseHeizZEW;
+    imageBaseViessmanWEW = imagesModule.imageBaseViessmanWEW;
+    imageBaseViessmanZEW = imagesModule.imageBaseViessmanZEW;
+
 }
 
 loadImageData();
@@ -69,6 +74,8 @@ function getSecondPageBackgroundImageByType(pdfType) {
             return  imageBaseGalmetZEW;
             case "HEIZTECHNIK":
             return imageBaseHeizZEW;
+            case "VIESSMAN":
+                return imageBaseViessmanZEW;
         default:
             return null; // lub jakiś domyślny obraz, jeśli potrzebujesz
     }
@@ -90,6 +97,9 @@ function getBackgroundImageByType(pdfType) {
             return imageBaseGalmetWEW;
             case "HEIZTECHNIK":
             return imageBaseHeizWEW;
+            case "VIESSMAN":
+                return imageBaseViessmanWEW;
+            
         default:
             return null; // lub jakiś domyślny obraz, jeśli potrzebujesz
     }
@@ -1480,6 +1490,171 @@ break;
 `};
 
         break;
+
+case "VIESSMAN":
+        if (power === '13 kW') {
+            tableContent = `
+        <table id="customTable" border="1">
+        <tbody>
+        <tr>
+        <th>Numer</th>
+        <th>Nazwa towaru</th>
+        <th>Miara</th>
+        <th>Ilość</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>POMPA CIEPŁA VITOCAL 150-A typ MONOBLOK A13</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 300L</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>DWA CZUJNIKI TEM. NTC 10 kOhm</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+    <td>5</td>
+    <td>GRUPA BEZPIECZEŃWTWA CWU (6bar)</td>
+    <td>szt.</td>
+    <td>1</td>
+</tr>
+<tr>
+        <td>6</td>
+        <td>GRUPA BEZPIECZEŃSTWA C.O ( 2.5 bar )</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>INTERNET</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>OTULINA NA PRZEWODY HYDRAULICZNE</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>REGULATOR POKOJOWY BEZPRZEWODOWY</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
+                        </tbody>
+    </table>
+    `;
+    
+        } else if (power === '10 kW') {
+        tableContent = `
+    <table id="customTable" border="1">
+    <tbody>
+    <tr>
+    <th>Numer</th>
+    <th>Nazwa towaru</th>
+    <th>Miara</th>
+    <th>Ilość</th>
+</tr>
+<tr>
+    <td>1</td>
+    <td>POMPA CIEPŁA VITOCAL 150-A typ MONOBLOK A10</td>
+    <td>szt.</td>
+    <td>1</td>
+</tr>
+<tr>
+    <td>2</td>
+    <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 300L</td>
+    <td>szt.</td>
+    <td>1</td>
+</tr>
+<tr>
+    <td>3</td>
+    <td>DWA CZUJNIKI TEM. NTC 10 kOhm</td>
+    <td>kpl.</td>
+    <td>1</td>
+</tr>
+<tr>
+    <td>4</td>
+    <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+    <td>szt.</td>
+    <td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>GRUPA BEZPIECZEŃWTWA CWU (6bar)</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+    <td>6</td>
+    <td>GRUPA BEZPIECZEŃSTWA C.O ( 2.5 bar )</td>
+    <td>kpl.</td>
+    <td>1</td>
+</tr>
+<tr>
+    <td>7</td>
+    <td>INTERNET</td>
+    <td>kpl.</td>
+    <td>1</td>
+</tr>
+<tr>
+    <td>8</td>
+    <td>OTULINA NA PRZEWODY HYDRAULICZNE</td>
+    <td>szt.</td>
+    <td>1</td>
+</tr>
+<tr>
+    <td>9</td>
+    <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+    <td>szt.</td>
+    <td>1</td>
+</tr>
+<tr>
+    <td>10</td>
+    <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+    <td>kpl.</td>
+    <td>1</td>
+</tr>
+<tr>
+    <td>11</td>
+    <td>REGULATOR POKOJOWY BEZPRZEWODOWY</td>
+    <td>kpl.</td>
+    <td>1</td>
+</tr>
+                    </tbody>
+</table>
+`};
+
+        break;
+
+            
         case "GALMET-PRIMA":
         if (power === '12 kW') {
             tableContent = `
