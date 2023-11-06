@@ -1339,6 +1339,7 @@ break;
             <td>kpl.</td>
             <td>1</td>
         </tr>
+        </table>
     </tbody>
     `;
     
