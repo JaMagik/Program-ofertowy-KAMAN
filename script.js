@@ -1341,8 +1341,8 @@ break;
         </tr>
     </tbody>
     </table>
-
     `;
+    
     
         } else if (power === '10 kW') {
         tableContent = `
