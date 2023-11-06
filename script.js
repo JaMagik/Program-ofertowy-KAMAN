@@ -1343,7 +1343,6 @@ break;
     </table>
     `;
     
-    
         } else if (power === '10 kW') {
         tableContent = `
     <table id="customTable" border="1">
@@ -1490,8 +1489,6 @@ break;
                     </tbody>
 </table>
 `};
-
-        break;
 
 case "VIESSMAN":
         if (power === '13 kW') {
