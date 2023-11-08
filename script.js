@@ -161,7 +161,7 @@ function generatePDF() {
             ${tableContent}
             </div>
             <div id="price">
-                <span>CENA KOŃCOWA INSTALACJI: ${pdfPriceValue} zł</span>
+                <span>CENA KOŃCOWA INSTALACJI: ${pdfPriceValue} zł BRUTTO ( VAT 8% )</span>
             </div>
     </div>
     </div>
