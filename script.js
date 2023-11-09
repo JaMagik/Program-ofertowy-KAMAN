@@ -4,6 +4,7 @@ let imageBaseViessmanZEW;
 let imageBaseViessmanWEW;
 let imageBaseGalmetWEW;
 let imageBaseMitsubishiCylinder;
+
 let imageBase56;
 let imageBaseForAtlantic;
 let imageBaseForToshiba;
@@ -1822,7 +1823,7 @@ break;
 `;
 
         break;
-    }else if (power === '6 kW') {
+    } else if (power === '6 kW') {
         tableContent = `
     <table id="customTable" border="1">
     <tbody>
