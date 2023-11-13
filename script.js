@@ -112,7 +112,7 @@ function getBackgroundImageByType(pdfType) {
 function generatePDF() {
     const offerNumber = generateOfferNumber();
     console.log(offerNumber); 
-    const userName = document.getElementById('userName').value;
+    const userName = document.getElementById('namePC').value;
     const pdfType = document.getElementById('pdfType').value;
     const power = document.getElementById('powerOptions').value; // Pobranie wartości mocy
     const priceInput = document.getElementById("price");
