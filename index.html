@@ -9,7 +9,41 @@
 
 </head>
 <body>
-    <div class="background-image" style="background-image: url('mitsubishi.jpg');"></div>
+    <div class="background-image" style="background-image: url('family.jpg');"></div>
+    <div class="form-container photovoltaics-generator">
+      <h2>Generator Fotowoltaika</h2>
+      <form id="photovoltaicsForm">
+          <div class="input-group">
+              <label for="userName">Imię i Nazwisko:</label>
+              <input type="text" id="userName" name="userName" required>
+          </div>
+          <div class="input-group">
+              <label for="pricePV">Cena:</label>
+              <input type="number" id="pricePV" name="pricePV" required>
+          </div>
+          <!-- ... istniejący kod ... -->
+
+          <div class="input-group">
+            <label for="powerRange">Moc paneli:</label>
+            <input type="range" id="powerRange" name="powerRange" min="1" max="21" value="1" oninput="updatePowerOutput(this.value)" required>
+            <span id="powerOutput">0.455 kW</span> <!-- Wartość początkowa dla jednego panelu -->
+        </div>
+        
+<div class="input-group">
+  <label for="installationType">Typ instalacji:</label>
+  <select id="installationType" name="installationType">
+      <option value="dach">Dach</option>
+      <option value="grunt">Grunt</option>
+      
+  </select>
+</div>
+
+<!-- ... istniejący kod ... -->
+
+          <button type="button" id="generatePhotovoltaicsPdfButton">Generuj PDF</button>
+      </form>
+  </div>
+  
     <div class="form-container">
         <h2>Generator Ofert</h2>
         <form id="offerForm">
@@ -28,9 +62,9 @@
                 <select id="pdfType" name="pdfType" autocomplete="off">
                   <option value="Toshiba 3F" id="device-name">Toshiba 3F</option>
                   <option value="Toshiba 1F" id="device-name">Toshiba 1F</option>
-                   <option value="Mitsubishi-ecoinverter" id="device-name">Mitsubishi-ecoinverter</option>
                   <option value="Mitsubishi-hydrobox" id="device-name">Mitsubishi-hydrobox</option>
                   <option value="Mitsubishi-cylinder" id="device-name">Mitsubishi-cylinder</option>
+                  <option value="Mitsubishi-ecoinverter" id="device-name">Mitsubishi-ecoinverter</option>
                   <option value="ATLANTIC" id="device-name">ATLANTIC</option>
                   <option value="GALMET-PRIMA" id="device-name">GALMET-PRIMA</option>
                   <option value="HEIZTECHNIK" id="device-name">HEIZTECHNIK</option>
@@ -83,6 +117,7 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
     <script src="script.js" type="module"></script>
+    <script src="scriptPV.js" type="module"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
   const pdfTypeSelect = document.getElementById('pdfType');
@@ -119,12 +154,13 @@
           else if (pdfType === 'Toshiba 1F') {
             options = ['11 kW', '8 kW', '6 kW'];
           }
-              else if (pdfType === 'Mitsubishi-ecoinverter') {
-            options = ['8 kW', '6 kW'];
-          }
            else if (pdfType === 'Mitsubishi-cylinder') {
             options = ['14 kW','12 kW', '10 kW', '8 kW', '6 kW'];
-          } else if (pdfType === 'Mitsubishi-hydrobox') {
+          }
+          else if (pdfType === 'Mitsubishi-ecoinverter') {
+            options = ['8 kW', '6 kW'];
+          }
+           else if (pdfType === 'Mitsubishi-hydrobox') {
             options = ['14 kW','12 kW', '10 kW', '8 kW', '6 kW'];
           } else if (pdfType === 'ATLANTIC') {
             options = ['15 kW', '10 kW', '8 kW', '6 kW'];
@@ -138,6 +174,8 @@
           else if (pdfType === 'VIESSMAN') {
             options = ['13 kW', '10 kW', ];
           }
+          
+          
           
       
           for (var i = 0; i < options.length; i++) {
@@ -172,10 +210,23 @@
           updatePowerOptions();
           updateDeviceName();
         });
+        // ... istniejący kod JavaScript ...
+
+// ... istniejący kod JavaScript ...
+
       </script>
-      
-      
+<script>
+    function updatePowerOutput(value) {
+    const powerPerPanel = 0.455; // Moc jednego panelu w kW
+    const totalPower = value * powerPerPanel; // Całkowita moc w zależności od liczby paneli
+    document.getElementById('powerOutput').textContent = `${totalPower.toFixed(3)} kW`; // Ustawienie tekstu
+}
+
+  
+</script>     
+
       
 </body>
 </html>
+
 
