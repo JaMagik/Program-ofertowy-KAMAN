@@ -181,7 +181,7 @@ function getPVTableContent(installationType, powerRange, inverterType) {
 
 function createTableContent(panelDescription, inverterType) {
     // W zależności od rodzaju falownika wybieramy odpowiedni model
-    const inverterModel = inverterType === 'hybrid' ? 'Sungrow' : 'FOXESS';
+    const inverterModel = inverterType === 'hybrid' ? 'Sungrow w wersji hybrydowej z możliwością podłączenia magazynu energii' : 'FOXESS';
     return `
     <table id="customTable" border="1">
         <tbody>
