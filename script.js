@@ -153,7 +153,7 @@ function generatePDF() {
                 <span>Kontakt do opiekuna oferty:</span>
             </div>
             <div id="bottom-bottom-right">
-                <span id="number">721 174 625</span>
+                <span id="number">884 996 055</span>
             </div>
         </div>
     </div>
