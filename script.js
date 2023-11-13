@@ -148,7 +148,7 @@ function generatePDF() {
                 <span>Przygotowano dla:</span>
             </div>
             <div id="bottom-top-right">
-                <span id="user-name">${userName}</span>
+                <span id="userName">${userName}</span>
             </div>
             <div id="bottom-bottom-left">
                 <span>Kontakt do opiekuna oferty:</span>
