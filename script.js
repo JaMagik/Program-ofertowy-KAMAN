@@ -4,7 +4,6 @@ let imageBaseViessmanZEW;
 let imageBaseViessmanWEW;
 let imageBaseGalmetWEW;
 let imageBaseMitsubishiCylinder;
-
 let imageBase56;
 let imageBaseForAtlantic;
 let imageBaseForToshiba;
@@ -22,6 +21,7 @@ let imageBaseHeizZEW;
 
 async function loadImageData() {
     const imagesModule = await import('./images.js');
+
     imageBaseForToshiba = imagesModule.imageBaseForToshiba;
     imageBaseForAtlantic = imagesModule.imageBaseForAtlantic;
     imageBase56 = imagesModule.imageBase56;
@@ -61,9 +61,9 @@ function generateOfferNumber() {
 
 function getSecondPageBackgroundImageByType(pdfType) {
     switch(pdfType) {
-            case "Mitsubishi-ecoinverter":
-            return imageBase61;
         case "Mitsubishi-cylinder":
+            return imageBase61;
+            case "Mitsubishi-ecoinverter":
             return imageBase61;
             case "Mitsubishi-hydrobox":
             return imageBase61; // Zakładam, że masz zdefiniowane zmienne dla każdego typu
@@ -86,9 +86,9 @@ function getSecondPageBackgroundImageByType(pdfType) {
 
 function getBackgroundImageByType(pdfType) {
     switch(pdfType) {
-            case "Mitsubishi-ecoinverter":
-            return imageBaseMitsubishiCylinder;
         case "Mitsubishi-cylinder":
+            return imageBaseMitsubishiCylinder;
+            case "Mitsubishi-ecoinverter":
             return imageBaseMitsubishiCylinder;
             case "Mitsubishi-hydrobox":
             return imageBase64;
@@ -103,8 +103,7 @@ function getBackgroundImageByType(pdfType) {
             case "HEIZTECHNIK":
             return imageBaseHeizWEW;
             case "VIESSMAN":
-                return imageBaseViessmanWEW;
-            
+                return imageBaseViessmanWEW
         default:
             return null; // lub jakiś domyślny obraz, jeśli potrzebujesz
     }
@@ -148,13 +147,13 @@ function generatePDF() {
                 <span>Przygotowano dla:</span>
             </div>
             <div id="bottom-top-right">
-                <span id="userName">${userName}</span>
+                <span id="client-name">${userName}</span>
             </div>
             <div id="bottom-bottom-left">
                 <span>Kontakt do opiekuna oferty:</span>
             </div>
             <div id="bottom-bottom-right">
-                <span id="number">884 996 055</span>
+                <span id="number">721 174 625</span>
             </div>
         </div>
     </div>
@@ -166,7 +165,7 @@ function generatePDF() {
             ${tableContent}
             </div>
             <div id="price">
-                <span>CENA KOŃCOWA INSTALACJI: ${pdfPriceValue} zł BRUTTO ( VAT 8% )</span>
+                <span>CENA KOŃCOWA INSTALACJI: ${pdfPriceValue} zł</span>
             </div>
     </div>
     </div>
@@ -229,7 +228,7 @@ function getTableContentByType(pdfType, power) {
 
     switch(pdfType) {
 
-            case "Mitsubishi-ecoinverter":
+        case "Mitsubishi-ecoinverter":
         if (power === '8 kW') {
           tableContent = `
       <table id="customTable" border="1">
@@ -404,6 +403,7 @@ function getTableContentByType(pdfType, power) {
   `};
   break;
         
+
         case "Toshiba 1F":
         if (power === '11 kW') {
           tableContent = `
@@ -479,7 +479,83 @@ function getTableContentByType(pdfType, power) {
   </table>
   `;
   break;
-        } else if (power === '8 kW') {
+        }
+        else if (power === '8 kW') {
+          tableContent = `
+      <table id="customTable" border="1">
+      <tbody>
+          <tr>
+              <th>Numer</th>
+              <th>Nazwa towaru</th>
+              <th>Miara</th>
+              <th>Ilość</th>
+          </tr>
+          <tr>
+              <td>1</td>
+              <td> JEDNOSTKA WEWNĘTRZNA TOSHIBA 8 KW 1F 1101HRW-E 1101XWH**W-E</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>2</td>
+              <td>JEDNOSTKA ZEWNĘTRZNA TOSHIBA 8 KW 1101HRW-E</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>3</td>
+              <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>4</td>
+              <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>5</td>
+              <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+              <td>kpl.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>6</td>
+              <td>Grupa bezpieczeństwa CWU (6bar)</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>7</td>
+              <td>MIEDŹ CHŁODNICZA</td>
+              <td>kpl.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>8</td>
+              <td>GRUPA BEZPIECZEŃSTWA C.O (3 bar)</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>9</td>
+              <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>10</td>
+              <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+              <td>kpl.</td>
+              <td>1</td>
+          </tr>
+      </tbody>
+  </table>
+  `;
+  break;
+        } 
+        else if (power === '8 kW') {
           tableContent = `
       <table id="customTable" border="1">
       <tbody>
@@ -772,6 +848,7 @@ break;
     `;
     break;
           } 
+        
         else if (power === '8 kW') {
           tableContent = `
       <table id="customTable" border="1">
@@ -1220,82 +1297,7 @@ break;
         break;
 
         case "Mitsubishi-hydrobox":
-        if (power === '14 kW') {
-            tableContent = `
-        <table id="customTable" border="1">
-        <tbody>
-                            <tr>
-                                <th>Numer</th>
-                                <th>Nazwa towaru</th>
-                                <th>Miara</th>
-                                <th>Ilość</th>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Ecodan | Zubadan Inverter | Split | 14,0kW, 400V, R32 PUD-SHWM100YAA</td>
-                                <td>szt.</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Ecodan | Hydrobox | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie EHSD-YM6/9D</td>
-                                <td>szt.</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 300L</td>
-                                <td>szt.</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-                                <td>szt.</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
-                                <td>kpl.</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>Grupa bezpieczeństwa CWU (6bar)</td>
-                                <td>szt.</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>MIEDŹ CHŁODNICZA</td>
-                                <td>kpl.</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-                                <td>REGULATOR BEZPRZEWODOWY MITSUBISHI PAR-WT</td>
-                                <td>szt.</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>9</td>
-                                <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
-                                <td>szt.</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>10</td>
-                                <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
-                                <td>kpl.</td>
-                                <td>1</td>
-                            </tr>
-                        </tbody>
-    </table>
-    `;
-    
-        }
-        else if (power === '12 kW') {
+        if (power === '12 kW') {
             tableContent = `
         <table id="customTable" border="1">
         <tbody>
@@ -1598,7 +1600,7 @@ break;
     
             break;
         
-        
+
         
       case "ATLANTIC":
         if (power === '15 kW') {
@@ -1749,80 +1751,6 @@ break;
 `;
 
         break;
-    } else if (power === '8 kW') {
-        tableContent = `
-    <table id="customTable" border="1">
-    <tbody>
-    <tr>
-        <th>Numer</th>
-        <th>Nazwa towaru</th>
-        <th>Miara</th>
-        <th>Ilość</th>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>ATLANTIC EXTENSA AI DUO 8 KW 1F</td>
-        <td>szt.</td>
-        <td>1</td>
-    </tr>
-        <td>2</td>
-        <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-        <td>szt.</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>3</td>
-        <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
-        <td>kpl.</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>4</td>
-        <td>Grupa bezpieczeństwa CWU (6bar)</td>
-        <td>szt.</td>
-        <td>1</td>
-    </tr>
-    <tr>
-    <td>5</td>
-    <td>Grupa bezpieczeńśtwa C.O (2.5 bar)</td>
-    <td>szt.</td>
-    <td>1</td>
-</tr>
-<tr>
-        <td>6</td>
-        <td>KABEL GRZEWCZY</td>
-        <td>kpl.</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>7</td>
-        <td>MIEDŹ CHŁODNICZA</td>
-        <td>kpl.</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>8</td>
-        <td>SONDA POGODOWA</td>
-        <td>szt.</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>9</td>
-        <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
-        <td>szt.</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>10</td>
-        <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
-        <td>kpl.</td>
-        <td>1</td>
-    </tr>
-</tbody>
-</table>
-`;
-
-        break;
     } else if (power === '6 kW') {
         tableContent = `
     <table id="customTable" border="1">
@@ -1895,6 +1823,7 @@ break;
                     </tbody>
 </table>
 `};
+
 
 case "VIESSMAN":
         if (power === '13 kW') {
@@ -2058,8 +1987,8 @@ case "VIESSMAN":
 `};
 
         break;
+     
 
-            
         case "GALMET-PRIMA":
         if (power === '12 kW') {
             tableContent = `
@@ -2079,7 +2008,7 @@ case "VIESSMAN":
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 300L</td>
+                                <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L</td>
                                 <td>szt.</td>
                                 <td>1</td>
                             </tr>
@@ -2569,16 +2498,6 @@ function getAdditionalOptionsTable() {
 
     `;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
