@@ -100,6 +100,12 @@ function getPVTableContent(powerRange) {
   <td>szt.</td>
   <td>1</td>
 </tr>
+<tr>
+  <td>5/td>
+  <td> MONTAŻ SYSTEMU </td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
       </tbody>
   </table>
             `;
@@ -137,6 +143,12 @@ function getPVTableContent(powerRange) {
     <tr>
   <td>4</td>
   <td>ZGŁOSZENIE MIKRO-INSTALACJI DO OPERATORA SIECI </td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>5/td>
+  <td> MONTAŻ SYSTEMU </td>
   <td>szt.</td>
   <td>1</td>
 </tr>
@@ -180,6 +192,12 @@ function getPVTableContent(powerRange) {
   <td>szt.</td>
   <td>1</td>
 </tr>
+<tr>
+  <td>5/td>
+  <td> MONTAŻ SYSTEMU </td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
       </tbody> 
   </table>
             `;
@@ -217,6 +235,12 @@ function getPVTableContent(powerRange) {
 <tr>
   <td>4</td>
   <td>ZGŁOSZENIE MIKRO-INSTALACJI DO OPERATORA SIECI </td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>5/td>
+  <td> MONTAŻ SYSTEMU </td>
   <td>szt.</td>
   <td>1</td>
 </tr>
@@ -260,6 +284,12 @@ function getPVTableContent(powerRange) {
   <td>szt.</td>
   <td>1</td>
 </tr>
+<tr>
+  <td>5/td>
+  <td> MONTAŻ SYSTEMU </td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
       </tbody>
   </table>
             `;
@@ -297,6 +327,12 @@ function getPVTableContent(powerRange) {
 <tr>
   <td>4</td>
   <td>ZGŁOSZENIE MIKRO-INSTALACJI DO OPERATORA SIECI </td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>5/td>
+  <td> MONTAŻ SYSTEMU </td>
   <td>szt.</td>
   <td>1</td>
 </tr>
@@ -340,6 +376,12 @@ function getPVTableContent(powerRange) {
   <td>szt.</td>
   <td>1</td>
 </tr>
+<tr>
+  <td>5/td>
+  <td> MONTAŻ SYSTEMU </td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
       </tbody>
   </table>
             `;
@@ -377,6 +419,12 @@ function getPVTableContent(powerRange) {
     <tr>
   <td>4</td>
   <td>ZGŁOSZENIE MIKRO-INSTALACJI DO OPERATORA SIECI </td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>5/td>
+  <td> MONTAŻ SYSTEMU </td>
   <td>szt.</td>
   <td>1</td>
 </tr>
@@ -422,6 +470,12 @@ function getPVTableContent(powerRange) {
   <td>szt.</td>
   <td>1</td>
 </tr>
+<tr>
+  <td>5/td>
+  <td> MONTAŻ SYSTEMU </td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
               </tbody>
           </table>
                     `;
@@ -459,6 +513,12 @@ function getPVTableContent(powerRange) {
             <tr>
   <td>4</td>
   <td>ZGŁOSZENIE MIKRO-INSTALACJI DO OPERATORA SIECI </td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>5/td>
+  <td> MONTAŻ SYSTEMU </td>
   <td>szt.</td>
   <td>1</td>
 </tr>
@@ -504,6 +564,12 @@ function getPVTableContent(powerRange) {
   <td>szt.</td>
   <td>1</td>
 </tr>
+<tr>
+  <td>5/td>
+  <td> MONTAŻ SYSTEMU </td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
                       </tbody>
                   </table>
             
@@ -546,6 +612,12 @@ function getPVTableContent(powerRange) {
   <td>szt.</td>
   <td>1</td>
 </tr>
+<tr>
+  <td>5/td>
+  <td> MONTAŻ SYSTEMU </td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
                           </tbody>
                       </table>
                                 `;
@@ -582,6 +654,12 @@ function getPVTableContent(powerRange) {
                     <tr>
   <td>4</td>
   <td>ZGŁOSZENIE MIKRO-INSTALACJI DO OPERATORA SIECI </td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>5/td>
+  <td> MONTAŻ SYSTEMU </td>
   <td>szt.</td>
   <td>1</td>
 </tr>
@@ -624,6 +702,12 @@ function getPVTableContent(powerRange) {
   <td>szt.</td>
   <td>1</td>
 </tr>
+<tr>
+  <td>5/td>
+  <td> MONTAŻ SYSTEMU </td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
                           </tbody>
                       </table>
                                 `;
@@ -663,6 +747,12 @@ function getPVTableContent(powerRange) {
   <td>szt.</td>
   <td>1</td>
 </tr>
+<tr>
+  <td>5/td>
+  <td> MONTAŻ SYSTEMU </td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
                               </tbody>
                           </table>
                                     `;
@@ -699,6 +789,12 @@ function getPVTableContent(powerRange) {
                     <tr>
   <td>4</td>
   <td>ZGŁOSZENIE MIKRO-INSTALACJI DO OPERATORA SIECI </td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>5/td>
+  <td> MONTAŻ SYSTEMU </td>
   <td>szt.</td>
   <td>1</td>
 </tr>
