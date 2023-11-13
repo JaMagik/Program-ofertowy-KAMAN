@@ -20,7 +20,7 @@ body {
     z-index: -1;
     background-size: cover;
     background-position: center;
-    opacity: 0.5;
+    opacity: 0.8;
 }
 
 .header-info {
@@ -56,7 +56,7 @@ h1 {
 }
 
 .form-container {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 1);
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -135,8 +135,8 @@ button:hover {
     padding:0;
     flex: 1;
     display: flex;
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 277mm;
     flex-direction: column;
     background-size: cover;
     background-position: center;
@@ -427,4 +427,101 @@ select {
     font-weight: bold;
     color: white;
 }
+/* Styl dla formularza oferty */
+.form-container {
+    position: absolute;
+    top: 50%;
+    left: 15%; /* Dostosuj, aby uniknąć nachodzenia */
+    transform: translateY(-50%);
+    z-index: 5; /* Ustawienie niższej wartości z-index, aby formularz był pod drugim formularzem */
+    width: 400px; /* Dostosuj szerokość */
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    border-radius: 8px;
+    /* Pozostałe style pozostają bez zmian */
+}
+
+/* Styl dla formularza fotowoltaiki */
+.photovoltaics-generator {
+    position: absolute;
+    top: 50%; /* Adjust as per layout */
+    left: 52%; /* Adjust as per layout */
+    width: 400px; /* Adjust as per layout */
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    border-radius: 8px;
+    z-index: 10;
+    /* Pozostałe style pozostają bez zmian */
+}
+
+/* Styl wspólny dla obu formularzy */
+.form-container .input-group,
+.photovoltaics-generator .input-group {
+    margin-bottom: 15px;
+}
+
+.form-container .input-group label,
+.photovoltaics-generator .input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-container .input-group input,
+.photovoltaics-generator .input-group input,
+.form-container .input-group select,
+.photovoltaics-generator .input-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Reszta stylów dla suwaka, buttonów itp. */
+/* ... */
+
+#pricePVPDF {
+    align-self: center;
+    justify-content: start;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 20px;
+    font-weight: 800;
+    color:#7b0000;
+    padding-bottom: 800px;
+    padding-left: 150px;
+}
+
+#page-second-price {
+    padding:0;
+    margin:0;
+    display: flex;
+    flex-direction: column;
+    height: 277mm;
+    width: 100%;
+    justify-content: top;
+    align-items: start;
+    page-break-after: always;
+    background-size: cover;
+}
+#page-last {
+    padding:0;
+    margin:0;
+    display: flex;
+    flex-direction: column;
+    height: 280mm;
+    width: 100%;
+    justify-content: top;
+    align-items: start;
+    background-size: cover;
+    background-color: black;
+}    
+
+
+
+
+
+
+
 
