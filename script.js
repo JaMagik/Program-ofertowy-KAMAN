@@ -112,7 +112,7 @@ function getBackgroundImageByType(pdfType) {
 function generatePDF() {
     const offerNumber = generateOfferNumber();
     console.log(offerNumber); 
-    const userName = document.getElementById('userName').value;
+    const userNamePC = document.getElementById('userNamePC').value;
     const pdfType = document.getElementById('pdfType').value;
     const power = document.getElementById('powerOptions').value; // Pobranie wartości mocy
     const priceInput = document.getElementById("price");
@@ -147,7 +147,7 @@ function generatePDF() {
                 <span>Przygotowano dla:</span>
             </div>
             <div id="bottom-top-right">
-                <span id="client-name">${userName}</span>
+                <span id="userNamePC">${userNamePC}</span>
             </div>
             <div id="bottom-bottom-left">
                 <span>Kontakt do opiekuna oferty:</span>
@@ -214,7 +214,7 @@ const FourthPageContent = `
 
     const opt = {
         margin: 0,
-        filename: `${userName}_Oferta.pdf`,
+        filename: `${userNamePC}_Oferta.pdf`,
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: { scale: 2 },
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
