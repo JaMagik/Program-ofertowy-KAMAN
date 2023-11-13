@@ -36,6 +36,14 @@
       <option value="grunt">Grunt</option>
       
   </select>
+
+  <div class="input-group">
+    <label for="inverterType">Rodzaj falownika:</label>
+    <select id="inverterType" name="inverterType">
+      <option value="standard">Falownik zwykły</option>
+      <option value="hybrid">Falownik hybrydowy</option>
+    </select>
+  </div>
 </div>
 
 <!-- ... istniejący kod ... -->
@@ -141,6 +149,38 @@
 
       </script>
      <script>
+      document.addEventListener('DOMContentLoaded', function () {
+  const installationTypeSelect = document.getElementById('installationType');
+  const inverterTypeSelect = document.getElementById('inverterType');
+
+  function updateInverterOptions() {
+    // Pobranie aktualnie wybranej opcji instalacji
+    const selectedInstallation = installationTypeSelect.value;
+    // Wyczyść obecne opcje falownika
+    inverterTypeSelect.innerHTML = '';
+
+    // Definiowanie opcji falownika w zależności od wybranej instalacji
+    if (selectedInstallation === 'dach' || selectedInstallation === 'grunt') {
+        // Tutaj używamy już zaktualizowanych wartości
+        const optionStandard = document.createElement('option');
+        optionStandard.value = 'standard';
+        optionStandard.textContent = 'Falownik zwykły';
+        inverterTypeSelect.appendChild(optionStandard);
+
+        const optionHybrid = document.createElement('option');
+        optionHybrid.value = 'hybrid';
+        optionHybrid.textContent = 'Falownik hybrydowy';
+        inverterTypeSelect.appendChild(optionHybrid);
+    }
+}
+
+
+  // Dodanie nasłuchiwania zmiany wyboru instalacji
+  installationTypeSelect.addEventListener('change', updateInverterOptions);
+
+  // Inicjalizacja opcji falownika przy załadowaniu strony
+  updateInverterOptions();
+});
         function updatePowerOptions() {
           var pdfType = document.getElementById('pdfType').value;
           var powerOptions = document.getElementById('powerOptions');
@@ -222,12 +262,17 @@
     document.getElementById('powerOutput').textContent = `${totalPower.toFixed(3)} kW`; // Ustawienie tekstu
 }
 
+
   
 </script>     
 
       
 </body>
 </html>
+
+
+
+
 
 
 
