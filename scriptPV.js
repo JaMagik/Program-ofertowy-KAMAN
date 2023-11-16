@@ -261,7 +261,7 @@ switch(inverterType) {
         tableContent += `
             <tr>
                 <td>3</td>
-                <td>Magazyn energii</td>
+                <td>Magazyn energii Pylontech Force</td>
                 <td>szt.</td>
                 <td>1</td>
             </tr>`;
