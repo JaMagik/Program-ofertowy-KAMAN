@@ -41,7 +41,9 @@
     <label for="inverterType">Rodzaj falownika:</label>
     <select id="inverterType" name="inverterType">
       <option value="standard">Falownik zwykły</option>
+      <option value="fronius">Falownik Fronius</option>
       <option value="hybrid">Falownik hybrydowy</option>
+      <option value="hybridWithStorage">Falownik hybrydowy z magazynem</option>
     </select>
   </div>
 </div>
@@ -167,10 +169,20 @@
         optionStandard.textContent = 'Falownik zwykły';
         inverterTypeSelect.appendChild(optionStandard);
 
+        const optionFronius = document.createElement('option');
+        optionFronius.value = 'fronius';
+        optionFronius.textContent = 'Falownik Fronius';
+        inverterTypeSelect.appendChild(optionFronius);
+
         const optionHybrid = document.createElement('option');
         optionHybrid.value = 'hybrid';
         optionHybrid.textContent = 'Falownik hybrydowy';
-        inverterTypeSelect.appendChild(optionHybrid);
+        inverterTypeSelect.appendChild(optionHybrid);    
+
+        const optionHybridWithStorage = document.createElement('option');
+        optionHybridWithStorage.value = 'hybridWithStorage';
+        optionHybridWithStorage.textContent = 'Falownik hybrydowy z magazynem';
+        inverterTypeSelect.appendChild(optionHybridWithStorage);
     }
 }
 
@@ -269,6 +281,10 @@
       
 </body>
 </html>
+
+
+
+
 
 
 
