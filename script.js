@@ -173,7 +173,7 @@ function getSecondPageBackgroundImageByType(pdfType) {
             return  imageBaseGalmetZEW;
             case "HEIZTECHNIK":
             return imageBaseHeizZEW;
-            case "VIESSMAN":
+            case "VIESSMANN":
                 return imageBaseViessmanZEW;
         default:
             return null; // lub jakiś domyślny obraz, jeśli potrzebujesz
@@ -198,7 +198,7 @@ function getBackgroundImageByType(pdfType) {
             return imageBaseGalmetWEW;
             case "HEIZTECHNIK":
             return imageBaseHeizWEW;
-            case "VIESSMAN":
+            case "VIESSMANN":
                 return imageBaseViessmanWEW
         default:
             return null; // lub jakiś domyślny obraz, jeśli potrzebujesz
@@ -405,7 +405,7 @@ else if (pdfType === 'Mitsubishi-cylinder')
     content = firstPageContent + secondPageContent + thirdPageContent + MitsCylDS1+MitsCylDS2+MitsZubDS1+MitsZubDS2+MitsZubDS3+FourthPageContent;
 }
 
-else if (pdfType === 'VIESSMAN') 
+else if (pdfType === 'VIESSMANN') 
 {
     // Dodaj standardowe strony
     content = firstPageContent + secondPageContent + thirdPageContent + Vies1+Vies2+Vies3+Vies4+Vies5+Vies6+Vies7+Vies8+FourthPageContent;
@@ -2123,7 +2123,7 @@ else if (power === '14 kW') {
 `};
 
 
-case "VIESSMAN":
+case "VIESSMANN":
         if (power === '13 kW') {
             tableContent = `
         <table id="customTable" border="1">
