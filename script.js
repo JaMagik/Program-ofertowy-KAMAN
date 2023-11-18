@@ -241,12 +241,8 @@ function generatePDF() {
     const TOS4 = `<div id="page" style="background-image: url('${TSDS4}');"></div>`;
     const ATLF1 = `<div id="page" style="background-image: url('${ATLFIRST1}');"></div>`;
     const ATLF2 = `<div id="page" style="background-image: url('${ATLFIRST2}');"></div>`;
-    const ATLF3 = `<div id="page" style="background-image: url('${ATLFIRST3}');"></div>`;
-    const ATLF4 = `<div id="page" style="background-image: url('${ATLFIRST4}');"></div>`;
     const ATLS1 = `<div id="page" style="background-image: url('${ATLSECOND1}');"></div>`;
     const ATLS2 = `<div id="page" style="background-image: url('${ATLSECOND2}');"></div>`;
-    const ATLS3 = `<div id="page" style="background-image: url('${ATLSECOND3}');"></div>`;
-    const ATLS4 = `<div id="page" style="background-image: url('${ATLSECOND4}');"></div>`;
     const GLF1= `<div id="page" style="background-image: url('${G2MET1}');"></div>`;
     const GLF2= `<div id="page" style="background-image: url('${G2MET2}');"></div>`;
     const GLF3= `<div id="page" style="background-image: url('${G2MET3}');"></div>`;
@@ -377,9 +373,9 @@ else if (pdfType === 'ATLANTIC') {
     var selectedPower = document.getElementById('powerOptions').value;
     
     if (selectedPower === '15 kW') {
-      content = firstPageContent + secondPageContent + thirdPageContent + ATLS1+ ATLS2+ ATLS3+ ATLS4+ FourthPageContent;
+      content = firstPageContent + secondPageContent + thirdPageContent + ATLS1+ ATLS2+ FourthPageContent;
     } else if (selectedPower === '10 kW' || selectedPower === '8 kW' || selectedPower === '6 kW') {
-      content = firstPageContent + secondPageContent + thirdPageContent + ATLF1+ ATLF2+ATLF3+ATLF4+FourthPageContent;
+      content = firstPageContent + secondPageContent + thirdPageContent + ATLF1+ ATLF2+ FourthPageContent;
     } 
     // Dodaj więcej warunków dla innych mocy
     // ...
