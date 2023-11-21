@@ -2760,7 +2760,7 @@ function getAdditionalOptionsTable() {
     </tr>
     <tr>
         <td>9</td>
-        <td>40cm (górna krawędź krawężnika ułożona na równo z gruntem chłonnym)</td>
+        <td>Podbudowa 40cm (górna krawędź krawężnika ułożona na równo z gruntem chłonnym)</td>
         <td>kpl.</td>
         <td>300zł</td>
     </tr>
