@@ -54,7 +54,7 @@ let G1MET1;
 let G1MET2;
 let G1MET3;
 let G1MET4;
-
+let meet;
 
 
 
@@ -122,6 +122,7 @@ async function loadImageData() {
     G1MET2 = imagesModule.G2MET1;
     G1MET3 = imagesModule.G2MET1;
     G1MET4 = imagesModule.G2MET1;
+    meet = imagesModule.meet;
 
 
 
@@ -262,7 +263,7 @@ function generatePDF() {
 
 
 
-
+    let tableHtml = getAdditionalOptionsTable (pdfType);
     let tableContent = getTableContentByType(pdfType, power);
     let backgroundImage = getBackgroundImageByType(pdfType);
     let secondPageBackgroundImage = getSecondPageBackgroundImageByType(pdfType);
@@ -323,7 +324,7 @@ function generatePDF() {
                 <h1>Opcje dodatkowe Pompy Ciepła</h1>
             </div>
             <div id="table-container">
-                ${getAdditionalOptionsTable()}
+                ${tableHtml}
             </div>
             <div id="opcje-dodatkowe">
                 <p id="Dodatek">UWAGI: Opcje Dodatkowe nie są wymagane przez Producentów* do pracy instalacji i o ich zasadności każdorazowo należy konsultować się z Opiekunem Handlowym lub Doradcą Technicznym</p>
@@ -349,6 +350,37 @@ function generatePDF() {
     </div>
 `;
 
+const MeetUsContent =   
+`
+<div id = "next" style="background-image: url('${meet}'); background-size:cover; " >
+<div id= "page-meet" >
+<div id="useful-links">
+<h1 id="welcome">
+<a href="https://www.google.com/search?q=kaman+instalacje+oze+opinie&oq=kaman+instalacje+OZE+OPINIE&gs_lcrp=EgZjaHJvbWUqBwgAEAAYgAQyBwgAEAAYgAQyBggBEEUYOdIBCDM2NDFqMGo0qAIAsAIA&sourceid=chrome&ie=UTF-8#lrd=0x471779eb89052609:0x61dfc57d59116c9,1,,,,"> Znajdź nas na mapie <i class="fas fa-external-link-alt"></i></a>
+
+</h1>
+<!-- Tutaj możesz dodać przydatne linki -->
+<h2> Przydatne linki </h2>
+<a href="https://kaman.eu/dokumenty-do-pobrania/">Dokumenty, które możesz potrzebować <i class="fas fa-external-link-alt"></i></a>
+<a href="https://kaman.eu/dotacje/"> Informacje o dofinansowaniach <i class="fas fa-external-link-alt"></i></a>
+<a href="https://kaman.eu/opcje-dodatkowe-pc/"> Informacje na temat opcji dodatkowych <i class="fas fa-external-link-alt"></i></a>
+<a href="https://kaman.eu/realizacje/"> Nasze realizacje <i class="fas fa-external-link-alt"></i></a>
+
+</div>
+<h3 id="meet"> Poznaj nas lepiej </>
+<div id="social-media-links">
+
+</br>
+<a href="https://www.facebook.com/kamaninstalacjeoze" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+<a href="https://www.instagram.com/kaman.eu/?igshid=YmMyMTA2M2Y%3D" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+<a href="https://www.tiktok.com/@kaman.eu" target="_blank" title="LinkedIn"><i class="fab fa-tiktok"></i></a>
+</div>
+</div>
+</div>
+</div>
+`;
+
+
 const FourthPageContent = `
     <div id="page">
         <div id="top-page" style="background-image: url('${imageBase59}');">
@@ -361,21 +393,21 @@ const FourthPageContent = `
 
   if (pdfType === 'HEIZTECHNIK') {
     // Dodaj strony dla magazynu energii
-    content = firstPageContent + secondPageContent + thirdPageContent + HeizDS1 + HeizDS2 + FourthPageContent;
+    content = firstPageContent + secondPageContent + thirdPageContent + MeetUsContent+ HeizDS1 + HeizDS2 + FourthPageContent;
 } 
 else if (pdfType === 'Mitsubishi-hydrobox') 
 {
     // Dodaj standardowe strony
-    content = firstPageContent + secondPageContent + thirdPageContent + MitsHydDS1+MitsHydDS2+MitsZubDS1+MitsZubDS2+MitsZubDS3+FourthPageContent;
+    content = firstPageContent + secondPageContent + thirdPageContent + MeetUsContent+MitsHydDS1+MitsHydDS2+MitsZubDS1+MitsZubDS2+MitsZubDS3+FourthPageContent;
 }
 
 else if (pdfType === 'ATLANTIC') {
     var selectedPower = document.getElementById('powerOptions').value;
     
     if (selectedPower === '15 kW') {
-      content = firstPageContent + secondPageContent + thirdPageContent + ATLS1+ ATLS2+ FourthPageContent;
+      content = firstPageContent + secondPageContent + thirdPageContent + MeetUsContent + ATLS1+ ATLS2+ FourthPageContent;
     } else if (selectedPower === '10 kW' || selectedPower === '8 kW' || selectedPower === '6 kW') {
-      content = firstPageContent + secondPageContent + thirdPageContent + ATLF1+ ATLF2+ FourthPageContent;
+      content = firstPageContent + secondPageContent + thirdPageContent + MeetUsContent+ATLF1+ ATLF2+ FourthPageContent;
     } 
     // Dodaj więcej warunków dla innych mocy
     // ...
@@ -385,9 +417,9 @@ else if (pdfType === 'ATLANTIC') {
     var selectedPower = document.getElementById('powerOptions').value;
     
     if (selectedPower === '12 kW') {
-      content = firstPageContent + secondPageContent + thirdPageContent + GLF4+ GLF3+ GLF2+ GLF1+ FourthPageContent;
+      content = firstPageContent + secondPageContent + thirdPageContent + MeetUsContent+ GLF4+ GLF3+ GLF2+ GLF1+ FourthPageContent;
     } else if (selectedPower === '10 kW' || selectedPower === '8 kW') {
-      content = firstPageContent + secondPageContent + thirdPageContent + GLS1+ GLS2+GLS3+GLS4+FourthPageContent;
+      content = firstPageContent + secondPageContent + thirdPageContent + MeetUsContent+GLS1+ GLS2+GLS3+GLS4+FourthPageContent;
     } 
     // Dodaj więcej warunków dla innych mocy
     // ...
@@ -398,34 +430,34 @@ else if (pdfType === 'ATLANTIC') {
 else if (pdfType === 'Mitsubishi-cylinder') 
 {
     // Dodaj standardowe strony
-    content = firstPageContent + secondPageContent + thirdPageContent + MitsCylDS1+MitsCylDS2+MitsZubDS1+MitsZubDS2+MitsZubDS3+FourthPageContent;
+    content = firstPageContent + secondPageContent + thirdPageContent + MeetUsContent+ MitsCylDS1+MitsCylDS2+MitsZubDS1+MitsZubDS2+MitsZubDS3+FourthPageContent;
 }
 
 else if (pdfType === 'VIESSMANN') 
 {
     // Dodaj standardowe strony
-    content = firstPageContent + secondPageContent + thirdPageContent + Vies1+Vies2+Vies3+Vies4+Vies5+Vies6+Vies7+Vies8+FourthPageContent;
+    content = firstPageContent + secondPageContent + thirdPageContent + MeetUsContent+ Vies1+Vies2+Vies3+Vies4+Vies5+Vies6+Vies7+Vies8+FourthPageContent;
 }
 else if (pdfType === 'Toshiba 3F') 
 {
     // Dodaj standardowe strony
-    content = firstPageContent + secondPageContent + thirdPageContent + TOS1 + TOS2 + TOS3 + TOS4 + FourthPageContent;
+    content = firstPageContent + secondPageContent + thirdPageContent + MeetUsContent+ TOS1 + TOS2 + TOS3 + TOS4 + FourthPageContent;
 }
 else if (pdfType === 'Toshiba 1F') 
 {
     // Dodaj standardowe strony
-    content = firstPageContent + secondPageContent + thirdPageContent + TOS1 + TOS2 + TOS3 + TOS4 + FourthPageContent;
+    content = firstPageContent + secondPageContent + thirdPageContent + MeetUsContent+TOS1 + TOS2 + TOS3 + TOS4 + FourthPageContent;
 }
 
 else if (pdfType === 'Mitsubishi-ecoinverter') 
 {
     // Dodaj standardowe strony
-    content = firstPageContent + secondPageContent + thirdPageContent + MitsEcoDS1+MitsEcoDS2+MitsZubDS1+MitsZubDS2+MitsZubDS3+FourthPageContent;
+    content = firstPageContent + secondPageContent + thirdPageContent + MeetUsContent+MitsEcoDS1+MitsEcoDS2+MitsZubDS1+MitsZubDS2+MitsZubDS3+FourthPageContent;
 }
 
 else {
     // Dodaj standardowe strony
-    content = firstPageContent + secondPageContent + thirdPageContent + FourthPageContent;
+    content = firstPageContent + secondPageContent + thirdPageContent + MeetUsContent+ FourthPageContent;
 }
 
     const opt = {
@@ -2700,11 +2732,182 @@ case "VIESSMANN":
     
   }
   
+  function getAdditionalOptionsTable(pdfType) {
+    let tableHtml = "";
 
-function getAdditionalOptionsTable() {
-    return `
-    <table border='1' id="kamanTable">
-    <tr>
+    switch (pdfType) {
+        case "HEIZTECHNIK":
+            tableHtml = `
+                <table border='1' id="kamanTable">
+                <tr>
+                <th>Lp.</th>
+                <th>Nazwa</th>
+                <th>Miara</th>
+                <th>Cena</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Pompa do cyrkulacji z osprzętem i regulatorem czasowym</td>
+                <td>szt.</td>
+                <td>660zł</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Separator zanieczyszczeń magnetyczny (odmulnik)</td>
+                <td>szt.</td>
+                <td>580zł</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Pompa obiegowa do instalacji C.0 (LFP/WILO) z osprzętem</td>
+                <td>szt.</td>
+                <td>650zł</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td> Zbiornik z stali nierdzewnej</td>
+                <td>szt.</td>
+                <td>1250zł</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Dodatkowy sterownik do zarządznia do drugą strefą</td>
+                <td>szt.</td>
+                <td>450zł</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Licznik energii elektrycznej 3f</td>
+                <td>szt.</td>
+                <td>540zł</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Kabel grzewczy z termostatem ( istnieje możliwość podpięcia do kanalizacji lub drenażu po wcześniejszych oględzinach i potwierdzeniu przez montera ) </td>
+                <td>kpl.</td>
+                <td>500zł</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Wykonanie podbudowy ( fundamentu ) pod pompę ciepła: krawężniki przemysłowe ułożone na podsypce betonowej minimum B20 na głębokość 30-40 cm ( górna krawedź ułożona na równo z gruntem chłonnym)</td>
+                <td>kpl.</td>
+                <td>300zł</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Doprowadzenie kabla siłowego do pompy ciepła ( liczone gdy odległość kabla zasilającego o odpowiednim przekroju jest większa niż 10 mb )</td>
+                <td>mb.</td>
+                <td>55zł</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Demontaż starego źródła ciepła - polega na odłączeniu kotła od instalacji C.O i odsunięciu go tak aby nie przeszkadzał przy montażu pompy ciepła ( w tym samym pomieszczeniu ). Istnieje możliwość wywiezienia go poza pomieszczenie w którym był zamontowany jeżeli będzie to możliwe za pomocą wózka paletowego ( tzn. powierzchnia musi być równa bez progów i odpowiedniej szerokośći )</td>
+                <td>kpl.</td>
+                <td>500zł</td>
+            </tr>
+         <tr>
+                <td>11</td>
+                <td>BUFOR (SPRZĘGŁO HYDRAULICZNE) 40-140L + OSPRZĘT</td>
+                <td>Kpl</td>
+                <td>1400-1950 zł</td>
+            </tr>
+             <tr>
+                <td>12</td>
+                <td>UPS 40-55 Ah ( zabezpieczenie układu wodnego na wypadek braku prądu )</td>
+                <td>Kpl</td>
+                <td>1400-1950 zł</td>
+            </tr>
+                </table>`;
+            break;
+
+            case "VIESSMANN":
+            tableHtml = `
+                <table border='1' id="kamanTable">
+                <tr>
+                <th>Lp.</th>
+                <th>Nazwa</th>
+                <th>Miara</th>
+                <th>Cena</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Pompa do cyrkulacji z osprzętem i regulatorem czasowym</td>
+                <td>szt.</td>
+                <td>660zł</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Separator zanieczyszczeń magnetyczny (odmulnik)</td>
+                <td>szt.</td>
+                <td>580zł</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Pompa obiegowa do instalacji C.0 (LFP/WILO) z osprzętem</td>
+                <td>szt.</td>
+                <td>650zł</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td> Zbiornik z stali nierdzewnej</td>
+                <td>szt.</td>
+                <td>1250zł</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Dodatkowy sterownik do zarządznia do drugą strefą</td>
+                <td>szt.</td>
+                <td>450zł</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Licznik energii elektrycznej 3f</td>
+                <td>szt.</td>
+                <td>540zł</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Kabel grzewczy z termostatem ( istnieje możliwość podpięcia do kanalizacji lub drenażu po wcześniejszych oględzinach i potwierdzeniu przez montera ) </td>
+                <td>kpl.</td>
+                <td>500zł</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Wykonanie podbudowy ( fundamentu ) pod pompę ciepła: krawężniki przemysłowe ułożone na podsypce betonowej minimum B20 na głębokość 30-40 cm ( górna krawedź ułożona na równo z gruntem chłonnym)</td>
+                <td>kpl.</td>
+                <td>300zł</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Doprowadzenie kabla siłowego do pompy ciepła ( liczone gdy odległość kabla zasilającego o odpowiednim przekroju jest większa niż 10 mb )</td>
+                <td>mb.</td>
+                <td>55zł</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Demontaż starego źródła ciepła - polega na odłączeniu kotła od instalacji C.O i odsunięciu go tak aby nie przeszkadzał przy montażu pompy ciepła ( w tym samym pomieszczeniu ). Istnieje możliwość wywiezienia go poza pomieszczenie w którym był zamontowany jeżeli będzie to możliwe za pomocą wózka paletowego ( tzn. powierzchnia musi być równa bez progów i odpowiedniej szerokośći )</td>
+                <td>kpl.</td>
+                <td>500zł</td>
+            </tr>
+         <tr>
+                <td>11</td>
+                <td>BUFOR (SPRZĘGŁO HYDRAULICZNE) 40-140L + OSPRZĘT</td>
+                <td>Kpl</td>
+                <td>1400-1950 zł</td>
+            </tr>
+             <tr>
+                <td>12</td>
+                <td>UPS 40-55 Ah ( zabezpieczenie układu wodnego na wypadek braku prądu )</td>
+                <td>Kpl</td>
+                <td>1400-1950 zł</td>
+            </tr>
+                </table>`;
+            break;
+
+            case "ATLANTIC":
+            tableHtml = `
+                <table border='1' id="kamanTable">
+                <tr>
         <th>Lp.</th>
         <th>Nazwa</th>
         <th>Miara</th>
@@ -2742,55 +2945,541 @@ function getAdditionalOptionsTable() {
     </tr>
     <tr>
         <td>6</td>
-        <td>Modem Internetowy (dotyczy pompy ciepła MITSUBISHI )</td>
-        <td>szt.</td>
-        <td>480zł</td>
-    </tr>
-    <tr>
-        <td>7</td>
         <td>Licznik energii elektrycznej 3f</td>
         <td>szt.</td>
         <td>540zł</td>
     </tr>
     <tr>
-        <td>8</td>
-        <td>Kabel grzewczy</td>
+        <td>7</td>
+        <td>Kabel grzewczy z termostatem ( istnieje możliwość podpięcia do kanalizacji lub drenażu po wcześniejszych oględzinach i potwierdzeniu przez montera ) </td>
         <td>kpl.</td>
         <td>500zł</td>
     </tr>
     <tr>
-        <td>9</td>
-        <td>Podbudowa 40cm (górna krawędź krawężnika ułożona na równo z gruntem chłonnym)</td>
+        <td>8</td>
+        <td>Wykonanie podbudowy ( fundamentu ) pod pompę ciepła: krawężniki przemysłowe ułożone na podsypce betonowej minimum B20 na głębokość 30-40 cm ( górna krawedź ułożona na równo z gruntem chłonnym)</td>
         <td>kpl.</td>
         <td>300zł</td>
     </tr>
     <tr>
-        <td>10</td>
-        <td>Doprowadzenie kabla siłowego do pompy ciepła</td>
+        <td>9</td>
+        <td>Doprowadzenie kabla siłowego do pompy ciepła ( liczone gdy odległość kabla zasilającego o odpowiednim przekroju jest większa niż 10 mb )</td>
         <td>mb.</td>
         <td>55zł</td>
     </tr>
     <tr>
-        <td>11</td>
-        <td>Demontaż starego źródła ciepła</td>
+        <td>10</td>
+        <td>Demontaż starego źródła ciepła - polega na odłączeniu kotła od instalacji C.O i odsunięciu go tak aby nie przeszkadzał przy montażu pompy ciepła ( w tym samym pomieszczeniu ). Istnieje możliwość wywiezienia go poza pomieszczenie w którym był zamontowany jeżeli będzie to możliwe za pomocą wózka paletowego ( tzn. powierzchnia musi być równa bez progów i odpowiedniej szerokośći )</td>
         <td>kpl.</td>
         <td>500zł</td>
     </tr>
-    <tr>
-        <td>12</td>
-        <td>Ups40-5SAh (zabezpieczenie układu wodnego na wypadek braku prądu)</td>
-        <td>kpl.</td>
-        <td>1250zł</td>
+
+ <tr>
+        <td>11</td>
+        <td>BUFOR (SPRZĘGŁO HYDRAULICZNE) 40-140L + OSPRZĘT</td>
+        <td>Kpl</td>
+        <td>1400-1950 zł</td>
     </tr>
-    <tr>
+<tr>
+        <td>12</td>
+        <td>ZESTAW PODŁĄCZENIA ZASOBNIKA C.W.U. - umożliwia współpracę z dowolnym wewnęrznym zasobnikiem C.W.U</td>
+        <td>Kpl</td>
+        <td>1400-1950 zł</td>
+    </tr>
         <td>13</td>
-        <td>BUFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-        <td>kpl.</td>
+        <td>TACA OCIEKOWA - umożliwia odbiór kondensatu</td>
+        <td>Kpl</td>
+        <td>550 zł</td>
+    </tr>
+<tr>
+        <td>14</td>
+        <td>CENTRALKA COZYTOUCH 2 - Umożliwia zdalne sterowanie urządzeniem oraz jego funkcjami za pomocą aplikacji mobilnej </td>
+        <td>Kpl</td>
+        <td>560 zł</td>
+    </tr>
+<tr>
+        <td>15</td>
+        <td>PROGRAMATOR A59 NB - Podstawowy programator z funkcją zmiany trybów pracy ( KOMFORT, ECO ) </td>
+        <td>Kpl</td>
+        <td>560 zł</td>
+    </tr>
+<tr>
+        <td>16</td>
+        <td> ZESTAW HYDRAULICZNY 2 OBIEGI GRZWEWCZE  - umożliwia podłączenia drugiego obiegu grzewczego </td>
+        <td>Kpl</td>
         <td>1900 zł</td>
     </tr>
-</table>
+                </table>`;
+            break;
+            case "GALMET-PRIMA":
+                tableHtml = `
+                    <table border='1' id="kamanTable">
+                    <tr>
+                    <th>Lp.</th>
+                    <th>Nazwa</th>
+                    <th>Miara</th>
+                    <th>Cena</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Pompa do cyrkulacji z osprzętem i regulatorem czasowym</td>
+                    <td>szt.</td>
+                    <td>660zł</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Separator zanieczyszczeń magnetyczny (odmulnik)</td>
+                    <td>szt.</td>
+                    <td>580zł</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Pompa obiegowa do instalacji C.0 (LFP/WILO) z osprzętem</td>
+                    <td>szt.</td>
+                    <td>650zł</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td> Zbiornik z stali nierdzewnej</td>
+                    <td>szt.</td>
+                    <td>1250zł</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Dodatkowy sterownik do zarządznia do drugą strefą</td>
+                    <td>szt.</td>
+                    <td>450zł</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Licznik energii elektrycznej 3f</td>
+                    <td>szt.</td>
+                    <td>540zł</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Kabel grzewczy z termostatem ( istnieje możliwość podpięcia do kanalizacji lub drenażu po wcześniejszych oględzinach i potwierdzeniu przez montera ) </td>
+                    <td>kpl.</td>
+                    <td>500zł</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Wykonanie podbudowy ( fundamentu ) pod pompę ciepła: krawężniki przemysłowe ułożone na podsypce betonowej minimum B20 na głębokość 30-40 cm ( górna krawedź ułożona na równo z gruntem chłonnym)</td>
+                    <td>kpl.</td>
+                    <td>300zł</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Doprowadzenie kabla siłowego do pompy ciepła ( liczone gdy odległość kabla zasilającego o odpowiednim przekroju jest większa niż 10 mb )</td>
+                    <td>mb.</td>
+                    <td>55zł</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Demontaż starego źródła ciepła - polega na odłączeniu kotła od instalacji C.O i odsunięciu go tak aby nie przeszkadzał przy montażu pompy ciepła ( w tym samym pomieszczeniu ). Istnieje możliwość wywiezienia go poza pomieszczenie w którym był zamontowany jeżeli będzie to możliwe za pomocą wózka paletowego ( tzn. powierzchnia musi być równa bez progów i odpowiedniej szerokośći )</td>
+                    <td>kpl.</td>
+                    <td>500zł</td>
+                </tr>
+             <tr>
+                    <td>11</td>
+                    <td>BUFOR (SPRZĘGŁO HYDRAULICZNE) 40-140L + OSPRZĘT</td>
+                    <td>Kpl</td>
+                    <td>1400-1950 zł</td>
+                </tr>
+                    </table>`;
+                break;
+                case "Toshiba 1F":
+                    tableHtml = `
+                        <table border='1' id="kamanTable">
+                        <tr>
+                        <th>Lp.</th>
+                        <th>Nazwa</th>
+                        <th>Miara</th>
+                        <th>Cena</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Pompa do cyrkulacji z osprzętem i regulatorem czasowym</td>
+                        <td>szt.</td>
+                        <td>660zł</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Separator zanieczyszczeń magnetyczny (odmulnik)</td>
+                        <td>szt.</td>
+                        <td>580zł</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Pompa obiegowa do instalacji C.0 (LFP/WILO) z osprzętem</td>
+                        <td>szt.</td>
+                        <td>650zł</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td> Zbiornik z stali nierdzewnej</td>
+                        <td>szt.</td>
+                        <td>1250zł</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Dodatkowy sterownik do zarządznia do drugą strefą</td>
+                        <td>szt.</td>
+                        <td>450zł</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Licznik energii elektrycznej 3f</td>
+                        <td>szt.</td>
+                        <td>540zł</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Kabel grzewczy z termostatem ( istnieje możliwość podpięcia do kanalizacji lub drenażu po wcześniejszych oględzinach i potwierdzeniu przez montera ) </td>
+                        <td>kpl.</td>
+                        <td>500zł</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Wykonanie podbudowy ( fundamentu ) pod pompę ciepła: krawężniki przemysłowe ułożone na podsypce betonowej minimum B20 na głębokość 30-40 cm ( górna krawedź ułożona na równo z gruntem chłonnym)</td>
+                        <td>kpl.</td>
+                        <td>300zł</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Doprowadzenie kabla siłowego do pompy ciepła ( liczone gdy odległość kabla zasilającego o odpowiednim przekroju jest większa niż 10 mb )</td>
+                        <td>mb.</td>
+                        <td>55zł</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Demontaż starego źródła ciepła - polega na odłączeniu kotła od instalacji C.O i odsunięciu go tak aby nie przeszkadzał przy montażu pompy ciepła ( w tym samym pomieszczeniu ). Istnieje możliwość wywiezienia go poza pomieszczenie w którym był zamontowany jeżeli będzie to możliwe za pomocą wózka paletowego ( tzn. powierzchnia musi być równa bez progów i odpowiedniej szerokośći )</td>
+                        <td>kpl.</td>
+                        <td>500zł</td>
+                    </tr>
+                 <tr>
+                        <td>11</td>
+                        <td>BUFOR (SPRZĘGŁO HYDRAULICZNE) 40-140L + OSPRZĘT</td>
+                        <td>Kpl</td>
+                        <td>1400-1950 zł</td>
+                    </tr>
+                        </table>`;
+                    break;
+                    case "Toshiba 3F":
+                        tableHtml = `
+                            <table border='1' id="kamanTable">
+                            <tr>
+                            <th>Lp.</th>
+                            <th>Nazwa</th>
+                            <th>Miara</th>
+                            <th>Cena</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Pompa do cyrkulacji z osprzętem i regulatorem czasowym</td>
+                            <td>szt.</td>
+                            <td>660zł</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Separator zanieczyszczeń magnetyczny (odmulnik)</td>
+                            <td>szt.</td>
+                            <td>580zł</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Pompa obiegowa do instalacji C.0 (LFP/WILO) z osprzętem</td>
+                            <td>szt.</td>
+                            <td>650zł</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td> Zbiornik z stali nierdzewnej</td>
+                            <td>szt.</td>
+                            <td>1250zł</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Dodatkowy sterownik do zarządznia do drugą strefą</td>
+                            <td>szt.</td>
+                            <td>450zł</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Licznik energii elektrycznej 3f</td>
+                            <td>szt.</td>
+                            <td>540zł</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Kabel grzewczy z termostatem ( istnieje możliwość podpięcia do kanalizacji lub drenażu po wcześniejszych oględzinach i potwierdzeniu przez montera ) </td>
+                            <td>kpl.</td>
+                            <td>500zł</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Wykonanie podbudowy ( fundamentu ) pod pompę ciepła: krawężniki przemysłowe ułożone na podsypce betonowej minimum B20 na głębokość 30-40 cm ( górna krawedź ułożona na równo z gruntem chłonnym)</td>
+                            <td>kpl.</td>
+                            <td>300zł</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Doprowadzenie kabla siłowego do pompy ciepła ( liczone gdy odległość kabla zasilającego o odpowiednim przekroju jest większa niż 10 mb )</td>
+                            <td>mb.</td>
+                            <td>55zł</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Demontaż starego źródła ciepła - polega na odłączeniu kotła od instalacji C.O i odsunięciu go tak aby nie przeszkadzał przy montażu pompy ciepła ( w tym samym pomieszczeniu ). Istnieje możliwość wywiezienia go poza pomieszczenie w którym był zamontowany jeżeli będzie to możliwe za pomocą wózka paletowego ( tzn. powierzchnia musi być równa bez progów i odpowiedniej szerokośći )</td>
+                            <td>kpl.</td>
+                            <td>500zł</td>
+                        </tr>
+                     <tr>
+                            <td>11</td>
+                            <td>BUFOR (SPRZĘGŁO HYDRAULICZNE) 40-140L + OSPRZĘT</td>
+                            <td>Kpl</td>
+                            <td>1400-1950 zł</td>
+                        </tr>
+                            </table>`;
+                        break;
+        
+                        case "Mitsubishi-ecoinverter":
+                            tableHtml = `
+                                <table border='1' id="kamanTable">
+                                <tr>
+                                <th>Lp.</th>
+                                <th>Nazwa</th>
+                                <th>Miara</th>
+                                <th>Cena</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Pompa do cyrkulacji z osprzętem i regulatorem czasowym</td>
+                                <td>szt.</td>
+                                <td>660zł</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Separator zanieczyszczeń magnetyczny (odmulnik)</td>
+                                <td>szt.</td>
+                                <td>580zł</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Pompa obiegowa do instalacji C.0 (LFP/WILO) z osprzętem</td>
+                                <td>szt.</td>
+                                <td>650zł</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td> Zbiornik z stali nierdzewnej</td>
+                                <td>szt.</td>
+                                <td>1250zł</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Dodatkowy sterownik do zarządznia do drugą strefą</td>
+                                <td>szt.</td>
+                                <td>450zł</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Licznik energii elektrycznej 3f</td>
+                                <td>szt.</td>
+                                <td>540zł</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Kabel grzewczy z termostatem ( istnieje możliwość podpięcia do kanalizacji lub drenażu po wcześniejszych oględzinach i potwierdzeniu przez montera ) </td>
+                                <td>kpl.</td>
+                                <td>500zł</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Wykonanie podbudowy ( fundamentu ) pod pompę ciepła: krawężniki przemysłowe ułożone na podsypce betonowej minimum B20 na głębokość 30-40 cm ( górna krawedź ułożona na równo z gruntem chłonnym)</td>
+                                <td>kpl.</td>
+                                <td>300zł</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>Doprowadzenie kabla siłowego do pompy ciepła ( liczone gdy odległość kabla zasilającego o odpowiednim przekroju jest większa niż 10 mb )</td>
+                                <td>mb.</td>
+                                <td>55zł</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>Demontaż starego źródła ciepła - polega na odłączeniu kotła od instalacji C.O i odsunięciu go tak aby nie przeszkadzał przy montażu pompy ciepła ( w tym samym pomieszczeniu ). Istnieje możliwość wywiezienia go poza pomieszczenie w którym był zamontowany jeżeli będzie to możliwe za pomocą wózka paletowego ( tzn. powierzchnia musi być równa bez progów i odpowiedniej szerokośći )</td>
+                                <td>kpl.</td>
+                                <td>500zł</td>
+                            </tr>
+                         <tr>
+                                <td>11</td>
+                                <td>BUFOR (SPRZĘGŁO HYDRAULICZNE) 40-140L + OSPRZĘT</td>
+                                <td>Kpl</td>
+                                <td>1400-1950 zł</td>
+                            </tr>
+                                </table>`;
+                            break;
+                        
+                            case "Mitsubishi-cylinder":
+                                tableHtml = `
+                                    <table border='1' id="kamanTable">
+                                    <tr>
+                                    <th>Lp.</th>
+                                    <th>Nazwa</th>
+                                    <th>Miara</th>
+                                    <th>Cena</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Pompa do cyrkulacji z osprzętem i regulatorem czasowym</td>
+                                    <td>szt.</td>
+                                    <td>660zł</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Separator zanieczyszczeń magnetyczny (odmulnik)</td>
+                                    <td>szt.</td>
+                                    <td>580zł</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Pompa obiegowa do instalacji C.0 (LFP/WILO) z osprzętem</td>
+                                    <td>szt.</td>
+                                    <td>650zł</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td> Zbiornik z stali nierdzewnej</td>
+                                    <td>szt.</td>
+                                    <td>1250zł</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Dodatkowy sterownik do zarządznia do drugą strefą</td>
+                                    <td>szt.</td>
+                                    <td>450zł</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Licznik energii elektrycznej 3f</td>
+                                    <td>szt.</td>
+                                    <td>540zł</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Kabel grzewczy z termostatem ( istnieje możliwość podpięcia do kanalizacji lub drenażu po wcześniejszych oględzinach i potwierdzeniu przez montera ) </td>
+                                    <td>kpl.</td>
+                                    <td>500zł</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Wykonanie podbudowy ( fundamentu ) pod pompę ciepła: krawężniki przemysłowe ułożone na podsypce betonowej minimum B20 na głębokość 30-40 cm ( górna krawedź ułożona na równo z gruntem chłonnym)</td>
+                                    <td>kpl.</td>
+                                    <td>300zł</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>Doprowadzenie kabla siłowego do pompy ciepła ( liczone gdy odległość kabla zasilającego o odpowiednim przekroju jest większa niż 10 mb )</td>
+                                    <td>mb.</td>
+                                    <td>55zł</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>Demontaż starego źródła ciepła - polega na odłączeniu kotła od instalacji C.O i odsunięciu go tak aby nie przeszkadzał przy montażu pompy ciepła ( w tym samym pomieszczeniu ). Istnieje możliwość wywiezienia go poza pomieszczenie w którym był zamontowany jeżeli będzie to możliwe za pomocą wózka paletowego ( tzn. powierzchnia musi być równa bez progów i odpowiedniej szerokośći )</td>
+                                    <td>kpl.</td>
+                                    <td>500zł</td>
+                                </tr>
+                             <tr>
+                                    <td>11</td>
+                                    <td>BUFOR (SPRZĘGŁO HYDRAULICZNE) 40-140L + OSPRZĘT</td>
+                                    <td>Kpl</td>
+                                    <td>1400-1950 zł</td>
+                                </tr>
+                                    </table>`;
+                                break;
+                           
+                                case "Mitsubishi-hydrobox":
+                                    tableHtml = `
+                                        <table border='1' id="kamanTable">
+                                        <tr>
+                                        <th>Lp.</th>
+                                        <th>Nazwa</th>
+                                        <th>Miara</th>
+                                        <th>Cena</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Pompa do cyrkulacji z osprzętem i regulatorem czasowym</td>
+                                        <td>szt.</td>
+                                        <td>660zł</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Separator zanieczyszczeń magnetyczny (odmulnik)</td>
+                                        <td>szt.</td>
+                                        <td>580zł</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Pompa obiegowa do instalacji C.0 (LFP/WILO) z osprzętem</td>
+                                        <td>szt.</td>
+                                        <td>650zł</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td> Zbiornik z stali nierdzewnej</td>
+                                        <td>szt.</td>
+                                        <td>1250zł</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>Dodatkowy sterownik do zarządznia do drugą strefą</td>
+                                        <td>szt.</td>
+                                        <td>450zł</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>Licznik energii elektrycznej 3f</td>
+                                        <td>szt.</td>
+                                        <td>540zł</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>Kabel grzewczy z termostatem ( istnieje możliwość podpięcia do kanalizacji lub drenażu po wcześniejszych oględzinach i potwierdzeniu przez montera ) </td>
+                                        <td>kpl.</td>
+                                        <td>500zł</td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>Wykonanie podbudowy ( fundamentu ) pod pompę ciepła: krawężniki przemysłowe ułożone na podsypce betonowej minimum B20 na głębokość 30-40 cm ( górna krawedź ułożona na równo z gruntem chłonnym)</td>
+                                        <td>kpl.</td>
+                                        <td>300zł</td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>Doprowadzenie kabla siłowego do pompy ciepła ( liczone gdy odległość kabla zasilającego o odpowiednim przekroju jest większa niż 10 mb )</td>
+                                        <td>mb.</td>
+                                        <td>55zł</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>Demontaż starego źródła ciepła - polega na odłączeniu kotła od instalacji C.O i odsunięciu go tak aby nie przeszkadzał przy montażu pompy ciepła ( w tym samym pomieszczeniu ). Istnieje możliwość wywiezienia go poza pomieszczenie w którym był zamontowany jeżeli będzie to możliwe za pomocą wózka paletowego ( tzn. powierzchnia musi być równa bez progów i odpowiedniej szerokośći )</td>
+                                        <td>kpl.</td>
+                                        <td>500zł</td>
+                                    </tr>
+                                 <tr>
+                                        <td>11</td>
+                                        <td>BUFOR (SPRZĘGŁO HYDRAULICZNE) 40-140L + OSPRZĘT</td>
+                                        <td>Kpl</td>
+                                        <td>1400-1950 zł</td>
+                                    </tr>
+                                        </table>`;
+                                    break;
+                        
+    }
 
-    `;
+    return tableHtml;
 }
 
 
