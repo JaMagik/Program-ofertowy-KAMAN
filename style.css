@@ -201,6 +201,8 @@ button:hover {
 }
 
 #table td, .table th {
+    word-wrap: break-word; /* Umożliwia zawijanie długich słów */
+  word-break: break-all;
     text-align: center; /* Wyśrodkowanie tekstu w poziomie */
     vertical-align: middle; /* Wyśrodkowanie tekstu w pionie */
     border: 1px solid black; /* Obramowanie dla komórek */
@@ -212,6 +214,8 @@ button:hover {
     text-align: center;
     margin: 0;
     padding: 0;
+    word-wrap: break-word; /* Umożliwia zawijanie długich słów */
+  word-break: break-all;
 }
 
 #page-second {
@@ -248,6 +252,8 @@ additional-options-table {
     border: 2px solid black;
     padding: 8px 12px;
     text-align: center;
+    word-wrap: break-word; /* Umożliwia zawijanie długich słów */
+  word-break: break-all;
 }
 
 #additional-options-table th {
@@ -357,12 +363,16 @@ a:hover i.fas {
         padding: 8px;
         text-align: center;
         border-bottom: 1px solid #ddd;
+        word-wrap: break-word; /* Umożliwia zawijanie długich słów */
+  word-break: break-all;
     }
 
     #kamanTable td:nth-child(4) {
         background-color: #781212;
         font-weight: bold;
         color:white;
+        word-wrap: break-word; /* Umożliwia zawijanie długich słów */
+  word-break: break-all;
     }
 
     #kamanTable tr:hover {
