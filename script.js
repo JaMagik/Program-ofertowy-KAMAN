@@ -329,23 +329,6 @@ function generatePDF() {
             <div id="opcje-dodatkowe">
                 <p id="Dodatek">UWAGI: Opcje Dodatkowe nie są wymagane przez Producentów* do pracy instalacji i o ich zasadności każdorazowo należy konsultować się z Opiekunem Handlowym lub Doradcą Technicznym</p>
             </div>
-            <div id="useful-links">
-                <!-- Tutaj możesz dodać przydatne linki -->
-                <h2> Przydatne linki </h2>
-                <a href="https://kaman.eu/dokumenty-do-pobrania/">Dokumenty, które możesz potrzebować <i class="fas fa-external-link-alt"></i></a>
-                <a href="https://kaman.eu/dotacje/"> Informacje o dofinansowaniach <i class="fas fa-external-link-alt"></i></a>
-                <a href="https://kaman.eu/opcje-dodatkowe-pc/"> Informacje na temat opcji dodatkowych <i class="fas fa-external-link-alt"></i></a>
-                <a href="https://kaman.eu/realizacje/"> Nasze realizacje <i class="fas fa-external-link-alt"></i></a>
-                
-            </div>
-            <h3 id="meet"> Poznaj nas lepiej </>
-            <div id="social-media-links">
-            
-            </br>
-            <a href="https://www.facebook.com/kamaninstalacjeoze" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/kaman.eu/?igshid=YmMyMTA2M2Y%3D" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@kaman.eu" target="_blank" title="LinkedIn"><i class="fab fa-tiktok"></i></a>
-        </div>
         </div>
     </div>
 `;
