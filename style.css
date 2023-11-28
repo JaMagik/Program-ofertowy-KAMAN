@@ -404,6 +404,8 @@ span #client-name {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: center;
+    word-wrap: break-word; /* Umożliwia zawijanie długich słów */
+  word-break: break-all;
 }
 
 #customTable th {
@@ -421,6 +423,8 @@ span #client-name {
 
 #customTable td {
     font-size: 14px;
+    word-wrap: break-word; /* Umożliwia zawijanie długich słów */
+  word-break: break-all;
 }
 select {
     width: 200px;
