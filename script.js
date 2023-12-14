@@ -1374,7 +1374,87 @@ break;
     </table>
     `;
     
-        } else if (power === '10 kW') {
+        }
+        
+        else if (power === '6 kW') {
+            tableContent = `
+        <table id="customTable" border="1">
+        <tbody>
+                            <tr>
+                                <th>Numer</th>
+                                <th>Nazwa towaru</th>
+                                <th>Miara</th>
+                                <th>Ilość</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Ecodan | Zubadan Inverter | Split | 6,0kW, 400V, R32 PUD-SHWM100YAA</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                            <td>2</td>
+                            <td>Ecodan | moduł wew. 200 litrów | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie EHSD-YM6/9D</td>
+                            <td>szt.</td>
+                            <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+                                <td>kpl.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Grupa bezpieczeństwa CWU (6bar)</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>MIEDŹ CHŁODNICZA</td>
+                                <td>kpl.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>REGULATOR BEZPRZEWODOWY MITSUBISHI PAR-WT</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+                                <td>szt.</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+                                <td>kpl.</td>
+                                <td>1</td>
+                            </tr>
+                        </tbody>
+    </table>
+    `;
+    
+            break;
+        }
+
+        
+        else if (power === '10 kW') {
         tableContent = `
     <table id="customTable" border="1">
     <tbody>
@@ -1522,6 +1602,7 @@ break;
                     </tbody>
 </table>
 `};
+
 
 
 
