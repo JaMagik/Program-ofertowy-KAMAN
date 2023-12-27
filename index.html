@@ -36,6 +36,16 @@
       <option value="grunt">Grunt</option>
       
   </select>
+  </div>
+
+  <div class="input-group">
+    <label for="panelType">Rodzaj paneli</label>
+    <select id="panelType" name="panelType">
+        <option value="canadian">Canadian 455</option>
+        <option value="zn-shine">ZN-SHINE 450</option>
+        
+    </select>
+    
 
   <div class="input-group">
     <label for="inverterType">Rodzaj falownika:</label>
@@ -154,6 +164,21 @@
       document.addEventListener('DOMContentLoaded', function () {
   const installationTypeSelect = document.getElementById('installationType');
   const inverterTypeSelect = document.getElementById('inverterType');
+  const panelTypeSelect = document.getElementById('panelType');
+
+  panelTypeSelect.addEventListener('change', function () {
+        updatePanelType();
+    });
+  
+    function updatePanelType() {
+        const selectedPanelType = panelTypeSelect.value;
+        // Tutaj możesz użyć zmiennej selectedPanelType do dalszych działań
+        console.log("Wybrany typ panelu:", selectedPanelType);
+        // Na przykład: Możesz tutaj zaktualizować inne elementy interfejsu użytkownika lub wywołać inną funkcję
+    }
+
+    // Inicjalizacja stanu początkowego
+    updatePanelType();
 
   function updateInverterOptions() {
     // Pobranie aktualnie wybranej opcji instalacji

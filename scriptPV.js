@@ -25,6 +25,14 @@ let imageFroniusDS1;
 let imageFroniusDS2;
 let inverterModel;
 let panelDescription;
+let imageZNFox;
+let imageZNHybrid;
+let imageZNHybridWithStorage;
+let imageZNFronius;
+let panelType;
+let ZNDs1;
+let ZNDs2;
+let ZNDs3;
 
 
 async function loadImageDataForPV() {
@@ -51,20 +59,59 @@ async function loadImageDataForPV() {
     imageFronius = imagesModule.imageFronius;
     imageFroniusDS1 = imagesModule.imageFroniusDS1;
     imageFroniusDS2 = imagesModule.imageFroniusDS2;
+    imageZNFox = imagesModule.imageZNFox;
+    imageZNHybrid = imagesModule.imageZNHybrid;
+    imageZNHybridWithStorage = imagesModule.imageZNHybridWithStorage;
+    imageZNFronius = imagesModule.imageZNFronius;
+    ZNDs1 = imagesModule.ZNDs1;
+    ZNDs2 = imagesModule.ZNDs2; 
+    ZNDs3 = imagesModule.ZNDs3;
+
 }
 
 loadImageDataForPV(); // Poprawione na właściwą nazwę funkcji
 
-function getInverterImage(inverterType) {
-    switch(inverterType) {
+function getInverterImage(inverterType, panelType) {
+
+    
+    switch (inverterType) {
         case "standard":
-            return imageFOX2; // Zmienna z obrazem dla standardowego falownika
+            switch (panelType) {
+                case "zn-shine":
+                    return imageZNFox;
+                case "canadian":
+                    return imageFOX2;
+                // Domyślny obraz dla standardowego falownika
+            }
+            break;
         case "hybrid":
-            return imageSungrow2;
-            case "hybridWithStorage":
-                return imageMVSTORAGEMAIN; // Zmienna z obrazem dla falownika hybrydowego
-                case "fronius":
+            switch (panelType) {
+                case "zn-shine":
+                    return imageZNHybrid;
+                case "canadian":
+                    return imageSungrow2;
+                 // Domyślny obraz dla falownika hybrydowego
+            }
+            break;
+        case "hybridWithStorage":
+            switch (panelType) {
+                case "zn-shine":
+                    return imageZNHybridWithStorage;
+                case "canadian":
+                    return imageMVSTORAGEMAIN;
+                // Domyślny obraz dla hybrydy z magazynem
+            }
+            break;
+        case "fronius":
+            switch (panelType) {
+                case "zn-shine":
+                    return imageZNFronius;
+                case "canadian":
                     return imageFronius;
+                // Domyślny obraz dla Fronius
+            }
+            break;
+     // Domyślny obraz dla nieznanego typu falownika
     }
 }
 
@@ -79,6 +126,24 @@ function getThirdPage(inverterType) {
     
     case "hybridWithStorage":
     return imageSungrowDS1;
+    }
+}
+
+function getFifthPage(panelType) {
+    switch(panelType) {
+        case "canadian":
+            return imageCSDS1; // Zmienna z obrazem dla standardowego falownika
+        case "zn-shine":
+            return ZNDs1; // Zmienna z obrazem dla falownika hybrydowego
+    }
+}
+
+function getSixthPage(panelType) {
+    switch(panelType) {
+        case "canadian":
+            return imageCSDS2; // Zmienna z obrazem dla standardowego falownika
+        case "zn-shine":
+            return ZNDs2; // Zmienna z obrazem dla falownika hybrydowego
     }
 }
 
@@ -122,118 +187,40 @@ function getFirstPageBackgroundImage(installationType) {
 
 
 
-function getPVTableContent( powerRange, inverterType, installationType ) {
 
-    const powerPerPanel = 0.455; // Moc jednego panelu w kW
-    const totalPower = powerRange * powerPerPanel; // Całkowita moc w zależności od liczby paneli
-    let panelDescription = `Canadian Solar ${powerRange} sztuk (${totalPower.toFixed(2)} kWp)`; // Opis paneli
-    let tableContent = '';
-
-    // Wybierz odpowiednią zawartość tabeli na podstawie instalacji i mocy
-    if (installationType === 'dach' || installationType === 'grunt') {
-
-        switch (true) {
-            // Przykładowe wartości i logika dla instalacji dachowej/gruntowej
-            case (totalPower > 9.2):
-                tableContent = createTableContent('Canadian Solar 21 sztuk ( 9,55 kWp)', inverterType, inverterType === 'hybridWithStorage');
-                break;
-            case (totalPower > 8.8):
-                tableContent = createTableContent('Canadian Solar 20 sztuk ( 9,1 kWp)', inverterType, inverterType === 'hybridWithStorage');
-                break;
-            case (totalPower > 8.5):
-                tableContent = createTableContent('Canadian Solar 19 sztuk ( 8,65 kWp)', inverterType, inverterType === 'hybridWithStorage');
-                break;
-                case (totalPower > 7.8):
-                    tableContent = createTableContent('Canadian Solar 18 sztuk ( 8,19 kWp)', inverterType, inverterType === 'hybridWithStorage');
-                    break;
-                
-                case (totalPower > 7.4):
-                    tableContent = createTableContent('Canadian Solar 17 sztuk ( 7,735 kWp)', inverterType, inverterType === 'hybridWithStorage');
-                    break;
-                
-                case (totalPower > 6.9):
-                    tableContent = createTableContent('Canadian Solar 16 sztuk ( 7,28 kWp)', inverterType, inverterType === 'hybridWithStorage');
-                    break;
-                
-                case (totalPower > 6.5):
-                    tableContent = createTableContent('Canadian Solar 15 sztuk ( 6,825 kWp)', inverterType, inverterType === 'hybridWithStorage' );
-                    break;
-                
-                case (totalPower > 6):
-                    tableContent = createTableContent('Canadian Solar 14 sztuk ( 6,37 kWp)', inverterType, inverterType === 'hybridWithStorage');
-                    break;
-                
-                case (totalPower > 5.6):
-                    tableContent = createTableContent('Canadian Solar 13 sztuk ( 5,915 kWp)', inverterType, inverterType === 'hybridWithStorage');
-                    break;
-                
-                case (totalPower > 5.2):
-                    tableContent = createTableContent('Canadian Solar 12 sztuk ( 5,46 kWp)', inverterType, inverterType === 'hybridWithStorage');
-                    break;
-                
-                case (totalPower > 4.7):
-                    tableContent = createTableContent('Canadian Solar 11 sztuk ( 5,005 kWp)', inverterType, inverterType === 'hybridWithStorage');
-                    break;
-                
-                case (totalPower > 4.2):
-                    tableContent = createTableContent('Canadian Solar 10 sztuk ( 4,55 kWp)', inverterType, inverterType === 'hybridWithStorage' );
-                    break;
-                
-                case (totalPower > 3.9):
-                    tableContent = createTableContent('Canadian Solar 9 sztuk ( 4,09 kWp)', inverterType, inverterType === 'hybridWithStorage');
-                    break;
-                
-                case (totalPower > 3.3):
-                    tableContent = createTableContent('Canadian Solar 8 sztuk ( 3,64 kWp)',  inverterType, inverterType === 'hybridWithStorage');
-                    break;
-                
-                case (totalPower > 2.9):
-                    tableContent = createTableContent('Canadian Solar 7 sztuk ( 3,185 kWp)', inverterType, inverterType === 'hybridWithStorage');
-                    break;
-                
-                case (totalPower > 2.4):
-                    tableContent = createTableContent('Canadian Solar 6 sztuk ( 2,73 kWp)', inverterType, inverterType === 'hybridWithStorage');
-                    break;
-            
-            // Dodaj dodatkowe przypadki dla różnych zakresów mocy
-            // ...
-            default:
-                console.log("Default case reached");
-
-                tableContent = `
-                <table id="customTable" border="1">
-                    <!-- Twoja domyślna zawartość tabeli -->
-                </table>
-                `;
-                break;
-                
-        }
-
+function createTableContent(panelDescription, inverterType, includeEnergyStorage, panelType) {
+    let inverterModel;
+    switch(inverterType) {
+        case 'hybrid':
+        case 'hybridWithStorage':
+            inverterModel = 'Sungrow';
+            break;
+        case 'fronius':
+            inverterModel = 'Fronius';
+            break;
+        default:
+            inverterModel = 'FOXESS';
     }
-    console.log('Inside getPVTableContent:', { powerRange, inverterType, totalPower, tableContent });
 
-    return tableContent;
-    
-}
+    let panelName;
+    switch(panelType) {
+        case 'zn-shine':
+            panelName = 'Panele fotowoltaiczne Zn-Shine SOLAR Bifacjal 450 Wp';
+            break;
+        case 'canadian':
+            panelName = 'Panele fotowoltaiczne Canadian Solar 455 Wp';
+            break;
+        default:
+            panelName = 'Standardowy panel';
+    }
 
+    let numberOfPanels;
+    let descriptionParts = panelDescription.match(/(.+)\s(\d+)\s(.+)/);
+    if (descriptionParts) {
+        panelName += ' ' + descriptionParts[1];
+        numberOfPanels = descriptionParts[2];
+    }
 
-function createTableContent( panelDescription, inverterType, includeEnergyStorage) {
-    // Dynamicznie wybierz model falownika
-switch(inverterType) {
-    case 'hybrid':
-    case 'hybridWithStorage':
-        inverterModel = 'Sungrow';
-        break;
-    case 'fronius':
-        inverterModel = 'Fronius';
-        break;
-    default:
-        inverterModel = 'FOXESS';
-}
-    
-
-    
-    
     let tableContent = `
     <table id="customTable" border="1">
         <tbody>
@@ -245,9 +232,9 @@ switch(inverterType) {
             </tr>
             <tr>
                 <td>1</td>
-                <td>Canadian Solar 455 Wp ${panelDescription} sztuk</td>
+                <td>${panelName}</td>
                 <td>szt.</td>
-                <td>1</td>
+                <td>${panelDescription}</td>
             </tr>
             <tr>
                 <td>2</td>
@@ -256,7 +243,6 @@ switch(inverterType) {
                 <td>1</td>
             </tr>`;
 
-    // Dodaj wiersz dla magazynu energii, jeśli jest wybrany
     if (includeEnergyStorage) {
         tableContent += `
             <tr>
@@ -267,7 +253,6 @@ switch(inverterType) {
             </tr>`;
     }
 
-    // Dodaj pozostałe wiersze
     tableContent += `
             <tr>
                 <td>${includeEnergyStorage ? '4' : '3'}</td>
@@ -291,8 +276,6 @@ switch(inverterType) {
     </table>`;
 
     return tableContent;
-
-    
 }
 
 
@@ -312,18 +295,25 @@ async function generatePVPDF() {
     const pricePV = document.getElementById('pricePV').value;
     const inverterTypeSelect = document.getElementById('inverterType');
     const inverterType = inverterTypeSelect.options[inverterTypeSelect.selectedIndex].value;
+    const panelTypeSelect = document.getElementById('panelType');
+    const panelType = panelTypeSelect.options[panelTypeSelect.selectedIndex].value;
+    
 
     
     console.log('Power Range:', powerRange);
     console.log('Inverter Type:', inverterType);
     console.log('Installation Type:', installationType);
 
+    panelDescription = powerRange + (panelType === 'canadian' ? '' : '');
 
     
 
-    let secondPageBackgroundImage = getInverterImage(inverterType);
+    let secondPageBackgroundImage = getInverterImage(inverterType, panelType);
     let thirdPageBackgroundImage = getThirdPage(inverterType);
     let fourthPageBackgroundImage = getFourthPage(inverterType);
+    let fifthPageBackgroundImage = getFifthPage (panelType);
+    let SixthPageBackgroundImage = getSixthPage (panelType);
+
 
 
     
@@ -331,7 +321,7 @@ async function generatePVPDF() {
  
     let backgroundImage = getFirstPageBackgroundImage(installationType);
 
-    let tableContent = createTableContent( powerRange, inverterType, inverterType === 'hybridWithStorage');
+    let tableContent = createTableContent(panelDescription, inverterType, inverterType === 'hybridWithStorage', panelType);
 
     let content = '';
 
@@ -399,13 +389,13 @@ const secondPageContent = `
     `;
     const FiftPageContent = `
     <div id="page">
-    <div id="page-second" style="background-image: url('${imageCSDS1}');">
+    <div id="page-second" style="background-image: url('${fifthPageBackgroundImage}');">
     </div>
     </div>
     `;
     const sixthPageContent = `
     <div id="page">
-    <div id="page-second" style="background-image: url('${imageCSDS2}');">
+    <div id="page-second" style="background-image: url('${SixthPageBackgroundImage}');">
     </div>
     </div>
     `;
@@ -414,16 +404,21 @@ const secondPageContent = `
     <div id="page-last" style="background-image: url('${imageLastPV}');">
     </div>
     `;
+ 
+ 
 
         const storageImage1 = imageMVSTORAGE;
         const storageImage2 = imageMVSTORAGE1;
         const storageImage3 = imageMVSTORAGE2;
         const storageImage4 = imageMVSTORAGE3;
+        const ZNLast = ZNDs3;
     
         const storagePageContent1 = `<div id="page" style="background-image: url('${storageImage1}');"></div>`;
         const storagePageContent2 = `<div id="page" style="background-image: url('${storageImage2}');"></div>`;
         const storagePageContent3 = `<div id="page" style="background-image: url('${storageImage3}');"></div>`;
         const storagePageContent4 = `<div id="page" style="background-image: url('${storageImage4}');"></div>`;
+        const LastZN = `<div id="page" style="background-image: url('${ZNLast}');"></div>`;
+
 
         if (inverterType === 'hybridWithStorage') {
             // Dodaj strony dla magazynu energii
@@ -431,6 +426,27 @@ const secondPageContent = `
         } else {
             // Dodaj standardowe strony
             content = firstPageContent + secondPageContent + thirdPageContent + FourthPageContent + FiftPageContent + sixthPageContent + seventhPageContent;
+        }
+
+
+        if (inverterType === 'hybridWithStorage') {
+            if (panelType === 'zn-shine') {
+                // Użyj treści specyficznej dla hybrydy z magazynem energii i paneli ZN-Shine
+                content = firstPageContent + secondPageContent + thirdPageContent + FourthPageContent + FiftPageContent + sixthPageContent + LastZN+ storagePageContent1 + storagePageContent2 + storagePageContent3 + storagePageContent4 + seventhPageContent;
+            } else {
+                // Użyj standardowej treści dla hybrydy z magazynem energii
+                content = firstPageContent + secondPageContent + thirdPageContent + FourthPageContent + FiftPageContent + sixthPageContent + storagePageContent1 + storagePageContent2 + storagePageContent3 + storagePageContent4 + seventhPageContent;
+            }
+        } else {
+            if (panelType === 'zn-shine') {
+                // Użyj treści specyficznej dla paneli ZN-Shine
+                content = firstPageContent + secondPageContent + thirdPageContent + FourthPageContent + FiftPageContent + sixthPageContent + LastZN+ seventhPageContent;
+
+            } else {
+                // Użyj standardowej treści
+                content = firstPageContent + secondPageContent + thirdPageContent + FourthPageContent + FiftPageContent + sixthPageContent + seventhPageContent;
+
+            }
         }
     
        
