@@ -55,8 +55,23 @@ let G1MET2;
 let G1MET3;
 let G1MET4;
 let meet;
-
-
+let MitsHR1;
+let MitsHR2;
+let MitsHR3;
+let MitsAP1;
+let MitsAP2;
+let MitsubishiAPZew;
+let MitsubishiHRZew;
+let MitsubishiAP;
+let MitsubishiHR;
+let Lazar1;
+let Lazar2;
+let LazarDS1;
+let LazarDS2;
+let LazarDS3;
+let LazarDS4;
+let LazarDS5;
+let LazarDS6;
 
 
 
@@ -123,9 +138,23 @@ async function loadImageData() {
     G1MET3 = imagesModule.G2MET1;
     G1MET4 = imagesModule.G2MET1;
     meet = imagesModule.meet;
-
-
-
+    MitsHR1 = imagesModule.MitsHR1;
+    MitsHR2 = imagesModule.MitsHR2;
+    MitsHR3 = imagesModule.MitsHR3;
+    MitsAP1 = imagesModule.MitsAP1;
+    MitsAP2 = imagesModule.MitsAP2;
+    MitsubishiAPZew = imagesModule.MitsubishiAPZew;
+    MitsubishiHRZew = imagesModule.MitsubishiHRZew;
+    MitsubishiAP = imagesModule.MitsubishiAP;
+    MitsubishiHR = imagesModule.MitsubishiHR;
+    LazarDS1 = imagesModule.LazarDS1;
+    LazarDS2 = imagesModule.LazarDS2;
+    LazarDS3 = imagesModule.LazarDS3;
+    LazarDS4 = imagesModule.LazarDS4;
+    LazarDS5 = imagesModule.LazarDS5;
+    LazarDS6 = imagesModule.LazarDS6;
+    Lazar1 = imagesModule.Lazar1;
+    Lazar2 = imagesModule.Lazar2;
 }
 
 loadImageData();
@@ -176,6 +205,13 @@ function getSecondPageBackgroundImageByType(pdfType) {
             return imageBaseHeizZEW;
             case "VIESSMANN":
                 return imageBaseViessmanZEW;
+
+                case "MITSUBISHI AP":
+                    return MitsubishiAPZew;
+                    case "MITSUBISHI HR":
+                        return MitsubishiHRZew;   
+            case "LAZAR":
+                return Lazar2;
         default:
             return null; // lub jakiś domyślny obraz, jeśli potrzebujesz
     }
@@ -200,7 +236,13 @@ function getBackgroundImageByType(pdfType) {
             case "HEIZTECHNIK":
             return imageBaseHeizWEW;
             case "VIESSMANN":
-                return imageBaseViessmanWEW
+                return imageBaseViessmanWEW;
+                case "MITSUBISHI AP":
+                    return MitsubishiAP;
+                    case "MITSUBISHI HR":
+                        return MitsubishiHR;  
+            case "LAZAR":
+                return Lazar1;            
         default:
             return null; // lub jakiś domyślny obraz, jeśli potrzebujesz
     }
@@ -252,16 +294,19 @@ function generatePDF() {
     const GLS2= `<div id="page" style="background-image: url('${G1MET2}');"></div>`;
     const GLS3= `<div id="page" style="background-image: url('${G1MET3}');"></div>`;
     const GLS4= `<div id="page" style="background-image: url('${G1MET4}');"></div>`;
-
-
-
+    const MHR1= `<div id="page" style="background-image: url('${MitsHR1}');"></div>`;
+    const MHR2= `<div id="page" style="background-image: url('${MitsHR2}');"></div>`;
+    const MHR3= `<div id="page" style="background-image: url('${MitsHR3}');"></div>`;
+    const MAP1= `<div id="page" style="background-image: url('${MitsAP1}');"></div>`; 
+    const MAP2= `<div id="page" style="background-image: url('${MitsAP2}');"></div>`;
+    const L1= `<div id="page" style="background-image: url('${LazarDS1}');"></div>`;
+    const L2= `<div id="page" style="background-image: url('${LazarDS2}');"></div>`;
+    const L3= `<div id="page" style="background-image: url('${LazarDS3}');"></div>`;
+    const L4= `<div id="page" style="background-image: url('${LazarDS4}');"></div>`;
+    const L5= `<div id="page" style="background-image: url('${LazarDS5}');"></div>`;
+    const L6= `<div id="page" style="background-image: url('${LazarDS6}');"></div>`;
 
     
-
-    
-
-
-
 
     let tableHtml = getAdditionalOptionsTable (pdfType);
     let tableContent = getTableContentByType(pdfType, power);
@@ -383,6 +428,11 @@ else if (pdfType === 'Mitsubishi-hydrobox')
     // Dodaj standardowe strony
     content = firstPageContent + secondPageContent + thirdPageContent + MeetUsContent+MitsHydDS1+MitsHydDS2+MitsZubDS1+MitsZubDS2+MitsZubDS3+FourthPageContent;
 }
+else if (pdfType === 'LAZAR') 
+{
+    // Dodaj standardowe strony
+    content = firstPageContent + secondPageContent+L1+L2+L3+L4+L5+L6+MeetUsContent+FourthPageContent;
+}
 
 else if (pdfType === 'ATLANTIC') {
     var selectedPower = document.getElementById('powerOptions').value;
@@ -407,8 +457,18 @@ else if (pdfType === 'ATLANTIC') {
     // Dodaj więcej warunków dla innych mocy
     // ...
   }
+
+  else if (pdfType === 'MITSUBISHI HR') 
+{
+    // Dodaj standardowe strony
+    content = firstPageContent + secondPageContent + MHR1+ MHR2+ MHR3+MeetUsContent+FourthPageContent;
+}
+else if (pdfType === 'MITSUBISHI AP') 
+{
+    // Dodaj standardowe strony
+    content = firstPageContent + secondPageContent + MAP1+MAP2+MeetUsContent+FourthPageContent;
   
-  
+}
 
 else if (pdfType === 'Mitsubishi-cylinder') 
 {
@@ -627,6 +687,681 @@ function getTableContentByType(pdfType, power) {
       <td>12</td>
       <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
       <td>kpl.</td>
+      <td>1</td>
+  </tr>
+      </tbody>
+  </table>
+  `};
+  break;
+
+
+
+
+  case "LAZAR":
+    if (power === '11 kW/150') {
+      tableContent = `
+  <table id="customTable" border="1">
+  <tbody>
+  <tr>
+  <th>Numer</th>
+  <th>Nazwa towaru</th>
+  <th>Miara</th>
+  <th>Ilość</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td>LAZAR 11 kW/150L</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>ZASOBNIK CWU 200L</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>ELEMENTY PODŁĄCZENIOWE HYDRAULICZNE ORAZ ELEKTRYCZNE</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>GRUPA BEZPIECZEŃSTWA CWU ( 6 BAR )</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>GRUPA BEZPIECZEŃSTWA C.O ( 2.5 BAR )</td>
+  <td>kpl.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>PODŁĄCZENIE KOMINOWE</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>REGULATOR BEZPRZEWODOWY</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td>MONTAŻ, DOJAZD, URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWANIA</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+  </tbody>
+</table>
+`;
+break;
+    }
+
+
+    else if (power === '22 kW/150') {
+        tableContent = `
+    <table id="customTable" border="1">
+    <tbody>
+    <tr>
+  <th>Numer</th>
+  <th>Nazwa towaru</th>
+  <th>Miara</th>
+  <th>Ilość</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td>LAZAR 22 kW/150L</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>ZASOBNIK CWU 200L</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>ELEMENTY PODŁĄCZENIOWE HYDRAULICZNE ORAZ ELEKTRYCZNE</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>GRUPA BEZPIECZEŃSTWA CWU ( 6 BAR )</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>GRUPA BEZPIECZEŃSTWA C.O ( 2.5 BAR )</td>
+  <td>kpl.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>PODŁĄCZENIE KOMINOWE</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>REGULATOR BEZPRZEWODOWY</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td>MONTAŻ, DOJAZD, URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWANIA</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+    </tbody>
+</table>
+`;
+break;
+    }
+
+
+    else if (power === '22 kW/240') {
+        tableContent = `
+    <table id="customTable" border="1">
+    <tbody>
+    <tr>
+  <th>Numer</th>
+  <th>Nazwa towaru</th>
+  <th>Miara</th>
+  <th>Ilość</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td>LAZAR 22 kW/240L</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>ZASOBNIK CWU 200L</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>ELEMENTY PODŁĄCZENIOWE HYDRAULICZNE ORAZ ELEKTRYCZNE</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>GRUPA BEZPIECZEŃSTWA CWU ( 6 BAR )</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>GRUPA BEZPIECZEŃSTWA C.O ( 2.5 BAR )</td>
+  <td>kpl.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>PODŁĄCZENIE KOMINOWE</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>REGULATOR BEZPRZEWODOWY</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td>MONTAŻ, DOJAZD, URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWANIA</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+    </tbody>
+</table>
+`;
+break;
+    }
+
+
+
+    else if (power === '22 kW/440') {
+        tableContent = `
+    <table id="customTable" border="1">
+    <tbody>
+    <tr>
+  <th>Numer</th>
+  <th>Nazwa towaru</th>
+  <th>Miara</th>
+  <th>Ilość</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td>LAZAR 22 kW/440L</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>ZASOBNIK CWU 200L</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>ELEMENTY PODŁĄCZENIOWE HYDRAULICZNE ORAZ ELEKTRYCZNE</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>GRUPA BEZPIECZEŃSTWA CWU ( 6 BAR )</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>GRUPA BEZPIECZEŃSTWA C.O ( 2.5 BAR )</td>
+  <td>kpl.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>PODŁĄCZENIE KOMINOWE</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>REGULATOR BEZPRZEWODOWY</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td>MONTAŻ, DOJAZD, URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWANIA</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+    </tbody>
+</table>
+`;
+break;
+    }
+
+
+    else if (power === '15 kW/150') {
+        tableContent = `
+    <table id="customTable" border="1">
+    <tbody>
+    <tr>
+  <th>Numer</th>
+  <th>Nazwa towaru</th>
+  <th>Miara</th>
+  <th>Ilość</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td>LAZAR 15 kW/150L</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>ZASOBNIK CWU 200L</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>ELEMENTY PODŁĄCZENIOWE HYDRAULICZNE ORAZ ELEKTRYCZNE</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>GRUPA BEZPIECZEŃSTWA CWU ( 6 BAR )</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>GRUPA BEZPIECZEŃSTWA C.O ( 2.5 BAR )</td>
+  <td>kpl.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>PODŁĄCZENIE KOMINOWE</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>REGULATOR BEZPRZEWODOWY</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td>MONTAŻ, DOJAZD, URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWANIA</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+    </tbody>
+</table>
+`;
+break;
+    }
+
+
+
+    else if (power === '15 kW/240') {
+        tableContent = `
+    <table id="customTable" border="1">
+    <tbody>
+    <tr>
+  <th>Numer</th>
+  <th>Nazwa towaru</th>
+  <th>Miara</th>
+  <th>Ilość</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td>LAZAR 15 kW/240L</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>ZASOBNIK CWU 200L</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>ELEMENTY PODŁĄCZENIOWE HYDRAULICZNE ORAZ ELEKTRYCZNE</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>GRUPA BEZPIECZEŃSTWA CWU ( 6 BAR )</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>GRUPA BEZPIECZEŃSTWA C.O ( 2.5 BAR )</td>
+  <td>kpl.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>PODŁĄCZENIE KOMINOWE</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>REGULATOR BEZPRZEWODOWY</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td>MONTAŻ, DOJAZD, URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWANIA</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+    </tbody>
+</table>
+`;
+break;
+    }
+
+else if (power === '15 kW/440') {
+        tableContent = `
+    <table id="customTable" border="1">
+    <tbody>
+    <tr>
+  <th>Numer</th>
+  <th>Nazwa towaru</th>
+  <th>Miara</th>
+  <th>Ilość</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td>LAZAR 15 kW/440L</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>ZASOBNIK CWU 200L</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>ELEMENTY PODŁĄCZENIOWE HYDRAULICZNE ORAZ ELEKTRYCZNE</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>GRUPA BEZPIECZEŃSTWA CWU ( 6 BAR )</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>GRUPA BEZPIECZEŃSTWA C.O ( 2.5 BAR )</td>
+  <td>kpl.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>PODŁĄCZENIE KOMINOWE</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>REGULATOR BEZPRZEWODOWY</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td>MONTAŻ, DOJAZD, URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWANIA</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+    </tbody>
+</table>
+`;
+break;
+
+}
+    else if (power === '11 kW/440') {
+        tableContent = `
+    <table id="customTable" border="1">
+    <tbody>
+    <tr>
+  <th>Numer</th>
+  <th>Nazwa towaru</th>
+  <th>Miara</th>
+  <th>Ilość</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td>LAZAR 11 kW/440L</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>ZASOBNIK CWU 200L</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>ELEMENTY PODŁĄCZENIOWE HYDRAULICZNE ORAZ ELEKTRYCZNE</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>GRUPA BEZPIECZEŃSTWA CWU ( 6 BAR )</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>GRUPA BEZPIECZEŃSTWA C.O ( 2.5 BAR )</td>
+  <td>kpl.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>PODŁĄCZENIE KOMINOWE</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>REGULATOR BEZPRZEWODOWY</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td>MONTAŻ, DOJAZD, URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWANIA</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+    </tbody>
+</table>
+`;
+break;
+      } 
+    else if (power === '11 kW/240') {
+      tableContent = `
+  <table id="customTable" border="1">
+  <tbody>
+  <tr>
+  <th>Numer</th>
+  <th>Nazwa towaru</th>
+  <th>Miara</th>
+  <th>Ilość</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td>LAZAR 11 kW/240L</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>ZASOBNIK CWU 200L</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>ELEMENTY PODŁĄCZENIOWE HYDRAULICZNE ORAZ ELEKTRYCZNE</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>GRUPA BEZPIECZEŃSTWA CWU ( 6 BAR )</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>GRUPA BEZPIECZEŃSTWA C.O ( 2.5 BAR )</td>
+  <td>kpl.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>PODŁĄCZENIE KOMINOWE</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>REGULATOR BEZPRZEWODOWY</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td>MONTAŻ, DOJAZD, URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWANIA</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+  </tbody>
+</table>
+`};
+break;
+
+
+
+
+
+
+
+
+
+
+
+
+  case "Mitsubishi AP":
+        if (power === '4,2 kW') {
+          tableContent = `
+      <table id="customTable" border="1">
+      <tbody>
+      <tr>
+      <th>Numer</th>
+      <th>Nazwa towaru</th>
+      <th>Miara</th>
+      <th>Ilość</th>
+  </tr>
+  <tr>
+      <td>1</td>
+      <td>JEDNOSTKA WEWNĘTRZNA EHSD-YM9D</td>
+      <td>szt.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>2</td>
+      <td>JEDNOSTKA ZEWNĘTRZNA SUZ-SWM60VA</td>
+      <td>szt.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>3</td>
+      <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L</td>
+      <td>szt.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>4</td>
+      <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
+      <td>szt.</td>
+      <td>1</td>
+  </tr>
+      </tbody>
+  </table>
+  `;
+  break;
+        }
+        else if (power === '3,5 kW') {
+          tableContent = `
+      <table id="customTable" border="1">
+      <tbody>
+      <tr>
+      <th>Numer</th>
+      <th>Nazwa towaru</th>
+      <th>Miara</th>
+      <th>Ilość</th>
+  </tr>
+  <tr>
+      <td>1</td>
+      <td>JEDNOSTKA WEWNĘTRZNA EHSD-YM9D</td>
+      <td>szt.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>2</td>
+      <td>JEDNOSTKA ZEWNĘTRZNA SUZ-SWM60VA</td>
+      <td>szt.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>3</td>
+      <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L</td>
+      <td>szt.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>4</td>
+      <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
+      <td>szt.</td>
       <td>1</td>
   </tr>
       </tbody>
@@ -928,6 +1663,686 @@ function getTableContentByType(pdfType, power) {
 </table>
 `};
 break;
+
+case "MITSUBISHI AP":
+        if (power === '4,2 kW') {
+          tableContent = `
+      <table id="customTable" border="1">
+      <tbody>
+          <tr>
+              <th>Numer</th>
+              <th>Nazwa towaru</th>
+              <th>Miara</th>
+              <th>Ilość</th>
+          </tr>
+          <tr>
+              <td>1</td>
+              <td> Klimatyzator pokojowy jednostka wewnętrzna Mitsubishi AP 4,2 kW</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>2</td>
+              <td>Klimatyzator pokojowy jednostka wewnętrzna Mitsubishi AP 4,2 kW</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>3</td>
+              <td> Miedź chłodnicza </td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>4</td>
+              <td> Elementy podłączeniowe </td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>5</td>
+              <td> Montaż i uruchomienie systemu </td>
+              <td>kpl.</td>
+              <td>1</td>
+          </tr>
+      </tbody>
+  </table>
+  `;
+  break;
+        } 
+        else if (power === '3,5 kW') {
+            tableContent = `
+        <table id="customTable" border="1">
+        <tbody>
+        <tr>
+        <th>Numer</th>
+        <th>Nazwa towaru</th>
+        <th>Miara</th>
+        <th>Ilość</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td> Klimatyzator pokojowy jednostka wewnętrzna Mitsubishi AP 3,5 kW</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Klimatyzator pokojowy jednostka wewnętrzna Mitsubishi AP 3,5 kW</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td> Miedź chłodnicza </td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td> Elementy podłączeniowe </td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td> Montaż i uruchomienie systemu </td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
+        </tbody>
+    </table>
+    `;
+    break;
+          } 
+        
+        else if (power === '2,5 kW') {
+          tableContent = `
+      <table id="customTable" border="1">
+      <tbody>
+      <tr>
+      <th>Numer</th>
+      <th>Nazwa towaru</th>
+      <th>Miara</th>
+      <th>Ilość</th>
+  </tr>
+  <tr>
+      <td>1</td>
+      <td> Klimatyzator pokojowy jednostka wewnętrzna Mitsubishi AP 2,5 kW</td>
+      <td>szt.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>2</td>
+      <td>Klimatyzator pokojowy jednostka wewnętrzna Mitsubishi AP 2,5 kW</td>
+      <td>szt.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>3</td>
+      <td> Miedź chłodnicza </td>
+      <td>szt.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>4</td>
+      <td> Elementy podłączeniowe </td>
+      <td>szt.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>5</td>
+      <td> Montaż i uruchomienie systemu </td>
+      <td>kpl.</td>
+      <td>1</td>
+  </tr>
+      </tbody>
+  </table>
+  `;
+  break;
+        } else if (power === '2 kW') {
+    tableContent = `
+<table id="customTable" border="1">
+<tbody>
+<tr>
+<th>Numer</th>
+<th>Nazwa towaru</th>
+<th>Miara</th>
+<th>Ilość</th>
+</tr>
+<tr>
+<td>1</td>
+<td> Klimatyzator pokojowy jednostka wewnętrzna Mitsubishi AP 2 kW</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Klimatyzator pokojowy jednostka wewnętrzna Mitsubishi AP 2 kW</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td> Miedź chłodnicza </td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td> Elementy podłączeniowe </td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td> Montaż i uruchomienie systemu </td>
+<td>kpl.</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+`};
+break;
+
+
+case "MITSUBISHI HR":
+        if (power === '4,2 kW') {
+          tableContent = `
+      <table id="customTable" border="1">
+      <tbody>
+          <tr>
+              <th>Numer</th>
+              <th>Nazwa towaru</th>
+              <th>Miara</th>
+              <th>Ilość</th>
+          </tr>
+          <tr>
+              <td>1</td>
+              <td> Klimatyzator pokojowy jednostka wewnętrzna Mitsubishi HR 4,2 kW</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>2</td>
+              <td>Klimatyzator pokojowy jednostka wewnętrzna Mitsubishi HR 4,2 kW</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>3</td>
+              <td> Miedź chłodnicza </td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>4</td>
+              <td> Elementy podłączeniowe </td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>5</td>
+              <td> Montaż i uruchomienie systemu </td>
+              <td>kpl.</td>
+              <td>1</td>
+          </tr>
+      </tbody>
+  </table>
+  `;
+  break;
+        } 
+        else if (power === '3,5 kW') {
+            tableContent = `
+        <table id="customTable" border="1">
+        <tbody>
+        <tr>
+        <th>Numer</th>
+        <th>Nazwa towaru</th>
+        <th>Miara</th>
+        <th>Ilość</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td> Klimatyzator pokojowy jednostka wewnętrzna Mitsubishi HR 3,5 kW</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Klimatyzator pokojowy jednostka wewnętrzna Mitsubishi HR 3,5 kW</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td> Miedź chłodnicza </td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td> Elementy podłączeniowe </td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td> Montaż i uruchomienie systemu </td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
+        </tbody>
+    </table>
+    `;
+    break;
+          } 
+        
+        else if (power === '2,5 kW') {
+          tableContent = `
+      <table id="customTable" border="1">
+      <tbody>
+      <tr>
+      <th>Numer</th>
+      <th>Nazwa towaru</th>
+      <th>Miara</th>
+      <th>Ilość</th>
+  </tr>
+  <tr>
+      <td>1</td>
+      <td> Klimatyzator pokojowy jednostka wewnętrzna Mitsubishi HR 2,5 kW</td>
+      <td>szt.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>2</td>
+      <td>Klimatyzator pokojowy jednostka wewnętrzna Mitsubishi HR 2,5 kW</td>
+      <td>szt.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>3</td>
+      <td> Miedź chłodnicza </td>
+      <td>szt.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>4</td>
+      <td> Elementy podłączeniowe </td>
+      <td>szt.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>5</td>
+      <td> Montaż i uruchomienie systemu </td>
+      <td>kpl.</td>
+      <td>1</td>
+  </tr>
+      </tbody>
+  </table>
+  `;
+  break;
+        } else if (power === '2 kW') {
+    tableContent = `
+<table id="customTable" border="1">
+<tbody>
+<tr>
+<th>Numer</th>
+<th>Nazwa towaru</th>
+<th>Miara</th>
+<th>Ilość</th>
+</tr>
+<tr>
+<td>1</td>
+<td> Klimatyzator pokojowy jednostka wewnętrzna Mitsubishi HR 2 kW</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Klimatyzator pokojowy jednostka wewnętrzna Mitsubishi HR 2 kW</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td> Miedź chłodnicza </td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td> Elementy podłączeniowe </td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td> Montaż i uruchomienie systemu </td>
+<td>kpl.</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+`};
+break;
+
+
+case "Toshiba 3F":
+        if (power === '11 kW') {
+          tableContent = `
+      <table id="customTable" border="1">
+      <tbody>
+          <tr>
+              <th>Numer</th>
+              <th>Nazwa towaru</th>
+              <th>Miara</th>
+              <th>Ilość</th>
+          </tr>
+          <tr>
+              <td>1</td>
+              <td> JEDNOSTKA WEWNĘTRZNA TOSHIBA 11 KW 3F 1101HRW-E 1101XWH**W-E</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>2</td>
+              <td>JEDNOSTKA ZEWNĘTRZNA TOSHIBA 11 KW 1101HRW-E</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>3</td>
+              <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L </td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>4</td>
+              <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>5</td>
+              <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+              <td>kpl.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>6</td>
+              <td>Grupa bezpieczeństwa CWU (6bar)</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>7</td>
+              <td>MIEDŹ CHŁODNICZA</td>
+              <td>kpl.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>8</td>
+              <td>GRUPA BEZPIECZEŃSTWA C.O (3 bar)</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>9</td>
+              <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>10</td>
+              <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+              <td>kpl.</td>
+              <td>1</td>
+          </tr>
+      </tbody>
+  </table>
+  `;
+  break;
+        } 
+        else if (power === '14 kW') {
+            tableContent = `
+        <table id="customTable" border="1">
+        <tbody>
+            <tr>
+                <th>Numer</th>
+                <th>Nazwa towaru</th>
+                <th>Miara</th>
+                <th>Ilość</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td> JEDNOSTKA WEWNĘTRZNA TOSHIBA 14 KW 3F 1101HRW-E 1101XWH**W-E</td>
+                <td>szt.</td>
+                <td>1</td>
+            </tr>
+            <tr>s
+                <td>2</td>
+                <td>JEDNOSTKA ZEWNĘTRZNA TOSHIBA 14 KW 1101HRW-E</td>
+                <td>szt.</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 300L</td>
+                <td>szt.</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
+                <td>szt.</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+                <td>kpl.</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Grupa bezpieczeństwa CWU (6bar)</td>
+                <td>szt.</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>MIEDŹ CHŁODNICZA</td>
+                <td>kpl.</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>GRUPA BEZPIECZEŃSTWA C.O (3 bar)</td>
+                <td>szt.</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+                <td>szt.</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+                <td>kpl.</td>
+                <td>1</td>
+            </tr>
+        </tbody>
+    </table>
+    `;
+    break;
+          } 
+        
+        else if (power === '8 kW') {
+          tableContent = `
+      <table id="customTable" border="1">
+      <tbody>
+          <tr>
+              <th>Numer</th>
+              <th>Nazwa towaru</th>
+              <th>Miara</th>
+              <th>Ilość</th>
+          </tr>
+          <tr>
+              <td>1</td>
+              <td> JEDNOSTKA WEWNĘTRZNA TOSHIBA 8 KW 3F 1101HRW-E 1101XWH**W-E</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>2</td>
+              <td>JEDNOSTKA ZEWNĘTRZNA TOSHIBA 8 KW 1101HRW-E</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>3</td>
+              <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>4</td>
+              <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>5</td>
+              <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+              <td>kpl.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>6</td>
+              <td>Grupa bezpieczeństwa CWU (6bar)</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>7</td>
+              <td>MIEDŹ CHŁODNICZA</td>
+              <td>kpl.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>8</td>
+              <td>GRUPA BEZPIECZEŃSTWA C.O (3 bar)</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>9</td>
+              <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>10</td>
+              <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+              <td>kpl.</td>
+              <td>1</td>
+          </tr>
+      </tbody>
+  </table>
+  `;
+  break;
+        } else if (power === '6 kW') {
+    tableContent = `
+<table id="customTable" border="1">
+<tbody>
+    <tr>
+        <th>Numer</th>
+        <th>Nazwa towaru</th>
+        <th>Miara</th>
+        <th>Ilość</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td> JEDNOSTKA WEWNĘTRZNA TOSHIBA 6 KW 3F 1101HRW-E 1101XWH**W-E</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>JEDNOSTKA ZEWNĘTRZNA TOSHIBA 6 KW 1101HRW-E</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>Grupa bezpieczeństwa CWU (6bar)</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>MIEDŹ CHŁODNICZA</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
+</tbody>
+</table>
+`};
+break;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       case "Toshiba 3F":
         if (power === '11 kW') {
           tableContent = `
