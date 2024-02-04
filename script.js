@@ -437,7 +437,7 @@ else if (pdfType === 'LAZAR')
 else if (pdfType === 'ATLANTIC') {
     var selectedPower = document.getElementById('powerOptions').value;
     
-    if (selectedPower === '15 kW') {
+    if (selectedPower === '15 kW', '17 kW') {
       content = firstPageContent + secondPageContent + thirdPageContent + MeetUsContent + ATLS1+ ATLS2+ FourthPageContent;
     } else if (selectedPower === '10 kW' || selectedPower === '8 kW' || selectedPower === '6 kW') {
       content = firstPageContent + secondPageContent + thirdPageContent + MeetUsContent+ATLF1+ ATLF2+ FourthPageContent;
@@ -3420,7 +3420,7 @@ else if (power === '14 kW') {
         </tr>
         <tr>
             <td>1</td>
-            <td>ATLANTIC EXTENSA AI DUO 15 KW 1F</td>
+            <td>ATLANTIC EXTENSA AI DUO 15 KW 3F</td>
             <td>szt.</td>
             <td>1</td>
         </tr>
@@ -3482,6 +3482,7 @@ else if (power === '14 kW') {
     </table>
     `;
     
+
         } else if (power === '10 kW') {
         tableContent = `
     <table id="customTable" border="1">
@@ -3556,7 +3557,87 @@ else if (power === '14 kW') {
 `;
 
         break;
-    } else if (power === '6 kW') {
+    } 
+    
+    else if (power === '17 kW') {
+        tableContent = `
+    <table id="customTable" border="1">
+    <tbody>
+    <tr>
+        <th>Numer</th>
+        <th>Nazwa towaru</th>
+        <th>Miara</th>
+        <th>Ilość</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>ATLANTIC EXTENSA AI DUO 17 KW 3F</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+        <td>2</td>
+        <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Grupa bezpieczeństwa CWU (6bar)</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+    <td>5</td>
+    <td>Grupa bezpieczeńśtwa C.O (2.5 bar)</td>
+    <td>szt.</td>
+    <td>1</td>
+</tr>
+<tr>
+        <td>6</td>
+        <td>KABEL GRZEWCZY</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>MIEDŹ CHŁODNICZA</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>SONDA POGODOWA</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
+</tbody>
+</table>
+`;
+
+        break;
+    }
+    
+    
+    
+    else if (power === '6 kW') {
         tableContent = `
     <table id="customTable" border="1">
     <tbody>
