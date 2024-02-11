@@ -33,6 +33,20 @@ let panelType;
 let ZNDs1;
 let ZNDs2;
 let ZNDs3;
+let JIDs1;
+let JIDs2;
+let JIFox;
+let imageJIHybrid;
+let imageJIStorage;
+let imageJIFronius;
+let JADs1;
+let JADs2;
+let imageJAFox;
+let imageJAHybrid;
+let imageJAStorage;
+let imageJAFronius;
+
+
 
 
 async function loadImageDataForPV() {
@@ -66,7 +80,18 @@ async function loadImageDataForPV() {
     ZNDs1 = imagesModule.ZNDs1;
     ZNDs2 = imagesModule.ZNDs2; 
     ZNDs3 = imagesModule.ZNDs3;
-
+    JIDs1 = imagesModule.JIDs1;
+    JIDs2 = imagesModule.JIDs2;
+    JIFox = imagesModule.JIFox;
+    imageJIHybrid = imagesModule.imageJIHybrid;
+    imageJIStorage = imagesModule.imageJIStorage;
+    imageJIFronius = imagesModule.imageJIFronius;
+    JADs1 = imagesModule.JADs1;
+    JADs2 = imagesModule.JADs2;
+    imageJAFox = imagesModule.imageJAFox;
+    imageJAFronius = imagesModule.imageJAFronius;
+    imageJAStorage = imagesModule.imageJAStorage;
+    imageJAHybrid = imagesModule.imageJAHybrid;
 }
 
 loadImageDataForPV(); // Poprawione na właściwą nazwę funkcji
@@ -81,6 +106,10 @@ function getInverterImage(inverterType, panelType) {
                     return imageZNFox;
                 case "canadian":
                     return imageFOX2;
+                    case "jinko 475":
+                    return JIFox;
+                    case "jasolar":
+                    return imageJAFox;
                 // Domyślny obraz dla standardowego falownika
             }
             break;
@@ -90,6 +119,10 @@ function getInverterImage(inverterType, panelType) {
                     return imageZNHybrid;
                 case "canadian":
                     return imageSungrow2;
+                    case "jinko 475":
+                    return imageJIHybrid;
+                    case "jasolar":
+                    return imageJAHybrid;
                  // Domyślny obraz dla falownika hybrydowego
             }
             break;
@@ -99,6 +132,10 @@ function getInverterImage(inverterType, panelType) {
                     return imageZNHybridWithStorage;
                 case "canadian":
                     return imageMVSTORAGEMAIN;
+                    case "jinko 475":
+                    return imageJIStorage;
+                    case "jasolar":
+                    return imageJAStorage;
                 // Domyślny obraz dla hybrydy z magazynem
             }
             break;
@@ -108,7 +145,11 @@ function getInverterImage(inverterType, panelType) {
                     return imageZNFronius;
                 case "canadian":
                     return imageFronius;
-                // Domyślny obraz dla Fronius
+                    case "jinko 475":
+                        return imageJIFronius;
+                        case "jasolar":
+                            return imageJAFronius;
+                        // Domyślny obraz dla Fronius
             }
             break;
      // Domyślny obraz dla nieznanego typu falownika
@@ -134,8 +175,13 @@ function getFifthPage(panelType) {
         case "canadian":
             return imageCSDS1; // Zmienna z obrazem dla standardowego falownika
         case "zn-shine":
-            return ZNDs1; // Zmienna z obrazem dla falownika hybrydowego
+            return ZNDs1; 
+         case "jinko 475":
+            return JIDs1;
+            case "jasolar":
+            return JADs1;// Zmienna z obrazem dla falownika hybrydowego
     }
+    
 }
 
 function getSixthPage(panelType) {
@@ -143,8 +189,14 @@ function getSixthPage(panelType) {
         case "canadian":
             return imageCSDS2; // Zmienna z obrazem dla standardowego falownika
         case "zn-shine":
-            return ZNDs2; // Zmienna z obrazem dla falownika hybrydowego
+            return ZNDs2; 
+            case "jinko 475":
+            return JIDs2;
+            case "jasolar":
+            return JADs2;
+            // Zmienna z obrazem dla falownika hybrydowego
     }
+    
 }
 
 function getFourthPage(inverterType) {
@@ -209,6 +261,12 @@ function createTableContent(panelDescription, inverterType, includeEnergyStorage
             break;
         case 'canadian':
             panelName = 'Panele fotowoltaiczne Canadian Solar 455 Wp';
+            break;
+            case 'jinko 475':
+            panelName = 'Panele fotowoltaiczne JINKO Solar 475 Wp';
+            break;
+            case 'jasolar':
+            panelName = 'Panele fotowoltaiczne JA SOLAR 460 Wp';
             break;
         default:
             panelName = 'Standardowy panel';
