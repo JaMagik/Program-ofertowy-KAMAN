@@ -72,7 +72,16 @@ let LazarDS3;
 let LazarDS4;
 let LazarDS5;
 let LazarDS6;
-
+let RX21DS1;
+let RX21DS2;
+let RX26DS1;
+let RX26DS2;
+let RX35DS1;
+let RX35DS2;
+let RX53DS1;
+let RX53DS2;
+let R1;
+let R2;
 
 
 
@@ -155,6 +164,15 @@ async function loadImageData() {
     LazarDS6 = imagesModule.LazarDS6;
     Lazar1 = imagesModule.Lazar1;
     Lazar2 = imagesModule.Lazar2;
+    RX21DS1 = imagesModule.RX21DS1;
+    RX21DS2 = imagesModule.RX21DS2;
+    RX26DS1 = imagesModule.RX26DS1;
+    RX35DS1 = imagesModule.RX35DS1;
+    RX35DS2 = imagesModule.RX35DS2;
+    RX53DS1 = imagesModule.RX53DS1;
+    RX53DS2 = imagesModule.RX53DS2;
+    R1 = imagesModule.R1;
+    R2 = imagesModule.R2;
 }
 
 loadImageData();
@@ -212,6 +230,8 @@ function getSecondPageBackgroundImageByType(pdfType) {
                         return MitsubishiHRZew;   
             case "LAZAR":
                 return Lazar2;
+                case "ROTENSO":
+                    return R1;
         default:
             return null; // lub jakiś domyślny obraz, jeśli potrzebujesz
     }
@@ -242,7 +262,9 @@ function getBackgroundImageByType(pdfType) {
                     case "MITSUBISHI HR":
                         return MitsubishiHR;  
             case "LAZAR":
-                return Lazar1;            
+                return Lazar1;  
+                case "ROTENSO":
+                    return R2;          
         default:
             return null; // lub jakiś domyślny obraz, jeśli potrzebujesz
     }
@@ -305,6 +327,12 @@ function generatePDF() {
     const L4= `<div id="page" style="background-image: url('${LazarDS4}');"></div>`;
     const L5= `<div id="page" style="background-image: url('${LazarDS5}');"></div>`;
     const L6= `<div id="page" style="background-image: url('${LazarDS6}');"></div>`;
+    const RX21DS11 = `<div id="page" style="background-image: url('${RX21DS1}');"></div>`;
+    const RX21DS12 = `<div id="page" style="background-image: url('${RX21DS2}');"></div>`;
+    const RX35DS11 = `<div id="page" style="background-image: url('${RX35DS1}');"></div>`;
+    const RX35DS12 = `<div id="page" style="background-image: url('${RX35DS2}');"></div>`; 
+    const RX53DS51 = `<div id="page" style="background-image: url('${RX53DS1}');"></div>`;
+    const RX53DS52 = `<div id="page" style="background-image: url('${RX53DS2}');"></div>`;
 
     
 
@@ -442,6 +470,20 @@ else if (pdfType === 'ATLANTIC') {
     } else if (selectedPower === '10 kW' || selectedPower === '8 kW' || selectedPower === '6 kW') {
       content = firstPageContent + secondPageContent + thirdPageContent + MeetUsContent+ATLF1+ ATLF2+ FourthPageContent;
     } 
+    // Dodaj więcej warunków dla innych mocy
+    // ...
+  }
+  else if (pdfType === 'ROTENSO') {
+    var selectedPower = document.getElementById('powerOptions').value;
+    
+    if (selectedPower === '2,1 kW' || selectedPower === '2,6 kW') {
+      content = firstPageContent + secondPageContent  + MeetUsContent + RX21DS11+ RX21DS12+ FourthPageContent;
+    } else if (selectedPower === '3,5 kW') {
+      content = firstPageContent + secondPageContent  + MeetUsContent+RX35DS11+ RX35DS12+ FourthPageContent;
+    } 
+    else if (selectedPower === '5,3 kW') {
+        content = firstPageContent + secondPageContent  + MeetUsContent+RX53DS51+ RX53DS52+ FourthPageContent;
+      } 
     // Dodaj więcej warunków dla innych mocy
     // ...
   }
@@ -1844,6 +1886,216 @@ case "MITSUBISHI AP":
 </table>
 `};
 break;
+
+
+
+case "ROTENSO":
+        if (power === '5,3 kW') {
+          tableContent = `
+      <table id="customTable" border="1">
+      <tbody>
+          <tr>
+              <th>Numer</th>
+              <th>Nazwa towaru</th>
+              <th>Miara</th>
+              <th>Ilość</th>
+          </tr>
+          <tr>
+              <td>1</td>
+              <td> Klimatyzator pokojowy jednostka wewnętrzna ROTENSO  5,3 kW</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>2</td>
+              <td>Klimatyzator pokojowy jednostka wewnętrzna ROTENSO 5,3 kW</td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>3</td>
+              <td> Miedź chłodnicza </td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>4</td>
+              <td> Elementy podłączeniowe </td>
+              <td>szt.</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>5</td>
+              <td> Montaż i uruchomienie systemu </td>
+              <td>kpl.</td>
+              <td>1</td>
+          </tr>
+      </tbody>
+  </table>
+  `;
+  break;
+        } 
+        else if (power === '3,5 kW') {
+            tableContent = `
+        <table id="customTable" border="1">
+        <tbody>
+        <tr>
+        <th>Numer</th>
+        <th>Nazwa towaru</th>
+        <th>Miara</th>
+        <th>Ilość</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td> Klimatyzator pokojowy jednostka wewnętrzna ROTENSO 3,5 kW</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Klimatyzator pokojowy jednostka wewnętrzna ROTENSO 3,5 kW</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td> Miedź chłodnicza </td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td> Elementy podłączeniowe </td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td> Montaż i uruchomienie systemu </td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
+        </tbody>
+    </table>
+    `;
+    break;
+          } 
+        
+        else if (power === '2,6 kW') {
+          tableContent = `
+      <table id="customTable" border="1">
+      <tbody>
+      <tr>
+      <th>Numer</th>
+      <th>Nazwa towaru</th>
+      <th>Miara</th>
+      <th>Ilość</th>
+  </tr>
+  <tr>
+      <td>1</td>
+      <td> Klimatyzator pokojowy jednostka wewnętrzna ROTENSO 2,6 kW</td>
+      <td>szt.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>2</td>
+      <td>Klimatyzator pokojowy jednostka wewnętrzna ROTENSO 2,6 kW</td>
+      <td>szt.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>3</td>
+      <td> Miedź chłodnicza </td>
+      <td>szt.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>4</td>
+      <td> Elementy podłączeniowe </td>
+      <td>szt.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>5</td>
+      <td> Montaż i uruchomienie systemu </td>
+      <td>kpl.</td>
+      <td>1</td>
+  </tr>
+      </tbody>
+  </table>
+  `;
+  break;
+        } else if (power === '2,1 kW') {
+    tableContent = `
+<table id="customTable" border="1">
+<tbody>
+<tr>
+<th>Numer</th>
+<th>Nazwa towaru</th>
+<th>Miara</th>
+<th>Ilość</th>
+</tr>
+<tr>
+<td>1</td>
+<td> Klimatyzator pokojowy jednostka wewnętrzna ROTENSO 2,1 kW</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Klimatyzator pokojowy jednostka wewnętrzna ROTENSO 2,1 kW</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td> Miedź chłodnicza </td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td> Elementy podłączeniowe </td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td> Montaż i uruchomienie systemu </td>
+<td>kpl.</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+`};
+break;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 case "MITSUBISHI HR":

@@ -96,6 +96,8 @@
                   <option value="MITSUBISHI HR" id="device-name">MITSUBISHI HR</option>
                   <option value="MITSUBISHI AP" id="device-name">MITSUBISHI AP</option>
                   <option value="LAZAR" id="device-name">LAZAR PELLET</option>
+                  <option value="ROTENSO" id="device-name">ROTENSO IMOTO X</option>
+
 
                 </select>
                 <select id="powerOptions" name="powerOptions" autocomplete="off">
@@ -274,6 +276,9 @@
           }
           else if (pdfType === 'MITSUBISHI AP') {
             options = ['4,2 kW', '3,5 kW', '2,5 kW', '2,0 kW']
+          }
+          else if (pdfType === 'ROTENSO') {
+            options = ['5,3 kW', '3,5 kW', '2,6 kW', '2,1 kW']
           }
           else if (pdfType === 'LAZAR') {
             options = ['11 kW/150', '11 kW/240', '11 kW/440', '15 kW/150', '15 kW/240', '15 kW/440', '22 kW/150', '22 kW/240', '22 kW/440']
