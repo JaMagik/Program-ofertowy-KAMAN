@@ -2904,7 +2904,7 @@ break;
                             </tr>
                             <tr>
                                 <td>1</td>
-                                <td>Ecodan | Zubadan Inverter | Split | 14,0kW, 400V, R32 PUD-SHWM100YAA</td>
+                                <td>Ecodan | Zubadan Inverter | Split | 14,0kW, 400V, R32 PUD-SHWM140YAA</td>
                                 <td>szt.</td>
                                 <td>1</td>
                             </tr>
@@ -2979,7 +2979,7 @@ break;
                             </tr>
                             <tr>
                                 <td>1</td>
-                                <td>Ecodan | Zubadan Inverter | Split | 12,0kW, 400V, R32 PUD-SHWM100YAA</td>
+                                <td>Ecodan | Zubadan Inverter | Split | 12,0kW, 400V, R32 PUD-SHWM120YAA</td>
                                 <td>szt.</td>
                                 <td>1</td>
                             </tr>
@@ -3055,7 +3055,7 @@ break;
                             </tr>
                             <tr>
                                 <td>1</td>
-                                <td>Ecodan | Zubadan Inverter | Split | 6,0kW, 400V, R32 PUD-SHWM100YAA</td>
+                                <td>Ecodan | Zubadan Inverter | Split | 6,0kW, 400V, R32 PUD-SHWM60YAA</td>
                                 <td>szt.</td>
                                 <td>1</td>
                             </tr>
@@ -3208,7 +3208,7 @@ break;
                         </tr>
                         <tr>
                             <td>1</td>
-                            <td>Ecodan | Zubadan Inverter | Split | 8,0kW, 400V, R32 PUD-SHWM100YAA</td>
+                            <td>Ecodan | Zubadan Inverter | Split | 8,0kW, 400V, R32 PUD-SHWM80YAA</td>
                             <td>szt.</td>
                             <td>1</td>
                         </tr>
@@ -3288,7 +3288,7 @@ break;
                             </tr>
                             <tr>
                                 <td>1</td>
-                                <td>Ecodan | Zubadan Inverter | Split | 12,0kW, 400V, R32 PUD-SHWM100YAA</td>
+                                <td>Ecodan | Zubadan Inverter | Split | 12,0kW, 400V, R32 PUD-SHWM120YAA</td>
                                 <td>szt.</td>
                                 <td>1</td>
                             </tr>
@@ -3363,7 +3363,7 @@ else if (power === '14 kW') {
                         </tr>
                         <tr>
                             <td>1</td>
-                            <td>Ecodan | Zubadan Inverter | Split | 14,0kW, 400V, R32 PUD-SHWM100YAA</td>
+                            <td>Ecodan | Zubadan Inverter | Split | 14,0kW, 400V, R32 PUD-SHWM140YAA</td>
                             <td>szt.</td>
                             <td>1</td>
                         </tr>
@@ -3515,7 +3515,7 @@ else if (power === '14 kW') {
                         </tr>
                         <tr>
                             <td>1</td>
-                            <td>Ecodan | Zubadan Inverter | Split | 8,0kW, 400V, R32 PUD-SHWM100YAA</td>
+                            <td>Ecodan | Zubadan Inverter | Split | 8,0kW, 400V, R32 PUD-SHWM80YAA</td>
                             <td>szt.</td>
                             <td>1</td>
                         </tr>
@@ -3592,7 +3592,7 @@ else if (power === '14 kW') {
                             </tr>
                             <tr>
                                 <td>1</td>
-                                <td>Ecodan | Zubadan Inverter | Split | 6,0kW, 400V, R32 PUD-SHWM100YAA</td>
+                                <td>Ecodan | Zubadan Inverter | Split | 6,0kW, 400V, R32 PUD-SHWM60YAA</td>
                                 <td>szt.</td>
                                 <td>1</td>
                             </tr>
