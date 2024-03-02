@@ -313,6 +313,7 @@ function createTableContent(panelDescription, inverterType, includeEnergyStorage
         case 'hybrid':
         case 'hybridWithStorage':
             inverterModel = 'Sungrow';
+            break;
         case 'fronius':
             inverterModel = 'Fronius';
             break;
@@ -445,7 +446,7 @@ async function generatePVPDF() {
  
     let backgroundImage = getFirstPageBackgroundImage(installationType);
 
-    let tableContent = createTableContent(panelDescription, inverterType, inverterType === 'hybridWithStorage' || 'hybridWithStorageFox', panelType);
+    let tableContent = createTableContent(panelDescription, inverterType, inverterType === 'hybridWithStorage' || inverterType === 'hybridWithStorageFox', panelType);
 
     let content = '';
 
