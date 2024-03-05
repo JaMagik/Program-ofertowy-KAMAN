@@ -82,7 +82,10 @@ let RX53DS1;
 let RX53DS2;
 let R1;
 let R2;
-
+let KIPI1;
+let KIPI2;
+let KIPIDS1;
+let KIPIDS2;
 
 
 
@@ -173,6 +176,10 @@ async function loadImageData() {
     RX53DS2 = imagesModule.RX53DS2;
     R1 = imagesModule.R1;
     R2 = imagesModule.R2;
+    KIPI1 = imagesModule.KIPI1;
+    KIPI2 = imagesModule.KIPI2;
+    KIPIDS1 = imagesModule.KIPIDS1;
+    KIPIDS2 = imagesModule.KIPIDS2;
 }
 
 loadImageData();
@@ -232,6 +239,8 @@ function getSecondPageBackgroundImageByType(pdfType) {
                 return Lazar2;
                 case "ROTENSO":
                     return R1;
+                    case "KIPI":
+                    return KIPI2;
         default:
             return null; // lub jakiś domyślny obraz, jeśli potrzebujesz
     }
@@ -264,7 +273,9 @@ function getBackgroundImageByType(pdfType) {
             case "LAZAR":
                 return Lazar1;  
                 case "ROTENSO":
-                    return R2;          
+                    return R2; 
+                    case "KIPI":
+                    return KIPI1;         
         default:
             return null; // lub jakiś domyślny obraz, jeśli potrzebujesz
     }
@@ -333,6 +344,8 @@ function generatePDF() {
     const RX35DS12 = `<div id="page" style="background-image: url('${RX35DS2}');"></div>`; 
     const RX53DS51 = `<div id="page" style="background-image: url('${RX53DS1}');"></div>`;
     const RX53DS52 = `<div id="page" style="background-image: url('${RX53DS2}');"></div>`;
+    const K1 = `<div id="page" style="background-image: url('${KIPIDS1}');"></div>`;
+    const K2 = `<div id="page" style="background-image: url('${KIPIDS2}');"></div>`;
 
     
 
@@ -504,6 +517,11 @@ else if (pdfType === 'ATLANTIC') {
 {
     // Dodaj standardowe strony
     content = firstPageContent + secondPageContent + MHR1+ MHR2+ MHR3+MeetUsContent+FourthPageContent;
+}
+else if (pdfType === 'KIPI') 
+{
+    // Dodaj standardowe strony
+    content = firstPageContent + secondPageContent + K1+ K2+MeetUsContent+FourthPageContent;
 }
 else if (pdfType === 'MITSUBISHI AP') 
 {
@@ -735,6 +753,299 @@ function getTableContentByType(pdfType, power) {
   </table>
   `};
   break;
+
+
+
+  case "KIPI":
+
+
+    if (power === '25 kW') {
+        tableContent = `
+    <table id="customTable" border="1">
+    <tbody>
+    <tr>
+  <th>Numer</th>
+  <th>Nazwa towaru</th>
+  <th>Miara</th>
+  <th>Ilość</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td>PIEC PELLETOWY KIPI 25 kW</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>ZASOBNIK CWU 200L</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>ELEMENTY PODŁĄCZENIOWE HYDRAULICZNE ORAZ ELEKTRYCZNE</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>GRUPA BEZPIECZEŃSTWA CWU ( 6 BAR )</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>GRUPA BEZPIECZEŃSTWA C.O ( 2.5 BAR )</td>
+  <td>kpl.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>PODŁĄCZENIE KOMINOWE</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>REGULATOR BEZPRZEWODOWY</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td>MONTAŻ, DOJAZD, URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWANIA</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+    </tbody>
+</table>
+`;
+break;
+    }
+
+
+
+    else if (power === '20 kW') {
+        tableContent = `
+    <table id="customTable" border="1">
+    <tbody>
+    <tr>
+  <th>Numer</th>
+  <th>Nazwa towaru</th>
+  <th>Miara</th>
+  <th>Ilość</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td>PIEC PELLETOWY KIPI 20 kW</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>ZASOBNIK CWU 200L</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>ELEMENTY PODŁĄCZENIOWE HYDRAULICZNE ORAZ ELEKTRYCZNE</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>GRUPA BEZPIECZEŃSTWA CWU ( 6 BAR )</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>GRUPA BEZPIECZEŃSTWA C.O ( 2.5 BAR )</td>
+  <td>kpl.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>PODŁĄCZENIE KOMINOWE</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>REGULATOR BEZPRZEWODOWY</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td>MONTAŻ, DOJAZD, URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWANIA</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+    </tbody>
+</table>
+`;
+break;
+    }
+
+
+    else if (power === '15 kW') {
+        tableContent = `
+    <table id="customTable" border="1">
+    <tbody>
+    <tr>
+  <th>Numer</th>
+  <th>Nazwa towaru</th>
+  <th>Miara</th>
+  <th>Ilość</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td>PIEC PELLETOWY KIPI 15 kW</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>ZASOBNIK CWU 200L</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>ELEMENTY PODŁĄCZENIOWE HYDRAULICZNE ORAZ ELEKTRYCZNE</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>GRUPA BEZPIECZEŃSTWA CWU ( 6 BAR )</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>GRUPA BEZPIECZEŃSTWA C.O ( 2.5 BAR )</td>
+  <td>kpl.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>PODŁĄCZENIE KOMINOWE</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>REGULATOR BEZPRZEWODOWY</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td>MONTAŻ, DOJAZD, URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWANIA</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+    </tbody>
+</table>
+`;
+break;
+    }
+
+
+
+    else if (power === '10 kW') {
+        tableContent = `
+    <table id="customTable" border="1">
+    <tbody>
+    <tr>
+  <th>Numer</th>
+  <th>Nazwa towaru</th>
+  <th>Miara</th>
+  <th>Ilość</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td>PIEC PELLETOWY KIPI 10 kW</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>ZASOBNIK CWU 200L</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>ELEMENTY PODŁĄCZENIOWE HYDRAULICZNE ORAZ ELEKTRYCZNE</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>GRUPA BEZPIECZEŃSTWA CWU ( 6 BAR )</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>GRUPA BEZPIECZEŃSTWA C.O ( 2.5 BAR )</td>
+  <td>kpl.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>PODŁĄCZENIE KOMINOWE</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>REGULATOR BEZPRZEWODOWY</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td>MONTAŻ, DOJAZD, URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWANIA</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+    </tbody>
+</table>
+`;
+break;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -98,8 +98,7 @@
                   <option value="MITSUBISHI AP" id="device-name">MITSUBISHI AP</option>
                   <option value="LAZAR" id="device-name">LAZAR PELLET</option>
                   <option value="ROTENSO" id="device-name">ROTENSO IMOTO X</option>
-
-
+                  <option value="KIPI" id="device-name">KIPI</option>
                 </select>
                 <select id="powerOptions" name="powerOptions" autocomplete="off">
                     <!-- Opcje zostaną tutaj dodane przez JavaScript -->
@@ -273,6 +272,9 @@
           }
           else if (pdfType === 'HEIZTECHNIK') {
             options = ['14 kW', '12 kW', '9 kW'];
+          }
+          else if (pdfType === 'KIPI') {
+            options = ['25 kW', '20 kW', '15 kW', '10 kW'];
           }
           else if (pdfType === 'VIESSMANN') {
             options = ['13 kW', '10 kW', ];
