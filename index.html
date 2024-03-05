@@ -58,6 +58,7 @@
       <option value="hybridFOX">Falownik hybrydowy FOXESS</option>
       <option value="hybridWithStorage">Falownik hybrydowy z magazynem SUNGROW+PYLONTECH</option>
       <option value="hybridWithStorageFOX">Falownik hybrydowy z magazynem FOXESS</option>
+      <option value="sofar">Sofar Solar</option>
     </select>
   </div>
 </div>
@@ -227,6 +228,11 @@
         const optionHybridWithStorageFOX = document.createElement('option');
         optionHybridWithStorageFOX.value = 'hybridWithStorageFOX';
         optionHybridWithStorageFOX.textContent = 'Falownik hybrydowy z magazynem FOXESS';
+        inverterTypeSelect.appendChild(optionHybridWithStorageFOX);
+
+        const optionSofar = document.createElement('option');
+        optionHybridWithStorageFOX.value = 'sofar';
+        optionHybridWithStorageFOX.textContent = 'Falownik Sofar';
         inverterTypeSelect.appendChild(optionHybridWithStorageFOX);
     }
 }

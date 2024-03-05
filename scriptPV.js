@@ -57,6 +57,12 @@ let FoxHybDS1;
 let FoxHybDS2;
 let FoxStorageDS1;
 let FoxStorageDS2;
+let Sofar1fDS1;
+let Sofar1fDS2;
+let JaSofar;
+let JinSofar;
+let ZnSofar;
+let CanSofar;
 
 
 
@@ -116,7 +122,12 @@ async function loadImageDataForPV() {
     FoxHybDS2 = imagesModule.FoxHybDS2;
     FoxStorageDS1 = imagesModule.FoxStorageDS1;
     FoxStorageDS2 = imagesModule.FoxStorageDS2;
-
+    Sofar1fDS1 = imagesModule.Sofar1fDS1;
+    Sofar1fDS2 = imagesModule.Sofar1fDS2;
+    JaSofar = imagesModule.JaSofar;
+    JinSofar = imagesModule.JinSofar;
+    ZnSofar = imagesModule.ZnSofar;
+    CanSofar = imagesModule.CanSofar;
 }
 
 loadImageDataForPV(); // Poprawione na właściwą nazwę funkcji
@@ -135,6 +146,19 @@ function getInverterImage(inverterType, panelType) {
                     return JIFox;
                     case "jasolar":
                     return imageJAFox;
+                // Domyślny obraz dla standardowego falownika
+            }
+            break;
+            case "sofar":
+            switch (panelType) {
+                case "zn-shine":
+                    return ZnSofar;
+                case "canadian":
+                    return CanSofar;
+                    case "jinko 475":
+                    return JinSofar;
+                    case "jasolar":
+                    return JaSofar;
                 // Domyślny obraz dla standardowego falownika
             }
             break;
@@ -226,6 +250,8 @@ function getThirdPage(inverterType) {
 
         case "hybridFOX":
             return FoxHybDS1;
+            case "sofar":
+                return Sofar1fDS1;
 
     }
     
@@ -276,6 +302,8 @@ function getFourthPage(inverterType) {
 
         case "hybridFOX":
             return FoxHybDS1;
+            case "sofar":
+                return Sofar1fDS2;
     }
 }
 
@@ -316,6 +344,9 @@ function createTableContent(panelDescription, inverterType, includeEnergyStorage
             break;
         case 'fronius':
             inverterModel = 'Fronius';
+            break;
+            case 'sofar':
+            inverterModel = 'Sofar Solar';
             break;
         default:
             inverterModel = 'FOXESS';
