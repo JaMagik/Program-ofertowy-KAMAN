@@ -86,7 +86,13 @@ let KIPI1;
 let KIPI2;
 let KIPIDS1;
 let KIPIDS2;
-
+let KKLUX1;
+let KKLUX2;
+let KKLUXDS1;
+let KKLUXDS2;
+let KKLUXDS3;
+let KKLUXDS4;  
+let KKLUXDS5;
 
 
 
@@ -180,6 +186,14 @@ async function loadImageData() {
     KIPI2 = imagesModule.KIPI2;
     KIPIDS1 = imagesModule.KIPIDS1;
     KIPIDS2 = imagesModule.KIPIDS2;
+    KKLUX1 = imagesModule.KKLUX1;
+    KKLUX2 = imagesModule.KKLUX2;
+    KKLUXDS1 = imagesModule.KKLUXDS1;
+    KKLUXDS2 = imagesModule.KKLUXDS2;
+    KKLUXDS3 = imagesModule.KKLUXDS3;
+    KKLUXDS4 = imagesModule.KKLUXDS4;
+    KKLUXDS5 = imagesModule.KKLUXDS5;
+
 }
 
 loadImageData();
@@ -241,6 +255,9 @@ function getSecondPageBackgroundImageByType(pdfType) {
                     return R1;
                     case "KIPI":
                     return KIPI2;
+                    case "KAMEN-KOMPAKT-LUX":
+                    return KKLUX2;
+                    
         default:
             return null; // lub jakiś domyślny obraz, jeśli potrzebujesz
     }
@@ -275,7 +292,9 @@ function getBackgroundImageByType(pdfType) {
                 case "ROTENSO":
                     return R2; 
                     case "KIPI":
-                    return KIPI1;         
+                    return KIPI1;  
+                    case "KAMEN-KOMPAKT-LUX":
+                    return KKLUX1;    
         default:
             return null; // lub jakiś domyślny obraz, jeśli potrzebujesz
     }
@@ -347,7 +366,14 @@ function generatePDF() {
     const K1 = `<div id="page" style="background-image: url('${KIPIDS1}');"></div>`;
     const K2 = `<div id="page" style="background-image: url('${KIPIDS2}');"></div>`;
 
-    
+    const KMLUX1 = `<div id="page" style="background-image: url('${KKLUXDS1}');"></div>`;
+    const KMLUX2 = `<div id="page" style="background-image: url('${KKLUXDS2}');"></div>`;
+    const KMLUX3 = `<div id="page" style="background-image: url('${KKLUXDS3}');"></div>`;
+    const KMLUX4 = `<div id="page" style="background-image: url('${KKLUXDS4}');"></div>`;
+    const KMLUX5 = `<div id="page" style="background-image: url('${KKLUXDS5}');"></div>`;
+
+
+
 
     let tableHtml = getAdditionalOptionsTable (pdfType);
     let tableContent = getTableContentByType(pdfType, power);
@@ -473,6 +499,12 @@ else if (pdfType === 'LAZAR')
 {
     // Dodaj standardowe strony
     content = firstPageContent + secondPageContent+L1+L2+L3+L4+L5+L6+MeetUsContent+FourthPageContent;
+}
+
+else if (pdfType === 'KAMEN-KOMPAKT-LUX') 
+{
+    // Dodaj standardowe strony
+    content = firstPageContent + secondPageContent+KMLUX1+KMLUX2+KMLUX3+KMLUX4+KMLUX5+MeetUsContent+FourthPageContent;
 }
 
 else if (pdfType === 'ATLANTIC') {
@@ -753,6 +785,220 @@ function getTableContentByType(pdfType, power) {
   </table>
   `};
   break;
+
+
+  case "KAMEN-KOMPAKT-LUX":
+
+
+  if (power === '20 kW') {
+      tableContent = `
+  <table id="customTable" border="1">
+  <tbody>
+  <tr>
+<th>Numer</th>
+<th>Nazwa towaru</th>
+<th>Miara</th>
+<th>Ilość</th>
+</tr>
+<tr>
+<td>1</td>
+<td>PIEC PELLETOWY KAMEN KOMPAKT LUX 20 kW</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>ZASOBNIK CWU 200L</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>ELEMENTY PODŁĄCZENIOWE HYDRAULICZNE ORAZ ELEKTRYCZNE</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>GRUPA BEZPIECZEŃSTWA CWU ( 6 BAR )</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>GRUPA BEZPIECZEŃSTWA C.O ( 2.5 BAR )</td>
+<td>kpl.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>PODŁĄCZENIE KOMINOWE</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>7</td>
+<td>REGULATOR BEZPRZEWODOWY</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>8</td>
+<td>MONTAŻ, DOJAZD, URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWANIA</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+  </tbody>
+</table>
+`;
+break;
+  }
+
+
+
+  else if (power === '17 kW') {
+      tableContent = `
+  <table id="customTable" border="1">
+  <tbody>
+  <tr>
+<th>Numer</th>
+<th>Nazwa towaru</th>
+<th>Miara</th>
+<th>Ilość</th>
+</tr>
+<tr>
+<td>1</td>
+<td>PIEC PELLETOWY KAMEN KOMPAKT LUX 17 kW</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>ZASOBNIK CWU 200L</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>ELEMENTY PODŁĄCZENIOWE HYDRAULICZNE ORAZ ELEKTRYCZNE</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>GRUPA BEZPIECZEŃSTWA CWU ( 6 BAR )</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>GRUPA BEZPIECZEŃSTWA C.O ( 2.5 BAR )</td>
+<td>kpl.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>PODŁĄCZENIE KOMINOWE</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>7</td>
+<td>REGULATOR BEZPRZEWODOWY</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>8</td>
+<td>MONTAŻ, DOJAZD, URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWANIA</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+  </tbody>
+</table>
+`;
+break;
+  }
+
+
+  else if (power === '12 kW') {
+      tableContent = `
+  <table id="customTable" border="1">
+  <tbody>
+  <tr>
+<th>Numer</th>
+<th>Nazwa towaru</th>
+<th>Miara</th>
+<th>Ilość</th>
+</tr>
+<tr>
+<td>1</td>
+<td>PIEC PELLETOWY KAMEN KOMPAKT LUX 12 kW</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>ZASOBNIK CWU 200L</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>ELEMENTY PODŁĄCZENIOWE HYDRAULICZNE ORAZ ELEKTRYCZNE</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>GRUPA BEZPIECZEŃSTWA CWU ( 6 BAR )</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>GRUPA BEZPIECZEŃSTWA C.O ( 2.5 BAR )</td>
+<td>kpl.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>PODŁĄCZENIE KOMINOWE</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>7</td>
+<td>REGULATOR BEZPRZEWODOWY</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>8</td>
+<td>MONTAŻ, DOJAZD, URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWANIA</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+  </tbody>
+</table>
+`;
+break;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
