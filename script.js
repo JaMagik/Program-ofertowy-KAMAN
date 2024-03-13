@@ -93,8 +93,12 @@ let KKLUXDS2;
 let KKLUXDS3;
 let KKLUXDS4;  
 let KKLUXDS5;
-
-
+let KKPELLET1;
+let KKPELLET2;
+let KKPELLETDS;
+let KDLX1;
+let KDLX2;
+let KDLXDS;
 
 
 
@@ -193,8 +197,13 @@ async function loadImageData() {
     KKLUXDS3 = imagesModule.KKLUXDS3;
     KKLUXDS4 = imagesModule.KKLUXDS4;
     KKLUXDS5 = imagesModule.KKLUXDS5;
-
-}
+    KKPELLET1 = imagesModule.KKPELLET1;
+     KKPELLET2 = imagesModule.KKPELLET2;
+    KKPELLETDS = imagesModule.KKPELLETDS;
+    KDLX1 = imagesModule.KDLX1;
+    KDLX2 = imagesModule.KDLX2;
+    KDLXDS = imagesModule.KDLXDS;
+} 
 
 loadImageData();
 
@@ -257,6 +266,10 @@ function getSecondPageBackgroundImageByType(pdfType) {
                     return KIPI2;
                     case "KAMEN-KOMPAKT-LUX":
                     return KKLUX2;
+                    case "KAMEN-PELLET-KOMPAKT":
+                    return KKPELLET2;
+                    case "KAMEN-DRX":
+                    return KDLX2;
                     
         default:
             return null; // lub jakiś domyślny obraz, jeśli potrzebujesz
@@ -294,7 +307,11 @@ function getBackgroundImageByType(pdfType) {
                     case "KIPI":
                     return KIPI1;  
                     case "KAMEN-KOMPAKT-LUX":
-                    return KKLUX1;    
+                    return KKLUX1;  
+                    case "KAMEN-PELLET-KOMPAKT":
+                    return KKPELLET1;  
+                    case "KAMEN-DRX":
+                    return KDLX1;
         default:
             return null; // lub jakiś domyślny obraz, jeśli potrzebujesz
     }
@@ -371,6 +388,9 @@ function generatePDF() {
     const KMLUX3 = `<div id="page" style="background-image: url('${KKLUXDS3}');"></div>`;
     const KMLUX4 = `<div id="page" style="background-image: url('${KKLUXDS4}');"></div>`;
     const KMLUX5 = `<div id="page" style="background-image: url('${KKLUXDS5}');"></div>`;
+    
+    const KKPELLET = `<div id="page" style="background-image: url('${KKPELLETDS}');"></div>`;
+    const KKDRX = `<div id="page" style="background-image: url('${KDLXDS}');"></div>`;
 
 
 
@@ -505,6 +525,18 @@ else if (pdfType === 'KAMEN-KOMPAKT-LUX')
 {
     // Dodaj standardowe strony
     content = firstPageContent + secondPageContent+KMLUX1+KMLUX2+KMLUX3+KMLUX4+KMLUX5+MeetUsContent+FourthPageContent;
+}
+
+else if (pdfType === 'KAMEN-PELLET-KOMPAKT') 
+{
+    // Dodaj standardowe strony
+    content = firstPageContent + secondPageContent+KMLUX1+KMLUX2+KMLUX3+KMLUX4+KKPELLET+MeetUsContent+FourthPageContent;
+}
+
+else if (pdfType === 'KAMEN-DRX') 
+{
+    // Dodaj standardowe strony
+    content = firstPageContent + secondPageContent+KMLUX1+KMLUX2+KMLUX3+KMLUX4+KKDRX+MeetUsContent+FourthPageContent;
 }
 
 else if (pdfType === 'ATLANTIC') {
@@ -796,7 +828,7 @@ function getTableContentByType(pdfType, power) {
   <tbody>
   <tr>
 <th>Numer</th>
-<th>Nazwa towaru</th>
+<th>Nazwa towarVu</th>
 <th>Miara</th>
 <th>Ilość</th>
 </tr>
@@ -934,6 +966,408 @@ break;
 <tr>
 <td>1</td>
 <td>PIEC PELLETOWY KAMEN KOMPAKT LUX 12 kW</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>ZASOBNIK CWU 200L</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>ELEMENTY PODŁĄCZENIOWE HYDRAULICZNE ORAZ ELEKTRYCZNE</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>GRUPA BEZPIECZEŃSTWA CWU ( 6 BAR )</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>GRUPA BEZPIECZEŃSTWA C.O ( 2.5 BAR )</td>
+<td>kpl.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>PODŁĄCZENIE KOMINOWE</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>7</td>
+<td>REGULATOR BEZPRZEWODOWY</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>8</td>
+<td>MONTAŻ, DOJAZD, URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWANIA</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+  </tbody>
+</table>
+`;
+break;
+  }
+
+
+
+
+  case "KAMEN-DRX":
+
+
+  if (power === '20 kW') {
+      tableContent = `
+  <table id="customTable" border="1">
+  <tbody>
+  <tr>
+<th>Numer</th>
+<th>Nazwa towarVu</th>
+<th>Miara</th>
+<th>Ilość</th>
+</tr>
+<tr>
+<td>1</td>
+<td>PIEC PELLETOWY KAMEN DRX 20 kW</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>ZASOBNIK CWU 200L</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>ELEMENTY PODŁĄCZENIOWE HYDRAULICZNE ORAZ ELEKTRYCZNE</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>GRUPA BEZPIECZEŃSTWA CWU ( 6 BAR )</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>GRUPA BEZPIECZEŃSTWA C.O ( 2.5 BAR )</td>
+<td>kpl.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>PODŁĄCZENIE KOMINOWE</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>7</td>
+<td>REGULATOR BEZPRZEWODOWY</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>8</td>
+<td>MONTAŻ, DOJAZD, URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWANIA</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+  </tbody>
+</table>
+`;
+break;
+  }
+
+
+
+  else if (power === '15 kW') {
+      tableContent = `
+  <table id="customTable" border="1">
+  <tbody>
+  <tr>
+<th>Numer</th>
+<th>Nazwa towaru</th>
+<th>Miara</th>
+<th>Ilość</th>
+</tr>
+<tr>
+<td>1</td>
+<td>PIEC PELLETOWY KAMEN DRX 15 kW</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>ZASOBNIK CWU 200L</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>ELEMENTY PODŁĄCZENIOWE HYDRAULICZNE ORAZ ELEKTRYCZNE</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>GRUPA BEZPIECZEŃSTWA CWU ( 6 BAR )</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>GRUPA BEZPIECZEŃSTWA C.O ( 2.5 BAR )</td>
+<td>kpl.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>PODŁĄCZENIE KOMINOWE</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>7</td>
+<td>REGULATOR BEZPRZEWODOWY</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>8</td>
+<td>MONTAŻ, DOJAZD, URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWANIA</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+  </tbody>
+</table>
+`;
+break;
+  }
+
+
+  else if (power === '11 kW') {
+      tableContent = `
+  <table id="customTable" border="1">
+  <tbody>
+  <tr>
+<th>Numer</th>
+<th>Nazwa towaru</th>
+<th>Miara</th>
+<th>Ilość</th>
+</tr>
+<tr>
+<td>1</td>
+<td>PIEC PELLETOWY KAMEN DRX 11 kW</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>ZASOBNIK CWU 200L</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>ELEMENTY PODŁĄCZENIOWE HYDRAULICZNE ORAZ ELEKTRYCZNE</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>GRUPA BEZPIECZEŃSTWA CWU ( 6 BAR )</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>GRUPA BEZPIECZEŃSTWA C.O ( 2.5 BAR )</td>
+<td>kpl.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>PODŁĄCZENIE KOMINOWE</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>7</td>
+<td>REGULATOR BEZPRZEWODOWY</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>8</td>
+<td>MONTAŻ, DOJAZD, URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWANIA</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+  </tbody>
+</table>
+`;
+break;
+  }
+
+
+
+
+  case "KAMEN-PELLET-KOMPAKT":
+
+
+  if (power === '50 kW') {
+      tableContent = `
+  <table id="customTable" border="1">
+  <tbody>
+  <tr>
+<th>Numer</th>
+<th>Nazwa towarVu</th>
+<th>Miara</th>
+<th>Ilość</th>
+</tr>
+<tr>
+<td>1</td>
+<td>PIEC PELLETOWY KAMEN PELLET KOMPAKT 50 kW</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>ZASOBNIK CWU 200L</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>ELEMENTY PODŁĄCZENIOWE HYDRAULICZNE ORAZ ELEKTRYCZNE</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>GRUPA BEZPIECZEŃSTWA CWU ( 6 BAR )</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>GRUPA BEZPIECZEŃSTWA C.O ( 2.5 BAR )</td>
+<td>kpl.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>PODŁĄCZENIE KOMINOWE</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>7</td>
+<td>REGULATOR BEZPRZEWODOWY</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>8</td>
+<td>MONTAŻ, DOJAZD, URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWANIA</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+  </tbody>
+</table>
+`;
+break;
+  }
+
+
+
+  else if (power === '25 kW') {
+      tableContent = `
+  <table id="customTable" border="1">
+  <tbody>
+  <tr>
+<th>Numer</th>
+<th>Nazwa towaru</th>
+<th>Miara</th>
+<th>Ilość</th>
+</tr>
+<tr>
+<td>1</td>
+<td>PIEC PELLETOWY KAMEN PELLET KOMPAKT 25 kW</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>ZASOBNIK CWU 200L</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>ELEMENTY PODŁĄCZENIOWE HYDRAULICZNE ORAZ ELEKTRYCZNE</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>GRUPA BEZPIECZEŃSTWA CWU ( 6 BAR )</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>GRUPA BEZPIECZEŃSTWA C.O ( 2.5 BAR )</td>
+<td>kpl.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>PODŁĄCZENIE KOMINOWE</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>7</td>
+<td>REGULATOR BEZPRZEWODOWY</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>8</td>
+<td>MONTAŻ, DOJAZD, URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWANIA</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+  </tbody>
+</table>
+`;
+break;
+  }
+
+
+  else if (power === '20 kW') {
+      tableContent = `
+  <table id="customTable" border="1">
+  <tbody>
+  <tr>
+<th>Numer</th>
+<th>Nazwa towaru</th>
+<th>Miara</th>
+<th>Ilość</th>
+</tr>
+<tr>
+<td>1</td>
+<td>PIEC PELLETOWY KAMEN PELLET KOMPAKT 20 kW</td>
 <td>szt.</td>
 <td>1</td>
 </tr>

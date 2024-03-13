@@ -100,7 +100,9 @@
                   <option value="ROTENSO" id="device-name">ROTENSO IMOTO X</option>
                   <option value="KIPI" id="device-name">KIPI</option>
                   <option value="KAMEN-KOMPAKT-LUX" id="device-name">KAMEN KOMPAKT LUX</option>
-
+                  <option value="KAMEN-PELLET-KOMPAKT" id="device-name">KAMEN PELLET KOMPAKT</option>
+                  <option value="KAMEN-DRX" id="device-name">KAMEN DRX</option>
+ 
                 </select>
                 <select id="powerOptions" name="powerOptions" autocomplete="off">
                     <!-- Opcje zostaną tutaj dodane przez JavaScript -->
@@ -298,6 +300,12 @@
             options = ['20 kW', '17 kW', '12 kW']
           }
           
+          else if (pdfType === 'KAMEN-PELLET-KOMPAKT') {
+            options = ['20 kW', '25 kW', '50 kW']
+          }
+          else if (pdfType === 'KAMEN-DRX') {
+            options = ['11 kW', '15 kW', '20 kW']
+          }
       
           for (var i = 0; i < options.length; i++) {
             var option = document.createElement('option');
