@@ -454,7 +454,7 @@ function generatePDF() {
     <div id="page">
         <div id="page-third">
             <div id="header">
-                <h1>Opcje dodatkowe Pompy Ciepła</h1>
+                <h1>Opcje dodatkowe</h1>
             </div>
             <div id="table-container">
                 ${tableHtml}
