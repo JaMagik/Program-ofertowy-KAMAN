@@ -318,6 +318,7 @@ function getBackgroundImageByType(pdfType) {
 }
 
 function generatePDF() {
+    const bufferCapacity = document.getElementById('bufferCapacity').value;
     const offerNumber = generateOfferNumber();
     console.log(offerNumber); 
     const userNamePC = document.getElementById('userNamePC').value;
@@ -395,8 +396,8 @@ function generatePDF() {
 
 
 
-    let tableHtml = getAdditionalOptionsTable (pdfType);
-    let tableContent = getTableContentByType(pdfType, power);
+    let tableHtml = getAdditionalOptionsTable (pdfType, bufferCapacity);
+    let tableContent = getTableContentByType(pdfType, power, bufferCapacity);
     let backgroundImage = getBackgroundImageByType(pdfType);
     let secondPageBackgroundImage = getSecondPageBackgroundImageByType(pdfType);
 
@@ -637,9 +638,24 @@ else {
     html2pdf().from(content).set(opt).save();
 }
 
-function getTableContentByType(pdfType, power) {
+function getTableContentByType(pdfType, power, bufferCapacity) {
 
     let tableContent = '';
+    let bufferRow = '';
+    if(bufferCapacity === 'none'){
+        bufferRow = ` 
+            
+            <td>Brak bufora</td>
+            <td>szt.</td>
+            <td>0</td>
+        `;
+    }else{
+        bufferRow = `
+            <td>Bufor (sprzęgło hydrauliczne) ${bufferCapacity}l + osprzęt</td>
+            <td>szt.</td>
+            <td>1</td>
+        `;
+    }
 
     switch(pdfType) {
 
@@ -673,11 +689,9 @@ function getTableContentByType(pdfType, power) {
       <td>1</td>
   </tr>
   <tr>
-      <td>4</td>
-      <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-      <td>szt.</td>
-      <td>1</td>
-  </tr>
+        <td>4</td>
+        ${bufferRow}
+    </tr>;
   <tr>
       <td>5</td>
       <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
@@ -760,11 +774,9 @@ function getTableContentByType(pdfType, power) {
       <td>1</td>
   </tr>
   <tr>
-      <td>4</td>
-      <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-      <td>szt.</td>
-      <td>1</td>
-  </tr>
+        <td>4</td>
+        ${bufferRow}
+    </tr>;
   <tr>
       <td>5</td>
       <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
@@ -880,6 +892,10 @@ function getTableContentByType(pdfType, power) {
 <td>szt.</td>
 <td>1</td>
 </tr>
+<tr>
+        <td>9</td>
+        ${bufferRow}
+    </tr>;
   </tbody>
 </table>
 `;
@@ -946,6 +962,10 @@ break;
 <td>szt.</td>
 <td>1</td>
 </tr>
+<tr>
+        <td>9</td>
+        ${bufferRow}
+    </tr>;
   </tbody>
 </table>
 `;
@@ -1011,6 +1031,10 @@ break;
 <td>szt.</td>
 <td>1</td>
 </tr>
+<tr>
+        <td>9</td>
+        ${bufferRow}
+    </tr>;
   </tbody>
 </table>
 `;
@@ -1081,6 +1105,10 @@ break;
 <td>szt.</td>
 <td>1</td>
 </tr>
+<tr>
+        <td>9</td>
+        ${bufferRow}
+    </tr>;
   </tbody>
 </table>
 `;
@@ -1147,6 +1175,10 @@ break;
 <td>szt.</td>
 <td>1</td>
 </tr>
+<tr>
+        <td>9</td>
+        ${bufferRow}
+    </tr>;
   </tbody>
 </table>
 `;
@@ -1212,6 +1244,10 @@ break;
 <td>szt.</td>
 <td>1</td>
 </tr>
+<tr>
+        <td>9</td>
+        ${bufferRow}
+    </tr>;
   </tbody>
 </table>
 `;
@@ -1282,6 +1318,10 @@ break;
 <td>szt.</td>
 <td>1</td>
 </tr>
+<tr>
+        <td>9</td>
+        ${bufferRow}
+    </tr>;
   </tbody>
 </table>
 `;
@@ -1348,6 +1388,10 @@ break;
 <td>szt.</td>
 <td>1</td>
 </tr>
+<tr>
+        <td>9</td>
+        ${bufferRow}
+    </tr>;
   </tbody>
 </table>
 `;
@@ -1413,6 +1457,10 @@ break;
 <td>szt.</td>
 <td>1</td>
 </tr>
+<tr>
+        <td>9</td>
+        ${bufferRow}
+    </tr>;
   </tbody>
 </table>
 `;
@@ -1497,6 +1545,10 @@ break;
   <td>szt.</td>
   <td>1</td>
 </tr>
+<tr>
+        <td>9</td>
+        ${bufferRow}
+    </tr>;
     </tbody>
 </table>
 `;
@@ -1563,6 +1615,11 @@ break;
   <td>szt.</td>
   <td>1</td>
 </tr>
+<tr>
+        <td>9</td>
+        ${bufferRow}
+    </tr>;
+
     </tbody>
 </table>
 `;
@@ -1628,6 +1685,10 @@ break;
   <td>szt.</td>
   <td>1</td>
 </tr>
+<tr>
+        <td>9</td>
+        ${bufferRow}
+    </tr>;
     </tbody>
 </table>
 `;
@@ -1694,6 +1755,10 @@ break;
   <td>szt.</td>
   <td>1</td>
 </tr>
+<tr>
+        <td>9</td>
+        ${bufferRow}
+    </tr>;
     </tbody>
 </table>
 `;
@@ -1789,6 +1854,10 @@ break;
   <td>szt.</td>
   <td>1</td>
 </tr>
+<tr>
+        <td>9</td>
+        ${bufferRow}
+    </tr>;
   </tbody>
 </table>
 `;
@@ -1854,6 +1923,10 @@ break;
   <td>szt.</td>
   <td>1</td>
 </tr>
+<tr>
+        <td>9</td>
+        ${bufferRow}
+    </tr>;
     </tbody>
 </table>
 `;
@@ -1919,6 +1992,10 @@ break;
   <td>szt.</td>
   <td>1</td>
 </tr>
+<tr>
+        <td>9</td>
+        ${bufferRow}
+    </tr>;
     </tbody>
 </table>
 `;
@@ -1985,6 +2062,10 @@ break;
   <td>szt.</td>
   <td>1</td>
 </tr>
+<tr>
+        <td>9</td>
+        ${bufferRow}
+    </tr>;
     </tbody>
 </table>
 `;
@@ -2050,6 +2131,10 @@ break;
   <td>szt.</td>
   <td>1</td>
 </tr>
+<tr>
+        <td>9</td>
+        ${bufferRow}
+    </tr>;
     </tbody>
 </table>
 `;
@@ -2116,6 +2201,10 @@ break;
   <td>szt.</td>
   <td>1</td>
 </tr>
+<tr>
+        <td>9</td>
+        ${bufferRow}
+    </tr>;
     </tbody>
 </table>
 `;
@@ -2180,6 +2269,10 @@ else if (power === '15 kW/440') {
   <td>szt.</td>
   <td>1</td>
 </tr>
+<tr>
+        <td>9</td>
+        ${bufferRow}
+    </tr>;
     </tbody>
 </table>
 `;
@@ -2244,6 +2337,10 @@ break;
   <td>szt.</td>
   <td>1</td>
 </tr>
+<tr>
+        <td>9</td>
+        ${bufferRow}
+    </tr>;
     </tbody>
 </table>
 `;
@@ -2307,6 +2404,10 @@ break;
   <td>szt.</td>
   <td>1</td>
 </tr>
+<tr>
+        <td>9</td>
+        ${bufferRow}
+    </tr>;
   </tbody>
 </table>
 `};
@@ -2354,9 +2455,7 @@ break;
   </tr>
   <tr>
       <td>4</td>
-      <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-      <td>szt.</td>
-      <td>1</td>
+      ${bufferRow}
   </tr>
       </tbody>
   </table>
@@ -2393,9 +2492,7 @@ break;
   </tr>
   <tr>
       <td>4</td>
-      <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-      <td>szt.</td>
-      <td>1</td>
+      ${bufferRow}
   </tr>
       </tbody>
   </table>
@@ -2434,9 +2531,7 @@ break;
           </tr>
           <tr>
               <td>4</td>
-              <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-              <td>szt.</td>
-              <td>1</td>
+              ${bufferRow}
           </tr>
           <tr>
               <td>5</td>
@@ -2509,9 +2604,7 @@ break;
           </tr>
           <tr>
               <td>4</td>
-              <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-              <td>szt.</td>
-              <td>1</td>
+              ${bufferRow}
           </tr>
           <tr>
               <td>5</td>
@@ -2584,9 +2677,7 @@ break;
           </tr>
           <tr>
               <td>4</td>
-              <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-              <td>szt.</td>
-              <td>1</td>
+              ${bufferRow}
           </tr>
           <tr>
               <td>5</td>
@@ -2658,9 +2749,7 @@ break;
     </tr>
     <tr>
         <td>4</td>
-        <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-        <td>szt.</td>
-        <td>1</td>
+        ${bufferRow}
     </tr>
     <tr>
         <td>5</td>
@@ -3302,9 +3391,7 @@ case "Toshiba 3F":
           </tr>
           <tr>
               <td>4</td>
-              <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-              <td>szt.</td>
-              <td>1</td>
+              ${bufferRow}
           </tr>
           <tr>
               <td>5</td>
@@ -3377,9 +3464,7 @@ case "Toshiba 3F":
             </tr>
             <tr>
                 <td>4</td>
-                <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-                <td>szt.</td>
-                <td>1</td>
+                ${bufferRow}
             </tr>
             <tr>
                 <td>5</td>
@@ -3453,9 +3538,7 @@ case "Toshiba 3F":
           </tr>
           <tr>
               <td>4</td>
-              <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-              <td>szt.</td>
-              <td>1</td>
+              ${bufferRow}
           </tr>
           <tr>
               <td>5</td>
@@ -3527,9 +3610,7 @@ case "Toshiba 3F":
     </tr>
     <tr>
         <td>4</td>
-        <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-        <td>szt.</td>
-        <td>1</td>
+        ${bufferRow}
     </tr>
     <tr>
         <td>5</td>
@@ -3617,9 +3698,7 @@ break;
           </tr>
           <tr>
               <td>4</td>
-              <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-              <td>szt.</td>
-              <td>1</td>
+              ${bufferRow}
           </tr>
           <tr>
               <td>5</td>
@@ -3692,9 +3771,7 @@ break;
             </tr>
             <tr>
                 <td>4</td>
-                <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-                <td>szt.</td>
-                <td>1</td>
+                ${bufferRow}
             </tr>
             <tr>
                 <td>5</td>
@@ -3768,9 +3845,7 @@ break;
           </tr>
           <tr>
               <td>4</td>
-              <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-              <td>szt.</td>
-              <td>1</td>
+              ${bufferRow}
           </tr>
           <tr>
               <td>5</td>
@@ -3842,9 +3917,7 @@ break;
     </tr>
     <tr>
         <td>4</td>
-        <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-        <td>szt.</td>
-        <td>1</td>
+        ${bufferRow}
     </tr>
     <tr>
         <td>5</td>
@@ -3913,9 +3986,7 @@ break;
                             </tr>
                             <tr>
                                 <td>4</td>
-                                <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-                                <td>szt.</td>
-                                <td>1</td>
+                                ${bufferRow}
                             </tr>
                             <tr>
                                 <td>5</td>
@@ -3988,9 +4059,7 @@ break;
                             </tr>
                             <tr>
                                 <td>4</td>
-                                <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-                                <td>szt.</td>
-                                <td>1</td>
+                                ${bufferRow}
                             </tr>
                             <tr>
                                 <td>5</td>
@@ -4064,9 +4133,7 @@ break;
                             </tr>
                             <tr>
                                 <td>4</td>
-                                <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-                                <td>szt.</td>
-                                <td>1</td>
+                                ${bufferRow}
                             </tr>
                             <tr>
                                 <td>5</td>
@@ -4142,9 +4209,7 @@ break;
                         </tr>
                         <tr>
                             <td>4</td>
-                            <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-                            <td>szt.</td>
-                            <td>1</td>
+                            ${bufferRow}
                         </tr>
                         <tr>
                             <td>5</td>
@@ -4217,9 +4282,7 @@ break;
                         </tr>
                         <tr>
                             <td>4</td>
-                            <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-                            <td>szt.</td>
-                            <td>1</td>
+                            ${bufferRow}
                         </tr>
                         <tr>
                             <td>5</td>
@@ -4297,9 +4360,7 @@ break;
                             </tr>
                             <tr>
                                 <td>4</td>
-                                <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-                                <td>szt.</td>
-                                <td>1</td>
+                                ${bufferRow}
                             </tr>
                             <tr>
                                 <td>5</td>
@@ -4372,9 +4433,7 @@ else if (power === '14 kW') {
                         </tr>
                         <tr>
                             <td>4</td>
-                            <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-                            <td>szt.</td>
-                            <td>1</td>
+                            ${bufferRow}
                         </tr>
                         <tr>
                             <td>5</td>
@@ -4431,7 +4490,7 @@ else if (power === '14 kW') {
                         </tr>
                         <tr>
                             <td>1</td>
-                            <td>Ecodan | Zubadan Inverter 1F | Split | 10,0kW, 240V, R32 PUD-SHWM100YAA</td>
+                            <td>Ecodan | Zubadan Inverter | Split | 10,0kW, 400V, R32 PUD-SHWM100YAA</td>
                             <td>szt.</td>
                             <td>1</td>
                         </tr>
@@ -4449,9 +4508,7 @@ else if (power === '14 kW') {
                         </tr>
                         <tr>
                             <td>4</td>
-                            <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-                            <td>szt.</td>
-                            <td>1</td>
+                            ${bufferRow}
                         </tr>
                         <tr>
                             <td>5</td>
@@ -4524,9 +4581,7 @@ else if (power === '14 kW') {
                         </tr>
                         <tr>
                             <td>4</td>
-                            <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-                            <td>szt.</td>
-                            <td>1</td>
+                            ${bufferRow}
                         </tr>
                         <tr>
                             <td>5</td>
@@ -4601,9 +4656,7 @@ else if (power === '14 kW') {
                             </tr>
                             <tr>
                                 <td>4</td>
-                                <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-                                <td>szt.</td>
-                                <td>1</td>
+                                ${bufferRow}
                             </tr>
                             <tr>
                                 <td>5</td>
@@ -4669,9 +4722,7 @@ else if (power === '14 kW') {
         </tr>
         <tr>
             <td>2</td>
-            <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-            <td>szt.</td>
-            <td>1</td>
+            ${bufferRow}
         </tr>
         <tr>
             <td>3</td>
@@ -4738,14 +4789,12 @@ else if (power === '14 kW') {
     </tr>
     <tr>
         <td>1</td>
-        <td>ATLANTIC EXTENSA AI DUO 10 KW 1F+ZBIORNIK CWU 200L </td>
+        <td>ATLANTIC EXTENSA AI DUO 10 KW 1F</td>
         <td>szt.</td>
         <td>1</td>
     </tr>
         <td>2</td>
-        <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-        <td>szt.</td>
-        <td>1</td>
+        ${bufferRow}
     </tr>
     <tr>
         <td>3</td>
@@ -4819,9 +4868,7 @@ else if (power === '14 kW') {
         <td>1</td>
     </tr>
         <td>2</td>
-        <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-        <td>szt.</td>
-        <td>1</td>
+        ${bufferRow}
     </tr>
     <tr>
         <td>3</td>
@@ -4897,9 +4944,7 @@ else if (power === '14 kW') {
                             <td>1</td>
                         </tr>
                             <td>2</td>
-                            <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-                            <td>szt.</td>
-                            <td>1</td>
+                            ${bufferRow}
                         </tr>
                         <tr>
                             <td>3</td>
@@ -5149,9 +5194,7 @@ case "VIESSMANN":
                             </tr>
                             <tr>
                                 <td>4</td>
-                                <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-                                <td>szt.</td>
-                                <td>1</td>
+                                ${bufferRow}
                             </tr>
                             <tr>
                                 <td>5</td>
@@ -5217,9 +5260,7 @@ case "VIESSMANN":
                         </tr>
                         <tr>
                             <td>4</td>
-                            <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-                            <td>szt.</td>
-                            <td>1</td>
+                            ${bufferRow}
                         </tr>
                         <tr>
                             <td>5</td>
@@ -5286,9 +5327,7 @@ case "VIESSMANN":
                         </tr>
                         <tr>
                             <td>4</td>
-                            <td>BUFFOR (SPRZĘGŁO HYDRAULICZNE ) 40-140L + OSPRZET</td>
-                            <td>szt.</td>
-                            <td>1</td>
+                            ${bufferRow}
                         </tr>
                         <tr>
                             <td>5</td>
@@ -6284,9 +6323,3 @@ case "VIESSMANN":
 
     return tableHtml;
 }
-
-
-
-
-
-
