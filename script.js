@@ -4431,7 +4431,7 @@ else if (power === '14 kW') {
                         </tr>
                         <tr>
                             <td>1</td>
-                            <td>Ecodan | Zubadan Inverter | Split | 10,0kW, 400V, R32 PUD-SHWM100YAA</td>
+                            <td>Ecodan | Zubadan Inverter 1F | Split | 10,0kW, 240V, R32 PUD-SHWM100YAA</td>
                             <td>szt.</td>
                             <td>1</td>
                         </tr>
@@ -4738,7 +4738,7 @@ else if (power === '14 kW') {
     </tr>
     <tr>
         <td>1</td>
-        <td>ATLANTIC EXTENSA AI DUO 10 KW 1F</td>
+        <td>ATLANTIC EXTENSA AI DUO 10 KW 1F+ZBIORNIK CWU 200L </td>
         <td>szt.</td>
         <td>1</td>
     </tr>
