@@ -481,11 +481,7 @@ async function generatePVPDF() {
 
     let content = '';
 
-    // Załóżmy, że powerRange to liczba paneli
-// Jeśli masz już zdefiniowane funkcje odpowiedzialne za generowanie treści PDF (np. createPDFContent),
-// upewnij się, że są one tutaj prawidłowo wywołane z odpowiednimi argumentami.
-
-
+    
 const firstPageContent = `
 <div id="page">
     <div id="top-page" style="background-image: url('${backgroundImage}');">
@@ -593,7 +589,10 @@ const secondPageContent = `
                 content = firstPageContent + secondPageContent + thirdPageContent + FourthPageContent + FiftPageContent + sixthPageContent + storagePageContent1 + storagePageContent2 + storagePageContent3 + storagePageContent4 + seventhPageContent;
             }
         }
-        
+        else if (installationType === 'only-storage') {
+            // Generuj tylko strony dla magazynu energii
+            content = firstPageContent;
+        }
         else if (inverterType === 'hybridWithStorageFOX') {
             if (panelType === 'zn-shine') {
                 // Treść specyficzna dla hybrydy FOX z magazynem energii i paneli ZN-Shine
