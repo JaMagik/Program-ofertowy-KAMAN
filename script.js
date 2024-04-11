@@ -318,6 +318,7 @@ function getBackgroundImageByType(pdfType) {
 }
 
 function generatePDF() {
+    const tankCapacity = document.getElementById('tankCapacity').value;
     const bufferCapacity = document.getElementById('bufferCapacity').value;
     const offerNumber = generateOfferNumber();
     console.log(offerNumber); 
@@ -396,8 +397,8 @@ function generatePDF() {
 
 
 
-    let tableHtml = getAdditionalOptionsTable (pdfType, bufferCapacity);
-    let tableContent = getTableContentByType(pdfType, power, bufferCapacity);
+    let tableHtml = getAdditionalOptionsTable (pdfType, bufferCapacity, tankCapacity);
+    let tableContent = getTableContentByType(pdfType, power, bufferCapacity, tankCapacity);
     let backgroundImage = getBackgroundImageByType(pdfType);
     let secondPageBackgroundImage = getSecondPageBackgroundImageByType(pdfType);
 
@@ -638,10 +639,13 @@ else {
     html2pdf().from(content).set(opt).save();
 }
 
-function getTableContentByType(pdfType, power, bufferCapacity) {
+function getTableContentByType(pdfType, power, bufferCapacity, tankCapacity) {
 
     let tableContent = '';
     let bufferRow = '';
+    let tankRow= '';
+    
+    //Bufor
     if(bufferCapacity === 'none'){
         bufferRow = ` 
             
@@ -652,6 +656,22 @@ function getTableContentByType(pdfType, power, bufferCapacity) {
     }else{
         bufferRow = `
             <td>Bufor (sprzęgło hydrauliczne) ${bufferCapacity}l + osprzęt</td>
+            <td>szt.</td>
+            <td>1</td>
+        `;
+    }
+
+    //CWU
+    if(tankCapacity === 'none'){
+        tankRow = ` 
+            
+            <td>Brak zasobnika ciepłej wody użytkowej</td>
+            <td>szt.</td>
+            <td>0</td>
+        `;
+    }else{
+        tankRow = `
+            <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ ${tankCapacity}L</td>
             <td>szt.</td>
             <td>1</td>
         `;
@@ -684,9 +704,7 @@ function getTableContentByType(pdfType, power, bufferCapacity) {
   </tr>
   <tr>
       <td>3</td>
-      <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L</td>
-      <td>szt.</td>
-      <td>1</td>
+      ${tankRow}
   </tr>
   <tr>
         <td>4</td>
@@ -769,9 +787,7 @@ function getTableContentByType(pdfType, power, bufferCapacity) {
   </tr>
   <tr>
       <td>3</td>
-      <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L</td>
-      <td>szt.</td>
-      <td>1</td>
+      ${tankRow}
   </tr>
   <tr>
         <td>4</td>
@@ -852,9 +868,7 @@ function getTableContentByType(pdfType, power, bufferCapacity) {
 </tr>
 <tr>
 <td>2</td>
-<td>ZASOBNIK CWU 200L</td>
-<td>szt.</td>
-<td>1</td>
+${tankRow}
 </tr>
 <tr>
 <td>3</td>
@@ -922,9 +936,7 @@ break;
 </tr>
 <tr>
 <td>2</td>
-<td>ZASOBNIK CWU 200L</td>
-<td>szt.</td>
-<td>1</td>
+${tankRow}
 </tr>
 <tr>
 <td>3</td>
@@ -991,9 +1003,7 @@ break;
 </tr>
 <tr>
 <td>2</td>
-<td>ZASOBNIK CWU 200L</td>
-<td>szt.</td>
-<td>1</td>
+${tankRow}
 </tr>
 <tr>
 <td>3</td>
@@ -1059,15 +1069,13 @@ break;
 </tr>
 <tr>
 <td>1</td>
-<td>KOCIOŁ ZGAZOWYWUJĄCY DREWNO KAMEN DRX 20 kW</td>
+<td>PIEC PELLETOWY KAMEN DRX 20 kW</td>
 <td>szt.</td>
 <td>1</td>
 </tr>
 <tr>
 <td>2</td>
-<td>ZASOBNIK CWU 200L</td>
-<td>szt.</td>
-<td>1</td>
+${tankRow}
 </tr>
 <tr>
 <td>3</td>
@@ -1129,15 +1137,13 @@ break;
 </tr>
 <tr>
 <td>1</td>
-<td>KOCIOŁ ZGAZOWYWUJĄCY DREWNO KAMEN DRX 15 kW</td>
+<td>PIEC PELLETOWY KAMEN DRX 15 kW</td>
 <td>szt.</td>
 <td>1</td>
 </tr>
 <tr>
 <td>2</td>
-<td>ZASOBNIK CWU 200L</td>
-<td>szt.</td>
-<td>1</td>
+${tankRow}
 </tr>
 <tr>
 <td>3</td>
@@ -1198,15 +1204,13 @@ break;
 </tr>
 <tr>
 <td>1</td>
-<td>KOCIOŁ ZGAZOWYWUJĄCY DREWNO KAMEN DRX 11 kW</td>
+<td>PIEC PELLETOWY KAMEN DRX 11 kW</td>
 <td>szt.</td>
 <td>1</td>
 </tr>
 <tr>
 <td>2</td>
-<td>ZASOBNIK CWU 200L</td>
-<td>szt.</td>
-<td>1</td>
+${tankRow}
 </tr>
 <tr>
 <td>3</td>
@@ -1278,9 +1282,7 @@ break;
 </tr>
 <tr>
 <td>2</td>
-<td>ZASOBNIK CWU 200L</td>
-<td>szt.</td>
-<td>1</td>
+${tankRow}
 </tr>
 <tr>
 <td>3</td>
@@ -1348,9 +1350,7 @@ break;
 </tr>
 <tr>
 <td>2</td>
-<td>ZASOBNIK CWU 200L</td>
-<td>szt.</td>
-<td>1</td>
+${tankRow}
 </tr>
 <tr>
 <td>3</td>
@@ -1417,9 +1417,7 @@ break;
 </tr>
 <tr>
 <td>2</td>
-<td>ZASOBNIK CWU 200L</td>
-<td>szt.</td>
-<td>1</td>
+${tankRow}
 </tr>
 <tr>
 <td>3</td>
@@ -1505,9 +1503,7 @@ break;
 </tr>
 <tr>
   <td>2</td>
-  <td>ZASOBNIK CWU 200L</td>
-  <td>szt.</td>
-  <td>1</td>
+  ${tankRow}
 </tr>
 <tr>
   <td>3</td>
@@ -1575,9 +1571,7 @@ break;
 </tr>
 <tr>
   <td>2</td>
-  <td>ZASOBNIK CWU 200L</td>
-  <td>szt.</td>
-  <td>1</td>
+  ${tankRow}
 </tr>
 <tr>
   <td>3</td>
@@ -1645,9 +1639,7 @@ break;
 </tr>
 <tr>
   <td>2</td>
-  <td>ZASOBNIK CWU 200L</td>
-  <td>szt.</td>
-  <td>1</td>
+  ${tankRow}
 </tr>
 <tr>
   <td>3</td>
@@ -1715,9 +1707,7 @@ break;
 </tr>
 <tr>
   <td>2</td>
-  <td>ZASOBNIK CWU 200L</td>
-  <td>szt.</td>
-  <td>1</td>
+  ${tankRow}
 </tr>
 <tr>
   <td>3</td>
@@ -1814,9 +1804,7 @@ break;
 </tr>
 <tr>
   <td>2</td>
-  <td>ZASOBNIK CWU 200L</td>
-  <td>szt.</td>
-  <td>1</td>
+  ${tankRow}
 </tr>
 <tr>
   <td>3</td>
@@ -1883,9 +1871,7 @@ break;
 </tr>
 <tr>
   <td>2</td>
-  <td>ZASOBNIK CWU 200L</td>
-  <td>szt.</td>
-  <td>1</td>
+  ${tankRow}
 </tr>
 <tr>
   <td>3</td>
@@ -1952,9 +1938,7 @@ break;
 </tr>
 <tr>
   <td>2</td>
-  <td>ZASOBNIK CWU 200L</td>
-  <td>szt.</td>
-  <td>1</td>
+  ${tankRow}
 </tr>
 <tr>
   <td>3</td>
@@ -2022,9 +2006,7 @@ break;
 </tr>
 <tr>
   <td>2</td>
-  <td>ZASOBNIK CWU 200L</td>
-  <td>szt.</td>
-  <td>1</td>
+  ${tankRow}
 </tr>
 <tr>
   <td>3</td>
@@ -2091,9 +2073,7 @@ break;
 </tr>
 <tr>
   <td>2</td>
-  <td>ZASOBNIK CWU 200L</td>
-  <td>szt.</td>
-  <td>1</td>
+  ${tankRow}
 </tr>
 <tr>
   <td>3</td>
@@ -2161,9 +2141,7 @@ break;
 </tr>
 <tr>
   <td>2</td>
-  <td>ZASOBNIK CWU 200L</td>
-  <td>szt.</td>
-  <td>1</td>
+  ${tankRow}
 </tr>
 <tr>
   <td>3</td>
@@ -2229,9 +2207,7 @@ else if (power === '15 kW/440') {
 </tr>
 <tr>
   <td>2</td>
-  <td>ZASOBNIK CWU 200L</td>
-  <td>szt.</td>
-  <td>1</td>
+  ${tankRow}
 </tr>
 <tr>
   <td>3</td>
@@ -2297,9 +2273,7 @@ break;
 </tr>
 <tr>
   <td>2</td>
-  <td>ZASOBNIK CWU 200L</td>
-  <td>szt.</td>
-  <td>1</td>
+  ${tankRow}
 </tr>
 <tr>
   <td>3</td>
@@ -2364,9 +2338,7 @@ break;
 </tr>
 <tr>
   <td>2</td>
-  <td>ZASOBNIK CWU 200L</td>
-  <td>szt.</td>
-  <td>1</td>
+  ${tankRow}
 </tr>
 <tr>
   <td>3</td>
@@ -2449,9 +2421,7 @@ break;
   </tr>
   <tr>
       <td>3</td>
-      <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L</td>
-      <td>szt.</td>
-      <td>1</td>
+      ${tankRow}
   </tr>
   <tr>
       <td>4</td>
@@ -2486,9 +2456,7 @@ break;
   </tr>
   <tr>
       <td>3</td>
-      <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L</td>
-      <td>szt.</td>
-      <td>1</td>
+      ${tankRow}
   </tr>
   <tr>
       <td>4</td>
@@ -2525,9 +2493,7 @@ break;
           </tr>
           <tr>
               <td>3</td>
-              <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L </td>
-              <td>szt.</td>
-              <td>1</td>
+              ${tankRow}
           </tr>
           <tr>
               <td>4</td>
@@ -2598,9 +2564,7 @@ break;
           </tr>
           <tr>
               <td>3</td>
-              <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L</td>
-              <td>szt.</td>
-              <td>1</td>
+              ${tankRow}
           </tr>
           <tr>
               <td>4</td>
@@ -2671,9 +2635,7 @@ break;
           </tr>
           <tr>
               <td>3</td>
-              <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L</td>
-              <td>szt.</td>
-              <td>1</td>
+              ${tankRow}
           </tr>
           <tr>
               <td>4</td>
@@ -2743,9 +2705,7 @@ break;
     </tr>
     <tr>
         <td>3</td>
-        <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L</td>
-        <td>szt.</td>
-        <td>1</td>
+        ${tankRow}
     </tr>
     <tr>
         <td>4</td>
@@ -3385,9 +3345,7 @@ case "Toshiba 3F":
           </tr>
           <tr>
               <td>3</td>
-              <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L </td>
-              <td>szt.</td>
-              <td>1</td>
+              ${tankRow}
           </tr>
           <tr>
               <td>4</td>
@@ -3458,9 +3416,7 @@ case "Toshiba 3F":
             </tr>
             <tr>
                 <td>3</td>
-                <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 300L</td>
-                <td>szt.</td>
-                <td>1</td>
+                ${tankRow}
             </tr>
             <tr>
                 <td>4</td>
@@ -3532,9 +3488,7 @@ case "Toshiba 3F":
           </tr>
           <tr>
               <td>3</td>
-              <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L</td>
-              <td>szt.</td>
-              <td>1</td>
+              ${tankRow}
           </tr>
           <tr>
               <td>4</td>
@@ -3604,9 +3558,7 @@ case "Toshiba 3F":
     </tr>
     <tr>
         <td>3</td>
-        <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L</td>
-        <td>szt.</td>
-        <td>1</td>
+        ${tankRow}
     </tr>
     <tr>
         <td>4</td>
@@ -3692,9 +3644,7 @@ break;
           </tr>
           <tr>
               <td>3</td>
-              <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L </td>
-              <td>szt.</td>
-              <td>1</td>
+              ${tankRow}
           </tr>
           <tr>
               <td>4</td>
@@ -3765,9 +3715,7 @@ break;
             </tr>
             <tr>
                 <td>3</td>
-                <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 300L</td>
-                <td>szt.</td>
-                <td>1</td>
+                ${tankRow}
             </tr>
             <tr>
                 <td>4</td>
@@ -3839,9 +3787,7 @@ break;
           </tr>
           <tr>
               <td>3</td>
-              <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L</td>
-              <td>szt.</td>
-              <td>1</td>
+              ${tankRow}
           </tr>
           <tr>
               <td>4</td>
@@ -3911,9 +3857,7 @@ break;
     </tr>
     <tr>
         <td>3</td>
-        <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L</td>
-        <td>szt.</td>
-        <td>1</td>
+        ${tankRow}
     </tr>
     <tr>
         <td>4</td>
@@ -4354,9 +4298,7 @@ break;
                             </tr>
                             <tr>
                                 <td>3</td>
-                                <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 300L</td>
-                                <td>szt.</td>
-                                <td>1</td>
+                                ${tankRow}
                             </tr>
                             <tr>
                                 <td>4</td>
@@ -4427,9 +4369,7 @@ else if (power === '14 kW') {
                         </tr>
                         <tr>
                             <td>3</td>
-                            <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 300L</td>
-                            <td>szt.</td>
-                            <td>1</td>
+                            ${tankRow}
                         </tr>
                         <tr>
                             <td>4</td>
@@ -4502,9 +4442,7 @@ else if (power === '14 kW') {
                         </tr>
                         <tr>
                             <td>3</td>
-                            <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 300L</td>
-                            <td>szt.</td>
-                            <td>1</td>
+                            ${tankRow}
                         </tr>
                         <tr>
                             <td>4</td>
@@ -4575,9 +4513,7 @@ else if (power === '14 kW') {
                         </tr>
                         <tr>
                             <td>3</td>
-                            <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 300L</td>
-                            <td>szt.</td>
-                            <td>1</td>
+                            ${tankRow}
                         </tr>
                         <tr>
                             <td>4</td>
@@ -4650,9 +4586,7 @@ else if (power === '14 kW') {
                             </tr>
                             <tr>
                                 <td>3</td>
-                                <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 300L</td>
-                                <td>szt.</td>
-                                <td>1</td>
+                                ${tankRow}
                             </tr>
                             <tr>
                                 <td>4</td>
@@ -5018,9 +4952,7 @@ case "VIESSMANN":
     </tr>
     <tr>
         <td>2</td>
-        <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 300L</td>
-        <td>szt.</td>
-        <td>1</td>
+        ${tankRow}
     </tr>
     <tr>
         <td>3</td>
@@ -5098,9 +5030,7 @@ case "VIESSMANN":
 </tr>
 <tr>
     <td>2</td>
-    <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 300L</td>
-    <td>szt.</td>
-    <td>1</td>
+    ${tankRow}
 </tr>
 <tr>
     <td>3</td>
@@ -5182,9 +5112,7 @@ case "VIESSMANN":
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L</td>
-                                <td>szt.</td>
-                                <td>1</td>
+                                ${tankRow}
                             </tr>
                             <tr>
                                 <td>3</td>
@@ -5248,9 +5176,7 @@ case "VIESSMANN":
                         </tr>
                         <tr>
                         <td>2</td>
-                        <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L</td>
-                        <td>szt.</td>
-                        <td>1</td>
+                        ${tankRow}
                         </tr>
                         <tr>
                             <td>3</td>
@@ -5315,9 +5241,7 @@ case "VIESSMANN":
                         </tr>
                         <tr>
                         <td>2</td>
-                        <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ 200L</td>
-                        <td>szt.</td>
-                        <td>1</td>
+                        ${tankRow}
                         </tr>
                         <tr>
                             <td>3</td>
