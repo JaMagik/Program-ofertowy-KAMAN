@@ -23,11 +23,7 @@
           </div>
           <!-- ... istniejący kod ... -->
 
-          <div class="input-group">
-            <label for="powerRange">Moc paneli:</label>
-            <input type="range" id="powerRange" name="powerRange" min="1" max="21" value="1" oninput="updatePowerOutput(this.value)" required>
-            <span id="powerOutput">0.455 kW</span> <!-- Wartość początkowa dla jednego panelu -->
-        </div>
+         
         
 <div class="input-group">
   <label for="installationType">Typ instalacji:</label>
@@ -48,7 +44,17 @@
         <option value="jinko 475">JINKO 475</option>
         <option value="jasolar">JA SOLAR 460</option>
     </select>
+    <div class="input-group">
+      <div class="input-group">
+        <label for="powerInput">Moc paneli (kW):</label>
+        <input type="number" id="powerInput" name="powerInput" step="0.001" required>
+    </div>
     
+  </div>
+
+  <div id="panelCountMessage" class="input-group">
+    <!-- Tutaj pojawi się wiadomość z liczbą paneli -->
+</div>
 
   <div class="input-group">
     <label for="inverterType">Rodzaj falownika:</label>

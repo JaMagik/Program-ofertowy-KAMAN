@@ -1,5 +1,6 @@
 document.getElementById('generatePhotovoltaicsPdfButton').addEventListener('click', generatePVPDF);
-
+document.getElementById('panelType').addEventListener('change', updatePowerInput);
+document.getElementById('powerInput').addEventListener('input', updatePanelCount);
 
 
 // Załaduj obrazy
@@ -132,6 +133,23 @@ async function loadImageDataForPV() {
 
 loadImageDataForPV(); // Poprawione na właściwą nazwę funkcji
 
+function updatePowerInput() {
+    const panelType = document.getElementById('panelType').value;
+    const panelPower = getPanelPower(panelType);
+    const powerInput = document.getElementById('powerInput');
+    powerInput.value = panelPower;
+    powerInput.step = panelPower.toString();
+    updatePanelCount(); // Aktualizuj liczbę paneli po zmianie typu panelu
+}
+
+function updatePanelCount() {
+    const powerInput = parseFloat(document.getElementById('powerInput').value);
+    const panelType = document.getElementById('panelType').value;
+    const panelPower = getPanelPower(panelType);
+    const numberOfPanels = Math.ceil(powerInput / panelPower);
+    const panelCountMessage = document.getElementById('panelCountMessage');
+    panelCountMessage.textContent = `Liczba paneli: ${numberOfPanels}`;
+}
 function getInverterImage(inverterType, panelType) {
 
     
@@ -370,7 +388,6 @@ function createTableContent(panelDescription, inverterType, includeEnergyStorage
             panelName = 'Standardowy panel';
     }
 
-    let numberOfPanels;
     let descriptionParts = panelDescription.match(/(.+)\s(\d+)\s(.+)/);
     if (descriptionParts) {
         panelName += ' ' + descriptionParts[1];
@@ -438,7 +455,20 @@ function createTableContent(panelDescription, inverterType, includeEnergyStorage
 
 
 
-
+function getPanelPower(panelType) {
+    switch (panelType) {
+        case 'canadian':
+            return 0.455;
+        case 'zn-shine':
+            return 0.450;
+        case 'jinko 475':
+            return 0.475;
+        case 'jasolar':
+            return 0.460;
+        default:
+            return 0.455; // Domyślna wartość, jeśli nic nie jest wybrane
+    }
+}
 
 
 async function generatePVPDF() {
@@ -446,7 +476,7 @@ async function generatePVPDF() {
 
     const offerNumber = generateOfferNumber();
     const userName = document.getElementById('userName').value; // Poprawione z userName na clientName
-    const powerRange = parseInt(document.getElementById('powerRange').value); // Pobierz wartość jako liczbę
+    const powerInput = parseFloat(document.getElementById('powerInput').value);
     const installationType = document.getElementById('installationType').value;
     const pricePV = document.getElementById('pricePV').value;
     const inverterTypeSelect = document.getElementById('inverterType');
@@ -454,13 +484,12 @@ async function generatePVPDF() {
     const panelTypeSelect = document.getElementById('panelType');
     const panelType = panelTypeSelect.options[panelTypeSelect.selectedIndex].value;
     
-
-    
-    console.log('Power Range:', powerRange);
+    const panelPower = getPanelPower(panelType);
+    const numberOfPanels = Math.ceil(powerInput / panelPower);
     console.log('Inverter Type:', inverterType);
     console.log('Installation Type:', installationType);
 
-    panelDescription = powerRange + (panelType === 'canadian' ? '' : '');
+    panelDescription = `${numberOfPanels}` + (panelType === 'canadian' ? '' : '');
 
     
 
@@ -627,6 +656,9 @@ const opt = {
 // Użyj html2pdf do konwersji treści HTML na PDF i zainicjuj pobieranie
 html2pdf().from(content).set(opt).save();
 }
+document.addEventListener('DOMContentLoaded', function () {
+    updatePowerInput(); // Ustaw początkowe wartości
+});
 
 
 
