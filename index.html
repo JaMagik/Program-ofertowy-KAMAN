@@ -6,157 +6,145 @@
     <title>Generator Ofert</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
 </head>
 <body>
-    <div class="background-image" style="background-image: url('family.jpg');"></div>
-    <div class="form-container photovoltaics-generator">
-      <h2>Generator Fotowoltaika</h2>
-      <form id="photovoltaicsForm">
-          <div class="input-group">
-              <label for="userName">Imię i Nazwisko:</label>
-              <input type="text" id="userName" name="userName" required>
-          </div>
-          <div class="input-group">
-              <label for="pricePV">Cena:</label>
-              <input type="number" id="pricePV" name="pricePV" required>
-          </div>
-          <!-- ... istniejący kod ... -->
-
-         
+    <div class="background-image" style="background-image: url('family.png');"></div>
+    <div class="form-wrapper">
+        <div class="form-container photovoltaics-generator">
+          <h2>Generator Fotowoltaika</h2>
+          <form id="photovoltaicsForm">
+              <div class="input-group">
+                  <label for="userName">Imię i Nazwisko:</label>
+                  <input type="text" id="userName" name="userName" required>
+              </div>
+              <div class="input-group">
+                  <label for="pricePV">Cena:</label>
+                  <input type="number" id="pricePV" name="pricePV" required>
+              </div>
+              <!-- ... istniejący kod ... -->
+            
+              <div class="input-group">
+                <label for="installationType">Typ instalacji:</label>
+                <select id="installationType" name="installationType">
+                    <option value="dach">Dach</option>
+                    <option value="grunt">Grunt</option>
+                    <option value="only-storage">Sam magazyn energii</option>
+                </select>
+              </div>
+            
+              <div class="input-group">
+                <label for="panelType">Rodzaj paneli</label>
+                <select id="panelType" name="panelType">
+                    <option value="canadian">Canadian 455</option>
+                    <option value="zn-shine">ZN-SHINE 450</option>
+                    <option value="jinko 475">JINKO 475</option>
+                    <option value="jasolar">JA SOLAR 460</option>
+                </select>
+                <div class="input-group">
+                  <div class="input-group">
+                    <label for="powerInput">Moc paneli (kW):</label>
+                    <input type="number" id="powerInput" name="powerInput" step="0.001" required>
+                  </div>
+                </div>
+                <div id="panelCountMessage" class="input-group">
+                    <!-- Tutaj pojawi się wiadomość z liczbą paneli -->
+                </div>
+                <div class="input-group">
+                    <label for="inverterType">Rodzaj falownika:</label>
+                    <select id="inverterType" name="inverterType"> 
+                      <option value="standard">Falownik zwykły</option>
+                      <option value="fronius">Falownik Fronius</option>
+                      <option value="hybrid">Falownik hybrydowy SUNGROW</option>
+                      <option value="hybridFOX">Falownik hybrydowy FOXESS</option>
+                      <option value="hybridWithStorage">Falownik hybrydowy z magazynem SUNGROW+PYLONTECH</option>
+                      <option value="hybridWithStorageFOX">Falownik hybrydowy z magazynem FOXESS</option>
+                      <option value="sofar">Sofar Solar</option>
+                    </select>
+                </div>
+              </div>
+            
+              <!-- ... istniejący kod ... -->
+            
+              <button type="button" id="generatePhotovoltaicsPdfButton">Generuj PDF</button>
+          </form>
+        </div>
         
-<div class="input-group">
-  <label for="installationType">Typ instalacji:</label>
-  <select id="installationType" name="installationType">
-      <option value="dach">Dach</option>
-      <option value="grunt">Grunt</option>
-      <option value="only-storage">Sam magazyn energii</option>
-
-      
-  </select>
-  </div>
-
-  <div class="input-group">
-    <label for="panelType">Rodzaj paneli</label>
-    <select id="panelType" name="panelType">
-        <option value="canadian">Canadian 455</option>
-        <option value="zn-shine">ZN-SHINE 450</option>
-        <option value="jinko 475">JINKO 475</option>
-        <option value="jasolar">JA SOLAR 460</option>
-    </select>
-    <div class="input-group">
-      <div class="input-group">
-        <label for="powerInput">Moc paneli (kW):</label>
-        <input type="number" id="powerInput" name="powerInput" step="0.001" required>
+        <div class="form-container">
+            <h2>Generator Ofert</h2>
+            <form id="offerForm">
+              <div id="offer-number"></div>
+                <div class="input-group">
+                    <label for="userNamePC">Imię i Nazwisko:</label>
+                    <input type="text" id="userNamePC" name="userNamePC" autocomplete="name" required>
+                </div>
+                <div class="input-group">
+                    <label for="price">Cena:</label>
+                    <input type="number" id="price" name="price" required>
+                </div>
+                <div class="input-group">
+                    <label for="pdfType">Typ oferty:</label>
+                    <select id="pdfType" name="pdfType" autocomplete="off">
+                      <option value="Toshiba 3F" id="device-name">Toshiba 3F</option>
+                      <option value="Toshiba 1F" id="device-name">Toshiba 1F</option>
+                      <option value="Mitsubishi-hydrobox" id="device-name">Mitsubishi-hydrobox</option>
+                      <option value="Mitsubishi-cylinder" id="device-name">Mitsubishi-cylinder</option>
+                      <option value="Mitsubishi-ecoinverter" id="device-name">Mitsubishi-ecoinverter</option>
+                      <option value="ATLANTIC" id="device-name">ATLANTIC</option>
+                      <option value="GALMET-PRIMA" id="device-name">GALMET-PRIMA</option>
+                      <option value="HEIZTECHNIK" id="device-name">HEIZTECHNIK</option>
+                      <option value="VIESSMANN" id="device-name">VIESSMANN</option>
+                      <option value="MITSUBISHI HR" id="device-name">MITSUBISHI HR</option>
+                      <option value="MITSUBISHI AP" id="device-name">MITSUBISHI AP</option>
+                      <option value="LAZAR" id="device-name">LAZAR PELLET</option>
+                      <option value="ROTENSO" id="device-name">ROTENSO IMOTO X</option>
+                      <option value="KIPI" id="device-name">KIPI</option>
+                      <option value="KAMEN-KOMPAKT-LUX" id="device-name">KAMEN KOMPAKT LUX</option>
+                      <option value="KAMEN-PELLET-KOMPAKT" id="device-name">KAMEN PELLET KOMPAKT</option>
+                      <option value="KAMEN-DRX" id="device-name">KAMEN DRX</option>
+                    </select>
+                    <select id="powerOptions" name="powerOptions" autocomplete="off">
+                        <!-- Opcje zostaną tutaj dodane przez JavaScript -->
+                    </select>
+                </div>
+                <div class="input-group">
+                  <label for="tankCapacity">Pojemność zasobnika CWU:</label>
+                  <select id="tankCapacity" name="tankCapacity">
+                      <option value="none">Brak zasobnika CWU</option>
+                      <option value="40">40 L</option>
+                      <option value="60">60 L</option>
+                      <option value="80">80 L</option>
+                      <option value="100">100 L</option>
+                      <option value="120">120 L</option>
+                      <option value="140">140 L</option>
+                      <option value="200">200 L</option>
+                      <option value="300">300 L</option>
+                      <option value="500">500 L</option>
+                      <option value="800">800 L</option>
+                      <option value="1000">1000 L</option>
+                  </select>
+                </div>
+                <div class="input-group">
+                  <label for="bufferCapacity">Pojemność bufora:</label>
+                  <select id="bufferCapacity" name="bufferCapacity">
+                      <option value="none">Brak bufora</option>
+                      <option value="40-120">40-120 L</option>
+                      <option value="40">40 L</option>
+                      <option value="60">60 L</option>
+                      <option value="80">80 L</option>
+                      <option value="100">100 L</option>
+                      <option value="120">120 L</option>
+                      <option value="140">140 L</option>
+                      <option value="300">300 L</option>
+                      <option value="500">500 L</option>
+                      <option value="800">800 L</option>
+                      <option value="1000">1000 L</option>
+                  </select>
+                </div>
+                <button type="button" id="generatePdfButton">Generuj PDF</button>
+            </form>
+        </div>
     </div>
     
-  </div>
-
-  <div id="panelCountMessage" class="input-group">
-    <!-- Tutaj pojawi się wiadomość z liczbą paneli -->
-</div>
-
-  <div class="input-group">
-    <label for="inverterType">Rodzaj falownika:</label>
-    <select id="inverterType" name="inverterType"> 
-      <option value="standard">Falownik zwykły</option>
-      <option value="fronius">Falownik Fronius</option>
-      <option value="hybrid">Falownik hybrydowy SUNGROW</option>
-      <option value="hybridFOX">Falownik hybrydowy FOXESS</option>
-      <option value="hybridWithStorage">Falownik hybrydowy z magazynem SUNGROW+PYLONTECH</option>
-      <option value="hybridWithStorageFOX">Falownik hybrydowy z magazynem FOXESS</option>
-      <option value="sofar">Sofar Solar</option>
-    </select>
-  </div>
-</div>
-
-<!-- ... istniejący kod ... -->
-
-          <button type="button" id="generatePhotovoltaicsPdfButton">Generuj PDF</button>
-      </form>
-  </div>
-  
-    <div class="form-container">
-        <h2>Generator Ofert</h2>
-        <form id="offerForm">
-          <div id="offer-number"></div>
-
-            <div class="input-group">
-                <label for="userNamePC">Imię i Nazwisko:</label>
-                <input type="text" id="userNamePC" name="userNamePC" autocomplete="name" required>
-            </div>
-            <div class="input-group">
-                <label for="price">Cena:</label>
-                <input type="number" id="price" name="price" required>
-            </div>
-            <div class="input-group">
-                <label for="pdfType">Typ oferty:</label>
-                <select id="pdfType" name="pdfType" autocomplete="off">
-                  <option value="Toshiba 3F" id="device-name">Toshiba 3F</option>
-                  <option value="Toshiba 1F" id="device-name">Toshiba 1F</option>
-                  <option value="Mitsubishi-hydrobox" id="device-name">Mitsubishi-hydrobox</option>
-                  <option value="Mitsubishi-cylinder" id="device-name">Mitsubishi-cylinder</option>
-                  <option value="Mitsubishi-ecoinverter" id="device-name">Mitsubishi-ecoinverter</option>
-                  <option value="ATLANTIC" id="device-name">ATLANTIC</option>
-                  <option value="GALMET-PRIMA" id="device-name">GALMET-PRIMA</option>
-                  <option value="HEIZTECHNIK" id="device-name">HEIZTECHNIK</option>
-                  <option value="VIESSMANN" id="device-name">VIESSMANN</option>
-                  <option value="MITSUBISHI HR" id="device-name">MITSUBISHI HR</option>
-                  <option value="MITSUBISHI AP" id="device-name">MITSUBISHI AP</option>
-                  <option value="LAZAR" id="device-name">LAZAR PELLET</option>
-                  <option value="ROTENSO" id="device-name">ROTENSO IMOTO X</option>
-                  <option value="KIPI" id="device-name">KIPI</option>
-                  <option value="KAMEN-KOMPAKT-LUX" id="device-name">KAMEN KOMPAKT LUX</option>
-                  <option value="KAMEN-PELLET-KOMPAKT" id="device-name">KAMEN PELLET KOMPAKT</option>
-                  <option value="KAMEN-DRX" id="device-name">KAMEN DRX</option>
- 
-                </select>
-                <select id="powerOptions" name="powerOptions" autocomplete="off">
-                    <!-- Opcje zostaną tutaj dodane przez JavaScript -->
-                  </select>
-                  
-            </div>
-
-            <div class="input-group">
-              <label for="tankCapacity">Pojemność zasobnika CWU:</label>
-              <select id="tankCapacity" name="tankCapacity">
-                  <option value="none">Brak zasobnika CWU</option>
-                  <option value="40">40 L</option>
-                  <option value="60">60 L</option>
-                  <option value="80">80 L</option>
-                  <option value="100">100 L</option>
-                  <option value="120">120 L</option>
-                  <option value="140">140 L</option>
-                  <option value="200">200 L</option>
-                  <option value="300">300 L</option>
-                  <option value="500">500 L</option>
-                  <option value="800">800 L</option>
-                  <option value="1000">1000 L</option>
-              </select>
-            </div>
-
-            <div class="input-group">
-              <label for="bufferCapacity">Pojemność bufora:</label>
-              <select id="bufferCapacity" name="bufferCapacity">
-                  <option value="none">Brak bufora</option>
-                  <option value="40-120">40-120 L</option>
-                  <option value="40">40 L</option>
-                  <option value="60">60 L</option>
-                  <option value="80">80 L</option>
-                  <option value="100">100 L</option>
-                  <option value="120">120 L</option>
-                  <option value="140">140 L</option>
-                  <option value="300">300 L</option>
-                  <option value="500">500 L</option>
-                  <option value="800">800 L</option>
-                  <option value="1000">1000 L</option>
-              </select>
-            </div>
-            
-
-            <button type="button" id="generatePdfButton">Generuj PDF</button>
-        </form>
-    </div>
     <div id="pdfTemplate" style="display:none;">
         <div class="header-info">
             <div class="seller-info">
@@ -199,218 +187,194 @@
     <script src="scriptPV.js" type="module"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-  const pdfTypeSelect = document.getElementById('pdfType');
-  const deviceNameSpan = document.getElementById('device-name');
-  const powerOptionsSelect = document.getElementById('powerOptions');
+            const pdfTypeSelect = document.getElementById('pdfType');
+            const deviceNameSpan = document.getElementById('device-name');
+            const powerOptionsSelect = document.getElementById('powerOptions');
 
-  function updateOffer() {
-    const selectedOption = pdfTypeSelect.options[pdfTypeSelect.selectedIndex];
-    const selectedPowerOption = powerOptionsSelect.value;
-    deviceNameSpan.textContent = `${selectedOption.text} ${selectedPowerOption}`;
-    // Tutaj możesz dodać więcej logiki do generowania oferty na podstawie wybranych opcji
-  }
+            function updateOffer() {
+                const selectedOption = pdfTypeSelect.options[pdfTypeSelect.selectedIndex];
+                const selectedPowerOption = powerOptionsSelect.value;
+                deviceNameSpan.textContent = `${selectedOption.text} ${selectedPowerOption}`;
+                // Tutaj możesz dodać więcej logiki do generowania oferty na podstawie wybranych opcji
+            }
 
-  pdfTypeSelect.addEventListener('change', updatePowerOptions);
-  powerOptionsSelect.addEventListener('change', updateOffer);
+            pdfTypeSelect.addEventListener('change', updatePowerOptions);
+            powerOptionsSelect.addEventListener('change', updateOffer);
 
-  // Inicjalizacja opcji mocy i oferty przy załadowaniu strony
-  updatePowerOptions();
-  updateOffer();
-});
+            // Inicjalizacja opcji mocy i oferty przy załadowaniu strony
+            updatePowerOptions();
+            updateOffer();
+        });
 
-      </script>
-     <script>
-      document.addEventListener('DOMContentLoaded', function () {
-  const installationTypeSelect = document.getElementById('installationType');
-  const inverterTypeSelect = document.getElementById('inverterType');
-  const panelTypeSelect = document.getElementById('panelType');
+        document.addEventListener('DOMContentLoaded', function () {
+            const installationTypeSelect = document.getElementById('installationType');
+            const inverterTypeSelect = document.getElementById('inverterType');
+            const panelTypeSelect = document.getElementById('panelType');
 
-  panelTypeSelect.addEventListener('change', function () {
-        updatePanelType();
-    });
-  
-    function updatePanelType() {
-        const selectedPanelType = panelTypeSelect.value;
-        // Tutaj możesz użyć zmiennej selectedPanelType do dalszych działań
-        console.log("Wybrany typ panelu:", selectedPanelType);
-        // Na przykład: Możesz tutaj zaktualizować inne elementy interfejsu użytkownika lub wywołać inną funkcję
-    }
+            panelTypeSelect.addEventListener('change', function () {
+                updatePanelType();
+            });
+        
+            function updatePanelType() {
+                const selectedPanelType = panelTypeSelect.value;
+                // Tutaj możesz użyć zmiennej selectedPanelType do dalszych działań
+                console.log("Wybrany typ panelu:", selectedPanelType);
+                // Na przykład: Możesz tutaj zaktualizować inne elementy interfejsu użytkownika lub wywołać inną funkcję
+            }
 
-    // Inicjalizacja stanu początkowego
-    updatePanelType();
+            // Inicjalizacja stanu początkowego
+            updatePanelType();
 
-  function updateInverterOptions() {
-    // Pobranie aktualnie wybranej opcji instalacji
-    const selectedInstallation = installationTypeSelect.value;
-    // Wyczyść obecne opcje falownika
-    inverterTypeSelect.innerHTML = '';
+            function updateInverterOptions() {
+                // Pobranie aktualnie wybranej opcji instalacji
+                const selectedInstallation = installationTypeSelect.value;
+                // Wyczyść obecne opcje falownika
+                inverterTypeSelect.innerHTML = '';
 
-    // Definiowanie opcji falownika w zależności od wybranej instalacji
-    if (selectedInstallation === 'dach' || selectedInstallation === 'grunt') {
-        // Tutaj używamy już zaktualizowanych wartości
-        const optionStandard = document.createElement('option');
-        optionStandard.value = 'standard';
-        optionStandard.textContent = 'Falownik zwykły';
-        inverterTypeSelect.appendChild(optionStandard);
+                // Definiowanie opcji falownika w zależności od wybranej instalacji
+                if (selectedInstallation === 'dach' || selectedInstallation === 'grunt') {
+                    // Tutaj używamy już zaktualizowanych wartości
+                    const optionStandard = document.createElement('option');
+                    optionStandard.value = 'standard';
+                    optionStandard.textContent = 'Falownik zwykły';
+                    inverterTypeSelect.appendChild(optionStandard);
 
-        const optionFronius = document.createElement('option');
-        optionFronius.value = 'fronius';
-        optionFronius.textContent = 'Falownik Fronius';
-        inverterTypeSelect.appendChild(optionFronius);
+                    const optionFronius = document.createElement('option');
+                    optionFronius.value = 'fronius';
+                    optionFronius.textContent = 'Falownik Fronius';
+                    inverterTypeSelect.appendChild(optionFronius);
 
-        const optionHybrid = document.createElement('option');
-        optionHybrid.value = 'hybrid';
-        optionHybrid.textContent = 'Falownik hybrydowy';
-        inverterTypeSelect.appendChild(optionHybrid);    
+                    const optionHybrid = document.createElement('option');
+                    optionHybrid.value = 'hybrid';
+                    optionHybrid.textContent = 'Falownik hybrydowy';
+                    inverterTypeSelect.appendChild(optionHybrid);    
 
-        const optionHybridFOX = document.createElement('option');
-        optionHybridFOX.value = 'hybridFOX';
-        optionHybridFOX.textContent = 'Falownik hybrydowy FOXESS';
-        inverterTypeSelect.appendChild(optionHybridFOX);    
+                    const optionHybridFOX = document.createElement('option');
+                    optionHybridFOX.value = 'hybridFOX';
+                    optionHybridFOX.textContent = 'Falownik hybrydowy FOXESS';
+                    inverterTypeSelect.appendChild(optionHybridFOX);    
 
-        const optionHybridWithStorage = document.createElement('option');
-        optionHybridWithStorage.value = 'hybridWithStorage';
-        optionHybridWithStorage.textContent = 'Falownik hybrydowy z magazynem';
-        inverterTypeSelect.appendChild(optionHybridWithStorage);
+                    const optionHybridWithStorage = document.createElement('option');
+                    optionHybridWithStorage.value = 'hybridWithStorage';
+                    optionHybridWithStorage.textContent = 'Falownik hybrydowy z magazynem';
+                    inverterTypeSelect.appendChild(optionHybridWithStorage);
 
-        const optionHybridWithStorageFOX = document.createElement('option');
-        optionHybridWithStorageFOX.value = 'hybridWithStorageFOX';
-        optionHybridWithStorageFOX.textContent = 'Falownik hybrydowy z magazynem FOXESS';
-        inverterTypeSelect.appendChild(optionHybridWithStorageFOX);
+                    const optionHybridWithStorageFOX = document.createElement('option');
+                    optionHybridWithStorageFOX.value = 'hybridWithStorageFOX';
+                    optionHybridWithStorageFOX.textContent = 'Falownik hybrydowy z magazynem FOXESS';
+                    inverterTypeSelect.appendChild(optionHybridWithStorageFOX);
 
-        const optionSofar = document.createElement('option');
-        optionHybridWithStorageFOX.value = 'sofar';
-        optionHybridWithStorageFOX.textContent = 'Falownik Sofar';
-        inverterTypeSelect.appendChild(optionHybridWithStorageFOX);
-    }
-}
+                    const optionSofar = document.createElement('option');
+                    optionHybridWithStorageFOX.value = 'sofar';
+                    optionHybridWithStorageFOX.textContent = 'Falownik Sofar';
+                    inverterTypeSelect.appendChild(optionHybridWithStorageFOX);
+                }
+            }
 
+            // Dodanie nasłuchiwania zmiany wyboru instalacji
+            installationTypeSelect.addEventListener('change', updateInverterOptions);
 
-  // Dodanie nasłuchiwania zmiany wyboru instalacji
-  installationTypeSelect.addEventListener('change', updateInverterOptions);
+            // Inicjalizacja opcji falownika przy załadowaniu strony
+            updateInverterOptions();
+        });
 
-  // Inicjalizacja opcji falownika przy załadowaniu strony
-  updateInverterOptions();
-});
         function updatePowerOptions() {
-          var pdfType = document.getElementById('pdfType').value;
-          var powerOptions = document.getElementById('powerOptions');
-          powerOptions.innerHTML = ''; // Wyczyść obecne opcje
-      
-          var options = [];
-      
-          if (pdfType === 'Toshiba 3F') {
-            options = ['14 kW','11 kW', '8 kW', '6 kW'];
-          }
-          else if (pdfType === 'Toshiba 1F') {
-            options = ['11 kW', '8 kW', '6 kW'];
-          }
-           else if (pdfType === 'Mitsubishi-cylinder') {
-            options = ['14 kW','12 kW', '10 kW', '8 kW', '6 kW'];
-          }
-          else if (pdfType === 'Mitsubishi-ecoinverter') {
-            options = ['8 kW', '6 kW'];
-          }
-           else if (pdfType === 'Mitsubishi-hydrobox') {
-            options = ['14 kW','12 kW', '10 kW', '8 kW', '6 kW'];
-          } else if (pdfType === 'ATLANTIC') {
-            options = ['17 kW', '15 kW', '10 kW', '8 kW', '6 kW'];
-          }
-          else if (pdfType === 'GALMET-PRIMA') {
-            options = ['12 kW', '10 kW', '8 kW'];
-          }
-          else if (pdfType === 'HEIZTECHNIK') {
-            options = ['14 kW', '12 kW', '9 kW'];
-          }
-          else if (pdfType === 'KIPI') {
-            options = ['25 kW', '20 kW', '15 kW', '10 kW'];
-          }
-          else if (pdfType === 'VIESSMANN') {
-            options = ['13 kW', '10 kW', ];
-          }
-          else if (pdfType === 'MITSUBISHI HR') {
-            options = ['4,2 kW', '3,5 kW', '2,5 kW', '2,0 kW']
-          }
-          else if (pdfType === 'MITSUBISHI AP') {
-            options = ['4,2 kW', '3,5 kW', '2,5 kW', '2,0 kW']
-          }
-          else if (pdfType === 'ROTENSO') {
-            options = ['5,3 kW', '3,5 kW', '2,6 kW', '2,1 kW']
-          }
-          else if (pdfType === 'LAZAR') {
-            options = ['11 kW/150', '11 kW/240', '11 kW/440', '15 kW/150', '15 kW/240', '15 kW/440', '22 kW/150', '22 kW/240', '22 kW/440']
-          }
-          
-          else if (pdfType === 'KAMEN-KOMPAKT-LUX') {
-            options = ['20 kW', '17 kW', '12 kW']
-          }
-          
-          else if (pdfType === 'KAMEN-PELLET-KOMPAKT') {
-            options = ['20 kW', '25 kW', '50 kW']
-          }
-          else if (pdfType === 'KAMEN-DRX') {
-            options = ['11 kW', '15 kW', '20 kW']
-          }
-      
-          for (var i = 0; i < options.length; i++) {
-            var option = document.createElement('option');
-            option.value = options[i];
-            option.text = options[i];
-            powerOptions.appendChild(option);
-          }
+            var pdfType = document.getElementById('pdfType').value;
+            var powerOptions = document.getElementById('powerOptions');
+            powerOptions.innerHTML = ''; // Wyczyść obecne opcje
+        
+            var options = [];
+        
+            if (pdfType === 'Toshiba 3F') {
+                options = ['14 kW','11 kW', '8 kW', '6 kW'];
+            }
+            else if (pdfType === 'Toshiba 1F') {
+                options = ['11 kW', '8 kW', '6 kW'];
+            }
+            else if (pdfType === 'Mitsubishi-cylinder') {
+                options = ['14 kW','12 kW', '10 kW', '8 kW', '6 kW'];
+            }
+            else if (pdfType === 'Mitsubishi-ecoinverter') {
+                options = ['8 kW', '6 kW'];
+            }
+            else if (pdfType === 'Mitsubishi-hydrobox') {
+                options = ['14 kW','12 kW', '10 kW', '8 kW', '6 kW'];
+            } else if (pdfType === 'ATLANTIC') {
+                options = ['17 kW', '15 kW', '10 kW', '8 kW', '6 kW'];
+            }
+            else if (pdfType === 'GALMET-PRIMA') {
+                options = ['12 kW', '10 kW', '8 kW'];
+            }
+            else if (pdfType === 'HEIZTECHNIK') {
+                options = ['14 kW', '12 kW', '9 kW'];
+            }
+            else if (pdfType === 'KIPI') {
+                options = ['25 kW', '20 kW', '15 kW', '10 kW'];
+            }
+            else if (pdfType === 'VIESSMANN') {
+                options = ['13 kW', '10 kW'];
+            }
+            else if (pdfType === 'MITSUBISHI HR') {
+                options = ['4,2 kW', '3,5 kW', '2,5 kW', '2,0 kW'];
+            }
+            else if (pdfType === 'MITSUBISHI AP') {
+                options = ['4,2 kW', '3,5 kW', '2,5 kW', '2,0 kW'];
+            }
+            else if (pdfType === 'ROTENSO') {
+                options = ['5,3 kW', '3,5 kW', '2,6 kW', '2,1 kW'];
+            }
+            else if (pdfType === 'LAZAR') {
+                options = ['11 kW/150', '11 kW/240', '11 kW/440', '15 kW/150', '15 kW/240', '15 kW/440', '22 kW/150', '22 kW/240', '22 kW/440'];
+            }
+            else if (pdfType === 'KAMEN-KOMPAKT-LUX') {
+                options = ['20 kW', '17 kW', '12 kW'];
+            }
+            else if (pdfType === 'KAMEN-PELLET-KOMPAKT') {
+                options = ['20 kW', '25 kW', '50 kW'];
+            }
+            else if (pdfType === 'KAMEN-DRX') {
+                options = ['11 kW', '15 kW', '20 kW'];
+            }
+        
+            for (var i = 0; i < options.length; i++) {
+                var option = document.createElement('option');
+                option.value = options[i];
+                option.text = options[i];
+                powerOptions.appendChild(option);
+            }
         }
       
         function updateDeviceName() {
-          var pdfType = document.getElementById('pdfType').value;
-          var power = document.getElementById('powerOptions').value;
-          var deviceNameSpan = document.getElementById('device-name');
-          deviceNameSpan.textContent = pdfType + ' ' + power;
+            var pdfType = document.getElementById('pdfType').value;
+            var power = document.getElementById('powerOptions').value;
+            var deviceNameSpan = document.getElementById('device-name');
+            deviceNameSpan.textContent = pdfType + ' ' + power;
         }
       
         document.addEventListener('DOMContentLoaded', function () {
-          var pdfTypeSelect = document.getElementById('pdfType');
-          var powerOptionsSelect = document.getElementById('powerOptions');
-      
-          pdfTypeSelect.addEventListener('change', function () {
+            var pdfTypeSelect = document.getElementById('pdfType');
+            var powerOptionsSelect = document.getElementById('powerOptions');
+        
+            pdfTypeSelect.addEventListener('change', function () {
+                updatePowerOptions();
+                updateDeviceName(); // Aktualizuj nazwę urządzenia po zmianie typu oferty
+            });
+        
+            powerOptionsSelect.addEventListener('change', function () {
+                updateDeviceName(); // Aktualizuj nazwę urządzenia również po zmianie mocy
+            });
+        
+            // Inicjalizacja opcji mocy i nazwy urządzenia przy załadowaniu strony
             updatePowerOptions();
-            updateDeviceName(); // Aktualizuj nazwę urządzenia po zmianie typu oferty
-          });
-      
-          powerOptionsSelect.addEventListener('change', function () {
-            updateDeviceName(); // Aktualizuj nazwę urządzenia również po zmianie mocy
-          });
-      
-          // Inicjalizacja opcji mocy i nazwy urządzenia przy załadowaniu strony
-          updatePowerOptions();
-          updateDeviceName();
+            updateDeviceName();
         });
-        // ... istniejący kod JavaScript ...
-
-// ... istniejący kod JavaScript ...
-
-      </script>
-<script>
-    function updatePowerOutput(value) {
-    const powerPerPanel = 0.455; // Moc jednego panelu w kW
-    const totalPower = value * powerPerPanel; // Całkowita moc w zależności od liczby paneli
-    document.getElementById('powerOutput').textContent = `${totalPower.toFixed(3)} kW`; // Ustawienie tekstu
-}
-
-
-  
-</script>     
-
-      
+    </script>
+    <script>
+        function updatePowerOutput(value) {
+            const powerPerPanel = 0.455; // Moc jednego panelu w kW
+            const totalPower = value * powerPerPanel; // Całkowita moc w zależności od liczby paneli
+            document.getElementById('powerOutput').textContent = `${totalPower.toFixed(3)} kW`; // Ustawienie tekstu
+        }
+    </script>     
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
