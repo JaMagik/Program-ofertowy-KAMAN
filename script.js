@@ -4006,37 +4006,37 @@ break;
                                 ${bufferRow}
                             </tr>
                             <tr>
-                                <td>5</td>
+                                <td>4</td>
                                 <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
                                 <td>kpl.</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td>6</td>
+                                <td>5</td>
                                 <td>Grupa bezpieczeństwa CWU (6bar)</td>
                                 <td>szt.</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td>7</td>
+                                <td>6</td>
                                 <td>MIEDŹ CHŁODNICZA</td>
                                 <td>kpl.</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td>8</td>
+                                <td>7</td>
                                 <td>REGULATOR BEZPRZEWODOWY MITSUBISHI PAR-WT</td>
                                 <td>szt.</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td>9</td>
+                                <td>8</td>
                                 <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
                                 <td>szt.</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td>10</td>
+                                <td>9</td>
                                 <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
                                 <td>kpl.</td>
                                 <td>1</td>
