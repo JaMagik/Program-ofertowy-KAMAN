@@ -653,7 +653,7 @@ function getTableContentByType(pdfType, power, bufferCapacity, tankCapacity) {
             <td>szt.</td>
             <td>0</td>
         `;
-    }else{
+    } else{
         bufferRow = `
             <td>Bufor (sprzęgło hydrauliczne) ${bufferCapacity}l + osprzęt</td>
             <td>szt.</td>
