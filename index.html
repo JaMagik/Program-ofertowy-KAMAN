@@ -87,6 +87,7 @@
                       <option value="Toshiba 3F" id="device-name">Toshiba 3F</option>
                       <option value="Toshiba 1F" id="device-name">Toshiba 1F</option>
                       <option value="Mitsubishi-hydrobox" id="device-name">Mitsubishi-hydrobox</option>
+                      <option value="Mitsubishi-hp" id="device-name">Mitsubishi-HP</option>
                       <option value="Mitsubishi-cylinder" id="device-name">Mitsubishi-cylinder</option>
                       <option value="Mitsubishi-ecoinverter" id="device-name">Mitsubishi-ecoinverter</option>
                       <option value="ATLANTIC" id="device-name">ATLANTIC</option>
@@ -293,6 +294,9 @@
             }
             else if (pdfType === 'Mitsubishi-cylinder') {
                 options = ['14 kW','12 kW', '10 kW', '8 kW', '6 kW'];
+            }
+            else if (pdfType === 'Mitsubishi-hp') {
+                options = [ '6 kW'];
             }
             else if (pdfType === 'Mitsubishi-ecoinverter') {
                 options = ['8 kW', '6 kW'];
