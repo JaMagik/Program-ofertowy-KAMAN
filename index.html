@@ -91,6 +91,7 @@
                       <option value="Mitsubishi-cylinder" id="device-name">Mitsubishi-cylinder</option>
                       <option value="Mitsubishi-ecoinverter" id="device-name">Mitsubishi-ecoinverter</option>
                       <option value="ATLANTIC" id="device-name">ATLANTIC</option>
+                      <option value="ATLANTIC-HYDROBOX" id="device-name">ATLANTIC HYDROBOX</option>
                       <option value="GALMET-PRIMA" id="device-name">GALMET-PRIMA</option>
                       <option value="HEIZTECHNIK" id="device-name">HEIZTECHNIK</option>
                       <option value="VIESSMANN" id="device-name">VIESSMANN</option>
@@ -306,6 +307,11 @@
             } else if (pdfType === 'ATLANTIC') {
                 options = ['17 kW', '15 kW', '10 kW', '8 kW', '6 kW'];
             }
+
+            else if (pdfType === 'ATLANTIC-HYDROBOX') {
+                options = ['17 kW', '15 kW','14 kW', '10 kW', '8 kW', '6 kW'];
+            }
+
             else if (pdfType === 'GALMET-PRIMA') {
                 options = ['12 kW', '10 kW', '8 kW', '6 kW'];
             }
