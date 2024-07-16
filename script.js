@@ -5126,7 +5126,7 @@ case "ATLANTIC-HYDROBOX":
     </tr>
     <tr>
         <td>1</td>
-        <td>ATLANTIC EXTENSA AI DUO 15 KW 3F HYDROBOX</td>
+        <td>ATLANTIC EXCELIA AI 15 KW 3F HYDROBOX</td>
         <td>szt.</td>
         <td>1</td>
     </tr>
@@ -5199,7 +5199,7 @@ case "ATLANTIC-HYDROBOX":
 </tr>
 <tr>
     <td>1</td>
-    <td>ATLANTIC EXTENSA AI DUO 10 KW 1F HYDROBOX</td>
+    <td>ATLANTIC EXCELIA AI 10 KW 1F HYDROBOX</td>
     <td>szt.</td>
     <td>1</td>
 </tr>
@@ -5273,7 +5273,7 @@ case "ATLANTIC-HYDROBOX":
 </tr>
 <tr>
     <td>1</td>
-    <td>ATLANTIC EXTENSA AI DUO 10 KW 1F HYDROBOX</td>
+    <td>ATLANTIC EXCELIA AI 10 KW 1F HYDROBOX</td>
     <td>szt.</td>
     <td>1</td>
 </tr>
@@ -5348,7 +5348,7 @@ else if (power === '8 kW') {
 </tr>
 <tr>
     <td>1</td>
-    <td>ATLANTIC EXTENSA AI DUO 8 KW 1F HYDROBOX</td>
+    <td>ATLANTIC EXCELIA AI 8 KW 1F HYDROBOX</td>
     <td>szt.</td>
     <td>1</td>
 </tr>
@@ -5423,7 +5423,7 @@ else if (power === '14 kW') {
 </tr>
 <tr>
     <td>1</td>
-    <td>ATLANTIC EXTENSA AI DUO 14 KW 3F HYDROBOX</td>
+    <td>ATLANTIC EXCELIA AI 14 KW 3F HYDROBOX</td>
     <td>szt.</td>
     <td>1</td>
 </tr>
@@ -5496,7 +5496,7 @@ else if (power === '8 kW') {
 </tr>
 <tr>
     <td>1</td>
-    <td>ATLANTIC EXTENSA AI DUO 8 KW 1F HYDROBOX</td>
+    <td>ATLANTIC EXCELIA AI 8 KW 1F HYDROBOX</td>
     <td>szt.</td>
     <td>1</td>
 </tr>
@@ -5570,7 +5570,7 @@ else if (power === '17 kW') {
 </tr>
 <tr>
     <td>1</td>
-    <td>ATLANTIC EXTENSA AI DUO 17 KW 3F HYDROBOX</td>
+    <td>ATLANTIC EXCELIA AI 17 KW 3F HYDROBOX</td>
     <td>szt.</td>
     <td>1</td>
 </tr>
@@ -5646,7 +5646,7 @@ else if (power === '6 kW') {
                     </tr>
                     <tr>
                         <td>1</td>
-                        <td>ATLANTIC EXTENSA AI DUO 6 KW 1F HYDROBOX</td>
+                        <td>ATLANTIC EXCELIA AI 6 KW 1F HYDROBOX</td>
                         <td>szt.</td>
                         <td>1</td>
                     </tr>
