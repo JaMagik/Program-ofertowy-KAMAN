@@ -669,7 +669,7 @@ else if (pdfType === 'KIPI')
     // Dodaj standardowe strony
     content = firstPageContent + secondPageContent +thirdPageContent+ K1+ K2+MeetUsContent+FourthPageContent;
 }
-else if (pdfType === 'MITSUBISHI AP') 
+else if (pdfType === 'MITSUBISHI AY') 
 {
     // Dodaj standardowe strony
     content = firstPageContent + secondPageContent + MAP1+MAP2+MeetUsContent+FourthPageContent;
@@ -3016,7 +3016,7 @@ break;
 `};
 break;
 
-case "MITSUBISHI AP":
+case "MITSUBISHI AY":
         if (power === '4,2 kW') {
           tableContent = `
       <table id="customTable" border="1">
@@ -3029,13 +3029,13 @@ case "MITSUBISHI AP":
           </tr>
           <tr>
               <td>1</td>
-              <td> Klimatyzator pokojowy jednostka wewnętrzna Mitsubishi AP 4,2 kW</td>
+              <td> Klimatyzator pokojowy jednostka wewnętrzna Mitsubishi AY 4,2 kW</td>
               <td>szt.</td>
               <td>1</td>
           </tr>
           <tr>
               <td>2</td>
-              <td>Klimatyzator pokojowy jednostka wewnętrzna Mitsubishi AP 4,2 kW</td>
+              <td>Klimatyzator pokojowy jednostka wewnętrzna Mitsubishi AY 4,2 kW</td>
               <td>szt.</td>
               <td>1</td>
           </tr>
@@ -3074,13 +3074,13 @@ case "MITSUBISHI AP":
     </tr>
     <tr>
         <td>1</td>
-        <td> Klimatyzator pokojowy jednostka wewnętrzna Mitsubishi AP 3,5 kW</td>
+        <td> Klimatyzator pokojowy jednostka wewnętrzna Mitsubishi AY 3,5 kW</td>
         <td>szt.</td>
         <td>1</td>
     </tr>
     <tr>
         <td>2</td>
-        <td>Klimatyzator pokojowy jednostka wewnętrzna Mitsubishi AP 3,5 kW</td>
+        <td>Klimatyzator pokojowy jednostka wewnętrzna Mitsubishi AY 3,5 kW</td>
         <td>szt.</td>
         <td>1</td>
     </tr>
@@ -3120,13 +3120,13 @@ case "MITSUBISHI AP":
   </tr>
   <tr>
       <td>1</td>
-      <td> Klimatyzator pokojowy jednostka wewnętrzna Mitsubishi AP 2,5 kW</td>
+      <td> Klimatyzator pokojowy jednostka wewnętrzna Mitsubishi AY 2,5 kW</td>
       <td>szt.</td>
       <td>1</td>
   </tr>
   <tr>
       <td>2</td>
-      <td>Klimatyzator pokojowy jednostka wewnętrzna Mitsubishi AP 2,5 kW</td>
+      <td>Klimatyzator pokojowy jednostka wewnętrzna Mitsubishi AY 2,5 kW</td>
       <td>szt.</td>
       <td>1</td>
   </tr>
@@ -3164,13 +3164,13 @@ case "MITSUBISHI AP":
 </tr>
 <tr>
 <td>1</td>
-<td> Klimatyzator pokojowy jednostka wewnętrzna Mitsubishi AP 2 kW</td>
+<td> Klimatyzator pokojowy jednostka wewnętrzna Mitsubishi AY 2 kW</td>
 <td>szt.</td>
 <td>1</td>
 </tr>
 <tr>
 <td>2</td>
-<td>Klimatyzator pokojowy jednostka wewnętrzna Mitsubishi AP 2 kW</td>
+<td>Klimatyzator pokojowy jednostka wewnętrzna Mitsubishi AY 2 kW</td>
 <td>szt.</td>
 <td>1</td>
 </tr>
