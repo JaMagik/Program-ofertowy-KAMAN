@@ -295,7 +295,7 @@ function getSecondPageBackgroundImageByType(pdfType) {
             return imageBaseHeizZEW;
         case "VIESSMANN":
             return imageBaseViessmanZEW;
-        case "MITSUBISHI AP":
+        case "MITSUBISHI AY":
             return MitsubishiAPZew;
         case "MITSUBISHI HR":
             return MitsubishiHRZew;   
@@ -348,7 +348,7 @@ function getBackgroundImageByType(pdfType) {
         return imageBaseHeizWEW;
     } else if (pdfType === "VIESSMANN") {
         return imageBaseViessmanWEW;
-    } else if (pdfType === "MITSUBISHI AP") {
+    } else if (pdfType === "MITSUBISHI AY") {
         return MitsubishiAP;
     } else if (pdfType === "MITSUBISHI HR") {
         return MitsubishiHR;
