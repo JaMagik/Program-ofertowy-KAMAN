@@ -5219,50 +5219,54 @@ case "ATLANTIC-HYDROBOX":
         <td>2</td>
         ${bufferRow}
     </tr>
-    <tr>
+     <tr>
         <td>3</td>
+        ${tankRow}
+    </tr>
+    <tr>
+        <td>4</td>
         <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
         <td>kpl.</td>
         <td>1</td>
     </tr>
     <tr>
-        <td>4</td>
+        <td>5</td>
         <td>Grupa bezpieczeństwa CWU (6bar)</td>
         <td>szt.</td>
         <td>1</td>
     </tr>
     <tr>
-    <td>5</td>
+    <td>6</td>
     <td>Grupa bezpieczeńśtwa C.O (2.5 bar)</td>
     <td>szt.</td>
     <td>1</td>
 </tr>
 <tr>
-        <td>6</td>
+        <td>7</td>
         <td>KABEL GRZEWCZY</td>
         <td>kpl.</td>
         <td>1</td>
     </tr>
     <tr>
-        <td>7</td>
+        <td>8</td>
         <td>MIEDŹ CHŁODNICZA</td>
         <td>kpl.</td>
         <td>1</td>
     </tr>
     <tr>
-        <td>8</td>
+        <td>9</td>
         <td>SONDA POGODOWA</td>
         <td>szt.</td>
         <td>1</td>
     </tr>
     <tr>
-        <td>9</td>
+        <td>10</td>
         <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
         <td>szt.</td>
         <td>1</td>
     </tr>
     <tr>
-        <td>10</td>
+        <td>11</td>
         <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
         <td>kpl.</td>
         <td>1</td>
@@ -5275,70 +5279,75 @@ case "ATLANTIC-HYDROBOX":
     } else if (power === '10 kW') {
     tableContent = `
 <table id="customTable" border="1">
-<tbody>
-<tr>
-    <th>Numer</th>
-    <th>Nazwa towaru</th>
-    <th>Miara</th>
-    <th>Ilość</th>
-</tr>
-<tr>
-    <td>1</td>
-    <td>ATLANTIC EXCELIA AI 10 KW 1F HYDROBOX</td>
-    <td>szt.</td>
-    <td>1</td>
-</tr>
-    <td>2</td>
-    ${bufferRow}
-</tr>
-<tr>
-    <td>3</td>
-    <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
-    <td>kpl.</td>
-    <td>1</td>
-</tr>
-<tr>
-    <td>4</td>
-    <td>Grupa bezpieczeństwa CWU (6bar)</td>
-    <td>szt.</td>
-    <td>1</td>
-</tr>
-<tr>
-<td>5</td>
-<td>Grupa bezpieczeńśtwa C.O (2.5 bar)</td>
-<td>szt.</td>
-<td>1</td>
-</tr>
-<tr>
+  <tbody>
+    <tr>
+        <th>Numer</th>
+        <th>Nazwa towaru</th>
+        <th>Miara</th>
+        <th>Ilość</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>ATLANTIC EXCELIA AI 15 KW 3F HYDROBOX</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        ${bufferRow}
+    </tr>
+     <tr>
+        <td>3</td>
+        ${tankRow}
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>Grupa bezpieczeństwa CWU (6bar)</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
     <td>6</td>
-    <td>KABEL GRZEWCZY</td>
-    <td>kpl.</td>
-    <td>1</td>
-</tr>
-<tr>
-    <td>7</td>
-    <td>MIEDŹ CHŁODNICZA</td>
-    <td>kpl.</td>
-    <td>1</td>
-</tr>
-<tr>
-    <td>8</td>
-    <td>SONDA POGODOWA</td>
+    <td>Grupa bezpieczeńśtwa C.O (2.5 bar)</td>
     <td>szt.</td>
     <td>1</td>
 </tr>
 <tr>
-    <td>9</td>
-    <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
-    <td>szt.</td>
-    <td>1</td>
-</tr>
-<tr>
-    <td>10</td>
-    <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
-    <td>kpl.</td>
-    <td>1</td>
-</tr>
+        <td>7</td>
+        <td>KABEL GRZEWCZY</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>MIEDŹ CHŁODNICZA</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>SONDA POGODOWA</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
 </tbody>
 </table>
 `;
@@ -5424,70 +5433,75 @@ case "ATLANTIC-HYDROBOX":
 else if (power === '8 kW') {
     tableContent = `
 <table id="customTable" border="1">
-<tbody>
-<tr>
-    <th>Numer</th>
-    <th>Nazwa towaru</th>
-    <th>Miara</th>
-    <th>Ilość</th>
-</tr>
-<tr>
-    <td>1</td>
-    <td>ATLANTIC EXCELIA AI 8 KW 1F HYDROBOX</td>
-    <td>szt.</td>
-    <td>1</td>
-</tr>
-    <td>2</td>
-    ${bufferRow}
-</tr>
-<tr>
-    <td>3</td>
-    <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
-    <td>kpl.</td>
-    <td>1</td>
-</tr>
-<tr>
-    <td>4</td>
-    <td>Grupa bezpieczeństwa CWU (6bar)</td>
-    <td>szt.</td>
-    <td>1</td>
-</tr>
-<tr>
-<td>5</td>
-<td>Grupa bezpieczeńśtwa C.O (2.5 bar)</td>
-<td>szt.</td>
-<td>1</td>
-</tr>
-<tr>
+ <tbody>
+    <tr>
+        <th>Numer</th>
+        <th>Nazwa towaru</th>
+        <th>Miara</th>
+        <th>Ilość</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>ATLANTIC EXCELIA AI 8 KW HYDROBOX</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        ${bufferRow}
+    </tr>
+     <tr>
+        <td>3</td>
+        ${tankRow}
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>Grupa bezpieczeństwa CWU (6bar)</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
     <td>6</td>
-    <td>KABEL GRZEWCZY</td>
-    <td>kpl.</td>
-    <td>1</td>
-</tr>
-<tr>
-    <td>7</td>
-    <td>MIEDŹ CHŁODNICZA</td>
-    <td>kpl.</td>
-    <td>1</td>
-</tr>
-<tr>
-    <td>8</td>
-    <td>SONDA POGODOWA</td>
+    <td>Grupa bezpieczeńśtwa C.O (2.5 bar)</td>
     <td>szt.</td>
     <td>1</td>
 </tr>
 <tr>
-    <td>9</td>
-    <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
-    <td>szt.</td>
-    <td>1</td>
-</tr>
-<tr>
-    <td>10</td>
-    <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
-    <td>kpl.</td>
-    <td>1</td>
-</tr>
+        <td>7</td>
+        <td>KABEL GRZEWCZY</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>MIEDŹ CHŁODNICZA</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>SONDA POGODOWA</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
 </tbody>
 </table>
 `;
@@ -5499,70 +5513,75 @@ else if (power === '8 kW') {
 else if (power === '14 kW') {
     tableContent = `
 <table id="customTable" border="1">
-<tbody>
-<tr>
-    <th>Numer</th>
-    <th>Nazwa towaru</th>
-    <th>Miara</th>
-    <th>Ilość</th>
-</tr>
-<tr>
-    <td>1</td>
-    <td>ATLANTIC EXCELIA AI 14 KW 3F HYDROBOX</td>
-    <td>szt.</td>
-    <td>1</td>
-</tr>
-    <td>2</td>
-    ${bufferRow}
-</tr>
-<tr>
-    <td>3</td>
-    <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
-    <td>kpl.</td>
-    <td>1</td>
-</tr>
-<tr>
-    <td>4</td>
-    <td>Grupa bezpieczeństwa CWU (6bar)</td>
-    <td>szt.</td>
-    <td>1</td>
-</tr>
-<tr>
-<td>5</td>
-<td>Grupa bezpieczeńśtwa C.O (2.5 bar)</td>
-<td>szt.</td>
-<td>1</td>
-</tr>
-<tr>
+ <tbody>
+    <tr>
+        <th>Numer</th>
+        <th>Nazwa towaru</th>
+        <th>Miara</th>
+        <th>Ilość</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>ATLANTIC EXCELIA AI 14 KW 3F HYDROBOX</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        ${bufferRow}
+    </tr>
+     <tr>
+        <td>3</td>
+        ${tankRow}
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>Grupa bezpieczeństwa CWU (6bar)</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
     <td>6</td>
-    <td>KABEL GRZEWCZY</td>
-    <td>kpl.</td>
-    <td>1</td>
-</tr>
-<tr>
-    <td>7</td>
-    <td>MIEDŹ CHŁODNICZA</td>
-    <td>kpl.</td>
-    <td>1</td>
-</tr>
-<tr>
-    <td>8</td>
-    <td>SONDA POGODOWA</td>
+    <td>Grupa bezpieczeńśtwa C.O (2.5 bar)</td>
     <td>szt.</td>
     <td>1</td>
 </tr>
 <tr>
-    <td>9</td>
-    <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
-    <td>szt.</td>
-    <td>1</td>
-</tr>
-<tr>
-    <td>10</td>
-    <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
-    <td>kpl.</td>
-    <td>1</td>
-</tr>
+        <td>7</td>
+        <td>KABEL GRZEWCZY</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>MIEDŹ CHŁODNICZA</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>SONDA POGODOWA</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
 </tbody>
 </table>
 `;
@@ -5572,70 +5591,75 @@ else if (power === '14 kW') {
 else if (power === '8 kW') {
     tableContent = `
 <table id="customTable" border="1">
-<tbody>
-<tr>
-    <th>Numer</th>
-    <th>Nazwa towaru</th>
-    <th>Miara</th>
-    <th>Ilość</th>
-</tr>
-<tr>
-    <td>1</td>
-    <td>ATLANTIC EXCELIA AI 8 KW 1F HYDROBOX</td>
-    <td>szt.</td>
-    <td>1</td>
-</tr>
-    <td>2</td>
-    ${bufferRow}
-</tr>
-<tr>
-    <td>3</td>
-    <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
-    <td>kpl.</td>
-    <td>1</td>
-</tr>
-<tr>
-    <td>4</td>
-    <td>Grupa bezpieczeństwa CWU (6bar)</td>
-    <td>szt.</td>
-    <td>1</td>
-</tr>
-<tr>
-<td>5</td>
-<td>Grupa bezpieczeńśtwa C.O (2.5 bar)</td>
-<td>szt.</td>
-<td>1</td>
-</tr>
-<tr>
+ <tbody>
+    <tr>
+        <th>Numer</th>
+        <th>Nazwa towaru</th>
+        <th>Miara</th>
+        <th>Ilość</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>ATLANTIC EXCELIA AI 8 KW HYDROBOX</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        ${bufferRow}
+    </tr>
+     <tr>
+        <td>3</td>
+        ${tankRow}
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>Grupa bezpieczeństwa CWU (6bar)</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
     <td>6</td>
-    <td>KABEL GRZEWCZY</td>
-    <td>kpl.</td>
-    <td>1</td>
-</tr>
-<tr>
-    <td>7</td>
-    <td>MIEDŹ CHŁODNICZA</td>
-    <td>kpl.</td>
-    <td>1</td>
-</tr>
-<tr>
-    <td>8</td>
-    <td>SONDA POGODOWA</td>
+    <td>Grupa bezpieczeńśtwa C.O (2.5 bar)</td>
     <td>szt.</td>
     <td>1</td>
 </tr>
 <tr>
-    <td>9</td>
-    <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
-    <td>szt.</td>
-    <td>1</td>
-</tr>
-<tr>
-    <td>10</td>
-    <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
-    <td>kpl.</td>
-    <td>1</td>
-</tr>
+        <td>7</td>
+        <td>KABEL GRZEWCZY</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>MIEDŹ CHŁODNICZA</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>SONDA POGODOWA</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
 </tbody>
 </table>
 `;
@@ -5646,70 +5670,75 @@ else if (power === '8 kW') {
 else if (power === '17 kW') {
     tableContent = `
 <table id="customTable" border="1">
-<tbody>
-<tr>
-    <th>Numer</th>
-    <th>Nazwa towaru</th>
-    <th>Miara</th>
-    <th>Ilość</th>
-</tr>
-<tr>
-    <td>1</td>
-    <td>ATLANTIC EXCELIA AI 17 KW 3F HYDROBOX</td>
-    <td>szt.</td>
-    <td>1</td>
-</tr>
-    <td>2</td>
-    ${bufferRow}
-</tr>
-<tr>
-    <td>3</td>
-    <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
-    <td>kpl.</td>
-    <td>1</td>
-</tr>
-<tr>
-    <td>4</td>
-    <td>Grupa bezpieczeństwa CWU (6bar)</td>
-    <td>szt.</td>
-    <td>1</td>
-</tr>
-<tr>
-<td>5</td>
-<td>Grupa bezpieczeńśtwa C.O (2.5 bar)</td>
-<td>szt.</td>
-<td>1</td>
-</tr>
-<tr>
+ <tbody>
+    <tr>
+        <th>Numer</th>
+        <th>Nazwa towaru</th>
+        <th>Miara</th>
+        <th>Ilość</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>ATLANTIC EXCELIA AI 17 KW 3F HYDROBOX</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        ${bufferRow}
+    </tr>
+     <tr>
+        <td>3</td>
+        ${tankRow}
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>Grupa bezpieczeństwa CWU (6bar)</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
     <td>6</td>
-    <td>KABEL GRZEWCZY</td>
-    <td>kpl.</td>
-    <td>1</td>
-</tr>
-<tr>
-    <td>7</td>
-    <td>MIEDŹ CHŁODNICZA</td>
-    <td>kpl.</td>
-    <td>1</td>
-</tr>
-<tr>
-    <td>8</td>
-    <td>SONDA POGODOWA</td>
+    <td>Grupa bezpieczeńśtwa C.O (2.5 bar)</td>
     <td>szt.</td>
     <td>1</td>
 </tr>
 <tr>
-    <td>9</td>
-    <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
-    <td>szt.</td>
-    <td>1</td>
-</tr>
-<tr>
-    <td>10</td>
-    <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
-    <td>kpl.</td>
-    <td>1</td>
-</tr>
+        <td>7</td>
+        <td>KABEL GRZEWCZY</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>MIEDŹ CHŁODNICZA</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>SONDA POGODOWA</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+        <td>szt.</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+        <td>kpl.</td>
+        <td>1</td>
+    </tr>
 </tbody>
 </table>
 `;
