@@ -5288,7 +5288,7 @@ case "ATLANTIC-HYDROBOX":
     </tr>
     <tr>
         <td>1</td>
-        <td>ATLANTIC EXCELIA AI 15 KW 3F HYDROBOX</td>
+        <td>ATLANTIC EXCELIA AI 10 KW HYDROBOX</td>
         <td>szt.</td>
         <td>1</td>
     </tr>
