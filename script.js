@@ -82,10 +82,10 @@ let RX53DS1;
 let RX53DS2;
 let R1;
 let R2;
-let KIPI1;
-let KIPI2;
-let KIPIDS1;
-let KIPIDS2;
+let KTS1;
+let KTS2;
+let KTSDS1;
+let KTSDS2;
 let KKLUX1;
 let KKLUX2;
 let KKLUXDS1;
@@ -199,10 +199,10 @@ async function loadImageData() {
     RX53DS2 = imagesModule.RX53DS2;
     R1 = imagesModule.R1;
     R2 = imagesModule.R2;
-    KIPI1 = imagesModule.KIPI1;
-    KIPI2 = imagesModule.KIPI2;
-    KIPIDS1 = imagesModule.KIPIDS1;
-    KIPIDS2 = imagesModule.KIPIDS2;
+    KTS1 = imagesModule.KTS1;
+    KTS2 = imagesModule.KTS2;
+    KTSDS1 = imagesModule.KTSDS1;
+    KTSDS2 = imagesModule.KTSDS2;
     KKLUX1 = imagesModule.KKLUX1;
     KKLUX2 = imagesModule.KKLUX2;
     KKLUXDS1 = imagesModule.KKLUXDS1;
@@ -303,8 +303,8 @@ function getSecondPageBackgroundImageByType(pdfType) {
             return Lazar2;
         case "ROTENSO":
             return R1;
-        case "KIPI":
-            return KIPI2;
+        case "Kotlospaw Slimko Plus":
+            return KTS2;
         case "KAMEN-KOMPAKT-LUX":
             return KKLUX2;
         case "KAMEN-PELLET-KOMPAKT":
@@ -356,8 +356,8 @@ function getBackgroundImageByType(pdfType) {
         return Lazar1;
     } else if (pdfType === "ROTENSO") {
         return R2;
-    } else if (pdfType === "KIPI") {
-        return KIPI1;
+    } else if (pdfType === "Kotlospaw Slimko Plus") {
+        return KTS1;
     } else if (pdfType === "KAMEN-KOMPAKT-LUX") {
         return KKLUX1;
     } else if (pdfType === "KAMEN-PELLET-KOMPAKT") {
@@ -436,8 +436,8 @@ function generatePDF() {
     const RX35DS12 = `<div id="page" style="background-image: url('${RX35DS2}');"></div>`; 
     const RX53DS51 = `<div id="page" style="background-image: url('${RX53DS1}');"></div>`;
     const RX53DS52 = `<div id="page" style="background-image: url('${RX53DS2}');"></div>`;
-    const K1 = `<div id="page" style="background-image: url('${KIPIDS1}');"></div>`;
-    const K2 = `<div id="page" style="background-image: url('${KIPIDS2}');"></div>`;
+    const K1 = `<div id="page" style="background-image: url('${KTSDS1}');"></div>`;
+    const K2 = `<div id="page" style="background-image: url('${KTSDS2}');"></div>`;
 
     const KMLUX1 = `<div id="page" style="background-image: url('${KKLUXDS1}');"></div>`;
     const KMLUX2 = `<div id="page" style="background-image: url('${KKLUXDS2}');"></div>`;
@@ -664,10 +664,10 @@ else if (pdfType === 'ATLANTIC') {
     // Dodaj standardowe strony
     content = firstPageContent + secondPageContent + MHR1+ MHR2+ MHR3+MeetUsContent+FourthPageContent;
 }
-else if (pdfType === 'KIPI') 
+else if (pdfType === 'Kotlospaw Slimko Plus') 
 {
     // Dodaj standardowe strony
-    content = firstPageContent + secondPageContent +thirdPageContent+ K1+ K2+MeetUsContent+FourthPageContent;
+    content = firstPageContent + secondPageContent +thirdPageContent+ K2+K1+MeetUsContent+FourthPageContent;
 }
 else if (pdfType === 'MITSUBISHI AY') 
 {
@@ -1752,7 +1752,7 @@ break;
 
 
 
-  case "KIPI":
+  case "Kotlospaw Slimko Plus":
 
 
     if (power === '25 kW') {
@@ -1767,7 +1767,7 @@ break;
 </tr>
 <tr>
   <td>1</td>
-  <td>PIEC PELLETOWY KIPI 25 kW</td>
+  <td>PIEC PELLETOWY KOTŁOSPAW SLIMKO PLUS 25 kW</td>
   <td>szt.</td>
   <td>1</td>
 </tr>
@@ -1835,7 +1835,7 @@ break;
 </tr>
 <tr>
   <td>1</td>
-  <td>PIEC PELLETOWY KIPI 20 kW</td>
+  <td>PIEC PELLETOWY KOTŁOSPAW SLIMKO PLUS  20 kW</td>
   <td>szt.</td>
   <td>1</td>
 </tr>
@@ -1891,7 +1891,7 @@ break;
     }
 
 
-    else if (power === '15 kW') {
+    else if (power === '16 kW') {
         tableContent = `
     <table id="customTable" border="1">
     <tbody>
@@ -1903,7 +1903,7 @@ break;
 </tr>
 <tr>
   <td>1</td>
-  <td>PIEC PELLETOWY KIPI 15 kW</td>
+  <td>PIEC PELLETOWY KOTŁOSPAW SLIMKO PLUS  16 kW</td>
   <td>szt.</td>
   <td>1</td>
 </tr>
@@ -1959,7 +1959,7 @@ break;
 
 
 
-    else if (power === '10 kW') {
+    else if (power === '12 kW') {
         tableContent = `
     <table id="customTable" border="1">
     <tbody>
@@ -1971,7 +1971,7 @@ break;
 </tr>
 <tr>
   <td>1</td>
-  <td>PIEC PELLETOWY KIPI 10 kW</td>
+  <td>PIEC PELLETOWY KOTŁOSPAW SLIMKO PLUS 12 kW</td>
   <td>szt.</td>
   <td>1</td>
 </tr>
@@ -2023,6 +2023,76 @@ break;
 </table>
 `;
 break;
+
+}
+
+
+
+else if (power === '8 kW') {
+    tableContent = `
+<table id="customTable" border="1">
+<tbody>
+<tr>
+<th>Numer</th>
+<th>Nazwa towaru</th>
+<th>Miara</th>
+<th>Ilość</th>
+</tr>
+<tr>
+<td>1</td>
+<td>PIEC PELLETOWY KOTŁOSPAW SLIMKO PLUS 8 kW</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+${tankRow}
+</tr>
+<tr>
+<td>3</td>
+<td>ELEMENTY PODŁĄCZENIOWE HYDRAULICZNE ORAZ ELEKTRYCZNE</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>GRUPA BEZPIECZEŃSTWA CWU ( 6 BAR )</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>GRUPA BEZPIECZEŃSTWA C.O ( 2.5 BAR )</td>
+<td>kpl.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>PODŁĄCZENIE KOMINOWE</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>7</td>
+<td>REGULATOR BEZPRZEWODOWY</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>8</td>
+<td>MONTAŻ, DOJAZD, URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWANIA</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+    <td>9</td>
+    ${bufferRow}
+</tr>;
+</tbody>
+</table>
+`;
+break;
+
     }
 
 
@@ -7246,7 +7316,7 @@ case "VIESSMANN":
                                     </table>`;
                                 break;
 
-                            case "KIPI":
+                            case "Kotlospaw Slimko Plus":
                                 tableHtml = `
                                     <table border='1' id="kamanTable">
                                     <tr>
