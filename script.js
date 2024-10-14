@@ -750,18 +750,39 @@ function getTableContentByType(pdfType, power, bufferCapacity, tankCapacity) {
     //CWU
     if(tankCapacity === 'none'){
         tankRow = ` 
-            
             <td>Brak zasobnika ciepłej wody użytkowej</td>
             <td>szt.</td>
             <td>0</td>
         `;
-    }else{
+    } else if ( tankCapacity === '200-L') {
+        tankRow = `
+            <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ ${tankCapacity} ZE STALI NIERDZEWNEJ</td>
+            <td>szt.</td>
+            <td>1</td>
+        `;
+    }
+        else if ( tankCapacity === '250-L') {
+            tankRow = `
+                <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ ${tankCapacity} ZE STALI NIERDZEWNEJ</td>
+                <td>szt.</td>
+                <td>1</td>
+            `;
+    } 
+    else if ( tankCapacity === '300-L') {
+        tankRow = `
+            <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ ${tankCapacity} ZE STALI NIERDZEWNEJ</td>
+            <td>szt.</td>
+            <td>1</td>
+        `;
+}
+    else {
         tankRow = `
             <td>ZASOBNIK CIEPŁEJ WODY UŻYTKOWEJ ${tankCapacity}L</td>
             <td>szt.</td>
             <td>1</td>
         `;
     }
+    
 
     switch(pdfType) {
 
