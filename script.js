@@ -1360,7 +1360,7 @@ break;
 </tr>
 <tr>
 <td>1</td>
-<td>PIEC PELLETOWY KAMEN DRX 20 kW</td>
+<td>PIEC KAMEN DRX 20 kW</td>
 <td>szt.</td>
 <td>1</td>
 </tr>
@@ -1428,7 +1428,7 @@ break;
 </tr>
 <tr>
 <td>1</td>
-<td>PIEC PELLETOWY KAMEN DRX 15 kW</td>
+<td>PIEC KAMEN DRX 15 kW</td>
 <td>szt.</td>
 <td>1</td>
 </tr>
@@ -1495,7 +1495,7 @@ break;
 </tr>
 <tr>
 <td>1</td>
-<td>PIEC PELLETOWY KAMEN DRX 11 kW</td>
+<td>PIEC KAMEN DRX 11 kW</td>
 <td>szt.</td>
 <td>1</td>
 </tr>
