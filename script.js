@@ -112,6 +112,10 @@ let ATLHBL1;
 let ATLHBL2;
 let ATLANTICDS1;
 let ATLANTICDS2;
+let DrSlim1;
+let DrSlim2;
+let DrSlimds1;
+let DrSlimds2;
 
 
 
@@ -229,6 +233,10 @@ async function loadImageData() {
     ATLHBL2 = imagesModule.ATLHBL2;
     ATLANTICDS1 = imagesModule.ATLANTICDS1;
     ATLANTICDS2 = imagesModule.ATLANTICDS2;
+    DrSlim1 = imagesModule.DrSlim1;
+    DrSlim2 = imagesModule.DrSlim2;
+    DrSlimds1 = imagesModule.DrSlimds1;
+    DrSlimds2 = imagesModule.DrSlimds2;
 
 } 
 
@@ -311,6 +319,8 @@ function getSecondPageBackgroundImageByType(pdfType) {
             return KKPELLET2;
         case "KAMEN-DRX":
             return KDLX2;
+            case "DREWKO-HYBRID":
+            return DrSlim2;
         default:
             return null; // lub jakiś domyślny obraz, jeśli potrzebujesz
     }
@@ -364,6 +374,11 @@ function getBackgroundImageByType(pdfType) {
         return KKPELLET1;
     } else if (pdfType === "KAMEN-DRX") {
         return KDLX1;
+        
+    } 
+    else if (pdfType === "DREWKO-HYBRID") {
+        return DrSlim1;
+        
     } else {
         return null; // lub jakiś domyślny obraz, jeśli potrzebujesz
     }
@@ -456,6 +471,11 @@ function generatePDF() {
 
     const ATLANTICHYDDS1 = `<div id="page" style="background-image: url('${ATLANTICDS1}');"></div>`;
     const ATLANTICHYDDS2 = `<div id="page" style="background-image: url('${ATLANTICDS2}');"></div>`;
+
+    const DR1 = `<div id="page" style="background-image: url('${DrSlimds1}');"></div>`;
+    const DR2 = `<div id="page" style="background-image: url('${DrSlimds2}');"></div>`;
+
+
 
     
 
@@ -608,6 +628,11 @@ else if (pdfType === 'KAMEN-DRX')
     // Dodaj standardowe strony
     content = firstPageContent + secondPageContent+ thirdPageContent+KMLUX1+KMLUX2+KMLUX3+KMLUX4+KKDRX+MeetUsContent+FourthPageContent;
 }
+else if (pdfType === 'DREWKO-HYBRID') 
+    {
+        // Dodaj standardowe strony
+        content = firstPageContent + secondPageContent+ thirdPageContent+DR1+DR2+MeetUsContent+FourthPageContent;
+    }
 
 else if (pdfType === 'ATLANTIC') {
     var selectedPower = document.getElementById('powerOptions').value;
@@ -2116,6 +2141,214 @@ break;
 
     }
 
+
+
+
+
+    case "DREWKO-HYBRID":
+
+
+    if (power === '24 kW') {
+        tableContent = `
+    <table id="customTable" border="1">
+    <tbody>
+    <tr>
+  <th>Numer</th>
+  <th>Nazwa towaru</th>
+  <th>Miara</th>
+  <th>Ilość</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td>PIEC PELLETOWY KOTŁOSPAW DREWKO HYBRID 24 kW</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>2</td>
+  ${tankRow}
+</tr>
+<tr>
+  <td>3</td>
+  <td>ELEMENTY PODŁĄCZENIOWE HYDRAULICZNE ORAZ ELEKTRYCZNE</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>GRUPA BEZPIECZEŃSTWA CWU ( 6 BAR )</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>GRUPA BEZPIECZEŃSTWA C.O ( 2.5 BAR )</td>
+  <td>kpl.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>PODŁĄCZENIE KOMINOWE</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>REGULATOR BEZPRZEWODOWY</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td>MONTAŻ, DOJAZD, URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWANIA</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+        <td>9</td>
+        ${bufferRow}
+    </tr>;
+    </tbody>
+</table>
+`;
+break;
+    }
+
+
+
+    else if (power === '18 kW') {
+        tableContent = `
+    <table id="customTable" border="1">
+    <tbody>
+    <tr>
+  <th>Numer</th>
+  <th>Nazwa towaru</th>
+  <th>Miara</th>
+  <th>Ilość</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td>PIEC PELLETOWY KOTŁOSPAW DREWKO HYBRID 18 kW</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>2</td>
+  ${tankRow}
+</tr>
+<tr>
+  <td>3</td>
+  <td>ELEMENTY PODŁĄCZENIOWE HYDRAULICZNE ORAZ ELEKTRYCZNE</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>GRUPA BEZPIECZEŃSTWA CWU ( 6 BAR )</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>GRUPA BEZPIECZEŃSTWA C.O ( 2.5 BAR )</td>
+  <td>kpl.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>PODŁĄCZENIE KOMINOWE</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>REGULATOR BEZPRZEWODOWY</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td>MONTAŻ, DOJAZD, URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWANIA</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+        <td>9</td>
+        ${bufferRow}
+    </tr>;
+
+    </tbody>
+</table>
+`;
+break;
+    }
+
+
+    else if (power === '12 kW') {
+        tableContent = `
+    <table id="customTable" border="1">
+    <tbody>
+    <tr>
+  <th>Numer</th>
+  <th>Nazwa towaru</th>
+  <th>Miara</th>
+  <th>Ilość</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td>PIEC PELLETOWY KOTŁOSPAW DREWKO HYBRID 12 kW</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>2</td>
+  ${tankRow}
+</tr>
+<tr>
+  <td>3</td>
+  <td>ELEMENTY PODŁĄCZENIOWE HYDRAULICZNE ORAZ ELEKTRYCZNE</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>GRUPA BEZPIECZEŃSTWA CWU ( 6 BAR )</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>GRUPA BEZPIECZEŃSTWA C.O ( 2.5 BAR )</td>
+  <td>kpl.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>PODŁĄCZENIE KOMINOWE</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>REGULATOR BEZPRZEWODOWY</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td>MONTAŻ, DOJAZD, URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWANIA</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+        <td>9</td>
+        ${bufferRow}
+    </tr>;
+    </tbody>
+</table>
+`;
+break;
+    }
 
 
 
@@ -7655,6 +7888,84 @@ case "VIESSMANN":
 
 
                             case "KAMEN-KOMPAKT-LUX":
+                                tableHtml = `
+                                    <table border='1' id="kamanTable">
+                                    <tr>
+                                    <th>Lp.</th>
+                                    <th>Nazwa</th>
+                                    <th>Miara</th>
+                                    <th>Cena</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Druga strefa grzewcza z podmieszaniem do podłogówki (pompa obiegowa, siłownik , zawór trzydrogowy, osprzęt) </td>
+                                    <td>szt.</td>
+                                    <td> 1350 zł </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Zbiornik CWU 300 L</td>
+                                    <td>szt.</td>
+                                    <td>700 zł </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Zasobnik CWU ze stali nierdzewnej</td>
+                                    <td>szt.</td>
+                                    <td>1200 zł</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td> Zbiornik z stali nierdzewnej</td>
+                                    <td>szt.</td>
+                                    <td>1250zł</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Zbiornik buforowy 200l</td>
+                                    <td>szt.</td>
+                                    <td> 2000 zł 
+                                     </td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Demontaż starego źródła ciepła</td>
+                                    <td>szt.</td>
+                                    <td>500 zł</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Regulator pokojowy (dodatkowy do sterowania drugą strefą grzewczą) </td>
+                                    <td>szt.</td>
+                                    <td>450 zł</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Separator zanieczyszczeń magnetyczny (odmulnik)</td>
+                                    <td>szt.</td>
+                                    <td>560 zł</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>Pompa do cyrkulacji z osprzętem i regulatorem czasowym</td>
+                                    <td>szt.</td>
+                                    <td>650 zł</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>Reduktor ciśnienia (wody użytkowej)</td>
+                                    <td>kpl.</td>
+                                    <td>500zł</td>
+                                </tr>
+                            
+                                    </table>`;
+                                break;
+
+
+
+
+
+                                case "DREWKO-HYBRID":
                                 tableHtml = `
                                     <table border='1' id="kamanTable">
                                     <tr>

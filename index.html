@@ -103,6 +103,7 @@
                       <option value="KAMEN-KOMPAKT-LUX" id="device-name">KAMEN KOMPAKT LUX</option>
                       <option value="KAMEN-PELLET-KOMPAKT" id="device-name">KAMEN PELLET KOMPAKT</option>
                       <option value="KAMEN-DRX" id="device-name">KAMEN DRX</option>
+                      <option value="DREWKO-HYBRID" id="device-name">Kotłospaw DREWKO HYBRID</option>
                     </select>
                     <select id="powerOptions" name="powerOptions" autocomplete="off">
                     </select>
@@ -347,6 +348,9 @@
             }
             else if (pdfType === 'KAMEN-DRX') {
                 options = ['11 kW', '15 kW', '20 kW'];
+            }
+            else if (pdfType === 'DREWKO-HYBRID') {
+                options = ['12 kW', '18 kW', '24 kW'];
             }
         
             for (var i = 0; i < options.length; i++) {
