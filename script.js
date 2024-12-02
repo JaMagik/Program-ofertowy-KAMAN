@@ -764,7 +764,16 @@ function getTableContentByType(pdfType, power, bufferCapacity, tankCapacity) {
             <td>szt.</td>
             <td>0</td>
         `;
-    } else{
+    } 
+    else if (bufferCapacity === 'sprzeglo') {
+        bufferRow = `
+            <td>Sprzęgło hydrauliczne</td>
+            <td>szt.</td>
+            <td>1</td>
+        `;
+        
+    }
+    else {
         bufferRow = `
             <td>Bufor (sprzęgło hydrauliczne) ${bufferCapacity}l + osprzęt</td>
             <td>szt.</td>
