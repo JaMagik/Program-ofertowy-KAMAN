@@ -5233,7 +5233,7 @@ break;
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td>Ecodan | moduł wew. 300 litrów | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie EHSD-YM6/9D</td>
+                                <td>Ecodan | moduł wew. 300 litrów | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie EHST20D-VM60</td>
                                 <td>szt.</td>
                                 <td>1</td>
                             </tr>
@@ -5306,7 +5306,7 @@ break;
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td>Ecodan | moduł wew. 200 litrów | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie EHSD-YM6/9D</td>
+                                <td>Ecodan | moduł wew. 200 litrów | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie EHST20D-VM60</td>
                                 <td>szt.</td>
                                 <td>1</td>
                             </tr>
@@ -5380,7 +5380,7 @@ break;
                             </tr>
                             <tr>
                             <td>2</td>
-                            <td>Ecodan | moduł wew. 200 litrów | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie EHSD-YM6/9D</td>
+                            <td>Ecodan | moduł wew. 200 litrów | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie EHST20D-VM60</td>
                             <td>szt.</td>
                             <td>1</td>
                             </tr>
@@ -5450,7 +5450,7 @@ break;
                         </tr>
                         <tr>
                         <td>2</td>
-                        <td>Ecodan | moduł wew. 200 litrów | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie EHSD-YM6/9D</td>
+                        <td>Ecodan | moduł wew. 200 litrów | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie EHST20D-VM60</td>
                         <td>szt.</td>
                         <td>1</td>
                         </tr>
