@@ -64,6 +64,8 @@ let JaSofar;
 let JinSofar;
 let ZnSofar;
 let CanSofar;
+let imageCSD2S1;
+let imageCSD2S2;
 
 
 
@@ -129,6 +131,8 @@ async function loadImageDataForPV() {
     JinSofar = imagesModule.JinSofar;
     ZnSofar = imagesModule.ZnSofar;
     CanSofar = imagesModule.CanSofar;
+    imageCSD2S1 = imagesModule.imageCSD2S1;
+    imageCSD2S2 = imagesModule.imageCSD2S2;
 }
 
 loadImageDataForPV(); // Poprawione na właściwą nazwę funkcji
@@ -158,7 +162,9 @@ function getInverterImage(inverterType, panelType) {
             switch (panelType) {
                 case "zn-shine":
                     return imageZNFox;
-                case "canadian":
+                case "canadian 455":
+                    return imageFOX2;
+                    case "canadian 555":
                     return imageFOX2;
                     case "jinko 475":
                     return JIFox;
@@ -171,7 +177,9 @@ function getInverterImage(inverterType, panelType) {
             switch (panelType) {
                 case "zn-shine":
                     return ZnSofar;
-                case "canadian":
+                case "canadian 455":
+                    return CanSofar;
+                    case "canadian 555":
                     return CanSofar;
                     case "jinko 475":
                     return JinSofar;
@@ -184,7 +192,9 @@ function getInverterImage(inverterType, panelType) {
             switch (panelType) {
                 case "zn-shine":
                     return imageZNHybrid;
-                case "canadian":
+                case "canadian 455":
+                    return imageSungrow2;
+                    case "canadian 555":
                     return imageSungrow2;
                     case "jinko 475":
                     return imageJIHybrid;
@@ -199,8 +209,10 @@ function getInverterImage(inverterType, panelType) {
             switch (panelType) {
                 case "zn-shine":
                     return FoxHybZN;
-                case "canadian":
+                case "canadian 455":
                     return FOXHybCanadian;
+                    case "canadian 555":
+                        return FOXHybCanadian;
                     case "jinko 475":
                     return FoxHybJin;
                     case "jasolar":
@@ -212,8 +224,10 @@ function getInverterImage(inverterType, panelType) {
             switch (panelType) {
                 case "zn-shine":
                     return imageZNHybridWithStorage;
-                case "canadian":
+                case "canadian 455":
                     return imageMVSTORAGEMAIN;
+                    case "canadian 555":
+                        return imageMVSTORAGEMAIN;
                     case "jinko 475":
                     return imageJIStorage;
                     case "jasolar":
@@ -225,7 +239,9 @@ function getInverterImage(inverterType, panelType) {
             switch (panelType) {
                 case "zn-shine":
                     return FoxStorageZN;
-                case "canadian":
+                case "canadian 455":
+                    return FoxStorageCanadian;
+                    case "canadian 555":
                     return FoxStorageCanadian;
                     case "jinko 475":
                     return FoxStorageJin;
@@ -238,8 +254,10 @@ function getInverterImage(inverterType, panelType) {
             switch (panelType) {
                 case "zn-shine":
                     return imageZNFronius;
-                case "canadian":
+                case "canadian 455":
                     return imageFronius;
+                    case "canadian 555":
+                        return imageFronius;
                     case "jinko 475":
                         return imageJIFronius;
                         case "jasolar":
@@ -277,8 +295,10 @@ function getThirdPage(inverterType) {
 
 function getFifthPage(panelType) {
     switch(panelType) {
-        case "canadian":
-            return imageCSDS1; // Zmienna z obrazem dla standardowego falownika
+        case "canadian 455":
+            return imageCSDS1;
+            case "canadian 555":
+            return imageCSD2S1; // Zmienna z obrazem dla standardowego falownika
         case "zn-shine":
             return ZNDs1; 
          case "jinko 475":
@@ -292,8 +312,10 @@ function getFifthPage(panelType) {
 
 function getSixthPage(panelType) {
     switch(panelType) {
-        case "canadian":
-            return imageCSDS2; // Zmienna z obrazem dla standardowego falownika
+        case "canadian 455":
+            return imageCSDS2;
+            case "canadian 555":
+            return imageCSD2S2;  // Zmienna z obrazem dla standardowego falownika
         case "zn-shine":
             return ZNDs2; 
             case "jinko 475":
@@ -375,8 +397,11 @@ function createTableContent(panelDescription, inverterType, includeEnergyStorage
         case 'zn-shine':
             panelName = 'Panele fotowoltaiczne Zn-Shine SOLAR Bifacjal 450 Wp';
             break;
-        case 'canadian':
+        case 'canadian 455':
             panelName = 'Panele fotowoltaiczne Canadian Solar 455 Wp';
+            break;
+            case 'canadian 555':
+            panelName = 'Panele fotowoltaiczne Canadian Solar 555 Wp';
             break;
             case 'jinko 475':
             panelName = 'Panele fotowoltaiczne JINKO Solar 475 Wp';
@@ -457,8 +482,10 @@ function createTableContent(panelDescription, inverterType, includeEnergyStorage
 
 function getPanelPower(panelType) {
     switch (panelType) {
-        case 'canadian':
+        case 'canadian 455':
             return 0.455;
+            case 'canadian 555':
+            return 0.555;
         case 'zn-shine':
             return 0.450;
         case 'jinko 475':
