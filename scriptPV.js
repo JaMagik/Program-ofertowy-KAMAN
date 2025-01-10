@@ -533,7 +533,7 @@ async function generatePVPDF() {
  
     let backgroundImage = getFirstPageBackgroundImage(installationType);
 
-    let tableContent = createTableContent(panelDescription, inverterType, inverterType === 'hybridWithStorage' || inverterType === 'hybridWithStorageFox', panelType);
+    let tableContent = createTableContent(panelDescription, inverterType, inverterType === 'hybridWithStorage' || inverterType === 'hybridWithStorageFOX', panelType);
 
     let content = '';
 
