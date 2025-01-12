@@ -107,6 +107,7 @@
                       <option value="KAMEN-PELLET-KOMPAKT" id="device-name">KAMEN PELLET KOMPAKT</option>
                       <option value="KAMEN-DRX" id="device-name">KAMEN DRX</option>
                       <option value="DREWKO-HYBRID" id="device-name">Kotłospaw DREWKO HYBRID</option>
+                      <option value="NIBE12" id="device-name">NIBE F1245</option>
                     </select>
                     <select id="powerOptions" name="powerOptions" autocomplete="off">
                     </select>
@@ -331,6 +332,9 @@
             }
             else if (pdfType === 'VIESSMANN') {
                 options = ['13 kW', '10 kW'];
+            }
+            else if (pdfType === 'NIBE12') {
+                options = ['8 kW', '10 kW', '12 kW'];
             }
             else if (pdfType === 'MITSUBISHI HR') {
                 options = ['4,2 kW', '3,5 kW', '2,5 kW', '2,0 kW'];
