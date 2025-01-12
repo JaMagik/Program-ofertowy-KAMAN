@@ -345,7 +345,7 @@ function getSecondPageBackgroundImageByType(pdfType) {
             case "Kotlospaw drewko plus":
                 return DrPlus2;
                 case "NIBE12":
-                return Nibe12DS2;
+                return Nibe12S1;
                 case "Kotlospaw slimko plus niski":
                     return DrSlimN2;
         default:
