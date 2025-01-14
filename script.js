@@ -1101,13 +1101,13 @@ function getTableContentByType(pdfType, power, bufferCapacity, tankCapacity) {
 </tr>
 <tr>
   <td>1</td>
-  <td>JEDNOSTKA WEWNĘTRZNA MIDEA M-THERMAL ARCTIC 12 kW</td>
+  <td>JEDNOSTKA WEWNĘTRZNA MIDEA M-THERMAL SPLIT 12 kW</td>
   <td>szt.</td>
   <td>1</td>
 </tr>
 <tr>
   <td>2</td>
-  <td>JEDNOSTKA ZEWNĘTRZNA M-THERMAL ARCTIC</td>
+  <td>JEDNOSTKA ZEWNĘTRZNA M-THERMAL SPLIT</td>
   <td>szt.</td>
   <td>1</td>
 </tr>
@@ -1139,7 +1139,7 @@ function getTableContentByType(pdfType, power, bufferCapacity, tankCapacity) {
 </tr>
 <tr>
   <td>8</td>
-  <td>Pompa obiegowa do instalacji grzewczej LFP ( z osprzętem )</td>
+  <td>Pompa obiegowa do instalacji grzewczej ( z osprzętem )</td>
   <td>szt.</td>
   <td>1</td>
 </tr>
@@ -1151,18 +1151,12 @@ function getTableContentByType(pdfType, power, bufferCapacity, tankCapacity) {
 </tr>
 <tr>
   <td>10</td>
-  <td>REGULATOR BEZPRZEWODOWY MITSUBISHI PAR-WT</td>
-  <td>szt.</td>
-  <td>1</td>
-</tr>
-<tr>
-  <td>11</td>
   <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
   <td>szt.</td>
   <td>1</td>
 </tr>
 <tr>
-  <td>12</td>
+  <td>11</td>
   <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
   <td>kpl.</td>
   <td>1</td>
@@ -1186,7 +1180,7 @@ break;
     else if (power === '8 kW') {
         tableContent = `
     <table id="customTable" border="1">
-   <tbody>
+    <tbody>
   <tr>
   <th>Numer</th>
   <th>Nazwa towaru</th>
@@ -1195,13 +1189,13 @@ break;
 </tr>
 <tr>
   <td>1</td>
-  <td>JEDNOSTKA WEWNĘTRZNA MIDEA M-THERMAL ARCTIC 8 kW</td>
+  <td>JEDNOSTKA WEWNĘTRZNA MIDEA M-THERMAL SPLIT 8 kW</td>
   <td>szt.</td>
   <td>1</td>
 </tr>
 <tr>
   <td>2</td>
-  <td>JEDNOSTKA ZEWNĘTRZNA M-THERMAL ARCTIC</td>
+  <td>JEDNOSTKA ZEWNĘTRZNA M-THERMAL SPLIT</td>
   <td>szt.</td>
   <td>1</td>
 </tr>
@@ -1233,7 +1227,7 @@ break;
 </tr>
 <tr>
   <td>8</td>
-  <td>Pompa obiegowa do instalacji grzewczej LFP ( z osprzętem )</td>
+  <td>Pompa obiegowa do instalacji grzewczej ( z osprzętem )</td>
   <td>szt.</td>
   <td>1</td>
 </tr>
@@ -1245,23 +1239,18 @@ break;
 </tr>
 <tr>
   <td>10</td>
-  <td>REGULATOR BEZPRZEWODOWY MITSUBISHI PAR-WT</td>
-  <td>szt.</td>
-  <td>1</td>
-</tr>
-<tr>
-  <td>11</td>
   <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
   <td>szt.</td>
   <td>1</td>
 </tr>
 <tr>
-  <td>12</td>
+  <td>11</td>
   <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
   <td>kpl.</td>
   <td>1</td>
 </tr>
   </tbody>
+ 
   </table>
   `;
   break;
@@ -1269,7 +1258,7 @@ break;
     else if (power === '10 kW') {
       tableContent = `
   <table id="customTable" border="1">
-   <tbody>
+    <tbody>
   <tr>
   <th>Numer</th>
   <th>Nazwa towaru</th>
@@ -1278,13 +1267,13 @@ break;
 </tr>
 <tr>
   <td>1</td>
-  <td>JEDNOSTKA WEWNĘTRZNA MIDEA M-THERMAL ARCTIC 10 kW</td>
+  <td>JEDNOSTKA WEWNĘTRZNA MIDEA M-THERMAL SPLIT 10 kW</td>
   <td>szt.</td>
   <td>1</td>
 </tr>
 <tr>
   <td>2</td>
-  <td>JEDNOSTKA ZEWNĘTRZNA M-THERMAL ARCTIC</td>
+  <td>JEDNOSTKA ZEWNĘTRZNA M-THERMAL SPLIT</td>
   <td>szt.</td>
   <td>1</td>
 </tr>
@@ -1316,7 +1305,7 @@ break;
 </tr>
 <tr>
   <td>8</td>
-  <td>Pompa obiegowa do instalacji grzewczej LFP ( z osprzętem )</td>
+  <td>Pompa obiegowa do instalacji grzewczej ( z osprzętem )</td>
   <td>szt.</td>
   <td>1</td>
 </tr>
@@ -1328,18 +1317,12 @@ break;
 </tr>
 <tr>
   <td>10</td>
-  <td>REGULATOR BEZPRZEWODOWY MITSUBISHI PAR-WT</td>
-  <td>szt.</td>
-  <td>1</td>
-</tr>
-<tr>
-  <td>11</td>
   <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
   <td>szt.</td>
   <td>1</td>
 </tr>
 <tr>
-  <td>12</td>
+  <td>11</td>
   <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
   <td>kpl.</td>
   <td>1</td>
