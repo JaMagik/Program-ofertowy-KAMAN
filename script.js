@@ -317,6 +317,8 @@ function getSecondPageBackgroundImageByType(pdfType) {
             return imageBase61;
         case "Mitsubishi-ecoinverter":
             return imageBase61;
+            case "Mitsubishi-ecoinverter-hydrobox":
+            return imageBase61;
         case "Mitsubishi-hp":
             return MHP1;
         case "Mitsubishi-hydrobox":
@@ -382,6 +384,9 @@ function getBackgroundImageByType(pdfType) {
         return imageBaseMitsubishiCylinder;
     } else if (pdfType === "Mitsubishi-ecoinverter") {
         return imageBaseMitsubishiCylinder;
+    }
+    else if (pdfType === "Mitsubishi-ecoinverter-hydrobox") {
+        return imageBase64;
     } else if (pdfType === "Mitsubishi-hydrobox") {
         return imageBase64;
     } else if (pdfType === "Mitsubishi-hp") {
@@ -816,6 +821,11 @@ else if (pdfType === 'Mitsubishi-ecoinverter')
     // Dodaj standardowe strony
     content = firstPageContent + secondPageContent + thirdPageContent + MeetUsContent+MitsEcoDS1+MitsEcoDS2+MitsZubDS1+MitsZubDS2+MitsZubDS3+FourthPageContent;
 }
+else if (pdfType === 'Mitsubishi-ecoinverter-hydrobox') 
+    {
+        // Dodaj standardowe strony
+        content = firstPageContent + secondPageContent + thirdPageContent + MeetUsContent+MitsEcoDS1+MitsEcoDS2+MitsZubDS1+MitsZubDS2+MitsZubDS3+FourthPageContent;
+    }
 else if (pdfType === 'Mitsubishi-hp') 
     {
         // Dodaj standardowe strony
@@ -1078,6 +1088,178 @@ function getTableContentByType(pdfType, power, bufferCapacity, tankCapacity) {
   </tr>
   <tr>
       <td>12</td>
+      <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+      <td>kpl.</td>
+      <td>1</td>
+  </tr>
+      </tbody>
+  </table>
+  `};
+  break;
+
+  case "Mitsubishi-ecoinverter-hydrobox":
+        if (power === '8 kW') {
+          tableContent = `
+      <table id="customTable" border="1">
+      <tbody>
+      <tr>
+      <th>Numer</th>
+      <th>Nazwa towaru</th>
+      <th>Miara</th>
+      <th>Ilość</th>
+  </tr>
+  <tr>
+      <td>1</td>
+      <td>JEDNOSTKA WEWNĘTRZNA EHSD-YM9D</td>
+      <td>szt.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>2</td>
+      <td>JEDNOSTKA ZEWNĘTRZNA SUZ-SWM60VA</td>
+      <td>szt.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+        <td>3</td>
+        ${bufferRow}
+    </tr>;
+  <tr>
+      <td>4</td>
+      <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+      <td>kpl.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>5</td>
+      <td>Grupa bezpieczeństwa CWU (6bar)</td>
+      <td>szt.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>6</td>
+      <td>Grupa bezpieczeństwa C.0 (2.5 bar)</td>
+      <td>szt.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>7</td>
+      <td>Pompa obiegowa do instalacji grzewczej LFP ( z osprzętem )</td>
+      <td>szt.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>8</td>
+      <td>MIEDŹ CHŁODNICZA</td>
+      <td>kpl.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>9</td>
+      <td>REGULATOR BEZPRZEWODOWY MITSUBISHI PAR-WT</td>
+      <td>szt.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>10</td>
+      <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+      <td>szt.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>11</td>
+      <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+      <td>kpl.</td>
+      <td>1</td>
+  </tr>
+      </tbody>
+  </table>
+  `;
+  break;
+
+
+
+
+  
+
+
+
+
+
+
+
+        }
+        else if (power === '6 kW') {
+          tableContent = `
+      <table id="customTable" border="1">
+      <tbody>
+      <tr>
+      <th>Numer</th>
+      <th>Nazwa towaru</th>
+      <th>Miara</th>
+      <th>Ilość</th>
+  </tr>
+  <tr>
+      <td>1</td>
+      <td>JEDNOSTKA WEWNĘTRZNA EHSD-YM9D</td>
+      <td>szt.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>2</td>
+      <td>JEDNOSTKA ZEWNĘTRZNA SUZ-SWM60VA</td>
+      <td>szt.</td>
+      <td>1</td>
+  </tr>
+ 
+  <tr>
+        <td>3</td>
+        ${bufferRow}
+    </tr>;
+  <tr>
+      <td>4</td>
+      <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+      <td>kpl.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>5</td>
+      <td>Grupa bezpieczeństwa CWU (6bar)</td>
+      <td>szt.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>6</td>
+      <td>Grupa bezpieczeństwa C.0 (2.5 bar)</td>
+      <td>szt.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>7</td>
+      <td>Pompa obiegowa do instalacji grzewczej LFP ( z osprzętem )</td>
+      <td>szt.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>8</td>
+      <td>MIEDŹ CHŁODNICZA</td>
+      <td>kpl.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>9</td>
+      <td>REGULATOR BEZPRZEWODOWY MITSUBISHI PAR-WT</td>
+      <td>szt.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>10</td>
+      <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+      <td>szt.</td>
+      <td>1</td>
+  </tr>
+  <tr>
+      <td>11</td>
       <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
       <td>kpl.</td>
       <td>1</td>
@@ -9578,7 +9760,83 @@ case "VIESSMANN":
 
 
 
-
+                                case "Mitsubishi-ecoinverter-hydrobox":
+                                    tableHtml = `
+                                        <table border='1' id="kamanTable">
+                                        <tr>
+                                        <th>Lp.</th>
+                                        <th>Nazwa</th>
+                                        <th>Miara</th>
+                                        <th>Cena</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Pompa do cyrkulacji z osprzętem i regulatorem czasowym</td>
+                                        <td>szt.</td>
+                                        <td>660zł</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Separator zanieczyszczeń magnetyczny (odmulnik)</td>
+                                        <td>szt.</td>
+                                        <td>580zł</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Pompa obiegowa do instalacji C.0 (LFP/WILO) z osprzętem</td>
+                                        <td>szt.</td>
+                                        <td>650zł</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td> Zbiornik z stali nierdzewnej</td>
+                                        <td>szt.</td>
+                                        <td>1250zł</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>Dodatkowy sterownik do zarządznia do drugą strefą</td>
+                                        <td>szt.</td>
+                                        <td>450zł</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>Licznik energii elektrycznej 3f</td>
+                                        <td>szt.</td>
+                                        <td>540zł</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>Kabel grzewczy z termostatem ( istnieje możliwość podpięcia do kanalizacji lub drenażu po wcześniejszych oględzinach i potwierdzeniu przez montera ) </td>
+                                        <td>kpl.</td>
+                                        <td>500zł</td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>Wykonanie podbudowy ( fundamentu ) pod pompę ciepła: krawężniki przemysłowe ułożone na podsypce betonowej minimum B20 na głębokość 30-40 cm ( górna krawedź ułożona na równo z gruntem chłonnym)</td>
+                                        <td>kpl.</td>
+                                        <td>300zł</td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>Doprowadzenie kabla siłowego do pompy ciepła ( liczone gdy odległość kabla zasilającego o odpowiednim przekroju jest większa niż 10 mb )</td>
+                                        <td>mb.</td>
+                                        <td>55zł</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>Demontaż starego źródła ciepła - polega na odłączeniu kotła od instalacji C.O i odsunięciu go tak aby nie przeszkadzał przy montażu pompy ciepła ( w tym samym pomieszczeniu ). Istnieje możliwość wywiezienia go poza pomieszczenie w którym był zamontowany jeżeli będzie to możliwe za pomocą wózka paletowego ( tzn. powierzchnia musi być równa bez progów i odpowiedniej szerokośći )</td>
+                                        <td>kpl.</td>
+                                        <td>500zł</td>
+                                    </tr>
+                                 <tr>
+                                        <td>11</td>
+                                        <td>BUFOR (SPRZĘGŁO HYDRAULICZNE) 40-140L + OSPRZĘT</td>
+                                        <td>Kpl</td>
+                                        <td>1400-1950 zł</td>
+                                    </tr>
+                                        </table>`;
+                                    break;
 
 
 

@@ -90,7 +90,8 @@
                       <option value="Mitsubishi-hydrobox" id="device-name">Mitsubishi-hydrobox</option>
                       <option value="Mitsubishi-hp" id="device-name">Mitsubishi-HP</option>
                       <option value="Mitsubishi-cylinder" id="device-name">Mitsubishi-cylinder</option>
-                      <option value="Mitsubishi-ecoinverter" id="device-name">Mitsubishi-ecoinverter</option>
+                      <option value="Mitsubishi-ecoinverter" id="device-name">Mitsubishi-ecoinverter cylinder</option>
+                      <option value="Mitsubishi-ecoinverter-hydrobox" id="device-name">Mitsubishi-ecoinverter hydrobox</option>
                       <option value="ATLANTIC" id="device-name">ATLANTIC</option>
                       <option value="ATLANTIC-HYDROBOX" id="device-name">ATLANTIC HYDROBOX</option>
                       <option value="GALMET-PRIMA" id="device-name">GALMET-PRIMA</option>
@@ -312,6 +313,10 @@
             else if (pdfType === 'Mitsubishi-ecoinverter') {
                 options = ['8 kW', '6 kW'];
             }
+            else if (pdfType === 'Mitsubishi-ecoinverter-hydrobox') {
+                options = ['8 kW', '6 kW'];
+            }
+            
             else if (pdfType === 'Mitsubishi-hydrobox') {
                 options = ['14 kW','12 kW', '10 kW', '8 kW', '6 kW'];
             } else if (pdfType === 'ATLANTIC') {
