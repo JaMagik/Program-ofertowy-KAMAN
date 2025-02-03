@@ -132,6 +132,10 @@ let Midea1;
 let Midea2;
 let MideaDS1;
 let MideaDS2;
+let KAISAI1;
+let KAISAI2;
+let KAISAIDS1;
+let KAISAIDS2;
 
 async function loadImageData() {
     const imagesModule = await import('./images.js');
@@ -267,7 +271,10 @@ async function loadImageData() {
     MideaDS2 = imagesModule.MideaDS2;
     Midea1 = imagesModule.Midea1;
     Midea2 = imagesModule.Midea2;
-
+    KAISAI1 = imagesModule.KAISAI1;
+    KAISAI2 = imagesModule.KAISAI2;
+    KAISAIDS1 = imagesModule.KAISAIDS1;
+    KAISAIDS2 = imagesModule.KAISAIDS2;
 } 
 
 loadImageData();
@@ -341,6 +348,8 @@ function getSecondPageBackgroundImageByType(pdfType) {
             return MitsubishiHRZew;   
         case "LAZAR":
             return Lazar2;
+            case "KAISAI":
+            return KAISAI2;
         case "ROTENSO":
             return R1;
             case "MIDEA":
@@ -409,6 +418,8 @@ function getBackgroundImageByType(pdfType) {
         return MitsubishiHR;
     } else if (pdfType === "LAZAR") {
         return Lazar1;
+    } else if (pdfType === "KAISAI") {
+        return KAISAI1;
     } else if (pdfType === "ROTENSO") {
         return R2;
     } else if (pdfType === "Kotlospaw Slimko Plus") {
@@ -550,6 +561,8 @@ function generatePDF() {
     const MDS1= `<div id="page" style="background-image: url('${MideaDS1}');"></div>`;
     const MDS2= `<div id="page" style="background-image: url('${MideaDS2}');"></div>`;
 
+    const KS1 = `<div id="page" style="background-image: url('${KAISAIDS1}');"></div>`;
+    const KS2 = `<div id="page" style="background-image: url('${KAISAIDS2}');"></div>`;
 
 
 
@@ -721,6 +734,11 @@ else if (pdfType === 'DREWKO-HYBRID')
             // Dodaj standardowe strony
             content = firstPageContent + secondPageContent+ thirdPageContent+N12DS1+N12DS2+MeetUsContent+FourthPageContent;
         }
+        else if (pdfType === 'KAISAI') 
+            {
+                // Dodaj standardowe strony
+                content = firstPageContent + secondPageContent+ thirdPageContent+KS1+KS2+MeetUsContent+FourthPageContent;
+            }
         else if (pdfType === 'MIDEA') 
             {
                 // Dodaj standardowe strony
@@ -1270,6 +1288,9 @@ function getTableContentByType(pdfType, power, bufferCapacity, tankCapacity) {
   break;
 
 
+
+
+
   case "MIDEA":
     if (power === '12 kW') {
       tableContent = `
@@ -1516,6 +1537,178 @@ break;
 ;
 break;
 
+
+
+case "KAISAI":
+    if (power === '12 kW') {
+      tableContent = `
+  <table id="customTable" border="1">
+  <tbody>
+  <tr>
+  <th>Numer</th>
+  <th>Nazwa towaru</th>
+  <th>Miara</th>
+  <th>Ilość</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td>JEDNOSTKA WEWNĘTRZNA KAISAI ARCTIC SPLIT 10 KW</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>JEDNOSTKA ZEWNĘTRZNA KAISAI ARCTIC SPLIT 10 KW</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>3</td>
+  ${tankRow}
+</tr>
+<tr>
+    <td>4</td>
+    ${bufferRow}
+</tr>;
+<tr>
+  <td>5</td>
+  <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+  <td>kpl.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>Grupa bezpieczeństwa CWU (6bar)</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>Grupa bezpieczeństwa C.0 (2.5 bar)</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td>Pompa obiegowa do instalacji grzewczej ( z osprzętem )</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>9</td>
+  <td>MIEDŹ CHŁODNICZA</td>
+  <td>kpl.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>10</td>
+  <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>11</td>
+  <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+  <td>kpl.</td>
+  <td>1</td>
+</tr>
+  </tbody>
+</table>
+`;
+break;
+
+
+
+
+
+
+
+
+
+
+    }
+
+    else if (power === '10 kW') {
+        tableContent = `
+    <table id="customTable" border="1">
+    <tbody>
+  <tr>
+  <th>Numer</th>
+  <th>Nazwa towaru</th>
+  <th>Miara</th>
+  <th>Ilość</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td>JEDNOSTKA WEWNĘTRZNA KAISAI ARCTIC SPLIT 10 KW</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>JEDNOSTKA ZEWNĘTRZNA KAISAI ARCTIC SPLIT 10 KW</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>3</td>
+  ${tankRow}
+</tr>
+<tr>
+    <td>4</td>
+    ${bufferRow}
+</tr>;
+<tr>
+  <td>5</td>
+  <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+  <td>kpl.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>Grupa bezpieczeństwa CWU (6bar)</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>Grupa bezpieczeństwa C.0 (2.5 bar)</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td>Pompa obiegowa do instalacji grzewczej ( z osprzętem )</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>9</td>
+  <td>MIEDŹ CHŁODNICZA</td>
+  <td>kpl.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>10</td>
+  <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+  <td>szt.</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>11</td>
+  <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+  <td>kpl.</td>
+  <td>1</td>
+</tr>
+  </tbody>
+ 
+  </table>
+  `;
+  break;
+    }
+
+;
+break;
 
 
 
@@ -9839,7 +10032,83 @@ case "VIESSMANN":
                                     break;
 
 
-
+                                    case "KAISAI":
+                                        tableHtml = `
+                                            <table border='1' id="kamanTable">
+                                            <tr>
+                                            <th>Lp.</th>
+                                            <th>Nazwa</th>
+                                            <th>Miara</th>
+                                            <th>Cena</th>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Pompa do cyrkulacji z osprzętem i regulatorem czasowym</td>
+                                            <td>szt.</td>
+                                            <td>660zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Separator zanieczyszczeń magnetyczny (odmulnik)</td>
+                                            <td>szt.</td>
+                                            <td>580zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Pompa obiegowa do instalacji C.0 (LFP/WILO) z osprzętem</td>
+                                            <td>szt.</td>
+                                            <td>650zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td> Zbiornik z stali nierdzewnej</td>
+                                            <td>szt.</td>
+                                            <td>1250zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>Dodatkowy sterownik do zarządznia do drugą strefą</td>
+                                            <td>szt.</td>
+                                            <td>450zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>Licznik energii elektrycznej 3f</td>
+                                            <td>szt.</td>
+                                            <td>540zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>Kabel grzewczy z termostatem ( istnieje możliwość podpięcia do kanalizacji lub drenażu po wcześniejszych oględzinach i potwierdzeniu przez montera ) </td>
+                                            <td>kpl.</td>
+                                            <td>500zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>Wykonanie podbudowy ( fundamentu ) pod pompę ciepła: krawężniki przemysłowe ułożone na podsypce betonowej minimum B20 na głębokość 30-40 cm ( górna krawedź ułożona na równo z gruntem chłonnym)</td>
+                                            <td>kpl.</td>
+                                            <td>300zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
+                                            <td>Doprowadzenie kabla siłowego do pompy ciepła ( liczone gdy odległość kabla zasilającego o odpowiednim przekroju jest większa niż 10 mb )</td>
+                                            <td>mb.</td>
+                                            <td>55zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>10</td>
+                                            <td>Demontaż starego źródła ciepła - polega na odłączeniu kotła od instalacji C.O i odsunięciu go tak aby nie przeszkadzał przy montażu pompy ciepła ( w tym samym pomieszczeniu ). Istnieje możliwość wywiezienia go poza pomieszczenie w którym był zamontowany jeżeli będzie to możliwe za pomocą wózka paletowego ( tzn. powierzchnia musi być równa bez progów i odpowiedniej szerokośći )</td>
+                                            <td>kpl.</td>
+                                            <td>500zł</td>
+                                        </tr>
+                                     <tr>
+                                            <td>11</td>
+                                            <td>BUFOR (SPRZĘGŁO HYDRAULICZNE) 40-140L + OSPRZĘT</td>
+                                            <td>Kpl</td>
+                                            <td>1400-1950 zł</td>
+                                        </tr>
+                                            </table>`;
+                                        break;
 
 
 
