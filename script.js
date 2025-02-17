@@ -8474,13 +8474,19 @@ case "VIESSMANN":
                 <td>11</td>
                 <td>BUFOR (SPRZĘGŁO HYDRAULICZNE) 40-140L + OSPRZĘT</td>
                 <td>Kpl</td>
-                <td>1400-1950 zł</td>
+                <td>1400<br> -1950 zł</td>
             </tr>
              <tr>
                 <td>12</td>
                 <td>UPS 40-55 Ah ( zabezpieczenie układu wodnego na wypadek braku prądu )</td>
                 <td>Kpl</td>
-                <td>1400-1950 zł</td>
+                <td>1400 <br> -1950 zł</td>
+            </tr>
+             <tr>
+                <td>13</td>
+                <td>Wykonanie studni chłonnej</td>
+                <td>Kpl</td>
+                <td>800 <br> -1600 zł</td>
             </tr>
                 </table>`;
             break;
@@ -8565,6 +8571,12 @@ case "VIESSMANN":
                 <td>UPS 40-55 Ah ( zabezpieczenie układu wodnego na wypadek braku prądu )</td>
                 <td>Kpl</td>
                 <td>1400-1950 zł</td>
+            </tr>
+             <tr>
+                <td>13</td>
+                <td>Wykonanie studni chłonnej</td>
+                <td>Kpl</td>
+                <td>800 <br> -1600 zł</td>
             </tr>
                 </table>`;
             break;
@@ -8674,6 +8686,12 @@ case "VIESSMANN":
         <td>Kpl</td>
         <td>1900 zł</td>
     </tr>
+     <tr>
+                <td>17</td>
+                <td>Wykonanie studni chłonnej</td>
+                <td>Kpl</td>
+                <td>800 <br> -1600 zł</td>
+            </tr>
                 </table>`;
             break;
 
@@ -8783,6 +8801,12 @@ case "VIESSMANN":
             <td>Kpl</td>
             <td>1900 zł</td>
         </tr>
+         <tr>
+                <td>17</td>
+                <td>Wykonanie studni chłonnej</td>
+                <td>Kpl</td>
+                <td>800 <br> -1600 zł</td>
+            </tr>
                     </table>`;
                 break;
             case "GALMET-PRIMA":
@@ -8860,6 +8884,12 @@ case "VIESSMANN":
                     <td>Kpl</td>
                     <td>1400-1950 zł</td>
                 </tr>
+                 <tr>
+                <td>12</td>
+                <td>Wykonanie studni chłonnej</td>
+                <td>Kpl</td>
+                <td>800 <br> -1600 zł</td>
+            </tr>
                     </table>`;
                 break;
 
@@ -8938,6 +8968,12 @@ case "VIESSMANN":
                         <td>Kpl</td>
                         <td>1400-1950 zł</td>
                     </tr>
+                     <tr>
+                <td>12</td>
+                <td>Wykonanie studni chłonnej</td>
+                <td>Kpl</td>
+                <td>800 <br> -1600 zł</td>
+            </tr>
                         </table>`;
                     break;
 
@@ -9017,6 +9053,12 @@ case "VIESSMANN":
                         <td>Kpl</td>
                         <td>1400-1950 zł</td>
                     </tr>
+                     <tr>
+                <td>12</td>
+                <td>Wykonanie studni chłonnej</td>
+                <td>Kpl</td>
+                <td>800 <br> -1600 zł</td>
+            </tr>
                         </table>`;
                     break;
                     case "Toshiba 3F":
@@ -9094,6 +9136,12 @@ case "VIESSMANN":
                             <td>Kpl</td>
                             <td>1400-1950 zł</td>
                         </tr>
+                         <tr>
+                <td>12</td>
+                <td>Wykonanie studni chłonnej</td>
+                <td>Kpl</td>
+                <td>800 <br> -1600 zł</td>
+            </tr>
                             </table>`;
                         break;
 
@@ -9173,6 +9221,12 @@ case "VIESSMANN":
                                 <td>Kpl</td>
                                 <td>1400-1950 zł</td>
                             </tr>
+                             <tr>
+                <td>12</td>
+                <td>Wykonanie studni chłonnej</td>
+                <td>Kpl</td>
+                <td>800 <br> -1600 zł</td>
+            </tr>
                                 </table>`;
                             break;
         
@@ -9251,6 +9305,12 @@ case "VIESSMANN":
                                 <td>Kpl</td>
                                 <td>1400-1950 zł</td>
                             </tr>
+                             <tr>
+                <td>12</td>
+                <td>Wykonanie studni chłonnej</td>
+                <td>Kpl</td>
+                <td>800 <br> -1600 zł</td>
+            </tr>
                                 </table>`;
                             break;
 
@@ -9329,6 +9389,12 @@ case "VIESSMANN":
                                     <td>Kpl</td>
                                     <td>1400-1950 zł</td>
                                 </tr>
+                                 <tr>
+                <td>12</td>
+                <td>Wykonanie studni chłonnej</td>
+                <td>Kpl</td>
+                <td>800 <br> -1600 zł</td>
+            </tr>
                                     </table>`;
                                 break;
 
@@ -10028,6 +10094,12 @@ case "VIESSMANN":
                                         <td>Kpl</td>
                                         <td>1400-1950 zł</td>
                                     </tr>
+                                     <tr>
+                <td>12</td>
+                <td>Wykonanie studni chłonnej</td>
+                <td>Kpl</td>
+                <td>800 <br> -1600 zł</td>
+            </tr>
                                         </table>`;
                                     break;
 
@@ -10107,6 +10179,12 @@ case "VIESSMANN":
                                             <td>Kpl</td>
                                             <td>1400-1950 zł</td>
                                         </tr>
+                                         <tr>
+                <td>12</td>
+                <td>Wykonanie studni chłonnej</td>
+                <td>Kpl</td>
+                <td>800 <br> -1600 zł</td>
+            </tr>
                                             </table>`;
                                         break;
 
@@ -10191,6 +10269,12 @@ case "VIESSMANN":
                                     <td>Kpl</td>
                                     <td>1400-1950 zł</td>
                                 </tr>
+                                 <tr>
+                <td>12</td>
+                <td>Wykonanie studni chłonnej</td>
+                <td>Kpl</td>
+                <td>800 <br> -1600 zł</td>
+            </tr>
                                     </table>`;
                                 break;
                            
@@ -10269,6 +10353,12 @@ case "VIESSMANN":
                                         <td>Kpl</td>
                                         <td>1400-1950 zł</td>
                                     </tr>
+                                     <tr>
+                <td>12</td>
+                <td>Wykonanie studni chłonnej</td>
+                <td>Kpl</td>
+                <td>800 <br> -1600 zł</td>
+            </tr>
                                         </table>`;
                                     break;
                         

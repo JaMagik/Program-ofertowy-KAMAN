@@ -295,11 +295,12 @@ button:hover {
 }
 
 #page-third {
-    padding: 20px;
+    padding: 0px;
 }
 
 #header {
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+    font-size: 12px;
 }
 
 #table-container {
@@ -307,8 +308,10 @@ button:hover {
 }
 
 #opcje-dodatkowe {
-    margin-bottom: 20px;
+    padding:0;
+    margin-bottom: 0px;
     text-align: center;
+    font-size: 10px;
     background-color: rgb(138, 0, 0);
     color:rgb(0, 24, 244);
 }
