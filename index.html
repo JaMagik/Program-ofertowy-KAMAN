@@ -111,6 +111,7 @@
                       <option value="NIBE12" id="device-name">NIBE F1245</option>
                       <option value="MIDEA" id="device-name">MIDEA</option>
                       <option value="KAISAI" id="device-name">KAISAI ARCTIC</option>
+                      <option value="QMPELL" id="device-name">QMPELL EVO</option>
                     </select>
                     <select id="powerOptions" name="powerOptions" autocomplete="off">
                     </select>
@@ -378,6 +379,9 @@
             }
             else if (pdfType === 'DREWKO-HYBRID') {
                 options = ['12 kW', '18 kW', '24 kW'];
+            }
+            else if (pdfType === 'QMPELL') {
+                options = ['8 kW', '12 kW', '18 kW'];
             }
         
             for (var i = 0; i < options.length; i++) {

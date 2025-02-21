@@ -136,6 +136,10 @@ let KAISAI1;
 let KAISAI2;
 let KAISAIDS1;
 let KAISAIDS2;
+let QMPELL1;
+let QMPELL2;
+let QMPELLDS1;
+let QMPELLDS2;
 
 async function loadImageData() {
     const imagesModule = await import('./images.js');
@@ -275,7 +279,12 @@ async function loadImageData() {
     KAISAI2 = imagesModule.KAISAI2;
     KAISAIDS1 = imagesModule.KAISAIDS1;
     KAISAIDS2 = imagesModule.KAISAIDS2;
+    QMPELL1 = imagesModule.QMPELL1;
+    QMPELL2 = imagesModule.QMPELL2;
+    QMPELLDS1 = imagesModule.QMPELLDS1;
+    QMPELLDS2 = imagesModule.QMPELLDS2;
 } 
+
 
 loadImageData();
 
@@ -370,6 +379,8 @@ function getSecondPageBackgroundImageByType(pdfType) {
                 return Nibe12S1;
                 case "Kotlospaw slimko plus niski":
                     return DrSlimN2;
+                    case "QMPELL":
+                    return QMPELL2;
                     
         default:
             
@@ -422,7 +433,10 @@ function getBackgroundImageByType(pdfType) {
         return KAISAI1;
     } else if (pdfType === "ROTENSO") {
         return R2;
-    } else if (pdfType === "Kotlospaw Slimko Plus") {
+    } 
+    else if (pdfType === "QMPELL") {
+        return QMPELL1;
+    }else if (pdfType === "Kotlospaw Slimko Plus") {
         return KTS1;
     } else if (pdfType === "KAMEN-KOMPAKT-LUX") {
         return KKLUX1;
@@ -564,6 +578,8 @@ function generatePDF() {
     const KS1 = `<div id="page" style="background-image: url('${KAISAIDS1}');"></div>`;
     const KS2 = `<div id="page" style="background-image: url('${KAISAIDS2}');"></div>`;
 
+    const Q1 = `<div id="page" style="background-image: url('${QMPELLDS1}');"></div>`;
+    const Q2 = `<div id="page" style="background-image: url('${QMPELLDS2}');"></div>`;
 
 
 
@@ -728,6 +744,11 @@ else if (pdfType === 'DREWKO-HYBRID')
         // Dodaj standardowe strony
         content = firstPageContent + secondPageContent+ thirdPageContent+DR1+DR2+MeetUsContent+FourthPageContent;
     }
+    else if (pdfType === 'QMPELL') 
+        {
+            // Dodaj standardowe strony
+            content = firstPageContent + secondPageContent+ thirdPageContent+Q1+Q2+MeetUsContent+FourthPageContent;
+        }
 
     else if (pdfType === 'NIBE12') 
         {
@@ -2087,6 +2108,225 @@ ${tankRow}
 `;
 break;
   }
+
+
+
+  case "QMPELL":
+
+
+  if (power === '8 kW') {
+      tableContent = `
+  <table id="customTable" border="1">
+  <tbody>
+  <tr>
+<th>Numer</th>
+<th>Nazwa towarVu</th>
+<th>Miara</th>
+<th>Ilość</th>
+</tr>
+<tr>
+<td>1</td>
+<td>PIEC PELLETOWY QMPELL EVO 8 kW</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+${tankRow}
+</tr>
+<tr>
+<td>3</td>
+<td>ELEMENTY PODŁĄCZENIOWE HYDRAULICZNE ORAZ ELEKTRYCZNE</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>GRUPA BEZPIECZEŃSTWA CWU ( 6 BAR )</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>GRUPA BEZPIECZEŃSTWA C.O ( 2.5 BAR )</td>
+<td>kpl.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>PODŁĄCZENIE KOMINOWE</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>7</td>
+<td>REGULATOR BEZPRZEWODOWY</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>8</td>
+<td>MONTAŻ, DOJAZD, URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWANIA</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+        <td>9</td>
+        ${bufferRow}
+    </tr>;
+  </tbody>
+</table>
+`;
+break;
+  }
+
+
+
+  else if (power === '12 kW') {
+      tableContent = `
+  <table id="customTable" border="1">
+  <tbody>
+  <tr>
+<th>Numer</th>
+<th>Nazwa towaru</th>
+<th>Miara</th>
+<th>Ilość</th>
+</tr>
+<tr>
+<td>1</td>
+<td>PIEC PELLETOWY QMPELL EVO 12 kW</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+${tankRow}
+</tr>
+<tr>
+<td>3</td>
+<td>ELEMENTY PODŁĄCZENIOWE HYDRAULICZNE ORAZ ELEKTRYCZNE</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>GRUPA BEZPIECZEŃSTWA CWU ( 6 BAR )</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>GRUPA BEZPIECZEŃSTWA C.O ( 2.5 BAR )</td>
+<td>kpl.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>PODŁĄCZENIE KOMINOWE</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>7</td>
+<td>REGULATOR BEZPRZEWODOWY</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>8</td>
+<td>MONTAŻ, DOJAZD, URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWANIA</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+        <td>9</td>
+        ${bufferRow}
+    </tr>;
+  </tbody>
+</table>
+`;
+break;
+  }
+
+
+  else if (power === '18 kW') {
+      tableContent = `
+  <table id="customTable" border="1">
+  <tbody>
+  <tr>
+<th>Numer</th>
+<th>Nazwa towaru</th>
+<th>Miara</th>
+<th>Ilość</th>
+</tr>
+<tr>
+<td>1</td>
+<td>PIEC PELLETOWY QMPELL EVO 18 kW</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+${tankRow}
+</tr>
+<tr>
+<td>3</td>
+<td>ELEMENTY PODŁĄCZENIOWE HYDRAULICZNE ORAZ ELEKTRYCZNE</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>GRUPA BEZPIECZEŃSTWA CWU ( 6 BAR )</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>GRUPA BEZPIECZEŃSTWA C.O ( 2.5 BAR )</td>
+<td>kpl.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>PODŁĄCZENIE KOMINOWE</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>7</td>
+<td>REGULATOR BEZPRZEWODOWY</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>8</td>
+<td>MONTAŻ, DOJAZD, URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWANIA</td>
+<td>szt.</td>
+<td>1</td>
+</tr>
+<tr>
+        <td>9</td>
+        ${bufferRow}
+    </tr>;
+  </tbody>
+</table>
+`;
+break;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -9942,6 +10182,82 @@ case "VIESSMANN":
 
 
                                 case "DREWKO-HYBRID":
+                                tableHtml = `
+                                    <table border='1' id="kamanTable">
+                                    <tr>
+                                    <th>Lp.</th>
+                                    <th>Nazwa</th>
+                                    <th>Miara</th>
+                                    <th>Cena</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Druga strefa grzewcza z podmieszaniem do podłogówki (pompa obiegowa, siłownik , zawór trzydrogowy, osprzęt) </td>
+                                    <td>szt.</td>
+                                    <td> 1350 zł </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Zbiornik CWU 300 L</td>
+                                    <td>szt.</td>
+                                    <td>700 zł </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Zasobnik CWU ze stali nierdzewnej</td>
+                                    <td>szt.</td>
+                                    <td>1200 zł</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td> Zbiornik z stali nierdzewnej</td>
+                                    <td>szt.</td>
+                                    <td>1250zł</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Zbiornik buforowy 200l</td>
+                                    <td>szt.</td>
+                                    <td> 2000 zł 
+                                     </td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Demontaż starego źródła ciepła</td>
+                                    <td>szt.</td>
+                                    <td>500 zł</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Regulator pokojowy (dodatkowy do sterowania drugą strefą grzewczą) </td>
+                                    <td>szt.</td>
+                                    <td>450 zł</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Separator zanieczyszczeń magnetyczny (odmulnik)</td>
+                                    <td>szt.</td>
+                                    <td>560 zł</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>Pompa do cyrkulacji z osprzętem i regulatorem czasowym</td>
+                                    <td>szt.</td>
+                                    <td>650 zł</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>Reduktor ciśnienia (wody użytkowej)</td>
+                                    <td>kpl.</td>
+                                    <td>500zł</td>
+                                </tr>
+                            
+                                    </table>`;
+                                break;
+
+
+
+                                case "QMPELL":
                                 tableHtml = `
                                     <table border='1' id="kamanTable">
                                     <tr>
