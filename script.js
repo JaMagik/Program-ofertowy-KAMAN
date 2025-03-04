@@ -1131,6 +1131,7 @@ function getTableContentByType(pdfType, power, bufferCapacity, tankCapacity) {
       <td>kpl.</td>
       <td>1</td>
   </tr>
+  
       </tbody>
   </table>
   `};
@@ -1163,54 +1164,60 @@ function getTableContentByType(pdfType, power, bufferCapacity, tankCapacity) {
         <td>3</td>
         ${bufferRow}
     </tr>;
+     <tr>
+        <td>4</td>
+        ${tankRow}
+    </tr>;
   <tr>
-      <td>4</td>
+  
+      <td>5</td>
       <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
       <td>kpl.</td>
       <td>1</td>
   </tr>
   <tr>
-      <td>5</td>
+      <td>6</td>
       <td>Grupa bezpieczeństwa CWU (6bar)</td>
       <td>szt.</td>
       <td>1</td>
   </tr>
   <tr>
-      <td>6</td>
+      <td>7</td>
       <td>Grupa bezpieczeństwa C.0 (2.5 bar)</td>
       <td>szt.</td>
       <td>1</td>
   </tr>
   <tr>
-      <td>7</td>
+      <td>8</td>
       <td>Pompa obiegowa do instalacji grzewczej LFP ( z osprzętem )</td>
       <td>szt.</td>
       <td>1</td>
   </tr>
   <tr>
-      <td>8</td>
+      <td>9</td>
       <td>MIEDŹ CHŁODNICZA</td>
       <td>kpl.</td>
       <td>1</td>
   </tr>
   <tr>
-      <td>9</td>
+      <td>10</td>
       <td>REGULATOR BEZPRZEWODOWY MITSUBISHI PAR-WT</td>
       <td>szt.</td>
       <td>1</td>
   </tr>
   <tr>
-      <td>10</td>
+      <td>11</td>
       <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
       <td>szt.</td>
       <td>1</td>
   </tr>
   <tr>
-      <td>11</td>
+      <td>12</td>
       <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
       <td>kpl.</td>
       <td>1</td>
   </tr>
+  
       </tbody>
   </table>
   `;
@@ -1256,53 +1263,60 @@ function getTableContentByType(pdfType, power, bufferCapacity, tankCapacity) {
         ${bufferRow}
     </tr>;
   <tr>
-      <td>4</td>
+  <tr>
+        <td>4</td>
+        ${tankRowRow}
+    </tr>;
+ <tr>
+  
+      <td>5</td>
       <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
       <td>kpl.</td>
       <td>1</td>
   </tr>
   <tr>
-      <td>5</td>
+      <td>6</td>
       <td>Grupa bezpieczeństwa CWU (6bar)</td>
       <td>szt.</td>
       <td>1</td>
   </tr>
   <tr>
-      <td>6</td>
+      <td>7</td>
       <td>Grupa bezpieczeństwa C.0 (2.5 bar)</td>
       <td>szt.</td>
       <td>1</td>
   </tr>
   <tr>
-      <td>7</td>
+      <td>8</td>
       <td>Pompa obiegowa do instalacji grzewczej LFP ( z osprzętem )</td>
       <td>szt.</td>
       <td>1</td>
   </tr>
   <tr>
-      <td>8</td>
+      <td>9</td>
       <td>MIEDŹ CHŁODNICZA</td>
       <td>kpl.</td>
       <td>1</td>
   </tr>
   <tr>
-      <td>9</td>
+      <td>10</td>
       <td>REGULATOR BEZPRZEWODOWY MITSUBISHI PAR-WT</td>
       <td>szt.</td>
       <td>1</td>
   </tr>
   <tr>
-      <td>10</td>
+      <td>11</td>
       <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
       <td>szt.</td>
       <td>1</td>
   </tr>
   <tr>
-      <td>11</td>
+      <td>12</td>
       <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
       <td>kpl.</td>
       <td>1</td>
   </tr>
+  
       </tbody>
   </table>
   `};
