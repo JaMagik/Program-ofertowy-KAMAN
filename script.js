@@ -1265,7 +1265,7 @@ function getTableContentByType(pdfType, power, bufferCapacity, tankCapacity) {
   <tr>
   <tr>
         <td>4</td>
-        ${tankRowRow}
+        ${tankRow}
     </tr>;
  <tr>
   
