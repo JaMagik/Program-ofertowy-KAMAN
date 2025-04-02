@@ -987,7 +987,7 @@ function getTableContentByType(pdfType, power, bufferCapacity, tankCapacity) {
   </tr>
   <tr>
       <td>2</td>
-      <td>JEDNOSTKA ZEWNĘTRZNA SUZ-SWM60VA</td>
+      <td>JEDNOSTKA ZEWNĘTRZNA SUZ-SWM80VA</td>
       <td>szt.</td>
       <td>1</td>
   </tr>
@@ -1167,7 +1167,7 @@ function getTableContentByType(pdfType, power, bufferCapacity, tankCapacity) {
   </tr>
   <tr>
       <td>2</td>
-      <td>JEDNOSTKA ZEWNĘTRZNA SUZ-SWM60VA</td>
+      <td>JEDNOSTKA ZEWNĘTRZNA SUZ-SWM80VA</td>
       <td>szt.</td>
       <td>1</td>
   </tr>
