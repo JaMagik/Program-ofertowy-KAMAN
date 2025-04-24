@@ -339,6 +339,8 @@ function getSecondPageBackgroundImageByType(pdfType) {
             return MHP1;
         case "Mitsubishi-hydrobox":
             return imageBase61;
+            case "Mitsubishi-hydrobox-PUZ":
+            return imageBase61;
             case "Mitsubishi-hydrobox-1f":
             return imageBase61;
         case "Toshiba 3F":
@@ -410,6 +412,9 @@ function getBackgroundImageByType(pdfType) {
     else if (pdfType === "Mitsubishi-ecoinverter-hydrobox") {
         return imageBase64;
     } else if (pdfType === "Mitsubishi-hydrobox") {
+        return imageBase64;
+    }
+    else if (pdfType === "Mitsubishi-hydrobox-PUZ") {
         return imageBase64;
     }
     else if (pdfType === "Mitsubishi-hydrobox-1f") {
@@ -712,6 +717,11 @@ else if (pdfType === 'Mitsubishi-hydrobox')
     // Dodaj standardowe strony
     content = firstPageContent + secondPageContent + thirdPageContent + MeetUsContent+MitsHydDS1+MitsHydDS2+MitsZubDS1+MitsZubDS2+MitsZubDS3+FourthPageContent;
 }
+else if (pdfType === 'Mitsubishi-hydrobox-PUZ') 
+    {
+        // Dodaj standardowe strony
+        content = firstPageContent + secondPageContent + thirdPageContent + MeetUsContent+MitsHydDS1+MitsHydDS2+MitsZubDS1+MitsZubDS2+MitsZubDS3+FourthPageContent;
+    }
 else if (pdfType === 'Mitsubishi-hydrobox-1f') 
     {
         // Dodaj standardowe strony
@@ -7093,6 +7103,373 @@ else if (power === '14 kW') {
         
 
 
+
+
+            case "Mitsubishi-hydrobox-PUZ":
+                if (power === '12 kW') {
+                    tableContent = `
+                <table id="customTable" border="1">
+                <tbody>
+                                    <tr>
+                                        <th>Numer</th>
+                                        <th>Nazwa towaru</th>
+                                        <th>Miara</th>
+                                        <th>Ilość</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Ecodan | Zubadan Inverter | Split | 12,0kW, 400V, R32 PUZ-SHWM120YAA EHST20D-YM9E</td>
+                                        <td>szt.</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Ecodan | Hydrobox | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie EHSD-YM6/9D</td>
+                                        <td>szt.</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        ${tankRow}
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        ${bufferRow}
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+                                        <td>kpl.</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>Grupa bezpieczeństwa CWU (6bar)</td>
+                                        <td>szt.</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>MIEDŹ CHŁODNICZA</td>
+                                        <td>kpl.</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>REGULATOR BEZPRZEWODOWY MITSUBISHI PAR-WT</td>
+                                        <td>szt.</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+                                        <td>szt.</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+                                        <td>kpl.</td>
+                                        <td>1</td>
+                                    </tr>
+                                </tbody>
+            </table>
+            `;
+            
+                } 
+        else if (power === '14 kW') {
+                tableContent = `
+            <table id="customTable" border="1">
+            <tbody>
+                                <tr>
+                                    <th>Numer</th>
+                                    <th>Nazwa towaru</th>
+                                    <th>Miara</th>
+                                    <th>Ilość</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Ecodan | Zubadan Inverter | Split | 14,0kW, 400V, R32 PUZ-SHWM140YAA EHST20D-YM9E</td>
+                                    <td>szt.</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Ecodan | Hydrobox | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie EHSD-YM6/9D</td>
+                                    <td>szt.</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    ${tankRow}
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    ${bufferRow}
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+                                    <td>kpl.</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Grupa bezpieczeństwa CWU (6bar)</td>
+                                    <td>szt.</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>MIEDŹ CHŁODNICZA</td>
+                                    <td>kpl.</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>REGULATOR BEZPRZEWODOWY MITSUBISHI PAR-WT</td>
+                                    <td>szt.</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+                                    <td>szt.</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+                                    <td>kpl.</td>
+                                    <td>1</td>
+                                </tr>
+                            </tbody>
+        </table>
+        `;
+        
+                break;
+            } 
+                    
+                else if (power === '10 kW') {
+                tableContent = `
+            <table id="customTable" border="1">
+            <tbody>
+                                <tr>
+                                    <th>Numer</th>
+                                    <th>Nazwa towaru</th>
+                                    <th>Miara</th>
+                                    <th>Ilość</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                  <td>Ecodan | Zubadan Inverter | Split | 10,0kW, 400V, R32 PUZ-SHWM100YAA EHST20D-YM9E</td>
+                                    <td>szt.</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Ecodan | Hydrobox | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie EHSD-YM6/9D</td>
+                                    <td>szt.</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    ${tankRow}
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    ${bufferRow}
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+                                    <td>kpl.</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Grupa bezpieczeństwa CWU (6bar)</td>
+                                    <td>szt.</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>MIEDŹ CHŁODNICZA</td>
+                                    <td>kpl.</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>REGULATOR BEZPRZEWODOWY MITSUBISHI PAR-WT</td>
+                                    <td>szt.</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+                                    <td>szt.</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+                                    <td>kpl.</td>
+                                    <td>1</td>
+                                </tr>
+                            </tbody>
+        </table>
+        `;
+        
+                break;
+            } else if (power === '8 kW') {
+                tableContent = `
+            <table id="customTable" border="1">
+            <tbody>
+                                <tr>
+                                    <th>Numer</th>
+                                    <th>Nazwa towaru</th>
+                                    <th>Miara</th>
+                                    <th>Ilość</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                  <td>Ecodan | Zubadan Inverter | Split | 8,0kW, 400V, R32 PUZ-SHWM80YAA EHST20D-YM9E</td>
+                                    <td>szt.</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Ecodan | Hydrobox | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie EHSD-YM6/9D</td>
+                                    <td>szt.</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    ${tankRow}
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    ${bufferRow}
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+                                    <td>kpl.</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Grupa bezpieczeństwa CWU (6bar)</td>
+                                    <td>szt.</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>MIEDŹ CHŁODNICZA</td>
+                                    <td>kpl.</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>REGULATOR BEZPRZEWODOWY MITSUBISHI PAR-WT</td>
+                                    <td>szt.</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+                                    <td>szt.</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+                                    <td>kpl.</td>
+                                    <td>1</td>
+                                </tr>
+                            </tbody>
+        </table>
+        
+        `;
+        
+                break;
+        
+             } else if (power === '6 kW') {
+                    tableContent = `
+                <table id="customTable" border="1">
+                <tbody>
+                                    <tr>
+                                        <th>Numer</th>
+                                        <th>Nazwa towaru</th>
+                                        <th>Miara</th>
+                                        <th>Ilość</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Ecodan | Zubadan Inverter | Split | 6,0kW, 400V, R32 PUZ-SHWM60YAA EHST20D-YM9E</td>
+                                        <td>szt.</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Ecodan | Hydrobox | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie EHSD-YM6/9D</td>
+                                        <td>szt.</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        ${tankRow}
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        ${bufferRow}
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>ELEMENTY HYDRAULICZNE I ELEKTRYCZNE DO POMPY CIEPŁA</td>
+                                        <td>kpl.</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>Grupa bezpieczeństwa CWU (6bar)</td>
+                                        <td>szt.</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>MIEDŹ CHŁODNICZA</td>
+                                        <td>kpl.</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>REGULATOR BEZPRZEWODOWY MITSUBISHI PAR-WT</td>
+                                        <td>szt.</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>STOJAK LUB WIESZAK POD POMPĘ CIEPŁA</td>
+                                        <td>szt.</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>MONTAŻ , DOJAZD , URUCHOMIENIE ORAZ SZKOLENIE UŻYTKOWNIKA</td>
+                                        <td>kpl.</td>
+                                        <td>1</td>
+                                    </tr>
+                                </tbody>
+            </table>
+            
+            `};
+            
+                    break;
+                
+        
+
+
             case "Mitsubishi-hydrobox-1f":
                 if (power === '12 kW') {
                     tableContent = `
@@ -10988,6 +11365,93 @@ case "VIESSMANN":
             </tr>
                                     </table>`;
                                 break;
+
+
+
+
+                                case "Mitsubishi-hydrobox-PUZ":
+                                    tableHtml = `
+                                        <table border='1' id="kamanTable">
+                                        <tr>
+                                        <th>Lp.</th>
+                                        <th>Nazwa</th>
+                                        <th>Miara</th>
+                                        <th>Cena</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Pompa do cyrkulacji z osprzętem i regulatorem czasowym</td>
+                                        <td>szt.</td>
+                                        <td>660zł</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Separator zanieczyszczeń magnetyczny (odmulnik)</td>
+                                        <td>szt.</td>
+                                        <td>580zł</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Pompa obiegowa do instalacji C.0 (LFP/WILO) z osprzętem</td>
+                                        <td>szt.</td>
+                                        <td>650zł</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td> Zbiornik z stali nierdzewnej</td>
+                                        <td>szt.</td>
+                                        <td>1250zł</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>Dodatkowy sterownik do zarządznia do drugą strefą</td>
+                                        <td>szt.</td>
+                                        <td>450zł</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>Licznik energii elektrycznej 3f</td>
+                                        <td>szt.</td>
+                                        <td>540zł</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>Kabel grzewczy z termostatem ( istnieje możliwość podpięcia do kanalizacji lub drenażu po wcześniejszych oględzinach i potwierdzeniu przez montera ) </td>
+                                        <td>kpl.</td>
+                                        <td>500zł</td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>Wykonanie podbudowy ( fundamentu ) pod pompę ciepła: krawężniki przemysłowe ułożone na podsypce betonowej minimum B20 na głębokość 30-40 cm ( górna krawedź ułożona na równo z gruntem chłonnym)</td>
+                                        <td>kpl.</td>
+                                        <td>300zł</td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>Doprowadzenie kabla siłowego do pompy ciepła ( liczone gdy odległość kabla zasilającego o odpowiednim przekroju jest większa niż 10 mb )</td>
+                                        <td>mb.</td>
+                                        <td>55zł</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>Demontaż starego źródła ciepła - polega na odłączeniu kotła od instalacji C.O i odsunięciu go tak aby nie przeszkadzał przy montażu pompy ciepła ( w tym samym pomieszczeniu ). Istnieje możliwość wywiezienia go poza pomieszczenie w którym był zamontowany jeżeli będzie to możliwe za pomocą wózka paletowego ( tzn. powierzchnia musi być równa bez progów i odpowiedniej szerokośći )</td>
+                                        <td>kpl.</td>
+                                        <td>500zł</td>
+                                    </tr>
+                                 <tr>
+                                        <td>11</td>
+                                        <td>BUFOR (SPRZĘGŁO HYDRAULICZNE) 40-140L + OSPRZĘT</td>
+                                        <td>Kpl</td>
+                                        <td>1400-1950 zł</td>
+                                    </tr>
+                                     <tr>
+                <td>12</td>
+                <td>Wykonanie studni chłonnej</td>
+                <td>Kpl</td>
+                <td>800 <br> -1600 zł</td>
+            </tr>
+                                        </table>`;
+                                    break;
                            
                                 case "Mitsubishi-hydrobox":
                                     tableHtml = `
