@@ -10630,157 +10630,7 @@ case "VIESSMANN":
 
                             case "Kotlospaw Slimko Plus":
                                 tableHtml = `
-                                    <table border='1' id="kamanTable">
-                                    <tr>
-                                    <th>Lp.</th>
-                                    <th>Nazwa</th>
-                                    <th>Miara</th>
-                                    <th>Cena</th>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Druga strefa grzewcza z podmieszaniem do podłogówki (pompa obiegowa, siłownik , zawór trzydrogowy, osprzęt) </td>
-                                    <td>szt.</td>
-                                    <td> 1350 zł </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Zbiornik CWU 300 L</td>
-                                    <td>szt.</td>
-                                    <td>700 zł </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Zasobnik CWU ze stali nierdzewnej</td>
-                                    <td>szt.</td>
-                                    <td>1200 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td> Zbiornik z stali nierdzewnej</td>
-                                    <td>szt.</td>
-                                    <td>1250zł</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>Zbiornik buforowy 200l</td>
-                                    <td>szt.</td>
-                                    <td> 2000 zł 
-                                     </td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>Demontaż starego źródła ciepła</td>
-                                    <td>szt.</td>
-                                    <td>500 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>7</td>
-                                    <td>Regulator pokojowy (dodatkowy do sterowania drugą strefą grzewczą) </td>
-                                    <td>szt.</td>
-                                    <td>450 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>8</td>
-                                    <td>Separator zanieczyszczeń magnetyczny (odmulnik)</td>
-                                    <td>szt.</td>
-                                    <td>560 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>9</td>
-                                    <td>Pompa do cyrkulacji z osprzętem i regulatorem czasowym</td>
-                                    <td>szt.</td>
-                                    <td>650 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>10</td>
-                                    <td>Reduktor ciśnienia (wody użytkowej)</td>
-                                    <td>kpl.</td>
-                                    <td>500zł</td>
-                                </tr>
-                            
-                                    </table>`;
-                                break;
-
-
-                                case "Kotlospaw drewko plus palnik easy ROT":
-                                    tableHtml = `
-                                        <table border='1' id="kamanTable">
-                                        <tr>
-                                        <th>Lp.</th>
-                                        <th>Nazwa</th>
-                                        <th>Miara</th>
-                                        <th>Cena</th>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Druga strefa grzewcza z podmieszaniem do podłogówki (pompa obiegowa, siłownik , zawór trzydrogowy, osprzęt) </td>
-                                        <td>szt.</td>
-                                        <td> 1350 zł </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Zbiornik CWU 300 L</td>
-                                        <td>szt.</td>
-                                        <td>700 zł </td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Zasobnik CWU ze stali nierdzewnej</td>
-                                        <td>szt.</td>
-                                        <td>1200 zł</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td> Zbiornik z stali nierdzewnej</td>
-                                        <td>szt.</td>
-                                        <td>1250zł</td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>Zbiornik buforowy 200l</td>
-                                        <td>szt.</td>
-                                        <td> 2000 zł 
-                                         </td>
-                                    </tr>
-                                    <tr>
-                                        <td>6</td>
-                                        <td>Demontaż starego źródła ciepła</td>
-                                        <td>szt.</td>
-                                        <td>500 zł</td>
-                                    </tr>
-                                    <tr>
-                                        <td>7</td>
-                                        <td>Regulator pokojowy (dodatkowy do sterowania drugą strefą grzewczą) </td>
-                                        <td>szt.</td>
-                                        <td>450 zł</td>
-                                    </tr>
-                                    <tr>
-                                        <td>8</td>
-                                        <td>Separator zanieczyszczeń magnetyczny (odmulnik)</td>
-                                        <td>szt.</td>
-                                        <td>560 zł</td>
-                                    </tr>
-                                    <tr>
-                                        <td>9</td>
-                                        <td>Pompa do cyrkulacji z osprzętem i regulatorem czasowym</td>
-                                        <td>szt.</td>
-                                        <td>650 zł</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10</td>
-                                        <td>Reduktor ciśnienia (wody użytkowej)</td>
-                                        <td>kpl.</td>
-                                        <td>500zł</td>
-                                    </tr>niski
-                                
-                                        </table>`;
-                                    break;
-    
-
-                                    case "Kotlospaw drewko plus palnik REVO":
-                                        tableHtml = `
-                                            <table border='1' id="kamanTable">
+                               <table border='1' id="kamanTable">
                                             <tr>
                                             <th>Lp.</th>
                                             <th>Nazwa</th>
@@ -10803,51 +10653,183 @@ case "VIESSMANN":
                                             <td>3</td>
                                             <td>Zasobnik CWU ze stali nierdzewnej</td>
                                             <td>szt.</td>
-                                            <td>1200 zł</td>
+                                            <td>2200 zł</td>
                                         </tr>
                                         <tr>
                                             <td>4</td>
-                                            <td> Zbiornik z stali nierdzewnej</td>
-                                            <td>szt.</td>
-                                            <td>1250zł</td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
                                             <td>Zbiornik buforowy 200l</td>
                                             <td>szt.</td>
                                             <td> 2000 zł 
                                              </td>
                                         </tr>
                                         <tr>
-                                            <td>6</td>
+                                            <td>5</td>
                                             <td>Demontaż starego źródła ciepła</td>
                                             <td>szt.</td>
                                             <td>500 zł</td>
                                         </tr>
                                         <tr>
-                                            <td>7</td>
+                                            <td>6</td>
                                             <td>Regulator pokojowy (dodatkowy do sterowania drugą strefą grzewczą) </td>
                                             <td>szt.</td>
                                             <td>450 zł</td>
                                         </tr>
                                         <tr>
-                                            <td>8</td>
+                                            <td>7</td>
                                             <td>Separator zanieczyszczeń magnetyczny (odmulnik)</td>
                                             <td>szt.</td>
                                             <td>560 zł</td>
                                         </tr>
                                         <tr>
-                                            <td>9</td>
+                                            <td>8</td>
                                             <td>Pompa do cyrkulacji z osprzętem i regulatorem czasowym</td>
                                             <td>szt.</td>
                                             <td>650 zł</td>
                                         </tr>
                                         <tr>
-                                            <td>10</td>
+                                            <td>9</td>
                                             <td>Reduktor ciśnienia (wody użytkowej)</td>
                                             <td>kpl.</td>
                                             <td>500zł</td>
-                                        </tr>niski
+                                        </tr>
+                                    
+                                            </table>`;
+                                break;
+
+
+                                case "Kotlospaw drewko plus palnik easy ROT":
+                                    tableHtml = `
+                                       <table border='1' id="kamanTable">
+                                            <tr>
+                                            <th>Lp.</th>
+                                            <th>Nazwa</th>
+                                            <th>Miara</th>
+                                            <th>Cena</th>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Druga strefa grzewcza z podmieszaniem do podłogówki (pompa obiegowa, siłownik , zawór trzydrogowy, osprzęt) </td>
+                                            <td>szt.</td>
+                                            <td> 1350 zł </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Zbiornik CWU 300 L</td>
+                                            <td>szt.</td>
+                                            <td>700 zł </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Zasobnik CWU ze stali nierdzewnej</td>
+                                            <td>szt.</td>
+                                            <td>2200 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Zbiornik buforowy 200l</td>
+                                            <td>szt.</td>
+                                            <td> 2000 zł 
+                                             </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>Demontaż starego źródła ciepła</td>
+                                            <td>szt.</td>
+                                            <td>500 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>Regulator pokojowy (dodatkowy do sterowania drugą strefą grzewczą) </td>
+                                            <td>szt.</td>
+                                            <td>450 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>Separator zanieczyszczeń magnetyczny (odmulnik)</td>
+                                            <td>szt.</td>
+                                            <td>560 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>Pompa do cyrkulacji z osprzętem i regulatorem czasowym</td>
+                                            <td>szt.</td>
+                                            <td>650 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
+                                            <td>Reduktor ciśnienia (wody użytkowej)</td>
+                                            <td>kpl.</td>
+                                            <td>500zł</td>
+                                        </tr>
+                                    
+                                            </table>`;
+                                    break;
+    
+
+                                    case "Kotlospaw drewko plus palnik REVO":
+                                        tableHtml = `
+                                         <table border='1' id="kamanTable">
+                                            <tr>
+                                            <th>Lp.</th>
+                                            <th>Nazwa</th>
+                                            <th>Miara</th>
+                                            <th>Cena</th>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Druga strefa grzewcza z podmieszaniem do podłogówki (pompa obiegowa, siłownik , zawór trzydrogowy, osprzęt) </td>
+                                            <td>szt.</td>
+                                            <td> 1350 zł </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Zbiornik CWU 300 L</td>
+                                            <td>szt.</td>
+                                            <td>700 zł </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Zasobnik CWU ze stali nierdzewnej</td>
+                                            <td>szt.</td>
+                                            <td>2200 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Zbiornik buforowy 200l</td>
+                                            <td>szt.</td>
+                                            <td> 2000 zł 
+                                             </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>Demontaż starego źródła ciepła</td>
+                                            <td>szt.</td>
+                                            <td>500 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>Regulator pokojowy (dodatkowy do sterowania drugą strefą grzewczą) </td>
+                                            <td>szt.</td>
+                                            <td>450 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>Separator zanieczyszczeń magnetyczny (odmulnik)</td>
+                                            <td>szt.</td>
+                                            <td>560 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>Pompa do cyrkulacji z osprzętem i regulatorem czasowym</td>
+                                            <td>szt.</td>
+                                            <td>650 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
+                                            <td>Reduktor ciśnienia (wody użytkowej)</td>
+                                            <td>kpl.</td>
+                                            <td>500zł</td>
+                                        </tr>
                                     
                                             </table>`;
                                         break;
@@ -10881,47 +10863,41 @@ case "VIESSMANN":
                                             <td>3</td>
                                             <td>Zasobnik CWU ze stali nierdzewnej</td>
                                             <td>szt.</td>
-                                            <td>1200 zł</td>
+                                            <td>2200 zł</td>
                                         </tr>
                                         <tr>
                                             <td>4</td>
-                                            <td> Zbiornik z stali nierdzewnej</td>
-                                            <td>szt.</td>
-                                            <td>1250zł</td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
                                             <td>Zbiornik buforowy 200l</td>
                                             <td>szt.</td>
                                             <td> 2000 zł 
                                              </td>
                                         </tr>
                                         <tr>
-                                            <td>6</td>
+                                            <td>5</td>
                                             <td>Demontaż starego źródła ciepła</td>
                                             <td>szt.</td>
                                             <td>500 zł</td>
                                         </tr>
                                         <tr>
-                                            <td>7</td>
+                                            <td>6</td>
                                             <td>Regulator pokojowy (dodatkowy do sterowania drugą strefą grzewczą) </td>
                                             <td>szt.</td>
                                             <td>450 zł</td>
                                         </tr>
                                         <tr>
-                                            <td>8</td>
+                                            <td>7</td>
                                             <td>Separator zanieczyszczeń magnetyczny (odmulnik)</td>
                                             <td>szt.</td>
                                             <td>560 zł</td>
                                         </tr>
                                         <tr>
-                                            <td>9</td>
+                                            <td>8</td>
                                             <td>Pompa do cyrkulacji z osprzętem i regulatorem czasowym</td>
                                             <td>szt.</td>
                                             <td>650 zł</td>
                                         </tr>
                                         <tr>
-                                            <td>10</td>
+                                            <td>9</td>
                                             <td>Reduktor ciśnienia (wody użytkowej)</td>
                                             <td>kpl.</td>
                                             <td>500zł</td>
@@ -10935,75 +10911,69 @@ case "VIESSMANN":
                             case "LAZAR":
                                 tableHtml = `
                                     <table border='1' id="kamanTable">
-                                    <tr>
-                                    <th>Lp.</th>
-                                    <th>Nazwa</th>
-                                    <th>Miara</th>
-                                    <th>Cena</th>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Druga strefa grzewcza z podmieszaniem do podłogówki (pompa obiegowa, siłownik , zawór trzydrogowy, osprzęt) </td>
-                                    <td>szt.</td>
-                                    <td> 1350 zł </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Zbiornik CWU 300 L</td>
-                                    <td>szt.</td>
-                                    <td>700 zł </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Zasobnik CWU ze stali nierdzewnej</td>
-                                    <td>szt.</td>
-                                    <td>1200 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td> Zbiornik z stali nierdzewnej</td>
-                                    <td>szt.</td>
-                                    <td>1250zł</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>Zbiornik buforowy 200l</td>
-                                    <td>szt.</td>
-                                    <td> 2000 zł 
-                                     </td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>Demontaż starego źródła ciepła</td>
-                                    <td>szt.</td>
-                                    <td>500 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>7</td>
-                                    <td>Regulator pokojowy (dodatkowy do sterowania drugą strefą grzewczą) </td>
-                                    <td>szt.</td>
-                                    <td>450 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>8</td>
-                                    <td>Separator zanieczyszczeń magnetyczny (odmulnik)</td>
-                                    <td>szt.</td>
-                                    <td>560 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>9</td>
-                                    <td>Pompa do cyrkulacji z osprzętem i regulatorem czasowym</td>
-                                    <td>szt.</td>
-                                    <td>650 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>10</td>
-                                    <td>Reduktor ciśnienia (wody użytkowej)</td>
-                                    <td>kpl.</td>
-                                    <td>500zł</td>
-                                </tr>
-                            
-                                    </table>`;
+                                            <tr>
+                                            <th>Lp.</th>
+                                            <th>Nazwa</th>
+                                            <th>Miara</th>
+                                            <th>Cena</th>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Druga strefa grzewcza z podmieszaniem do podłogówki (pompa obiegowa, siłownik , zawór trzydrogowy, osprzęt) </td>
+                                            <td>szt.</td>
+                                            <td> 1350 zł </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Zbiornik CWU 300 L</td>
+                                            <td>szt.</td>
+                                            <td>700 zł </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Zasobnik CWU ze stali nierdzewnej</td>
+                                            <td>szt.</td>
+                                            <td>2200 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Zbiornik buforowy 200l</td>
+                                            <td>szt.</td>
+                                            <td> 2000 zł 
+                                             </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>Demontaż starego źródła ciepła</td>
+                                            <td>szt.</td>
+                                            <td>500 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>Regulator pokojowy (dodatkowy do sterowania drugą strefą grzewczą) </td>
+                                            <td>szt.</td>
+                                            <td>450 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>Separator zanieczyszczeń magnetyczny (odmulnik)</td>
+                                            <td>szt.</td>
+                                            <td>560 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>Pompa do cyrkulacji z osprzętem i regulatorem czasowym</td>
+                                            <td>szt.</td>
+                                            <td>650 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
+                                            <td>Reduktor ciśnienia (wody użytkowej)</td>
+                                            <td>kpl.</td>
+                                            <td>500zł</td>
+                                        </tr>
+                                    
+                                            </table>`;
                                 break;
 
 
@@ -11012,76 +10982,70 @@ case "VIESSMANN":
 
                             case "KAMEN-DRX":
                                 tableHtml = `
-                                    <table border='1' id="kamanTable">
-                                    <tr>
-                                    <th>Lp.</th>
-                                    <th>Nazwa</th>
-                                    <th>Miara</th>
-                                    <th>Cena</th>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Druga strefa grzewcza z podmieszaniem do podłogówki (pompa obiegowa, siłownik , zawór trzydrogowy, osprzęt) </td>
-                                    <td>szt.</td>
-                                    <td> 1350 zł </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Zbiornik CWU 300 L</td>
-                                    <td>szt.</td>
-                                    <td>700 zł </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Zasobnik CWU ze stali nierdzewnej</td>
-                                    <td>szt.</td>
-                                    <td>1200 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td> Zbiornik z stali nierdzewnej</td>
-                                    <td>szt.</td>
-                                    <td>1250zł</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>Zbiornik buforowy 200l</td>
-                                    <td>szt.</td>
-                                    <td> 2000 zł 
-                                     </td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>Demontaż starego źródła ciepła</td>
-                                    <td>szt.</td>
-                                    <td>500 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>7</td>
-                                    <td>Regulator pokojowy (dodatkowy do sterowania drugą strefą grzewczą) </td>
-                                    <td>szt.</td>
-                                    <td>450 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>8</td>
-                                    <td>Separator zanieczyszczeń magnetyczny (odmulnik)</td>
-                                    <td>szt.</td>
-                                    <td>560 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>9</td>
-                                    <td>Pompa do cyrkulacji z osprzętem i regulatorem czasowym</td>
-                                    <td>szt.</td>
-                                    <td>650 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>10</td>
-                                    <td>Reduktor ciśnienia (wody użytkowej)</td>
-                                    <td>kpl.</td>
-                                    <td>500zł</td>
-                                </tr>
-                            
-                                    </table>`;
+                                   <table border='1' id="kamanTable">
+                                            <tr>
+                                            <th>Lp.</th>
+                                            <th>Nazwa</th>
+                                            <th>Miara</th>
+                                            <th>Cena</th>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Druga strefa grzewcza z podmieszaniem do podłogówki (pompa obiegowa, siłownik , zawór trzydrogowy, osprzęt) </td>
+                                            <td>szt.</td>
+                                            <td> 1350 zł </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Zbiornik CWU 300 L</td>
+                                            <td>szt.</td>
+                                            <td>700 zł </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Zasobnik CWU ze stali nierdzewnej</td>
+                                            <td>szt.</td>
+                                            <td>2200 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Zbiornik buforowy 200l</td>
+                                            <td>szt.</td>
+                                            <td> 2000 zł 
+                                             </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>Demontaż starego źródła ciepła</td>
+                                            <td>szt.</td>
+                                            <td>500 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>Regulator pokojowy (dodatkowy do sterowania drugą strefą grzewczą) </td>
+                                            <td>szt.</td>
+                                            <td>450 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>Separator zanieczyszczeń magnetyczny (odmulnik)</td>
+                                            <td>szt.</td>
+                                            <td>560 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>Pompa do cyrkulacji z osprzętem i regulatorem czasowym</td>
+                                            <td>szt.</td>
+                                            <td>650 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
+                                            <td>Reduktor ciśnienia (wody użytkowej)</td>
+                                            <td>kpl.</td>
+                                            <td>500zł</td>
+                                        </tr>
+                                    
+                                            </table>`;
                                 break;
 
 
@@ -11092,75 +11056,69 @@ case "VIESSMANN":
                             case "KAMEN-PELLET-KOMPAKT":
                                 tableHtml = `
                                     <table border='1' id="kamanTable">
-                                    <tr>
-                                    <th>Lp.</th>
-                                    <th>Nazwa</th>
-                                    <th>Miara</th>
-                                    <th>Cena</th>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Druga strefa grzewcza z podmieszaniem do podłogówki (pompa obiegowa, siłownik , zawór trzydrogowy, osprzęt) </td>
-                                    <td>szt.</td>
-                                    <td> 1350 zł </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Zbiornik CWU 300 L</td>
-                                    <td>szt.</td>
-                                    <td>700 zł </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Zasobnik CWU ze stali nierdzewnej</td>
-                                    <td>szt.</td>
-                                    <td>1200 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td> Zbiornik z stali nierdzewnej</td>
-                                    <td>szt.</td>
-                                    <td>1250zł</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>Zbiornik buforowy 200l</td>
-                                    <td>szt.</td>
-                                    <td> 2000 zł 
-                                     </td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>Demontaż starego źródła ciepła</td>
-                                    <td>szt.</td>
-                                    <td>500 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>7</td>
-                                    <td>Regulator pokojowy (dodatkowy do sterowania drugą strefą grzewczą) </td>
-                                    <td>szt.</td>
-                                    <td>450 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>8</td>
-                                    <td>Separator zanieczyszczeń magnetyczny (odmulnik)</td>
-                                    <td>szt.</td>
-                                    <td>560 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>9</td>
-                                    <td>Pompa do cyrkulacji z osprzętem i regulatorem czasowym</td>
-                                    <td>szt.</td>
-                                    <td>650 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>10</td>
-                                    <td>Reduktor ciśnienia (wody użytkowej)</td>
-                                    <td>kpl.</td>
-                                    <td>500zł</td>
-                                </tr>
-                            
-                                    </table>`;
+                                            <tr>
+                                            <th>Lp.</th>
+                                            <th>Nazwa</th>
+                                            <th>Miara</th>
+                                            <th>Cena</th>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Druga strefa grzewcza z podmieszaniem do podłogówki (pompa obiegowa, siłownik , zawór trzydrogowy, osprzęt) </td>
+                                            <td>szt.</td>
+                                            <td> 1350 zł </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Zbiornik CWU 300 L</td>
+                                            <td>szt.</td>
+                                            <td>700 zł </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Zasobnik CWU ze stali nierdzewnej</td>
+                                            <td>szt.</td>
+                                            <td>2200 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Zbiornik buforowy 200l</td>
+                                            <td>szt.</td>
+                                            <td> 2000 zł 
+                                             </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>Demontaż starego źródła ciepła</td>
+                                            <td>szt.</td>
+                                            <td>500 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>Regulator pokojowy (dodatkowy do sterowania drugą strefą grzewczą) </td>
+                                            <td>szt.</td>
+                                            <td>450 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>Separator zanieczyszczeń magnetyczny (odmulnik)</td>
+                                            <td>szt.</td>
+                                            <td>560 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>Pompa do cyrkulacji z osprzętem i regulatorem czasowym</td>
+                                            <td>szt.</td>
+                                            <td>650 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
+                                            <td>Reduktor ciśnienia (wody użytkowej)</td>
+                                            <td>kpl.</td>
+                                            <td>500zł</td>
+                                        </tr>
+                                    
+                                            </table>`;
                                 break;
                            
 
@@ -11174,76 +11132,70 @@ case "VIESSMANN":
 
                             case "KAMEN-KOMPAKT-LUX":
                                 tableHtml = `
-                                    <table border='1' id="kamanTable">
-                                    <tr>
-                                    <th>Lp.</th>
-                                    <th>Nazwa</th>
-                                    <th>Miara</th>
-                                    <th>Cena</th>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Druga strefa grzewcza z podmieszaniem do podłogówki (pompa obiegowa, siłownik , zawór trzydrogowy, osprzęt) </td>
-                                    <td>szt.</td>
-                                    <td> 1350 zł </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Zbiornik CWU 300 L</td>
-                                    <td>szt.</td>
-                                    <td>700 zł </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Zasobnik CWU ze stali nierdzewnej</td>
-                                    <td>szt.</td>
-                                    <td>1200 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td> Zbiornik z stali nierdzewnej</td>
-                                    <td>szt.</td>
-                                    <td>1250zł</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>Zbiornik buforowy 200l</td>
-                                    <td>szt.</td>
-                                    <td> 2000 zł 
-                                     </td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>Demontaż starego źródła ciepła</td>
-                                    <td>szt.</td>
-                                    <td>500 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>7</td>
-                                    <td>Regulator pokojowy (dodatkowy do sterowania drugą strefą grzewczą) </td>
-                                    <td>szt.</td>
-                                    <td>450 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>8</td>
-                                    <td>Separator zanieczyszczeń magnetyczny (odmulnik)</td>
-                                    <td>szt.</td>
-                                    <td>560 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>9</td>
-                                    <td>Pompa do cyrkulacji z osprzętem i regulatorem czasowym</td>
-                                    <td>szt.</td>
-                                    <td>650 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>10</td>
-                                    <td>Reduktor ciśnienia (wody użytkowej)</td>
-                                    <td>kpl.</td>
-                                    <td>500zł</td>
-                                </tr>
-                            
-                                    </table>`;
+                                   <table border='1' id="kamanTable">
+                                            <tr>
+                                            <th>Lp.</th>
+                                            <th>Nazwa</th>
+                                            <th>Miara</th>
+                                            <th>Cena</th>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Druga strefa grzewcza z podmieszaniem do podłogówki (pompa obiegowa, siłownik , zawór trzydrogowy, osprzęt) </td>
+                                            <td>szt.</td>
+                                            <td> 1350 zł </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Zbiornik CWU 300 L</td>
+                                            <td>szt.</td>
+                                            <td>700 zł </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Zasobnik CWU ze stali nierdzewnej</td>
+                                            <td>szt.</td>
+                                            <td>2200 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Zbiornik buforowy 200l</td>
+                                            <td>szt.</td>
+                                            <td> 2000 zł 
+                                             </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>Demontaż starego źródła ciepła</td>
+                                            <td>szt.</td>
+                                            <td>500 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>Regulator pokojowy (dodatkowy do sterowania drugą strefą grzewczą) </td>
+                                            <td>szt.</td>
+                                            <td>450 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>Separator zanieczyszczeń magnetyczny (odmulnik)</td>
+                                            <td>szt.</td>
+                                            <td>560 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>Pompa do cyrkulacji z osprzętem i regulatorem czasowym</td>
+                                            <td>szt.</td>
+                                            <td>650 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
+                                            <td>Reduktor ciśnienia (wody użytkowej)</td>
+                                            <td>kpl.</td>
+                                            <td>500zł</td>
+                                        </tr>
+                                    
+                                            </table>`;
                                 break;
 
 
@@ -11252,152 +11204,140 @@ case "VIESSMANN":
 
                                 case "DREWKO-HYBRID":
                                 tableHtml = `
-                                    <table border='1' id="kamanTable">
-                                    <tr>
-                                    <th>Lp.</th>
-                                    <th>Nazwa</th>
-                                    <th>Miara</th>
-                                    <th>Cena</th>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Druga strefa grzewcza z podmieszaniem do podłogówki (pompa obiegowa, siłownik , zawór trzydrogowy, osprzęt) </td>
-                                    <td>szt.</td>
-                                    <td> 1350 zł </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Zbiornik CWU 300 L</td>
-                                    <td>szt.</td>
-                                    <td>700 zł </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Zasobnik CWU ze stali nierdzewnej</td>
-                                    <td>szt.</td>
-                                    <td>1200 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td> Zbiornik z stali nierdzewnej</td>
-                                    <td>szt.</td>
-                                    <td>1250zł</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>Zbiornik buforowy 200l</td>
-                                    <td>szt.</td>
-                                    <td> 2000 zł 
-                                     </td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>Demontaż starego źródła ciepła</td>
-                                    <td>szt.</td>
-                                    <td>500 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>7</td>
-                                    <td>Regulator pokojowy (dodatkowy do sterowania drugą strefą grzewczą) </td>
-                                    <td>szt.</td>
-                                    <td>450 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>8</td>
-                                    <td>Separator zanieczyszczeń magnetyczny (odmulnik)</td>
-                                    <td>szt.</td>
-                                    <td>560 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>9</td>
-                                    <td>Pompa do cyrkulacji z osprzętem i regulatorem czasowym</td>
-                                    <td>szt.</td>
-                                    <td>650 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>10</td>
-                                    <td>Reduktor ciśnienia (wody użytkowej)</td>
-                                    <td>kpl.</td>
-                                    <td>500zł</td>
-                                </tr>
-                            
-                                    </table>`;
+                                   <table border='1' id="kamanTable">
+                                            <tr>
+                                            <th>Lp.</th>
+                                            <th>Nazwa</th>
+                                            <th>Miara</th>
+                                            <th>Cena</th>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Druga strefa grzewcza z podmieszaniem do podłogówki (pompa obiegowa, siłownik , zawór trzydrogowy, osprzęt) </td>
+                                            <td>szt.</td>
+                                            <td> 1350 zł </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Zbiornik CWU 300 L</td>
+                                            <td>szt.</td>
+                                            <td>700 zł </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Zasobnik CWU ze stali nierdzewnej</td>
+                                            <td>szt.</td>
+                                            <td>2200 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Zbiornik buforowy 200l</td>
+                                            <td>szt.</td>
+                                            <td> 2000 zł 
+                                             </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>Demontaż starego źródła ciepła</td>
+                                            <td>szt.</td>
+                                            <td>500 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>Regulator pokojowy (dodatkowy do sterowania drugą strefą grzewczą) </td>
+                                            <td>szt.</td>
+                                            <td>450 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>Separator zanieczyszczeń magnetyczny (odmulnik)</td>
+                                            <td>szt.</td>
+                                            <td>560 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>Pompa do cyrkulacji z osprzętem i regulatorem czasowym</td>
+                                            <td>szt.</td>
+                                            <td>650 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
+                                            <td>Reduktor ciśnienia (wody użytkowej)</td>
+                                            <td>kpl.</td>
+                                            <td>500zł</td>
+                                        </tr>
+                                    
+                                            </table>`;
                                 break;
 
 
 
                                 case "QMPELL":
                                 tableHtml = `
-                                    <table border='1' id="kamanTable">
-                                    <tr>
-                                    <th>Lp.</th>
-                                    <th>Nazwa</th>
-                                    <th>Miara</th>
-                                    <th>Cena</th>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Druga strefa grzewcza z podmieszaniem do podłogówki (pompa obiegowa, siłownik , zawór trzydrogowy, osprzęt) </td>
-                                    <td>szt.</td>
-                                    <td> 1350 zł </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Zbiornik CWU 300 L</td>
-                                    <td>szt.</td>
-                                    <td>700 zł </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Zasobnik CWU ze stali nierdzewnej</td>
-                                    <td>szt.</td>
-                                    <td>1200 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td> Zbiornik z stali nierdzewnej</td>
-                                    <td>szt.</td>
-                                    <td>1250zł</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>Zbiornik buforowy 200l</td>
-                                    <td>szt.</td>
-                                    <td> 2000 zł 
-                                     </td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>Demontaż starego źródła ciepła</td>
-                                    <td>szt.</td>
-                                    <td>500 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>7</td>
-                                    <td>Regulator pokojowy (dodatkowy do sterowania drugą strefą grzewczą) </td>
-                                    <td>szt.</td>
-                                    <td>450 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>8</td>
-                                    <td>Separator zanieczyszczeń magnetyczny (odmulnik)</td>
-                                    <td>szt.</td>
-                                    <td>560 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>9</td>
-                                    <td>Pompa do cyrkulacji z osprzętem i regulatorem czasowym</td>
-                                    <td>szt.</td>
-                                    <td>650 zł</td>
-                                </tr>
-                                <tr>
-                                    <td>10</td>
-                                    <td>Reduktor ciśnienia (wody użytkowej)</td>
-                                    <td>kpl.</td>
-                                    <td>500zł</td>
-                                </tr>
-                            
-                                    </table>`;
+                                 <table border='1' id="kamanTable">
+                                            <tr>
+                                            <th>Lp.</th>
+                                            <th>Nazwa</th>
+                                            <th>Miara</th>
+                                            <th>Cena</th>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Druga strefa grzewcza z podmieszaniem do podłogówki (pompa obiegowa, siłownik , zawór trzydrogowy, osprzęt) </td>
+                                            <td>szt.</td>
+                                            <td> 1350 zł </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Zbiornik CWU 300 L</td>
+                                            <td>szt.</td>
+                                            <td>700 zł </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Zasobnik CWU ze stali nierdzewnej</td>
+                                            <td>szt.</td>
+                                            <td>2200 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Zbiornik buforowy 200l</td>
+                                            <td>szt.</td>
+                                            <td> 2000 zł 
+                                             </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>Demontaż starego źródła ciepła</td>
+                                            <td>szt.</td>
+                                            <td>500 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>Regulator pokojowy (dodatkowy do sterowania drugą strefą grzewczą) </td>
+                                            <td>szt.</td>
+                                            <td>450 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>Separator zanieczyszczeń magnetyczny (odmulnik)</td>
+                                            <td>szt.</td>
+                                            <td>560 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>Pompa do cyrkulacji z osprzętem i regulatorem czasowym</td>
+                                            <td>szt.</td>
+                                            <td>650 zł</td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
+                                            <td>Reduktor ciśnienia (wody użytkowej)</td>
+                                            <td>kpl.</td>
+                                            <td>500zł</td>
+                                        </tr>
+                                    
+                                            </table>`;
                                 break;
                            
 
