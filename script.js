@@ -140,6 +140,11 @@ let QMPELL1;
 let QMPELL2;
 let QMPELLDS1;
 let QMPELLDS2;
+let PUZCDS1;
+let PUZCDS2;
+
+
+
 
 async function loadImageData() {
     const imagesModule = await import('./images.js');
@@ -283,6 +288,8 @@ async function loadImageData() {
     QMPELL2 = imagesModule.QMPELL2;
     QMPELLDS1 = imagesModule.QMPELLDS1;
     QMPELLDS2 = imagesModule.QMPELLDS2;
+    PUZCDS1 =imagesModule.PUZCDS1;
+    PUZCDS2 = imagesModule.PUZCDS2;
 } 
 
 
@@ -603,6 +610,9 @@ function generatePDF() {
     const Q1 = `<div id="page" style="background-image: url('${QMPELLDS1}');"></div>`;
     const Q2 = `<div id="page" style="background-image: url('${QMPELLDS2}');"></div>`;
 
+    const CDS1 = `<div id="page" style="background-image: url('${PUZCDS1}');"></div>`;
+    const CDS2 = `<div id="page" style="background-image: url('${PUZCDS2}');"></div>`;
+
 
 
 
@@ -736,7 +746,7 @@ else if (pdfType === 'Mitsubishi-hydrobox-PUZ')
     else if (pdfType === 'Mitsubishi-cylinder-PUZ') 
     {
         // Dodaj standardowe strony
-        content = firstPageContent + secondPageContent + thirdPageContent + MeetUsContent+MitsHydDS1+MitsHydDS2+MitsZubDS1+MitsZubDS2+MitsZubDS3+FourthPageContent;
+        content = firstPageContent + secondPageContent + thirdPageContent + MeetUsContent+CDS1+CDS2+FourthPageContent;
     }
 else if (pdfType === 'Mitsubishi-hydrobox-1f') 
     {
@@ -7352,7 +7362,7 @@ else if (power === '14 kW') {
                                     </tr>
                                     <tr>
                                         <td>2</td>
-                                        <td>Ecodan | Hydrobox | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie EHSD-YM6/9D</td>
+                                        <td>Ecodan | Hydrobox | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie ERSF-YM9E</td>
                                         <td>szt.</td>
                                         <td>1</td>
                                     </tr>
@@ -7423,7 +7433,7 @@ else if (power === '14 kW') {
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td>Ecodan | Hydrobox | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie EHSD-YM6/9D</td>
+                                    <td>Ecodan | Hydrobox | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie ERSF-YM9E</td>
                                     <td>szt.</td>
                                     <td>1</td>
                                 </tr>
@@ -7496,7 +7506,7 @@ else if (power === '14 kW') {
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td>Ecodan | Hydrobox | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie EHSD-YM6/9D</td>
+                                    <td>Ecodan | Hydrobox | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie ERSF-YM9E</td>
                                     <td>szt.</td>
                                     <td>1</td>
                                 </tr>
@@ -7567,7 +7577,7 @@ else if (power === '14 kW') {
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td>Ecodan | Hydrobox | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie EHSD-YM6/9D</td>
+                                    <td>Ecodan | Hydrobox | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie ERSF-YM9E</td>
                                     <td>szt.</td>
                                     <td>1</td>
                                 </tr>
@@ -7640,7 +7650,7 @@ else if (power === '14 kW') {
                                     </tr>
                                     <tr>
                                         <td>2</td>
-                                        <td>Ecodan | Hydrobox | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie EHSD-YM6/9D</td>
+                                        <td>Ecodan | Hydrobox | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie ERSF-YM9E</td>
                                         <td>szt.</td>
                                         <td>1</td>
                                     </tr>
@@ -7713,13 +7723,13 @@ else if (power === '14 kW') {
                                     </tr>
                                     <tr>
                                         <td>1</td>
-                                        <td>Ecodan | Zubadan Inverter | Split | 12,0kW, 400V, R32 PUZ-SHWM120YAA EHST20D-YM9E</td>
+                                        <td>Ecodan | Zubadan Inverter | Split | 12,0kW, 400V, R32 PUZ-SHWM120YAA</td>
                                         <td>szt.</td>
                                         <td>1</td>
                                     </tr>
                                     <tr>
                                         <td>2</td>
-                                        <td>Ecodan | Hydrobox | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie EHSD-YM6/9D</td>
+                                        <td>Ecodan | Cylinder | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie ERST20F-YM9E</td>
                                         <td>szt.</td>
                                         <td>1</td>
                                     </tr>
@@ -7784,13 +7794,13 @@ else if (power === '14 kW') {
                                 </tr>
                                 <tr>
                                     <td>1</td>
-                                    <td>Ecodan | Zubadan Inverter | Split | 14,0kW, 400V, R32 PUZ-SHWM140YAA EHST20D-YM9E</td>
+                                    <td>Ecodan | Zubadan Inverter | Split | 14,0kW, 400V, R32 PUZ-SHWM140YAA</td>
                                     <td>szt.</td>
                                     <td>1</td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td>Ecodan | Hydrobox | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie EHSD-YM6/9D</td>
+                                    <td>Ecodan | Cylinder | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie ERST20F-YM9E</td>
                                     <td>szt.</td>
                                     <td>1</td>
                                 </tr>
@@ -7863,7 +7873,7 @@ else if (power === '14 kW') {
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td>Ecodan | Hydrobox | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie EHSD-YM6/9D</td>
+                                    <td>Ecodan | Cylinder | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie ERST20F-YM9ED</td>
                                     <td>szt.</td>
                                     <td>1</td>
                                 </tr>
@@ -7934,7 +7944,7 @@ else if (power === '14 kW') {
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td>Ecodan | Hydrobox | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie EHSD-YM6/9D</td>
+                                     <td>Ecodan | Cylinder | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie ERST20F-YM9ED</td>
                                     <td>szt.</td>
                                     <td>1</td>
                                 </tr>
@@ -8007,7 +8017,7 @@ else if (power === '14 kW') {
                                     </tr>
                                     <tr>
                                         <td>2</td>
-                                        <td>Ecodan | Hydrobox | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie EHSD-YM6/9D</td>
+                                         <td>Ecodan | Cylinder | Split | grz. 6/9 kW, 3x400V | naczynie wz. 10L | grzanie ERST20F-YM9ED</td>
                                         <td>szt.</td>
                                         <td>1</td>
                                     </tr>
